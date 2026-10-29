@@ -1,0 +1,312 @@
+{
+  "doc_id": "receipt_v1_bounce",
+  "doc_type": "receipt",
+  "variant": 1,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-6.1deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:3.4",
+    "noise:0.07",
+    "downscale:0.42"
+  ],
+  "quality_expectation": "bounce",
+  "lines": [
+    {
+      "text": "TRANSACTION RECEIPT",
+      "bbox": [
+        56.2,
+        16.8,
+        199.5,
+        32.0,
+        197.8,
+        48.1,
+        54.5,
+        32.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        52.7,
+        50.2,
+        74.8,
+        52.5,
+        73.5,
+        65.4,
+        51.3,
+        63.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "27/06/2026",
+      "bbox": [
+        152.9,
+        60.9,
+        213.1,
+        67.3,
+        211.7,
+        80.1,
+        151.5,
+        73.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "Bank",
+      "bbox": [
+        50.4,
+        71.9,
+        74.0,
+        74.4,
+        72.7,
+        87.2,
+        49.0,
+        84.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Punjab National Bank",
+      "bbox": [
+        150.6,
+        82.6,
+        270.9,
+        95.4,
+        269.6,
+        108.2,
+        149.2,
+        95.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "A/C",
+      "bbox": [
+        48.0,
+        93.6,
+        64.5,
+        95.4,
+        63.1,
+        108.2,
+        46.7,
+        106.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXXXX5312",
+      "bbox": [
+        148.3,
+        104.3,
+        208.4,
+        110.7,
+        207.1,
+        123.5,
+        146.9,
+        117.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Card",
+      "bbox": [
+        45.7,
+        115.3,
+        67.8,
+        117.7,
+        66.4,
+        130.5,
+        44.4,
+        128.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXX XXXX XXXX 1374",
+      "bbox": [
+        145.9,
+        126.0,
+        260.3,
+        138.2,
+        258.9,
+        151.0,
+        144.6,
+        138.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "card_last_four"
+    },
+    {
+      "text": "Amount",
+      "bbox": [
+        43.4,
+        137.0,
+        81.2,
+        141.1,
+        79.9,
+        153.9,
+        42.0,
+        149.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Rs. 250,000.00",
+      "bbox": [
+        143.6,
+        147.7,
+        227.8,
+        156.7,
+        226.5,
+        169.5,
+        142.3,
+        160.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "RRN",
+      "bbox": [
+        41.1,
+        158.8,
+        61.2,
+        160.9,
+        59.8,
+        173.8,
+        39.7,
+        171.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "296113771052",
+      "bbox": [
+        141.3,
+        169.4,
+        213.5,
+        177.2,
+        212.1,
+        190.0,
+        139.9,
+        182.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "Status",
+      "bbox": [
+        38.8,
+        180.5,
+        68.1,
+        183.6,
+        66.7,
+        196.4,
+        37.4,
+        193.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "FAILED",
+      "bbox": [
+        139.0,
+        191.1,
+        175.1,
+        195.0,
+        173.8,
+        207.8,
+        137.6,
+        204.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "transaction_date": "27/06/2026",
+    "bank_name": "Punjab National Bank",
+    "card_last_four": "1374",
+    "disputed_amount": 250000,
+    "transaction_reference": "296113771052"
+  },
+  "fields_bilingual": {
+    "transaction_date": {
+      "value": "27/06/2026",
+      "value_en": "27/06/2026",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "Punjab National Bank",
+      "value_en": "Punjab National Bank",
+      "script": "Latn"
+    },
+    "card_last_four": {
+      "value": "1374",
+      "value_en": "1374",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "Rs. 250,000.00",
+      "value_en": "Rs. 250,000.00",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "296113771052",
+      "value_en": "296113771052",
+      "script": "Latn"
+    }
+  }
+}

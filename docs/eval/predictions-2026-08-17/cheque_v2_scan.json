@@ -1,0 +1,392 @@
+{
+ "doc_id": "cheque_v2_scan",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 1.0,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.50/2.00 validator_failures=1(bank_name) quality_low handwriting=0.21 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "NDFC Bank Limited",
+     "bbox": [
+      49.27741584777832,
+      56.94355038496165,
+      321.2225841522217,
+      56.94355038496165,
+      321.2225841522217,
+      99.50837832230789,
+      49.27741584777832,
+      99.50837832230789
+     ],
+     "confidence": 0.9529038422247943,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "DATE",
+     "bbox": [
+      948.7828125,
+      64.66556490384616,
+      1013.4421875,
+      64.66556490384616,
+      1013.4421875,
+      99.16616586538463,
+      948.7828125,
+      99.16616586538463
+     ],
+     "confidence": 0.9913671165704727,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "2",
+     "bbox": [
+      1021.0632934570312,
+      76.38094768157373,
+      1056.1278259277344,
+      71.84112051817087,
+      1057.8363647460938,
+      85.99757940952595,
+      1022.7718322753907,
+      90.5374065729288
+     ],
+     "confidence": 0.4825439155101776,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "09/03/2026",
+     "bbox": [
+      1046.0371490478517,
+      62.37775245079628,
+      1194.8423217773438,
+      59.72039783917941,
+      1195.5073333740236,
+      99.6722889680129,
+      1046.7021606445312,
+      102.32965484032265
+     ],
+     "confidence": 0.9946220219135284,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "ACNo.",
+     "bbox": [
+      43.91250100135803,
+      105.99734133940477,
+      128.51250171661377,
+      105.99734133940477,
+      128.51250171661377,
+      139.01227404521063,
+      43.91250100135803,
+      139.01227404521063
+     ],
+     "confidence": 0.765582799911499,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "70377485692500",
+     "bbox": [
+      165.43571376800537,
+      103.45787492165199,
+      350.4142753601074,
+      103.45787492165199,
+      350.4142753601074,
+      138.59981738604034,
+      165.43571376800537,
+      138.59981738604034
+     ],
+     "confidence": 0.9369927559580121,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "PAY",
+     "bbox": [
+      40.80365767478943,
+      173.62347753231344,
+      100.27133960723877,
+      173.62347753231344,
+      100.27133960723877,
+      210.12653372837948,
+      40.80365767478943,
+      210.12653372837948
+     ],
+     "confidence": 0.9961803356806437,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "Abdul Rahman Shaikh",
+     "bbox": [
+      150.66067771911622,
+      169.84620197002704,
+      387.49232482910156,
+      166.31669543339657,
+      388.06314239501955,
+      207.40421617948093,
+      151.23145179748536,
+      210.93372271611142
+     ],
+     "confidence": 0.9569880805517498,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "RUPEES",
+     "bbox": [
+      45.93872995376587,
+      258.64410737844617,
+      136.46127548217774,
+      258.64410737844617,
+      136.46127548217774,
+      294.8414695446308,
+      45.93872995376587,
+      294.8414695446308
+     ],
+     "confidence": 0.9977622727553049,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "12,75oonly",
+     "bbox": [
+      187.63568344116212,
+      253.3844629434439,
+      319.6643165588379,
+      253.3844629434439,
+      319.6643165588379,
+      297.14919090270996,
+      187.63568344116212,
+      297.14919090270996
+     ],
+     "confidence": 0.8577695518732071,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 9
+    },
+    {
+     "text": "12,750.00",
+     "bbox": [
+      1020.0001098632813,
+      247.1331568497878,
+      1131.9196655273438,
+      251.77003992520847,
+      1130.333935546875,
+      292.83296731802136,
+      1018.4143798828126,
+      288.1960842426007
+     ],
+     "confidence": 0.8597364127635956,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "MICR",
+     "bbox": [
+      44.98817911148071,
+      464.2941778623141,
+      113.1868263244629,
+      464.2941778623141,
+      113.1868263244629,
+      493.6048605992244,
+      44.98817911148071,
+      493.6048605992244
+     ],
+     "confidence": 0.9890516996383667,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "627703233",
+     "bbox": [
+      148.0931293487549,
+      463.34120794442987,
+      280.83187065124514,
+      463.34120794442987,
+      280.83187065124514,
+      494.55783051710864,
+      148.0931293487549,
+      494.55783051710864
+     ],
+     "confidence": 0.9996678564283583,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "992735HDFC0627781703774856",
+     "bbox": [
+      47.99166297912598,
+      514.2838168511024,
+      487.9445182800293,
+      515.9591376964863,
+      487.8141426086426,
+      552.6899864490216,
+      47.86128730773926,
+      551.0146656036377
+     ],
+     "confidence": 0.9949641456970801,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "NDFC Bank Limited",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.47645192111239715,
+   "source": "lookup_table",
+   "validator_passed": false,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     49.27741584777832,
+     56.94355038496165,
+     321.2225841522217,
+     56.94355038496165,
+     321.2225841522217,
+     99.50837832230789,
+     49.27741584777832,
+     99.50837832230789
+    ],
+    "span": [
+     0,
+     17
+    ],
+    "line_index": 0
+   },
+   "mt_engine": null,
+   "flags": [
+    "MULTIPLE_CANDIDATES",
+    "VALIDATOR_FAILED"
+   ]
+  },
+  "transaction_date": {
+   "value": "09/03/2026",
+   "value_en": null,
+   "normalized": "2026-03-09",
+   "confidence": 0.9946220219135284,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     1046.0371490478517,
+     62.37775245079628,
+     1194.8423217773438,
+     59.72039783917941,
+     1195.5073333740236,
+     99.6722889680129,
+     1046.7021606445312,
+     102.32965484032265
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 3
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "micr_code": {
+   "value": "627703233",
+   "value_en": null,
+   "normalized": "627703233",
+   "confidence": 0.9996678564283583,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     148.0931293487549,
+     463.34120794442987,
+     280.83187065124514,
+     463.34120794442987,
+     280.83187065124514,
+     494.55783051710864,
+     148.0931293487549,
+     494.55783051710864
+    ],
+    "span": [
+     0,
+     9
+    ],
+    "line_index": 12
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 39.967,
+  "s1_ingest": 9.739,
+  "s15_quality": 132.182,
+  "s15_quality:p1": 132.182,
+  "s4_ocr": 322.122,
+  "s4_ocr:p1": 322.122,
+  "s2b_lid": 0.856,
+  "s2b_lid:p1": 0.856,
+  "s3_classify": 67.697,
+  "s3_classify:p1": 67.697,
+  "s5_validators": 36.399,
+  "s5_slm": 0.012,
+  "assemble": 0.664,
+  "s4b_vlm": 0.117,
+  "s4b_vlm:p1": 0.117,
+  "e2e_total": 610.012
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+  "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "supporting_doc",
+ "summary_span_count": 0
+}

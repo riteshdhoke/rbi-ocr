@@ -1,0 +1,9 @@
+-r requirements.txt
+pytest
+pytest-asyncio
+hypothesis
+ruff
+mypy
+fonttools            # instancing static TTFs from variable Google fonts
+truststore           # corporate-proxy TLS: use Windows cert store for downloads
+pip-licenses

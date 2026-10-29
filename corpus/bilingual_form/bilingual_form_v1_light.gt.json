@@ -1,0 +1,497 @@
+{
+  "doc_id": "bilingual_form_v1_light",
+  "doc_type": "bilingual_form",
+  "variant": 1,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": true,
+  "degradations": [
+    "skew:+1.1deg",
+    "blur:0.4",
+    "noise:0.004"
+  ],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+      "bbox": [
+        89.5,
+        114.0,
+        923.1,
+        97.9,
+        924.1,
+        146.6,
+        90.5,
+        162.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank — Integrated Ombudsman Scheme, 2021 — Form I",
+      "bbox": [
+        90.7,
+        174.0,
+        856.5,
+        159.2,
+        857.2,
+        191.2,
+        91.3,
+        206.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. Name of complainant",
+      "bbox": [
+        93.4,
+        314.0,
+        374.8,
+        308.6,
+        375.4,
+        340.5,
+        94.0,
+        346.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "प्रिया वेंकटेशन",
+      "bbox": [
+        703.2,
+        300.2,
+        874.4,
+        296.9,
+        875.2,
+        337.9,
+        704.0,
+        341.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. Address",
+      "bbox": [
+        94.9,
+        392.0,
+        216.9,
+        389.6,
+        217.5,
+        421.6,
+        95.5,
+        424.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "लखनऊ, उत्तर प्रदेश",
+      "bbox": [
+        704.7,
+        378.2,
+        950.3,
+        373.5,
+        951.1,
+        414.4,
+        705.5,
+        419.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. Mobile",
+      "bbox": [
+        96.4,
+        470.0,
+        204.0,
+        467.9,
+        204.6,
+        499.9,
+        97.0,
+        501.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9605102360",
+      "bbox": [
+        706.2,
+        456.2,
+        851.3,
+        453.4,
+        852.1,
+        494.4,
+        707.0,
+        497.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. Name of bank",
+      "bbox": [
+        97.9,
+        547.9,
+        290.8,
+        544.2,
+        291.4,
+        576.2,
+        98.5,
+        579.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "पंजाब नेशनल बैंक",
+      "bbox": [
+        707.7,
+        534.2,
+        933.4,
+        529.8,
+        934.2,
+        570.8,
+        708.5,
+        575.1
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC code",
+      "bbox": [
+        99.4,
+        625.9,
+        240.9,
+        623.2,
+        241.5,
+        655.2,
+        100.0,
+        657.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "PUNB0465409",
+      "bbox": [
+        709.2,
+        612.2,
+        878.9,
+        608.9,
+        879.7,
+        649.8,
+        710.0,
+        653.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. Account number",
+      "bbox": [
+        100.9,
+        703.9,
+        324.0,
+        699.6,
+        324.6,
+        731.6,
+        101.5,
+        735.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "08101675102",
+      "bbox": [
+        710.7,
+        690.2,
+        871.8,
+        687.0,
+        872.6,
+        728.0,
+        711.5,
+        731.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "7. Amount in dispute (Rs.)",
+      "bbox": [
+        102.4,
+        781.9,
+        402.6,
+        776.1,
+        403.2,
+        808.1,
+        103.0,
+        813.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12,750",
+      "bbox": [
+        712.2,
+        768.1,
+        793.9,
+        766.6,
+        794.7,
+        807.5,
+        713.0,
+        809.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. Date of transaction",
+      "bbox": [
+        103.9,
+        859.9,
+        355.9,
+        855.0,
+        356.5,
+        887.0,
+        104.5,
+        891.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "10/07/2026",
+      "bbox": [
+        713.7,
+        846.1,
+        853.4,
+        843.4,
+        854.2,
+        884.4,
+        714.5,
+        887.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. Transaction reference",
+      "bbox": [
+        105.4,
+        937.9,
+        387.5,
+        932.4,
+        388.1,
+        964.4,
+        106.0,
+        969.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "903787610784",
+      "bbox": [
+        715.2,
+        924.1,
+        892.5,
+        920.7,
+        893.3,
+        961.6,
+        716.0,
+        965.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. Previous complaint no.",
+      "bbox": [
+        106.9,
+        1015.9,
+        416.5,
+        1009.9,
+        417.1,
+        1041.9,
+        107.5,
+        1047.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2025/245772",
+      "bbox": [
+        716.8,
+        1002.1,
+        939.0,
+        997.8,
+        939.8,
+        1038.8,
+        717.5,
+        1043.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. Nature of complaint",
+      "bbox": [
+        109.2,
+        1133.8,
+        386.4,
+        1128.5,
+        387.0,
+        1160.5,
+        109.8,
+        1165.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "पूर्व सहमति के बिना क्रेडिट कार्ड वार्षिक शुल्क लगाया गया",
+      "bbox": [
+        140.6,
+        1209.2,
+        852.6,
+        1195.5,
+        853.4,
+        1236.5,
+        141.4,
+        1250.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    }
+  ],
+  "fields": {
+    "bank_name": "Punjab National Bank",
+    "ifsc_code": "PUNB0465409",
+    "account_number": "08101675102",
+    "card_last_four": "2992",
+    "disputed_amount": 12750,
+    "transaction_date": "10/07/2026",
+    "transaction_reference": "903787610784",
+    "complainant_name": "Priya Venkatesan",
+    "complainant_city": "Lucknow, Uttar Pradesh",
+    "mobile": "9605102360",
+    "prior_complaint_ref": "CMS/2025/245772",
+    "ground_en": "Credit card annual fee levied without prior consent or intimation"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "प्रिया वेंकटेशन",
+      "value_en": "Priya Venkatesan",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "लखनऊ, उत्तर प्रदेश",
+      "value_en": "Lucknow, Uttar Pradesh",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9605102360",
+      "value_en": "9605102360",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "पंजाब नेशनल बैंक",
+      "value_en": "Punjab National Bank",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "PUNB0465409",
+      "value_en": "PUNB0465409",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "08101675102",
+      "value_en": "08101675102",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "12,750",
+      "value_en": "12,750",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "10/07/2026",
+      "value_en": "10/07/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "903787610784",
+      "value_en": "903787610784",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2025/245772",
+      "value_en": "CMS/2025/245772",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "पूर्व सहमति के बिना क्रेडिट कार्ड वार्षिक शुल्क लगाया गया",
+      "value_en": "Credit card annual fee levied without prior consent or intimation",
+      "script": "Deva"
+    }
+  }
+}

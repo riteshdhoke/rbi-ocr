@@ -1,0 +1,9 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- NO_TEXT_DETECTED - document level: readable, but recognition found no text -#}
+{% block subject %}We opened your document but found no readable writing in it{% endblock %}
+{% block defect %}The document opened correctly, but no readable writing was found inside it.
+This happens when the picture is of something other than the document, or
+when handwriting is very faint.{% endblock %}
+{% block remedy %}Please send a scan of the written or printed pages at {{ recommended_dpi }}
+DPI. If your complaint is handwritten, please use dark ink on plain paper
+and write in clear, well separated letters.{% endblock %}

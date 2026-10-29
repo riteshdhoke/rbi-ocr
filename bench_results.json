@@ -1,0 +1,1851 @@
+{
+  "schema_version": 1,
+  "tool": "tools/bench_ocr_cpu.py",
+  "answers": "BUILD-BRIEF M0 (CPU throughput spike)",
+  "mode": "measured",
+  "generated_at": "2026-08-07T16:14:31.019323+00:00",
+  "started_at": "2026-08-07T16:09:28.194040+00:00",
+  "machine": {
+    "cpu_model": "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+    "cpu_cores_physical": 6,
+    "cpu_cores_logical": 12,
+    "ram_bytes": 34188873728,
+    "ram_gib": 31.84,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "python": "3.12.4",
+    "hostname_hashed": "cd82b1f621b6"
+  },
+  "runtime": {
+    "numpy": "2.5.1",
+    "onnxruntime": "1.28.0",
+    "cv2": "5.0.0"
+  },
+  "threads": {
+    "environment": {
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "ORT_INTRA_OP_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2"
+    },
+    "applied_by_app_import": {
+      "OMP_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "ORT_INTRA_OP_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2"
+    },
+    "ort_intra_op_threads": 2,
+    "ort_inter_op_threads": 1,
+    "celery_concurrency": 2,
+    "ocr_batch_size": 24,
+    "numeric_modules_loaded_before_app": [],
+    "thread_caps_honoured": true
+  },
+  "corpus": {
+    "path": "corpus/",
+    "seed": 1729,
+    "generator_version": "1.1.0",
+    "documents_available": 295,
+    "pages_sampled": 100,
+    "by_profile": {
+      "bounce": 17,
+      "clean": 16,
+      "heavy": 17,
+      "light": 16,
+      "photo": 19,
+      "scan": 15
+    },
+    "by_type": {
+      "bank_statement": 10,
+      "bilingual_form": 9,
+      "cheque": 11,
+      "complaint_form_deva": 10,
+      "complaint_form_en": 10,
+      "complaint_letter_en": 8,
+      "complaint_letter_mar": 11,
+      "email_printout": 11,
+      "photo_evidence": 9,
+      "receipt": 11
+    },
+    "by_script": {
+      "Deva": 21,
+      "Latn": 79
+    }
+  },
+  "models": {
+    "ocr_dir": "models/ocr",
+    "files": {
+      "det.onnx": 4826518,
+      "rec_deva.onnx": 7912311,
+      "rec_deva_dict.txt": 2511,
+      "rec_latn.onnx": 7848423,
+      "rec_latn_dict.txt": 1852
+    }
+  },
+  "concurrency": {
+    "1": {
+      "workers": 1,
+      "pages_attempted": 100,
+      "pages_measured": 100,
+      "wall_seconds_total": 57.677,
+      "pages_per_minute": 104.03,
+      "per_page_seconds": {
+        "n": 100,
+        "min": 0.0642,
+        "p50": 0.5266,
+        "p90": 0.7413,
+        "p95": 1.8881,
+        "p99": 2.5568,
+        "max": 2.5568,
+        "mean": 0.5768
+      },
+      "by_profile": {
+        "bounce": {
+          "n": 17,
+          "min": 0.0642,
+          "p50": 0.2413,
+          "p90": 0.3682,
+          "p95": 0.3957,
+          "p99": 0.3957,
+          "max": 0.3957,
+          "mean": 0.226
+        },
+        "clean": {
+          "n": 16,
+          "min": 0.2587,
+          "p50": 0.6382,
+          "p90": 2.4651,
+          "p95": 2.5568,
+          "p99": 2.5568,
+          "max": 2.5568,
+          "mean": 0.8132
+        },
+        "heavy": {
+          "n": 17,
+          "min": 0.2456,
+          "p50": 0.5266,
+          "p90": 0.6731,
+          "p95": 1.8597,
+          "p99": 1.8597,
+          "max": 1.8597,
+          "mean": 0.5522
+        },
+        "light": {
+          "n": 16,
+          "min": 0.2471,
+          "p50": 0.5499,
+          "p90": 0.7413,
+          "p95": 2.1096,
+          "p99": 2.1096,
+          "max": 2.1096,
+          "mean": 0.611
+        },
+        "photo": {
+          "n": 19,
+          "min": 0.2475,
+          "p50": 0.5482,
+          "p90": 1.8543,
+          "p95": 1.9201,
+          "p99": 1.9201,
+          "max": 1.9201,
+          "mean": 0.6353
+        },
+        "scan": {
+          "n": 15,
+          "min": 0.234,
+          "p50": 0.5062,
+          "p90": 1.8512,
+          "p95": 1.8881,
+          "p99": 1.8881,
+          "max": 1.8881,
+          "mean": 0.6392
+        }
+      },
+      "by_type": {
+        "bank_statement": {
+          "n": 10,
+          "min": 0.3628,
+          "p50": 1.8881,
+          "p90": 2.5568,
+          "p95": 2.5568,
+          "p99": 2.5568,
+          "max": 2.5568,
+          "mean": 1.7236
+        },
+        "bilingual_form": {
+          "n": 9,
+          "min": 0.265,
+          "p50": 0.6171,
+          "p90": 0.6814,
+          "p95": 0.6814,
+          "p99": 0.6814,
+          "max": 0.6814,
+          "mean": 0.5541
+        },
+        "cheque": {
+          "n": 11,
+          "min": 0.0642,
+          "p50": 0.2471,
+          "p90": 0.2587,
+          "p95": 0.2639,
+          "p99": 0.2639,
+          "max": 0.2639,
+          "mean": 0.2154
+        },
+        "complaint_form_deva": {
+          "n": 10,
+          "min": 0.2309,
+          "p50": 0.5563,
+          "p90": 0.6002,
+          "p95": 0.6002,
+          "p99": 0.6002,
+          "max": 0.6002,
+          "mean": 0.5323
+        },
+        "complaint_form_en": {
+          "n": 10,
+          "min": 0.2764,
+          "p50": 0.6973,
+          "p90": 0.7413,
+          "p95": 0.7413,
+          "p99": 0.7413,
+          "max": 0.7413,
+          "mean": 0.6143
+        },
+        "complaint_letter_en": {
+          "n": 8,
+          "min": 0.2388,
+          "p50": 0.6307,
+          "p90": 0.6655,
+          "p95": 0.6655,
+          "p99": 0.6655,
+          "max": 0.6655,
+          "mean": 0.5414
+        },
+        "complaint_letter_mar": {
+          "n": 11,
+          "min": 0.2863,
+          "p50": 0.5358,
+          "p90": 0.6122,
+          "p95": 0.76,
+          "p99": 0.76,
+          "max": 0.76,
+          "mean": 0.5322
+        },
+        "email_printout": {
+          "n": 11,
+          "min": 0.2383,
+          "p50": 0.513,
+          "p90": 0.5758,
+          "p95": 0.5851,
+          "p99": 0.5851,
+          "max": 0.5851,
+          "mean": 0.501
+        },
+        "photo_evidence": {
+          "n": 9,
+          "min": 0.086,
+          "p50": 0.3177,
+          "p90": 0.3544,
+          "p95": 0.3544,
+          "p99": 0.3544,
+          "max": 0.3544,
+          "mean": 0.2991
+        },
+        "receipt": {
+          "n": 11,
+          "min": 0.0741,
+          "p50": 0.3291,
+          "p90": 0.3716,
+          "p95": 0.3733,
+          "p99": 0.3733,
+          "max": 0.3733,
+          "mean": 0.2935
+        }
+      },
+      "by_script": {
+        "Deva": {
+          "n": 21,
+          "min": 0.2309,
+          "p50": 0.5504,
+          "p90": 0.6002,
+          "p95": 0.6122,
+          "p99": 0.76,
+          "max": 0.76,
+          "mean": 0.5322
+        },
+        "Latn": {
+          "n": 79,
+          "min": 0.0642,
+          "p50": 0.3733,
+          "p90": 1.8512,
+          "p95": 1.9201,
+          "p99": 2.5568,
+          "max": 2.5568,
+          "mean": 0.5886
+        }
+      },
+      "phase_seconds": {
+        "detect": {
+          "n": 100,
+          "min": 0.0604,
+          "p50": 0.2173,
+          "p90": 0.2247,
+          "p95": 0.227,
+          "p99": 0.2384,
+          "max": 0.2384,
+          "mean": 0.1923
+        },
+        "recognise": {
+          "n": 100,
+          "min": 0.0,
+          "p50": 0.2861,
+          "p90": 0.4737,
+          "p95": 1.6231,
+          "p99": 2.2876,
+          "max": 2.2876,
+          "mean": 0.3635
+        }
+      },
+      "lines_per_page": {
+        "n": 100,
+        "min": 0.0,
+        "p50": 14.0,
+        "p90": 26.0,
+        "p95": 99.0,
+        "p99": 102.0,
+        "max": 102.0,
+        "mean": 20.82
+      },
+      "errors": []
+    },
+    "2": {
+      "workers": 2,
+      "pages_attempted": 100,
+      "pages_measured": 100,
+      "wall_seconds_total": 44.327,
+      "pages_per_minute": 135.36,
+      "per_page_seconds": {
+        "n": 100,
+        "min": 0.0823,
+        "p50": 0.7627,
+        "p90": 1.1879,
+        "p95": 3.1379,
+        "p99": 3.6468,
+        "max": 3.6468,
+        "mean": 0.8854
+      },
+      "by_profile": {
+        "bounce": {
+          "n": 17,
+          "min": 0.0823,
+          "p50": 0.3653,
+          "p90": 0.5065,
+          "p95": 0.585,
+          "p99": 0.585,
+          "max": 0.585,
+          "mean": 0.3258
+        },
+        "clean": {
+          "n": 16,
+          "min": 0.4083,
+          "p50": 0.949,
+          "p90": 3.4805,
+          "p95": 3.6468,
+          "p99": 3.6468,
+          "max": 3.6468,
+          "mean": 1.1723
+        },
+        "heavy": {
+          "n": 17,
+          "min": 0.4013,
+          "p50": 0.7937,
+          "p90": 1.2067,
+          "p95": 2.9838,
+          "p99": 2.9838,
+          "max": 2.9838,
+          "mean": 0.8896
+        },
+        "light": {
+          "n": 16,
+          "min": 0.3123,
+          "p50": 0.8373,
+          "p90": 1.1058,
+          "p95": 3.0207,
+          "p99": 3.0207,
+          "max": 3.0207,
+          "mean": 0.8845
+        },
+        "photo": {
+          "n": 19,
+          "min": 0.2997,
+          "p50": 0.7822,
+          "p90": 3.1379,
+          "p95": 3.3658,
+          "p99": 3.3658,
+          "max": 3.3658,
+          "mean": 1.0163
+        },
+        "scan": {
+          "n": 15,
+          "min": 0.2957,
+          "p50": 0.778,
+          "p90": 3.0717,
+          "p95": 3.2586,
+          "p99": 3.2586,
+          "max": 3.2586,
+          "mean": 1.0442
+        }
+      },
+      "by_type": {
+        "bank_statement": {
+          "n": 10,
+          "min": 0.4951,
+          "p50": 3.1379,
+          "p90": 3.6468,
+          "p95": 3.6468,
+          "p99": 3.6468,
+          "max": 3.6468,
+          "mean": 2.6967
+        },
+        "bilingual_form": {
+          "n": 9,
+          "min": 0.3653,
+          "p50": 1.0672,
+          "p90": 1.2067,
+          "p95": 1.2067,
+          "p99": 1.2067,
+          "max": 1.2067,
+          "mean": 0.9466
+        },
+        "cheque": {
+          "n": 11,
+          "min": 0.0823,
+          "p50": 0.3123,
+          "p90": 0.4195,
+          "p95": 0.4674,
+          "p99": 0.4674,
+          "max": 0.4674,
+          "mean": 0.3054
+        },
+        "complaint_form_deva": {
+          "n": 10,
+          "min": 0.3427,
+          "p50": 0.7937,
+          "p90": 0.861,
+          "p95": 0.861,
+          "p99": 0.861,
+          "max": 0.861,
+          "mean": 0.7595
+        },
+        "complaint_form_en": {
+          "n": 10,
+          "min": 0.4014,
+          "p50": 1.0256,
+          "p90": 1.1058,
+          "p95": 1.1058,
+          "p99": 1.1058,
+          "max": 1.1058,
+          "mean": 0.9128
+        },
+        "complaint_letter_en": {
+          "n": 8,
+          "min": 0.3488,
+          "p50": 0.9824,
+          "p90": 1.1879,
+          "p95": 1.1879,
+          "p99": 1.1879,
+          "max": 1.1879,
+          "mean": 0.8615
+        },
+        "complaint_letter_mar": {
+          "n": 11,
+          "min": 0.4403,
+          "p50": 0.7822,
+          "p90": 0.9781,
+          "p95": 1.015,
+          "p99": 1.015,
+          "max": 1.015,
+          "mean": 0.7808
+        },
+        "email_printout": {
+          "n": 11,
+          "min": 0.3399,
+          "p50": 0.7772,
+          "p90": 0.8374,
+          "p95": 0.9074,
+          "p99": 0.9074,
+          "max": 0.9074,
+          "mean": 0.7428
+        },
+        "photo_evidence": {
+          "n": 9,
+          "min": 0.1204,
+          "p50": 0.5028,
+          "p90": 0.5897,
+          "p95": 0.5897,
+          "p99": 0.5897,
+          "max": 0.5897,
+          "mean": 0.4505
+        },
+        "receipt": {
+          "n": 11,
+          "min": 0.0964,
+          "p50": 0.554,
+          "p90": 0.615,
+          "p95": 0.7555,
+          "p99": 0.7555,
+          "max": 0.7555,
+          "mean": 0.479
+        }
+      },
+      "by_script": {
+        "Deva": {
+          "n": 21,
+          "min": 0.3427,
+          "p50": 0.7852,
+          "p90": 0.8998,
+          "p95": 0.9781,
+          "p99": 1.015,
+          "max": 1.015,
+          "mean": 0.7706
+        },
+        "Latn": {
+          "n": 79,
+          "min": 0.0823,
+          "p50": 0.6914,
+          "p90": 2.9838,
+          "p95": 3.2586,
+          "p99": 3.6468,
+          "max": 3.6468,
+          "mean": 0.9159
+        }
+      },
+      "phase_seconds": {
+        "detect": {
+          "n": 100,
+          "min": 0.0784,
+          "p50": 0.3052,
+          "p90": 0.3501,
+          "p95": 0.3615,
+          "p99": 0.3879,
+          "max": 0.3879,
+          "mean": 0.279
+        },
+        "recognise": {
+          "n": 100,
+          "min": 0.0,
+          "p50": 0.4335,
+          "p90": 0.8368,
+          "p95": 2.6928,
+          "p99": 3.2572,
+          "max": 3.2572,
+          "mean": 0.5797
+        }
+      },
+      "lines_per_page": {
+        "n": 100,
+        "min": 0.0,
+        "p50": 14.0,
+        "p90": 26.0,
+        "p95": 99.0,
+        "p99": 102.0,
+        "max": 102.0,
+        "mean": 20.82
+      },
+      "errors": []
+    }
+  },
+  "batching": {
+    "Deva": {
+      "crops": 153,
+      "pages_sampled": 8,
+      "repeats": 3,
+      "modes": {
+        "looped_exact_width": {
+          "batch_size": 1,
+          "bucketed": false,
+          "calls": 153,
+          "seconds_median": 2.2272,
+          "seconds_min": 2.1557,
+          "crops_per_second": 68.7,
+          "pad_seconds_median": 0.0247,
+          "infer_seconds_median": 2.1875,
+          "decode_seconds_median": 0.0147,
+          "padded_pixels": 5690448
+        },
+        "looped": {
+          "batch_size": 1,
+          "bucketed": true,
+          "calls": 153,
+          "seconds_median": 2.4716,
+          "seconds_min": 2.4256,
+          "crops_per_second": 61.9,
+          "pad_seconds_median": 0.0246,
+          "infer_seconds_median": 2.4328,
+          "decode_seconds_median": 0.0142,
+          "padded_pixels": 6727680
+        },
+        "batch_2": {
+          "batch_size": 2,
+          "bucketed": true,
+          "calls": 77,
+          "seconds_median": 2.4599,
+          "seconds_min": 2.3916,
+          "crops_per_second": 62.2,
+          "pad_seconds_median": 0.0238,
+          "infer_seconds_median": 2.4237,
+          "decode_seconds_median": 0.0116,
+          "padded_pixels": 6727680
+        },
+        "batch_4": {
+          "batch_size": 4,
+          "bucketed": true,
+          "calls": 40,
+          "seconds_median": 2.5172,
+          "seconds_min": 2.4602,
+          "crops_per_second": 60.8,
+          "pad_seconds_median": 0.0256,
+          "infer_seconds_median": 2.4824,
+          "decode_seconds_median": 0.009,
+          "padded_pixels": 6727680
+        },
+        "batch_8": {
+          "batch_size": 8,
+          "bucketed": true,
+          "calls": 22,
+          "seconds_median": 2.8455,
+          "seconds_min": 2.7428,
+          "crops_per_second": 53.8,
+          "pad_seconds_median": 0.027,
+          "infer_seconds_median": 2.811,
+          "decode_seconds_median": 0.0075,
+          "padded_pixels": 6727680
+        },
+        "batch_16": {
+          "batch_size": 16,
+          "bucketed": true,
+          "calls": 13,
+          "seconds_median": 3.1671,
+          "seconds_min": 3.1426,
+          "crops_per_second": 48.3,
+          "pad_seconds_median": 0.0266,
+          "infer_seconds_median": 3.1347,
+          "decode_seconds_median": 0.0065,
+          "padded_pixels": 6727680
+        },
+        "batch_24": {
+          "batch_size": 24,
+          "bucketed": true,
+          "calls": 9,
+          "seconds_median": 3.5697,
+          "seconds_min": 3.3628,
+          "crops_per_second": 42.9,
+          "pad_seconds_median": 0.026,
+          "infer_seconds_median": 3.5383,
+          "decode_seconds_median": 0.0062,
+          "padded_pixels": 6727680
+        },
+        "batch_32": {
+          "batch_size": 32,
+          "bucketed": true,
+          "calls": 8,
+          "seconds_median": 3.4887,
+          "seconds_min": 3.4558,
+          "crops_per_second": 43.9,
+          "pad_seconds_median": 0.0254,
+          "infer_seconds_median": 3.4574,
+          "decode_seconds_median": 0.0065,
+          "padded_pixels": 6727680
+        }
+      },
+      "speedup_vs_looped": {
+        "looped_exact_width": 1.11,
+        "batch_2": 1.0,
+        "batch_4": 0.98,
+        "batch_8": 0.87,
+        "batch_16": 0.78,
+        "batch_24": 0.69,
+        "batch_32": 0.71
+      },
+      "infer_only_speedup_vs_looped": {
+        "looped_exact_width": 1.11,
+        "batch_2": 1.0,
+        "batch_4": 0.98,
+        "batch_8": 0.87,
+        "batch_16": 0.78,
+        "batch_24": 0.69,
+        "batch_32": 0.7
+      },
+      "text_agreement_vs_looped": {
+        "looped_exact_width": 0.5556,
+        "batch_2": 1.0,
+        "batch_4": 1.0,
+        "batch_8": 1.0,
+        "batch_16": 1.0,
+        "batch_24": 1.0,
+        "batch_32": 1.0
+      },
+      "fastest_bucketed_mode": "batch_2",
+      "fastest_bucketed_speedup_vs_looped": 1.0,
+      "notes": {
+        "looped": "batch size 1 with bucket padding — the baseline PLAN.md invariant 4 forbids outside this tool",
+        "looped_exact_width": "batch size 1 with no bucket padding (the naive PaddleOCR loop). Reported for diagnosis only: it is out of distribution for a head trained on right-padded crops and its text_agreement below is the size of that effect",
+        "text_agreement_vs_looped": "share of crops decoding identically to the looped baseline. 1.0 for every batch_N is the assertion that batching is output-neutral"
+      }
+    },
+    "Latn": {
+      "crops": 299,
+      "pages_sampled": 8,
+      "repeats": 3,
+      "modes": {
+        "looped_exact_width": {
+          "batch_size": 1,
+          "bucketed": false,
+          "calls": 299,
+          "seconds_median": 3.6891,
+          "seconds_min": 3.6024,
+          "crops_per_second": 81.0,
+          "pad_seconds_median": 0.0394,
+          "infer_seconds_median": 3.6275,
+          "decode_seconds_median": 0.0216,
+          "padded_pixels": 9010368
+        },
+        "looped": {
+          "batch_size": 1,
+          "bucketed": true,
+          "calls": 299,
+          "seconds_median": 4.3138,
+          "seconds_min": 4.3092,
+          "crops_per_second": 69.3,
+          "pad_seconds_median": 0.0419,
+          "infer_seconds_median": 4.2468,
+          "decode_seconds_median": 0.0244,
+          "padded_pixels": 10944000
+        },
+        "batch_2": {
+          "batch_size": 2,
+          "bucketed": true,
+          "calls": 151,
+          "seconds_median": 3.8888,
+          "seconds_min": 3.8654,
+          "crops_per_second": 76.9,
+          "pad_seconds_median": 0.0386,
+          "infer_seconds_median": 3.8309,
+          "decode_seconds_median": 0.019,
+          "padded_pixels": 10944000
+        },
+        "batch_4": {
+          "batch_size": 4,
+          "bucketed": true,
+          "calls": 78,
+          "seconds_median": 3.8918,
+          "seconds_min": 3.8758,
+          "crops_per_second": 76.8,
+          "pad_seconds_median": 0.0374,
+          "infer_seconds_median": 3.8399,
+          "decode_seconds_median": 0.0144,
+          "padded_pixels": 10944000
+        },
+        "batch_8": {
+          "batch_size": 8,
+          "bucketed": true,
+          "calls": 40,
+          "seconds_median": 4.4599,
+          "seconds_min": 4.4313,
+          "crops_per_second": 67.0,
+          "pad_seconds_median": 0.0461,
+          "infer_seconds_median": 4.4019,
+          "decode_seconds_median": 0.0119,
+          "padded_pixels": 10944000
+        },
+        "batch_16": {
+          "batch_size": 16,
+          "bucketed": true,
+          "calls": 22,
+          "seconds_median": 5.0253,
+          "seconds_min": 5.0078,
+          "crops_per_second": 59.5,
+          "pad_seconds_median": 0.0443,
+          "infer_seconds_median": 4.9713,
+          "decode_seconds_median": 0.0098,
+          "padded_pixels": 10944000
+        },
+        "batch_24": {
+          "batch_size": 24,
+          "bucketed": true,
+          "calls": 16,
+          "seconds_median": 5.5798,
+          "seconds_min": 5.4526,
+          "crops_per_second": 53.6,
+          "pad_seconds_median": 0.0431,
+          "infer_seconds_median": 5.5283,
+          "decode_seconds_median": 0.0094,
+          "padded_pixels": 10944000
+        },
+        "batch_32": {
+          "batch_size": 32,
+          "bucketed": true,
+          "calls": 13,
+          "seconds_median": 5.6821,
+          "seconds_min": 5.6779,
+          "crops_per_second": 52.6,
+          "pad_seconds_median": 0.0424,
+          "infer_seconds_median": 5.6314,
+          "decode_seconds_median": 0.0092,
+          "padded_pixels": 10944000
+        }
+      },
+      "speedup_vs_looped": {
+        "looped_exact_width": 1.17,
+        "batch_2": 1.11,
+        "batch_4": 1.11,
+        "batch_8": 0.97,
+        "batch_16": 0.86,
+        "batch_24": 0.77,
+        "batch_32": 0.76
+      },
+      "infer_only_speedup_vs_looped": {
+        "looped_exact_width": 1.17,
+        "batch_2": 1.11,
+        "batch_4": 1.11,
+        "batch_8": 0.96,
+        "batch_16": 0.85,
+        "batch_24": 0.77,
+        "batch_32": 0.75
+      },
+      "text_agreement_vs_looped": {
+        "looped_exact_width": 0.8528,
+        "batch_2": 1.0,
+        "batch_4": 1.0,
+        "batch_8": 1.0,
+        "batch_16": 1.0,
+        "batch_24": 1.0,
+        "batch_32": 1.0
+      },
+      "fastest_bucketed_mode": "batch_2",
+      "fastest_bucketed_speedup_vs_looped": 1.11,
+      "notes": {
+        "looped": "batch size 1 with bucket padding — the baseline PLAN.md invariant 4 forbids outside this tool",
+        "looped_exact_width": "batch size 1 with no bucket padding (the naive PaddleOCR loop). Reported for diagnosis only: it is out of distribution for a head trained on right-padded crops and its text_agreement below is the size of that effect",
+        "text_agreement_vs_looped": "share of crops decoding identically to the looped baseline. 1.0 for every batch_N is the assertion that batching is output-neutral"
+      }
+    }
+  },
+  "gate": {
+    "criterion": "p95 <= 4.0 s/page at concurrency 2",
+    "target_concurrency": 2,
+    "threshold_seconds": 4.0,
+    "p95_seconds": 3.1379,
+    "p50_seconds": 0.7627,
+    "pages_per_minute": 135.36,
+    "profiles_over_threshold": {},
+    "result": "PASS",
+    "advisory": false,
+    "note": "measured with the committed PP-OCRv5 ONNX weights"
+  },
+  "pages": [
+    {
+      "doc_id": "bilingual_form_v0_heavy",
+      "type": "bilingual_form",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.6158,
+      "lines_c1": 25,
+      "seconds_c2": 1.2067,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "bank_statement_v2_photo",
+      "type": "bank_statement",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 1.8543,
+      "lines_c1": 99,
+      "seconds_c2": 3.1379,
+      "lines_c2": 99
+    },
+    {
+      "doc_id": "bank_statement_v4_scan",
+      "type": "bank_statement",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 1.8512,
+      "lines_c1": 99,
+      "seconds_c2": 3.0717,
+      "lines_c2": 99
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_clean",
+      "type": "complaint_letter_mar",
+      "profile": "clean",
+      "script": "Deva",
+      "seconds_c1": 0.76,
+      "lines_c1": 13,
+      "seconds_c2": 0.9781,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "receipt_v4_photo",
+      "type": "receipt",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.3389,
+      "lines_c1": 15,
+      "seconds_c2": 0.4439,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "cheque_v0_photo",
+      "type": "cheque",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.2483,
+      "lines_c1": 7,
+      "seconds_c2": 0.3439,
+      "lines_c2": 7
+    },
+    {
+      "doc_id": "complaint_form_en_v0_light",
+      "type": "complaint_form_en",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.7076,
+      "lines_c1": 24,
+      "seconds_c2": 1.1058,
+      "lines_c2": 24
+    },
+    {
+      "doc_id": "receipt_v1_scan",
+      "type": "receipt",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.3249,
+      "lines_c1": 15,
+      "seconds_c2": 0.615,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "photo_evidence_v1_scan",
+      "type": "photo_evidence",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.3177,
+      "lines_c1": 15,
+      "seconds_c2": 0.5287,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "bilingual_form_v4_bounce",
+      "type": "bilingual_form",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.2806,
+      "lines_c1": 3,
+      "seconds_c2": 0.3894,
+      "lines_c2": 3
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_light",
+      "type": "complaint_form_deva",
+      "profile": "light",
+      "script": "Deva",
+      "seconds_c1": 0.595,
+      "lines_c1": 25,
+      "seconds_c2": 0.8373,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "receipt_v4_clean",
+      "type": "receipt",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.3733,
+      "lines_c1": 15,
+      "seconds_c2": 0.5571,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "bilingual_form_v3_clean",
+      "type": "bilingual_form",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.6382,
+      "lines_c1": 24,
+      "seconds_c2": 1.0672,
+      "lines_c2": 24
+    },
+    {
+      "doc_id": "email_printout_v0_heavy",
+      "type": "email_printout",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.4919,
+      "lines_c1": 13,
+      "seconds_c2": 0.9074,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "cheque_v0_light",
+      "type": "cheque",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.2513,
+      "lines_c1": 7,
+      "seconds_c2": 0.3338,
+      "lines_c2": 7
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_heavy",
+      "type": "complaint_form_deva",
+      "profile": "heavy",
+      "script": "Deva",
+      "seconds_c1": 0.5531,
+      "lines_c1": 25,
+      "seconds_c2": 0.7937,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_photo",
+      "type": "complaint_letter_mar",
+      "profile": "photo",
+      "script": "Deva",
+      "seconds_c1": 0.5789,
+      "lines_c1": 14,
+      "seconds_c2": 0.8663,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "photo_evidence_v3_heavy",
+      "type": "photo_evidence",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.328,
+      "lines_c1": 15,
+      "seconds_c2": 0.4475,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "email_printout_v2_clean",
+      "type": "email_printout",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.5851,
+      "lines_c1": 13,
+      "seconds_c2": 0.7769,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "complaint_form_en_v0_photo",
+      "type": "complaint_form_en",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.7247,
+      "lines_c1": 26,
+      "seconds_c2": 1.0138,
+      "lines_c2": 26
+    },
+    {
+      "doc_id": "complaint_form_en_v1_bounce",
+      "type": "complaint_form_en",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.2806,
+      "lines_c1": 3,
+      "seconds_c2": 0.4351,
+      "lines_c2": 3
+    },
+    {
+      "doc_id": "cheque_v1_bounce",
+      "type": "cheque",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.0642,
+      "lines_c1": 0,
+      "seconds_c2": 0.0823,
+      "lines_c2": 0
+    },
+    {
+      "doc_id": "cheque_v1_scan",
+      "type": "cheque",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.2369,
+      "lines_c1": 7,
+      "seconds_c2": 0.298,
+      "lines_c2": 7
+    },
+    {
+      "doc_id": "photo_evidence_v3_light",
+      "type": "photo_evidence",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.354,
+      "lines_c1": 15,
+      "seconds_c2": 0.4145,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_clean",
+      "type": "complaint_form_deva",
+      "profile": "clean",
+      "script": "Deva",
+      "seconds_c1": 0.5504,
+      "lines_c1": 25,
+      "seconds_c2": 0.7519,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "email_printout_v4_scan",
+      "type": "email_printout",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.5062,
+      "lines_c1": 13,
+      "seconds_c2": 0.7224,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_bounce",
+      "type": "complaint_letter_en",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.2388,
+      "lines_c1": 1,
+      "seconds_c2": 0.3488,
+      "lines_c2": 1
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_heavy",
+      "type": "complaint_letter_mar",
+      "profile": "heavy",
+      "script": "Deva",
+      "seconds_c1": 0.5266,
+      "lines_c1": 14,
+      "seconds_c2": 0.7443,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "email_printout_v3_light",
+      "type": "email_printout",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.5367,
+      "lines_c1": 12,
+      "seconds_c2": 0.7815,
+      "lines_c2": 12
+    },
+    {
+      "doc_id": "bank_statement_v0_clean",
+      "type": "bank_statement",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 2.4651,
+      "lines_c1": 99,
+      "seconds_c2": 3.4805,
+      "lines_c2": 99
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_photo",
+      "type": "complaint_letter_en",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.6224,
+      "lines_c1": 15,
+      "seconds_c2": 1.116,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "complaint_letter_mar_v0_bounce",
+      "type": "complaint_letter_mar",
+      "profile": "bounce",
+      "script": "Deva",
+      "seconds_c1": 0.3957,
+      "lines_c1": 12,
+      "seconds_c2": 0.585,
+      "lines_c2": 12
+    },
+    {
+      "doc_id": "cheque_v1_heavy",
+      "type": "cheque",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.2456,
+      "lines_c1": 7,
+      "seconds_c2": 0.4195,
+      "lines_c2": 7
+    },
+    {
+      "doc_id": "photo_evidence_v3_photo",
+      "type": "photo_evidence",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.3171,
+      "lines_c1": 15,
+      "seconds_c2": 0.5897,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "receipt_v4_heavy",
+      "type": "receipt",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.3291,
+      "lines_c1": 15,
+      "seconds_c2": 0.5532,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_photo",
+      "type": "complaint_form_deva",
+      "profile": "photo",
+      "script": "Deva",
+      "seconds_c1": 0.5482,
+      "lines_c1": 25,
+      "seconds_c2": 0.8425,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "complaint_form_en_v1_clean",
+      "type": "complaint_form_en",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.7019,
+      "lines_c1": 25,
+      "seconds_c2": 1.0744,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "email_printout_v2_photo",
+      "type": "email_printout",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.513,
+      "lines_c1": 14,
+      "seconds_c2": 0.6914,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "receipt_v0_bounce",
+      "type": "receipt",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.0817,
+      "lines_c1": 1,
+      "seconds_c2": 0.1161,
+      "lines_c2": 1
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_light",
+      "type": "complaint_letter_mar",
+      "profile": "light",
+      "script": "Deva",
+      "seconds_c1": 0.5297,
+      "lines_c1": 13,
+      "seconds_c2": 0.703,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "bank_statement_v3_bounce",
+      "type": "bank_statement",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.3682,
+      "lines_c1": 8,
+      "seconds_c2": 0.5065,
+      "lines_c2": 8
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_clean",
+      "type": "complaint_letter_en",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.6655,
+      "lines_c1": 13,
+      "seconds_c2": 0.9824,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "complaint_letter_en_v1_scan",
+      "type": "complaint_letter_en",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.659,
+      "lines_c1": 13,
+      "seconds_c2": 1.0513,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "bilingual_form_v4_light",
+      "type": "bilingual_form",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.6814,
+      "lines_c1": 24,
+      "seconds_c2": 0.9805,
+      "lines_c2": 24
+    },
+    {
+      "doc_id": "cheque_v1_clean",
+      "type": "cheque",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.2587,
+      "lines_c1": 9,
+      "seconds_c2": 0.4083,
+      "lines_c2": 9
+    },
+    {
+      "doc_id": "photo_evidence_v3_bounce",
+      "type": "photo_evidence",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.086,
+      "lines_c1": 1,
+      "seconds_c2": 0.1204,
+      "lines_c2": 1
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_scan",
+      "type": "complaint_form_deva",
+      "profile": "scan",
+      "script": "Deva",
+      "seconds_c1": 0.5647,
+      "lines_c1": 26,
+      "seconds_c2": 0.778,
+      "lines_c2": 26
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_light",
+      "type": "complaint_letter_en",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.6483,
+      "lines_c1": 13,
+      "seconds_c2": 0.9057,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_bounce",
+      "type": "complaint_form_deva",
+      "profile": "bounce",
+      "script": "Deva",
+      "seconds_c1": 0.2309,
+      "lines_c1": 0,
+      "seconds_c2": 0.3427,
+      "lines_c2": 0
+    },
+    {
+      "doc_id": "bilingual_form_v3_scan",
+      "type": "bilingual_form",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.6171,
+      "lines_c1": 25,
+      "seconds_c2": 1.1871,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "bank_statement_v3_light",
+      "type": "bank_statement",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 2.1096,
+      "lines_c1": 99,
+      "seconds_c2": 3.0207,
+      "lines_c2": 99
+    },
+    {
+      "doc_id": "email_printout_v1_bounce",
+      "type": "email_printout",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.2383,
+      "lines_c1": 1,
+      "seconds_c2": 0.3399,
+      "lines_c2": 1
+    },
+    {
+      "doc_id": "bilingual_form_v0_photo",
+      "type": "bilingual_form",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.6215,
+      "lines_c1": 24,
+      "seconds_c2": 1.1758,
+      "lines_c2": 24
+    },
+    {
+      "doc_id": "complaint_form_en_v1_scan",
+      "type": "complaint_form_en",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.6691,
+      "lines_c1": 26,
+      "seconds_c2": 0.9885,
+      "lines_c2": 26
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_heavy",
+      "type": "complaint_letter_en",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.6253,
+      "lines_c1": 13,
+      "seconds_c2": 0.9242,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "complaint_form_en_v3_heavy",
+      "type": "complaint_form_en",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.6731,
+      "lines_c1": 27,
+      "seconds_c2": 1.0869,
+      "lines_c2": 27
+    },
+    {
+      "doc_id": "bank_statement_v3_heavy",
+      "type": "bank_statement",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 1.8597,
+      "lines_c1": 99,
+      "seconds_c2": 2.9838,
+      "lines_c2": 99
+    },
+    {
+      "doc_id": "receipt_v2_light",
+      "type": "receipt",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.3439,
+      "lines_c1": 15,
+      "seconds_c2": 0.7555,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_scan",
+      "type": "complaint_letter_mar",
+      "profile": "scan",
+      "script": "Deva",
+      "seconds_c1": 0.5631,
+      "lines_c1": 14,
+      "seconds_c2": 1.015,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "bilingual_form_v2_heavy",
+      "type": "bilingual_form",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.61,
+      "lines_c1": 25,
+      "seconds_c2": 1.1552,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "bank_statement_v1_photo",
+      "type": "bank_statement",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 1.9201,
+      "lines_c1": 102,
+      "seconds_c2": 3.3658,
+      "lines_c2": 102
+    },
+    {
+      "doc_id": "bank_statement_v0_scan",
+      "type": "bank_statement",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 1.8881,
+      "lines_c1": 98,
+      "seconds_c2": 3.2586,
+      "lines_c2": 98
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_clean",
+      "type": "complaint_letter_mar",
+      "profile": "clean",
+      "script": "Deva",
+      "seconds_c1": 0.6122,
+      "lines_c1": 13,
+      "seconds_c2": 0.8998,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "receipt_v3_photo",
+      "type": "receipt",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.3251,
+      "lines_c1": 15,
+      "seconds_c2": 0.4278,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "cheque_v3_photo",
+      "type": "cheque",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.2475,
+      "lines_c1": 7,
+      "seconds_c2": 0.2997,
+      "lines_c2": 7
+    },
+    {
+      "doc_id": "complaint_form_en_v2_light",
+      "type": "complaint_form_en",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.7413,
+      "lines_c1": 25,
+      "seconds_c2": 1.0475,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "receipt_v0_scan",
+      "type": "receipt",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.3205,
+      "lines_c1": 15,
+      "seconds_c2": 0.5632,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "photo_evidence_v0_scan",
+      "type": "photo_evidence",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.3381,
+      "lines_c1": 15,
+      "seconds_c2": 0.5028,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "bilingual_form_v1_bounce",
+      "type": "bilingual_form",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.265,
+      "lines_c1": 2,
+      "seconds_c2": 0.3653,
+      "lines_c2": 2
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_light",
+      "type": "complaint_form_deva",
+      "profile": "light",
+      "script": "Deva",
+      "seconds_c1": 0.6002,
+      "lines_c1": 25,
+      "seconds_c2": 0.8399,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "receipt_v1_clean",
+      "type": "receipt",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.3716,
+      "lines_c1": 15,
+      "seconds_c2": 0.554,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "bilingual_form_v4_clean",
+      "type": "bilingual_form",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.6577,
+      "lines_c1": 24,
+      "seconds_c2": 0.9921,
+      "lines_c2": 24
+    },
+    {
+      "doc_id": "email_printout_v4_heavy",
+      "type": "email_printout",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.5149,
+      "lines_c1": 13,
+      "seconds_c2": 0.823,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "cheque_v4_light",
+      "type": "cheque",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.2471,
+      "lines_c1": 7,
+      "seconds_c2": 0.3123,
+      "lines_c2": 7
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_heavy",
+      "type": "complaint_form_deva",
+      "profile": "heavy",
+      "script": "Deva",
+      "seconds_c1": 0.5563,
+      "lines_c1": 25,
+      "seconds_c2": 0.7852,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_photo",
+      "type": "complaint_letter_mar",
+      "profile": "photo",
+      "script": "Deva",
+      "seconds_c1": 0.5358,
+      "lines_c1": 14,
+      "seconds_c2": 0.7822,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "photo_evidence_v0_heavy",
+      "type": "photo_evidence",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.3081,
+      "lines_c1": 11,
+      "seconds_c2": 0.4013,
+      "lines_c2": 11
+    },
+    {
+      "doc_id": "email_printout_v4_clean",
+      "type": "email_printout",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.5758,
+      "lines_c1": 13,
+      "seconds_c2": 0.7772,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "complaint_form_en_v1_photo",
+      "type": "complaint_form_en",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.6711,
+      "lines_c1": 25,
+      "seconds_c2": 1.0256,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "complaint_form_en_v4_bounce",
+      "type": "complaint_form_en",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.2764,
+      "lines_c1": 2,
+      "seconds_c2": 0.4014,
+      "lines_c2": 2
+    },
+    {
+      "doc_id": "cheque_v4_bounce",
+      "type": "cheque",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.0716,
+      "lines_c1": 1,
+      "seconds_c2": 0.0983,
+      "lines_c2": 1
+    },
+    {
+      "doc_id": "cheque_v3_scan",
+      "type": "cheque",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.234,
+      "lines_c1": 6,
+      "seconds_c2": 0.2957,
+      "lines_c2": 6
+    },
+    {
+      "doc_id": "photo_evidence_v0_light",
+      "type": "photo_evidence",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.3544,
+      "lines_c1": 15,
+      "seconds_c2": 0.5383,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_clean",
+      "type": "complaint_form_deva",
+      "profile": "clean",
+      "script": "Deva",
+      "seconds_c1": 0.5422,
+      "lines_c1": 25,
+      "seconds_c2": 0.861,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "email_printout_v0_scan",
+      "type": "email_printout",
+      "profile": "scan",
+      "script": "Latn",
+      "seconds_c1": 0.4971,
+      "lines_c1": 13,
+      "seconds_c2": 0.787,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_bounce",
+      "type": "complaint_letter_en",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.2413,
+      "lines_c1": 1,
+      "seconds_c2": 0.3758,
+      "lines_c2": 1
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_heavy",
+      "type": "complaint_letter_mar",
+      "profile": "heavy",
+      "script": "Deva",
+      "seconds_c1": 0.5402,
+      "lines_c1": 14,
+      "seconds_c2": 0.8367,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "email_printout_v2_light",
+      "type": "email_printout",
+      "profile": "light",
+      "script": "Latn",
+      "seconds_c1": 0.5499,
+      "lines_c1": 13,
+      "seconds_c2": 0.8374,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "bank_statement_v1_clean",
+      "type": "bank_statement",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 2.5568,
+      "lines_c1": 99,
+      "seconds_c2": 3.6468,
+      "lines_c2": 99
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_photo",
+      "type": "complaint_letter_en",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.6307,
+      "lines_c1": 14,
+      "seconds_c2": 1.1879,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_bounce",
+      "type": "complaint_letter_mar",
+      "profile": "bounce",
+      "script": "Deva",
+      "seconds_c1": 0.2863,
+      "lines_c1": 3,
+      "seconds_c2": 0.4403,
+      "lines_c2": 3
+    },
+    {
+      "doc_id": "cheque_v4_heavy",
+      "type": "cheque",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.2639,
+      "lines_c1": 7,
+      "seconds_c2": 0.4674,
+      "lines_c2": 7
+    },
+    {
+      "doc_id": "photo_evidence_v1_photo",
+      "type": "photo_evidence",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.2885,
+      "lines_c1": 8,
+      "seconds_c2": 0.511,
+      "lines_c2": 8
+    },
+    {
+      "doc_id": "receipt_v2_heavy",
+      "type": "receipt",
+      "profile": "heavy",
+      "script": "Latn",
+      "seconds_c1": 0.3454,
+      "lines_c1": 15,
+      "seconds_c2": 0.5867,
+      "lines_c2": 15
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_photo",
+      "type": "complaint_form_deva",
+      "profile": "photo",
+      "script": "Deva",
+      "seconds_c1": 0.5821,
+      "lines_c1": 25,
+      "seconds_c2": 0.7627,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "complaint_form_en_v3_clean",
+      "type": "complaint_form_en",
+      "profile": "clean",
+      "script": "Latn",
+      "seconds_c1": 0.6973,
+      "lines_c1": 25,
+      "seconds_c2": 0.949,
+      "lines_c2": 25
+    },
+    {
+      "doc_id": "email_printout_v0_photo",
+      "type": "email_printout",
+      "profile": "photo",
+      "script": "Latn",
+      "seconds_c1": 0.502,
+      "lines_c1": 14,
+      "seconds_c2": 0.7266,
+      "lines_c2": 14
+    },
+    {
+      "doc_id": "receipt_v2_bounce",
+      "type": "receipt",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.0741,
+      "lines_c1": 0,
+      "seconds_c2": 0.0964,
+      "lines_c2": 0
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_light",
+      "type": "complaint_letter_mar",
+      "profile": "light",
+      "script": "Deva",
+      "seconds_c1": 0.5258,
+      "lines_c1": 13,
+      "seconds_c2": 0.7379,
+      "lines_c2": 13
+    },
+    {
+      "doc_id": "bank_statement_v0_bounce",
+      "type": "bank_statement",
+      "profile": "bounce",
+      "script": "Latn",
+      "seconds_c1": 0.3628,
+      "lines_c1": 7,
+      "seconds_c2": 0.4951,
+      "lines_c2": 7
+    }
+  ]
+}

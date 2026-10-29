@@ -1,0 +1,9 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- QUALITY_SCORE_BELOW_THRESHOLD - quality gate: combined score below QUALITY_BOUNCE_THRESHOLD -#}
+{% block subject %}The document is not clear enough for us to read reliably{% endblock %}
+{% block defect %}Taken together — sharpness, the contrast between ink and paper, and the size
+of the writing — the pages are not clear enough to be read with confidence.
+No single problem stands out; the overall quality is simply too low.{% endblock %}
+{% block remedy %}Please scan the original document at {{ recommended_dpi }} DPI, laid flat
+with the whole page in view, and send the new file. A scan of the original
+is always clearer than a photograph of a photocopy.{% endblock %}

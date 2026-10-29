@@ -1,0 +1,51 @@
+{
+  "schema": "ifsc-master/1",
+  "authoritative": false,
+  "synthetic": true,
+  "source": "Synthetic fixture for OPEN-QUESTIONS Q4 option (b). Bank codes are the real four-letter IFSC prefixes of the five banks tools/generate_test_corpus.py renders; branch rows are sampled from the committed corpus/ ground truth and describe no real branch. Replace with the RBI master (CSV or JSON) once available - see app.stages.s5_validators.IFSCMaster.load.",
+  "notes": "authoritative=false means a structurally valid IFSC that is absent from this table is NOT a validation failure; it is unverifiable. Set authoritative=true (or load the real RBI list) to make absence a failure.",
+  "banks": [
+    {
+      "code": "SBIN",
+      "name": "State Bank of India",
+      "aliases": ["State Bank of India", "SBI", "State Bank", "स्टेट बैंक ऑफ इंडिया", "स्टेट बँक ऑफ इंडिया"]
+    },
+    {
+      "code": "PUNB",
+      "name": "Punjab National Bank",
+      "aliases": ["Punjab National Bank", "PNB", "पंजाब नेशनल बैंक", "पंजाब नॅशनल बँक"]
+    },
+    {
+      "code": "HDFC",
+      "name": "HDFC Bank Limited",
+      "aliases": ["HDFC Bank Limited", "HDFC Bank Ltd", "HDFC Bank", "एचडीएफसी बैंक लिमिटेड", "एचडीएफसी बैंक"]
+    },
+    {
+      "code": "BARB",
+      "name": "Bank of Baroda",
+      "aliases": ["Bank of Baroda", "BoB", "बैंक ऑफ बड़ौदा", "बँक ऑफ बडोदा"]
+    },
+    {
+      "code": "UBIN",
+      "name": "Union Bank of India",
+      "aliases": ["Union Bank of India", "Union Bank", "यूनियन बैंक ऑफ इंडिया", "युनियन बँक ऑफ इंडिया"]
+    }
+  ],
+  "branches": [
+    {"ifsc": "SBIN0152060", "bank_code": "SBIN", "branch": "SYNTHETIC BRANCH 152060", "centre": "PANVEL", "state": "MAHARASHTRA"},
+    {"ifsc": "SBIN0217834", "bank_code": "SBIN", "branch": "SYNTHETIC BRANCH 217834", "centre": "LUCKNOW", "state": "UTTAR PRADESH"},
+    {"ifsc": "SBIN0246383", "bank_code": "SBIN", "branch": "SYNTHETIC BRANCH 246383", "centre": "NAGPUR", "state": "MAHARASHTRA"},
+    {"ifsc": "PUNB0156546", "bank_code": "PUNB", "branch": "SYNTHETIC BRANCH 156546", "centre": "PATNA", "state": "BIHAR"},
+    {"ifsc": "PUNB0172288", "bank_code": "PUNB", "branch": "SYNTHETIC BRANCH 172288", "centre": "INDORE", "state": "MADHYA PRADESH"},
+    {"ifsc": "PUNB0199768", "bank_code": "PUNB", "branch": "SYNTHETIC BRANCH 199768", "centre": "PANVEL", "state": "MAHARASHTRA"},
+    {"ifsc": "HDFC0102826", "bank_code": "HDFC", "branch": "SYNTHETIC BRANCH 102826", "centre": "LUCKNOW", "state": "UTTAR PRADESH"},
+    {"ifsc": "HDFC0147799", "bank_code": "HDFC", "branch": "SYNTHETIC BRANCH 147799", "centre": "NAGPUR", "state": "MAHARASHTRA"},
+    {"ifsc": "HDFC0182417", "bank_code": "HDFC", "branch": "SYNTHETIC BRANCH 182417", "centre": "PATNA", "state": "BIHAR"},
+    {"ifsc": "BARB0100457", "bank_code": "BARB", "branch": "SYNTHETIC BRANCH 100457", "centre": "INDORE", "state": "MADHYA PRADESH"},
+    {"ifsc": "BARB0144620", "bank_code": "BARB", "branch": "SYNTHETIC BRANCH 144620", "centre": "PANVEL", "state": "MAHARASHTRA"},
+    {"ifsc": "BARB0152449", "bank_code": "BARB", "branch": "SYNTHETIC BRANCH 152449", "centre": "LUCKNOW", "state": "UTTAR PRADESH"},
+    {"ifsc": "UBIN0127753", "bank_code": "UBIN", "branch": "SYNTHETIC BRANCH 127753", "centre": "NAGPUR", "state": "MAHARASHTRA"},
+    {"ifsc": "UBIN0145496", "bank_code": "UBIN", "branch": "SYNTHETIC BRANCH 145496", "centre": "PATNA", "state": "BIHAR"},
+    {"ifsc": "UBIN0194167", "bank_code": "UBIN", "branch": "SYNTHETIC BRANCH 194167", "centre": "INDORE", "state": "MADHYA PRADESH"}
+  ]
+}

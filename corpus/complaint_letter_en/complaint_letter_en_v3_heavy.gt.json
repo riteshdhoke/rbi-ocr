@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_en_v3_heavy",
+  "doc_type": "complaint_letter_en",
+  "variant": 3,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+6.2deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:1.5",
+    "noise:0.03",
+    "downscale:0.7"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "To,",
+      "bbox": [
+        31.6,
+        167.2,
+        55.9,
+        164.6,
+        59.1,
+        194.9,
+        34.9,
+        197.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The Banking Ombudsman,",
+      "bbox": [
+        35.8,
+        206.1,
+        246.9,
+        183.3,
+        250.2,
+        213.6,
+        39.1,
+        236.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank of India",
+      "bbox": [
+        40.0,
+        245.1,
+        222.4,
+        225.4,
+        225.7,
+        255.6,
+        43.3,
+        275.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Subject: Non-adherence to the declared interest rate on a fixed deposit at ren",
+      "bbox": [
+        46.5,
+        305.0,
+        686.6,
+        235.6,
+        689.9,
+        265.9,
+        49.8,
+        335.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "I hold a savings account with Bank of Baroda.",
+      "bbox": [
+        52.1,
+        356.5,
+        435.8,
+        314.9,
+        439.0,
+        345.2,
+        55.4,
+        386.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "My account number is 16583607762.",
+      "bbox": [
+        56.2,
+        394.1,
+        366.2,
+        360.4,
+        369.5,
+        390.7,
+        59.5,
+        424.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "On 18/06/2026 an amount of Rs. 12,750 was",
+      "bbox": [
+        60.3,
+        431.6,
+        440.2,
+        390.5,
+        443.4,
+        420.8,
+        63.6,
+        461.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "debited without my authorisation or consent.",
+      "bbox": [
+        64.3,
+        469.2,
+        431.4,
+        429.4,
+        434.7,
+        459.7,
+        67.6,
+        499.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The transaction reference is 216217179692.",
+      "bbox": [
+        68.4,
+        506.8,
+        444.1,
+        466.1,
+        447.4,
+        496.4,
+        71.7,
+        537.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "I raised this with the branch but received no resolution.",
+      "bbox": [
+        72.5,
+        544.4,
+        532.3,
+        494.5,
+        535.6,
+        524.8,
+        75.7,
+        574.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "I request that the amount be reversed and compensation considered.",
+      "bbox": [
+        76.6,
+        582.0,
+        633.4,
+        521.6,
+        636.7,
+        551.9,
+        79.9,
+        612.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "Yours faithfully,",
+      "bbox": [
+        84.4,
+        654.4,
+        216.5,
+        640.0,
+        219.8,
+        670.3,
+        87.7,
+        684.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Meera Joshi",
+      "bbox": [
+        88.9,
+        696.1,
+        187.4,
+        685.4,
+        190.7,
+        715.8,
+        92.2,
+        726.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "Bank of Baroda",
+    "ifsc_code": "BARB0371548",
+    "account_number": "16583607762",
+    "card_last_four": "1042",
+    "disputed_amount": 12750,
+    "transaction_date": "18/06/2026",
+    "transaction_reference": "216217179692",
+    "complainant_name": "Meera Joshi",
+    "complainant_city": "Patna, Bihar",
+    "mobile": "9820550062",
+    "prior_complaint_ref": "CMS/2026/395189",
+    "ground_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "Subject: Non-adherence to the declared interest rate on a fixed deposit at ren",
+      "value_en": "Subject: Non-adherence to the declared interest rate on a fixed deposit at ren",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "16583607762",
+      "value_en": "16583607762",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "12,750",
+      "value_en": "12,750",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "216217179692",
+      "value_en": "216217179692",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "I request that the amount be reversed and compensation considered.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Meera Joshi",
+      "value_en": "Meera Joshi",
+      "script": "Latn"
+    }
+  }
+}

@@ -1,0 +1,460 @@
+{
+ "doc_id": "receipt_v2_light",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 1.0,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "TRANSACTION RECEIPT",
+     "bbox": [
+      70.6298867315054,
+      77.01423410574596,
+      424.0361171364784,
+      77.01423410574596,
+      424.0361171364784,
+      115.38992654482524,
+      70.6298867315054,
+      115.38992654482524
+     ],
+     "confidence": 0.9996329922425119,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "Date",
+     "bbox": [
+      67.66709513962269,
+      152.83627060254415,
+      134.2059517353773,
+      152.83627060254415,
+      134.2059517353773,
+      189.39081273078918,
+      67.66709513962269,
+      189.39081273078918
+     ],
+     "confidence": 0.998842254281044,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "22/07/2026",
+     "bbox": [
+      312.07205334305763,
+      156.93656454086303,
+      461.51776689291,
+      156.93656454086303,
+      461.51776689291,
+      186.86760212580364,
+      312.07205334305763,
+      186.86760212580364
+     ],
+     "confidence": 0.9996781647205353,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "Bank",
+     "bbox": [
+      68.11989310383797,
+      206.92049970626832,
+      138.37620064616203,
+      206.92049970626832,
+      138.37620064616203,
+      240.97116696039836,
+      68.11989310383797,
+      240.97116696039836
+     ],
+     "confidence": 0.999858483672142,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "HDFC BankLimited",
+     "bbox": [
+      310.20073610544205,
+      208.6422821680705,
+      565.096138894558,
+      208.6422821680705,
+      565.096138894558,
+      239.2493844985962,
+      310.20073610544205,
+      239.2493844985962
+     ],
+     "confidence": 0.9983090870082378,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "A/C",
+     "bbox": [
+      65.76388111710548,
+      256.5530948956808,
+      122.24002513289452,
+      256.5530948956808,
+      122.24002513289452,
+      297.00315510431926,
+      65.76388111710548,
+      297.00315510431926
+     ],
+     "confidence": 0.9343473513921102,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "XXXXXX1506",
+     "bbox": [
+      308.01247322559357,
+      258.4465526580811,
+      462.49533927440643,
+      258.4465526580811,
+      462.49533927440643,
+      291.9555306752523,
+      308.01247322559357,
+      291.9555306752523
+     ],
+     "confidence": 0.9481945157051086,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "Card",
+     "bbox": [
+      64.5076321810484,
+      310.4653478940328,
+      132.7423678189516,
+      310.4653478940328,
+      132.7423678189516,
+      347.1784021059672,
+      64.5076321810484,
+      347.1784021059672
+     ],
+     "confidence": 0.9992060661315918,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "XXXX XXXX XXXX 7991",
+     "bbox": [
+      310.6583191752434,
+      311.6209676424662,
+      589.2948058247566,
+      311.6209676424662,
+      589.2948058247566,
+      346.0227823575338,
+      310.6583191752434,
+      346.0227823575338
+     ],
+     "confidence": 0.9265085207788568,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "Amount",
+     "bbox": [
+      67.27125991880894,
+      362.18324209849044,
+      171.58616195619106,
+      362.18324209849044,
+      171.58616195619106,
+      397.97092456817626,
+      67.27125991880894,
+      397.97092456817626
+     ],
+     "confidence": 0.9994366268316904,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Rs.4,500.00",
+     "bbox": [
+      306.8879381418228,
+      361.38319765726726,
+      491.3581556081772,
+      361.38319765726726,
+      491.3581556081772,
+      398.77096900939944,
+      306.8879381418228,
+      398.77096900939944
+     ],
+     "confidence": 0.9522547884420915,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "RRN",
+     "bbox": [
+      67.34238398820162,
+      412.7227275848389,
+      129.90762189030647,
+      412.7227275848389,
+      129.90762189030647,
+      451.5189390818278,
+      67.34238398820162,
+      451.5189390818278
+     ],
+     "confidence": 0.9980351726214091,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "583889836639",
+     "bbox": [
+      308.8519712090492,
+      417.01403255462645,
+      489.3941225409508,
+      417.01403255462645,
+      489.3941225409508,
+      447.2276341120402,
+      308.8519712090492,
+      447.2276341120402
+     ],
+     "confidence": 0.9993859082460403,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "Status",
+     "bbox": [
+      67.7593642026186,
+      466.7702705383301,
+      149.5238389223814,
+      466.7702705383301,
+      149.5238389223814,
+      501.5588961283366,
+      67.7593642026186,
+      501.5588961283366
+     ],
+     "confidence": 0.9997520744800568,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    },
+    {
+     "text": "FAILED",
+     "bbox": [
+      310.0040882527828,
+      465.4774356842041,
+      407.3806577324867,
+      468.0999720255534,
+      406.4999161362648,
+      502.3519618988037,
+      309.1233466565609,
+      499.7294255574544
+     ],
+     "confidence": 0.9994852940241495,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 14
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "22/07/2026",
+   "value_en": null,
+   "normalized": "2026-07-22",
+   "confidence": 0.9996781647205353,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     312.07205334305763,
+     156.93656454086303,
+     461.51776689291,
+     156.93656454086303,
+     461.51776689291,
+     186.86760212580364,
+     312.07205334305763,
+     186.86760212580364
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 2
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "bank_name": {
+   "value": "HDFC BankLimited",
+   "value_en": null,
+   "normalized": "HDFC Bank Limited",
+   "confidence": 0.9983090870082378,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     310.20073610544205,
+     208.6422821680705,
+     565.096138894558,
+     208.6422821680705,
+     565.096138894558,
+     239.2493844985962,
+     310.20073610544205,
+     239.2493844985962
+    ],
+    "span": [
+     0,
+     16
+    ],
+    "line_index": 4
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "card_fragment": {
+   "value": "XXXX XXXX XXXX 7991",
+   "value_en": null,
+   "normalized": "7991",
+   "confidence": 0.8338576687009711,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     310.6583191752434,
+     311.6209676424662,
+     589.2948058247566,
+     311.6209676424662,
+     589.2948058247566,
+     346.0227823575338,
+     310.6583191752434,
+     346.0227823575338
+    ],
+    "span": [
+     0,
+     19
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "Rs.4,500.00",
+   "value_en": null,
+   "normalized": "4500.00",
+   "confidence": 0.9522547884420915,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     306.8879381418228,
+     361.38319765726726,
+     491.3581556081772,
+     361.38319765726726,
+     491.3581556081772,
+     398.77096900939944,
+     306.8879381418228,
+     398.77096900939944
+    ],
+    "span": [
+     0,
+     11
+    ],
+    "line_index": 10
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "583889836639",
+   "value_en": null,
+   "normalized": "583889836639",
+   "confidence": 0.9993859082460403,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     308.8519712090492,
+     417.01403255462645,
+     489.3941225409508,
+     417.01403255462645,
+     489.3941225409508,
+     447.2276341120402,
+     308.8519712090492,
+     447.2276341120402
+    ],
+    "span": [
+     0,
+     12
+    ],
+    "line_index": 12
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 1.129,
+  "s1_ingest": 17.414,
+  "s15_quality": 196.946,
+  "s15_quality:p1": 196.946,
+  "s4_ocr": 517.297,
+  "s4_ocr:p1": 517.297,
+  "s2b_lid": 1.258,
+  "s2b_lid:p1": 1.258,
+  "s3_classify": 95.548,
+  "s3_classify:p1": 95.548,
+  "s5_validators": 4.119,
+  "s5_slm": 2619.461,
+  "e2e_total": 3447.982
+ },
+ "warnings": [
+  "grounding_rejected:page=1:field=prior_complaint_reference:reason=empty",
+  "grounding_rejected:page=1:field=relief_sought:reason=empty"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_form",
+ "summary_span_count": 1
+}

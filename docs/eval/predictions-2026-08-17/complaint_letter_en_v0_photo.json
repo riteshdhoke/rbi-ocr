@@ -1,0 +1,347 @@
+{
+ "doc_id": "complaint_letter_en_v0_photo",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.4816388504350286,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.50/2.00 validator_failures=1(utr_rrn) quality_low handwriting=0.46 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "The Banking Ombudiman",
+     "bbox": [
+      224.08720779418945,
+      213.06089749336243,
+      418.85029220581055,
+      213.06089749336243,
+      418.85029220581055,
+      249.33286542892458,
+      224.08720779418945,
+      249.33286542892458
+     ],
+     "confidence": 0.8628723110471453,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 0
+    },
+    {
+     "text": "Rosere Bank of Lada",
+     "bbox": [
+      223.34341621398926,
+      247.43352184295657,
+      403.16727447509766,
+      249.55691204071047,
+      402.70044136047363,
+      289.38536472320556,
+      222.87658309936523,
+      287.26197452545165
+     ],
+     "confidence": 0.6884666791087702,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "Sbjet: Unatharisnd ehetron trancation dbited f",
+     "bbox": [
+      225.28125,
+      302.334375,
+      642.09375,
+      302.334375,
+      642.09375,
+      339.596875,
+      225.28125,
+      339.596875
+     ],
+     "confidence": 0.6661895882824193,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "RECIVEO",
+     "bbox": [
+      643.1749076843262,
+      310.6156484603882,
+      785.9790802001953,
+      304.1004898071289,
+      788.2705535888672,
+      354.6998754501343,
+      645.466381072998,
+      361.2150341033936
+     ],
+     "confidence": 0.7550936341285706,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "Ihota tavings actoant with State Banck of Irda",
+     "bbox": [
+      223.4426794052124,
+      345.31038665771484,
+      605.5583553314209,
+      349.14566974639894,
+      605.174280166626,
+      387.6942474365235,
+      223.05860424041748,
+      383.8589643478394
+     ],
+     "confidence": 0.7541876195565514,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "My 200unt mmer= 68978631914858.",
+     "bbox": [
+      224.88254928588867,
+      384.92794761657717,
+      537.8674507141113,
+      384.92794761657717,
+      537.8674507141113,
+      417.90955238342286,
+      224.88254928588867,
+      417.90955238342286
+     ],
+     "confidence": 0.7120520578276727,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 5
+    },
+    {
+     "text": "On 18/07/2026 an am0nt of Re.98.200wag",
+     "bbox": [
+      223.14512157440186,
+      417.0590849876404,
+      575.0424041748047,
+      417.0590849876404,
+      575.0424041748047,
+      450.14094085693364,
+      223.14512157440186,
+      450.14094085693364
+     ],
+     "confidence": 0.8089160174131393,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "dobred withoutmy ahoritaton or tonent",
+     "bbox": [
+      224.13255214691162,
+      448.09048404693607,
+      564.3002986907959,
+      451.9053499221802,
+      563.8986110687256,
+      487.98509883880615,
+      223.7309160232544,
+      484.17023296356206
+     ],
+     "confidence": 0.6812161557577752,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "The Cran5acmx reference is 179357340s3s.",
+     "bbox": [
+      226.01319694519043,
+      485.99403285980225,
+      568.7993030548096,
+      485.99403285980225,
+      568.7993030548096,
+      515.0122171401978,
+      226.01319694519043,
+      515.0122171401978
+     ],
+     "confidence": 0.7433098755776882,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "Iraised thig with the branck but receied as repolation",
+     "bbox": [
+      225.96041107177734,
+      519.8160514831543,
+      638.0394859313965,
+      519.8160514831543,
+      638.0394859313965,
+      548.9400951385499,
+      225.96041107177734,
+      548.9400951385499
+     ],
+     "confidence": 0.7148791071441438,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Iroquet thae the amount be reveroeid and compengation tonsiderd",
+     "bbox": [
+      221.95535373687744,
+      551.5035150527955,
+      731.3500785827637,
+      549.5886388778687,
+      731.4870643615723,
+      586.303233909607,
+      222.09233951568604,
+      588.2181100845337
+     ],
+     "confidence": 0.7648574383485884,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 10
+    },
+    {
+     "text": "Yoars fathply",
+     "bbox": [
+      220.21875,
+      612.290625,
+      351.84375,
+      612.290625,
+      351.84375,
+      651.246875,
+      220.21875,
+      651.246875
+     ],
+     "confidence": 0.6684042192422427,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "Raieth Kumar Sharima",
+     "bbox": [
+      222.4796848297119,
+      651.8224336624146,
+      401.8953151702881,
+      651.8224336624146,
+      401.8953151702881,
+      687.9338163375855,
+      222.4796848297119,
+      687.9338163375855
+     ],
+     "confidence": 0.6887559071183205,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "18/07/2026",
+   "value_en": null,
+   "normalized": "2026-07-18",
+   "confidence": 0.8089160174131393,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     223.14512157440186,
+     417.0590849876404,
+     575.0424041748047,
+     417.0590849876404,
+     575.0424041748047,
+     450.14094085693364,
+     223.14512157440186,
+     450.14094085693364
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "179357340s3s",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.3716549377888441,
+   "source": "regex_validator",
+   "validator_passed": false,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     226.01319694519043,
+     485.99403285980225,
+     568.7993030548096,
+     485.99403285980225,
+     568.7993030548096,
+     515.0122171401978,
+     226.01319694519043,
+     515.0122171401978
+    ],
+    "span": [
+     27,
+     39
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": [
+    "VALIDATOR_FAILED"
+   ]
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.817,
+  "s1_ingest": 19.526,
+  "s15_quality": 220.43,
+  "s15_quality:p1": 220.43,
+  "s4_ocr": 634.401,
+  "s4_ocr:p1": 634.401,
+  "s2b_lid": 0.926,
+  "s2b_lid:p1": 0.926,
+  "s3_classify": 144.22,
+  "s3_classify:p1": 144.22,
+  "s5_validators": 52.854,
+  "s5_slm": 0.014,
+  "assemble": 0.75,
+  "s4b_vlm": 0.115,
+  "s4b_vlm:p1": 0.115,
+  "e2e_total": 1077.4170000000001
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+  "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

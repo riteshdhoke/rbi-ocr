@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_mar_v4_bounce",
+  "doc_type": "complaint_letter_mar",
+  "variant": 4,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Deva",
+  "primary_language": "mar",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+15.6deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:3.4",
+    "noise:0.07",
+    "downscale:0.42"
+  ],
+  "quality_expectation": "bounce",
+  "lines": [
+    {
+      "text": "सेवेत,",
+      "bbox": [
+        -40.4,
+        159.1,
+        -11.4,
+        151.0,
+        -6.5,
+        168.6,
+        -35.4,
+        176.7
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "मा. बँकिंग लोकपाल,",
+      "bbox": [
+        -34.1,
+        181.7,
+        73.9,
+        151.7,
+        78.8,
+        169.3,
+        -29.1,
+        199.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "भारतीय रिझर्व्ह बँक",
+      "bbox": [
+        -27.8,
+        204.4,
+        73.6,
+        176.1,
+        78.5,
+        193.8,
+        -22.8,
+        222.0
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "विषय: ऋण खाता बंद करने और मूल संपत्ति दस्तावेज़ लौटाने में देरी",
+      "bbox": [
+        -18.1,
+        239.2,
+        337.9,
+        140.0,
+        342.8,
+        157.6,
+        -13.1,
+        256.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "माझे यूनियन बैंक ऑफ इंडिया येथे बचत खाते आहे.",
+      "bbox": [
+        -9.7,
+        269.1,
+        262.1,
+        193.4,
+        267.0,
+        211.0,
+        -4.8,
+        286.7
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "खाते क्रमांक 39649051633571 आहे.",
+      "bbox": [
+        -3.6,
+        291.0,
+        194.4,
+        235.8,
+        199.2,
+        253.4,
+        1.3,
+        308.6
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "दिनांक 10/06/2026 रोजी रु. 250,000 रक्कम",
+      "bbox": [
+        2.5,
+        312.8,
+        247.5,
+        244.5,
+        252.4,
+        262.2,
+        7.4,
+        330.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "माझ्या संमतीशिवाय डेबिट करण्यात आली.",
+      "bbox": [
+        8.6,
+        334.7,
+        231.8,
+        272.5,
+        236.6,
+        290.1,
+        13.5,
+        352.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "संदर्भ क्रमांक 390890381941.",
+      "bbox": [
+        14.7,
+        356.5,
+        173.6,
+        312.2,
+        178.5,
+        329.8,
+        19.5,
+        374.1
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "बँकेकडे तक्रार करूनही निराकरण झाले नाही.",
+      "bbox": [
+        20.7,
+        378.4,
+        254.1,
+        313.4,
+        259.0,
+        331.0,
+        25.6,
+        396.0
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "bbox": [
+        26.8,
+        400.2,
+        252.2,
+        337.4,
+        257.1,
+        355.0,
+        31.7,
+        417.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "आपला विश्वासू,",
+      "bbox": [
+        38.6,
+        442.3,
+        119.4,
+        419.7,
+        124.4,
+        437.3,
+        43.5,
+        459.9
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "संजय देशपांडे",
+      "bbox": [
+        45.3,
+        466.6,
+        114.5,
+        447.3,
+        119.4,
+        464.9,
+        50.2,
+        484.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "Union Bank of India",
+    "ifsc_code": "UBIN0723136",
+    "account_number": "39649051633571",
+    "card_last_four": "8978",
+    "disputed_amount": 250000,
+    "transaction_date": "10/06/2026",
+    "transaction_reference": "390890381941",
+    "complainant_name": "Sanjay Deshpande",
+    "complainant_city": "Indore, Madhya Pradesh",
+    "mobile": "9615034518",
+    "prior_complaint_ref": "CMS/2025/918278",
+    "ground_en": "Delay in closure of loan account and release of original property documents"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "विषय: ऋण खाता बंद करने और मूल संपत्ति दस्तावेज़ लौटाने में देरी",
+      "value_en": "Subject: Delay in closure of loan account and release of original property doc",
+      "script": "Deva"
+    },
+    "account_number": {
+      "value": "39649051633571",
+      "value_en": "39649051633571",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "390890381941",
+      "value_en": "390890381941",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Deva"
+    },
+    "complainant_name": {
+      "value": "संजय देशपांडे",
+      "value_en": "Sanjay Deshpande",
+      "script": "Deva"
+    }
+  }
+}

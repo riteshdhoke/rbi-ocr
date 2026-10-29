@@ -1,0 +1,40 @@
+{
+ "doc_id": "photo_evidence_v2_bounce",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "bounce",
+  "score": 0.17503243452730755,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "RESOLUTION_BELOW_FLOOR",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": []
+  }
+ ],
+ "fields": {},
+ "timings_ms": {
+  "s0_read": 0.794,
+  "s1_ingest": 2.193,
+  "s15_quality": 57.531,
+  "s15_quality:p1": 57.531,
+  "e2e_total": 61.608999999999995
+ },
+ "warnings": [],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": null,
+ "summary_span_count": 0
+}

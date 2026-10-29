@@ -1,0 +1,448 @@
+{
+ "doc_id": "complaint_letter_en_v0_heavy",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.9783228165514055,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.00/2.00 quality_low handwriting=0.50 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "To",
+     "bbox": [
+      211.6347769032354,
+      188.06332766215007,
+      237.06087527067766,
+      188.06332766215007,
+      237.06087527067766,
+      211.4783390045166,
+      211.6347769032354,
+      211.4783390045166
+     ],
+     "confidence": 0.9390588700771332,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Banking Ombudsiman",
+     "bbox": [
+      205.23761517068615,
+      217.01293182373047,
+      426.67542830757475,
+      217.01293182373047,
+      426.67542830757475,
+      256.86206817626953,
+      205.23761517068615,
+      256.86206817626953
+     ],
+     "confidence": 0.8772872442548926,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 1
+    },
+    {
+     "text": "Reserve Bank of India",
+     "bbox": [
+      205.32147117283034,
+      259.8379648844401,
+      409.7654710852582,
+      259.8379648844401,
+      409.7654710852582,
+      299.52036844889324,
+      205.32147117283034,
+      299.52036844889324
+     ],
+     "confidence": 0.905580556108838,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "Subjeet Unauthorised electronis transaction debited Prom iny Savings acount",
+     "bbox": [
+      206.9193566363791,
+      317.55918312072754,
+      854.7059034264606,
+      313.33693046569823,
+      855.0048695439879,
+      358.6547888437907,
+      207.21832275390625,
+      362.87704149882
+     ],
+     "confidence": 0.7720629928509394,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "Ihoda cavings account with State Bank of India",
+     "bbox": [
+      203.70487179963487,
+      371.773171488444,
+      639.2733154296875,
+      369.51819559733076,
+      639.470267917799,
+      407.110484568278,
+      203.90182428774628,
+      409.3654604593913
+     ],
+     "confidence": 0.8418584751046222,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "My aecount nomber is 12250413965.",
+     "bbox": [
+      204.30739693019703,
+      411.2133021036784,
+      530.4317335045856,
+      411.2133021036784,
+      530.4317335045856,
+      447.33669789632165,
+      204.30739693019703,
+      447.33669789632165
+     ],
+     "confidence": 0.7986411632913532,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 5
+    },
+    {
+     "text": "On 07/11/2026 an amount of Re 98.200 was",
+     "bbox": [
+      204.83921714451003,
+      447.45213483174643,
+      600.5194901176121,
+      443.3337782541911,
+      600.9382709005605,
+      483.08636271158855,
+      205.2579979274584,
+      487.20477600097655
+     ],
+     "confidence": 0.8015985421836376,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "debited withoat my authorsatiom or consent",
+     "bbox": [
+      207.97043078878653,
+      485.4709818522136,
+      588.4643660835599,
+      485.4709818522136,
+      588.4643660835599,
+      521.7456848144532,
+      207.97043078878653,
+      521.7456848144532
+     ],
+     "confidence": 0.8060626501128787,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "The trancaction reference is 396829749492",
+     "bbox": [
+      211.1370040230129,
+      523.9268786112467,
+      590.9064742378567,
+      523.9268786112467,
+      590.9064742378567,
+      555.7647880554199,
+      211.1370040230129,
+      555.7647880554199
+     ],
+     "confidence": 0.859159925361959,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 8
+    },
+    {
+     "text": "I raised this with the branch but receved no recolution",
+     "bbox": [
+      210.0346377828847,
+      562.9810284932455,
+      679.5109597911006,
+      558.8695340474446,
+      679.8200245732846,
+      593.7378969828288,
+      210.34370256506878,
+      597.8493914286296
+     ],
+     "confidence": 0.8557938299395821,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 9
+    },
+    {
+     "text": "I requeet that the amount be reversed and compericatio oinsidered",
+     "bbox": [
+      206.791211998981,
+      600.6116546630859,
+      780.02234152089,
+      595.8234746297201,
+      780.3561109459919,
+      635.3048914591471,
+      207.1249814240829,
+      640.093071492513
+     ],
+     "confidence": 0.8292813775631097,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "Yours faithfully",
+     "bbox": [
+      205.66877680239472,
+      669.1761469523112,
+      356.3086746879246,
+      666.5492548624675,
+      357.0939742378567,
+      711.0435440063477,
+      206.45407635232678,
+      713.6704360961915
+     ],
+     "confidence": 0.8640010189265013,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 11
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      933.0518002717391,
+      683.7675910949707,
+      1040.6711585003397,
+      670.3959617614746,
+      1045.4660273012908,
+      708.5245745340983,
+      937.8466690726902,
+      721.8962038675944
+     ],
+     "confidence": 0.9594365954399109,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "Rajesh Kumar Sharma",
+     "bbox": [
+      203.8082975304645,
+      710.9693649291993,
+      411.60302867060125,
+      704.8945068359375,
+      413.0528431768003,
+      753.8920557657877,
+      205.25811203666356,
+      759.9669138590496
+     ],
+     "confidence": 0.7675121442267769,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "State Bank of India",
+   "value_en": null,
+   "normalized": "State Bank of India",
+   "confidence": 0.8418584751046222,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     203.70487179963487,
+     371.773171488444,
+     639.2733154296875,
+     369.51819559733076,
+     639.470267917799,
+     407.110484568278,
+     203.90182428774628,
+     409.3654604593913
+    ],
+    "span": [
+     27,
+     46
+    ],
+    "line_index": 4
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "account_number": {
+   "value": "12250413965",
+   "value_en": null,
+   "normalized": "12250413965",
+   "confidence": 0.7187770469622179,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     204.30739693019703,
+     411.2133021036784,
+     530.4317335045856,
+     411.2133021036784,
+     530.4317335045856,
+     447.33669789632165,
+     204.30739693019703,
+     447.33669789632165
+    ],
+    "span": [
+     21,
+     32
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "07/11/2026",
+   "value_en": null,
+   "normalized": "2026-11-07",
+   "confidence": 0.8015985421836376,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     204.83921714451003,
+     447.45213483174643,
+     600.5194901176121,
+     443.3337782541911,
+     600.9382709005605,
+     483.08636271158855,
+     205.2579979274584,
+     487.20477600097655
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "98.20",
+   "value_en": null,
+   "normalized": "98.20",
+   "confidence": 0.8015985421836376,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     204.83921714451003,
+     447.45213483174643,
+     600.5194901176121,
+     443.3337782541911,
+     600.9382709005605,
+     483.08636271158855,
+     205.2579979274584,
+     487.20477600097655
+    ],
+    "span": [
+     30,
+     35
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "396829749492",
+   "value_en": null,
+   "normalized": "396829749492",
+   "confidence": 0.859159925361959,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     211.1370040230129,
+     523.9268786112467,
+     590.9064742378567,
+     523.9268786112467,
+     590.9064742378567,
+     555.7647880554199,
+     211.1370040230129,
+     555.7647880554199
+    ],
+    "span": [
+     29,
+     41
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.891,
+  "s1_ingest": 26.218,
+  "s15_quality": 224.527,
+  "s15_quality:p1": 224.527,
+  "s4_ocr": 667.958,
+  "s4_ocr:p1": 667.958,
+  "s2b_lid": 0.968,
+  "s2b_lid:p1": 0.968,
+  "s3_classify": 173.381,
+  "s3_classify:p1": 173.381,
+  "s5_validators": 58.575,
+  "s5_slm": 0.015,
+  "assemble": 0.818,
+  "s4b_vlm": 0.119,
+  "s4b_vlm:p1": 0.119,
+  "e2e_total": 1155.889
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+  "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

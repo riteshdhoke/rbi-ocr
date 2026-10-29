@@ -1,0 +1,9 @@
+{% extends "hin/_layout.txt.j2" %}
+{#- QUALITY_SCORE_BELOW_THRESHOLD - quality gate: combined score below QUALITY_BOUNCE_THRESHOLD -#}
+{% block subject %}दस्तावेज़ इतना स्पष्ट नहीं है कि उसे भरोसे से पढ़ा जा सके{% endblock %}
+{% block defect %}स्पष्टता, स्याही और कागज़ के बीच का अंतर, तथा लिखावट का आकार — इन सबको मिलाकर
+देखने पर पृष्ठ भरोसे के साथ पढ़ने योग्य नहीं हैं। कोई एक बड़ी कमी नहीं है;
+समग्र गुणवत्ता ही कम है।{% endblock %}
+{% block remedy %}कृपया मूल दस्तावेज़ को {{ recommended_dpi }} DPI पर, समतल रखकर और पूरा पृष्ठ
+दिखाते हुए स्कैन करें और नई फ़ाइल भेजें। मूल दस्तावेज़ का स्कैन छायाप्रति के
+छायाचित्र से सदैव अधिक स्पष्ट होता है।{% endblock %}

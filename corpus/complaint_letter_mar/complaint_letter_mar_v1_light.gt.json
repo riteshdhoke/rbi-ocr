@@ -1,0 +1,285 @@
+{
+  "doc_id": "complaint_letter_mar_v1_light",
+  "doc_type": "complaint_letter_mar",
+  "variant": 1,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Deva",
+  "primary_language": "mar",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+0.1deg",
+    "blur:0.4",
+    "noise:0.004"
+  ],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "सेवेत,",
+      "bbox": [
+        148.1,
+        161.3,
+        219.5,
+        161.2,
+        219.6,
+        204.7,
+        148.2,
+        204.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "मा. बँकिंग लोकपाल,",
+      "bbox": [
+        148.2,
+        217.3,
+        416.2,
+        216.8,
+        416.3,
+        260.3,
+        148.3,
+        260.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "भारतीय रिझर्व्ह बँक",
+      "bbox": [
+        148.3,
+        273.3,
+        400.1,
+        272.8,
+        400.2,
+        316.3,
+        148.4,
+        316.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "विषय: पूर्व सहमति के बिना क्रेडिट कार्ड वार्षिक शुल्क लगाया गया",
+      "bbox": [
+        148.5,
+        359.3,
+        995.6,
+        357.7,
+        995.7,
+        401.2,
+        148.5,
+        402.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "माझे पंजाब नेशनल बैंक येथे बचत खाते आहे.",
+      "bbox": [
+        148.6,
+        433.3,
+        743.1,
+        432.2,
+        743.2,
+        475.7,
+        148.7,
+        476.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "खाते क्रमांक 1496810689809317 आहे.",
+      "bbox": [
+        148.7,
+        487.3,
+        663.8,
+        486.3,
+        663.8,
+        529.8,
+        148.8,
+        530.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "दिनांक 09/06/2026 रोजी रु. 250,000 रक्कम",
+      "bbox": [
+        148.8,
+        541.3,
+        755.8,
+        540.1,
+        755.8,
+        583.7,
+        148.9,
+        584.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "माझ्या संमतीशिवाय डेबिट करण्यात आली.",
+      "bbox": [
+        148.9,
+        595.3,
+        699.3,
+        594.2,
+        699.4,
+        637.8,
+        149.0,
+        638.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "संदर्भ क्रमांक 810834537743.",
+      "bbox": [
+        149.0,
+        649.3,
+        548.4,
+        648.5,
+        548.5,
+        692.0,
+        149.1,
+        692.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "बँकेकडे तक्रार करूनही निराकरण झाले नाही.",
+      "bbox": [
+        149.1,
+        703.3,
+        726.2,
+        702.2,
+        726.2,
+        745.7,
+        149.2,
+        746.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "bbox": [
+        149.2,
+        757.3,
+        705.7,
+        756.2,
+        705.8,
+        799.8,
+        149.3,
+        800.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "आपला विश्वासू,",
+      "bbox": [
+        149.4,
+        861.3,
+        350.2,
+        860.9,
+        350.3,
+        904.4,
+        149.5,
+        904.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "प्रिया वेंकटेशन",
+      "bbox": [
+        149.5,
+        921.3,
+        333.8,
+        920.9,
+        333.9,
+        964.5,
+        149.6,
+        964.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "Punjab National Bank",
+    "ifsc_code": "PUNB0663897",
+    "account_number": "1496810689809317",
+    "card_last_four": "8262",
+    "disputed_amount": 250000,
+    "transaction_date": "09/06/2026",
+    "transaction_reference": "810834537743",
+    "complainant_name": "Priya Venkatesan",
+    "complainant_city": "Lucknow, Uttar Pradesh",
+    "mobile": "9211336940",
+    "prior_complaint_ref": "CMS/2026/388544",
+    "ground_en": "Credit card annual fee levied without prior consent or intimation"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "विषय: पूर्व सहमति के बिना क्रेडिट कार्ड वार्षिक शुल्क लगाया गया",
+      "value_en": "Subject: Credit card annual fee levied without prior consent or intimation",
+      "script": "Deva"
+    },
+    "account_number": {
+      "value": "1496810689809317",
+      "value_en": "1496810689809317",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "810834537743",
+      "value_en": "810834537743",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Deva"
+    },
+    "complainant_name": {
+      "value": "प्रिया वेंकटेशन",
+      "value_en": "Priya Venkatesan",
+      "script": "Deva"
+    }
+  }
+}

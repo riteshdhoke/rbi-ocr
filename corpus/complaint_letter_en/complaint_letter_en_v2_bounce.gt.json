@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_en_v2_bounce",
+  "doc_type": "complaint_letter_en",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-2.6deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:3.4",
+    "noise:0.07",
+    "downscale:0.42"
+  ],
+  "quality_expectation": "bounce",
+  "lines": [
+    {
+      "text": "To,",
+      "bbox": [
+        82.8,
+        54.6,
+        97.0,
+        55.2,
+        96.1,
+        73.5,
+        81.9,
+        72.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The Banking Ombudsman,",
+      "bbox": [
+        81.7,
+        78.1,
+        209.5,
+        84.0,
+        208.6,
+        102.2,
+        80.8,
+        96.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank of India",
+      "bbox": [
+        80.6,
+        101.6,
+        190.4,
+        106.6,
+        189.5,
+        124.9,
+        79.8,
+        119.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Subject: Failure to credit the amount of a failed ATM withdrawal within the pr",
+      "bbox": [
+        79.0,
+        137.7,
+        470.6,
+        155.7,
+        469.8,
+        173.9,
+        78.1,
+        155.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "I hold a savings account with HDFC Bank Limited.",
+      "bbox": [
+        77.5,
+        168.7,
+        325.9,
+        180.1,
+        325.1,
+        198.4,
+        76.7,
+        187.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "My account number is 86519745238.",
+      "bbox": [
+        76.5,
+        191.4,
+        263.7,
+        200.0,
+        262.9,
+        218.2,
+        75.6,
+        209.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "On 12/11/2026 an amount of Rs. 4,500 was",
+      "bbox": [
+        75.4,
+        214.0,
+        296.3,
+        224.2,
+        295.5,
+        242.4,
+        74.6,
+        232.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "debited without my authorisation or consent.",
+      "bbox": [
+        74.4,
+        236.7,
+        296.3,
+        246.9,
+        295.5,
+        265.1,
+        73.5,
+        254.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The transaction reference is 686325124501.",
+      "bbox": [
+        73.4,
+        259.3,
+        298.7,
+        269.7,
+        297.8,
+        288.0,
+        72.5,
+        277.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "I raised this with the branch but received no resolution.",
+      "bbox": [
+        72.3,
+        282.0,
+        349.7,
+        294.8,
+        348.9,
+        313.0,
+        71.5,
+        300.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "I request that the amount be reversed and compensation considered.",
+      "bbox": [
+        71.3,
+        304.6,
+        408.4,
+        320.1,
+        407.6,
+        338.4,
+        70.4,
+        322.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "Yours faithfully,",
+      "bbox": [
+        69.3,
+        348.3,
+        148.3,
+        351.9,
+        147.4,
+        370.2,
+        68.4,
+        366.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Abdul Rahman Shaikh",
+      "bbox": [
+        68.1,
+        373.5,
+        179.0,
+        378.5,
+        178.2,
+        396.8,
+        67.3,
+        391.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "HDFC Bank Limited",
+    "ifsc_code": "HDFC0997683",
+    "account_number": "86519745238",
+    "card_last_four": "2549",
+    "disputed_amount": 4500,
+    "transaction_date": "12/11/2026",
+    "transaction_reference": "686325124501",
+    "complainant_name": "Abdul Rahman Shaikh",
+    "complainant_city": "Nagpur, Maharashtra",
+    "mobile": "9238694808",
+    "prior_complaint_ref": "CMS/2026/572534",
+    "ground_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "Subject: Failure to credit the amount of a failed ATM withdrawal within the pr",
+      "value_en": "Subject: Failure to credit the amount of a failed ATM withdrawal within the pr",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "86519745238",
+      "value_en": "86519745238",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "686325124501",
+      "value_en": "686325124501",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "I request that the amount be reversed and compensation considered.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Abdul Rahman Shaikh",
+      "value_en": "Abdul Rahman Shaikh",
+      "script": "Latn"
+    }
+  }
+}

@@ -1,0 +1,369 @@
+{
+ "doc_id": "complaint_letter_en_v1_photo",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.4813319853439893,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "To",
+     "bbox": [
+      177.61684366931084,
+      159.7256902853648,
+      204.85869980895,
+      159.7256902853648,
+      204.85869980895,
+      183.71180971463522,
+      177.61684366931084,
+      183.71180971463522
+     ],
+     "confidence": 0.7649527490139008,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Banking Dambudtman",
+     "bbox": [
+      175.15074895775837,
+      185.06031227111816,
+      367.50685973789376,
+      185.06031227111816,
+      367.50685973789376,
+      223.79385439554852,
+      175.15074895775837,
+      223.79385439554852
+     ],
+     "confidence": 0.7653953392397274,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "Reterve Bank of Inda",
+     "bbox": [
+      175.24291715414626,
+      221.13168573379517,
+      352.7040812450906,
+      221.13168573379517,
+      352.7040812450906,
+      259.68081426620483,
+      175.24291715414626,
+      259.68081426620483
+     ],
+     "confidence": 0.7221454456448555,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": " ",
+     "bbox": [
+      177.90634234055227,
+      272.51869535446167,
+      708.3146967265917,
+      277.2151780128479,
+      707.9598410647848,
+      317.3308488527934,
+      177.5515365600586,
+      312.63436619440716
+     ],
+     "confidence": 0.3860037922859192,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "Ihold a saings account with Parab Natimal Bark",
+     "bbox": [
+      177.8350868847059,
+      322.0129826863607,
+      570.5917426399562,
+      320.0866467158,
+      570.7580469380254,
+      354.0315243403117,
+      178.00139118277508,
+      355.95786031087243
+     ],
+     "confidence": 0.7393533613370813,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "My acceant number is 03637010772",
+     "bbox": [
+      177.51648246723673,
+      354.2398443222046,
+      463.21179087265676,
+      354.2398443222046,
+      463.21179087265676,
+      389.8747390111288,
+      177.51648246723673,
+      389.8747390111288
+     ],
+     "confidence": 0.7927588629536331,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "On 09/05/2026 an am0nt ofRc 12,250was",
+     "bbox": [
+      176.9025682055432,
+      391.24017318089807,
+      524.3025823676068,
+      391.24017318089807,
+      524.3025823676068,
+      423.197301864624,
+      176.9025682055432,
+      423.197301864624
+     ],
+     "confidence": 0.6949423986512262,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "debotedwithout imy authoripatin or consent.",
+     "bbox": [
+      179.2152404681496,
+      423.69564278920495,
+      510.94506504224694,
+      427.87062676747644,
+      510.56536848648733,
+      458.07193342844647,
+      178.83556885304657,
+      453.896949450175
+     ],
+     "confidence": 0.8170730603295703,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "The trontacign rference it 3919826s5839.",
+     "bbox": [
+      178.68970342304394,
+      456.61299482981366,
+      517.782246755517,
+      458.427285194397,
+      517.6127500534058,
+      490.1357425053915,
+      178.52023166158924,
+      488.3214521408081
+     ],
+     "confidence": 0.7330058857798576,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "I thi the h  ",
+     "bbox": [
+      177.40464856313622,
+      492.69317722320557,
+      590.6667764083198,
+      490.77886931101483,
+      590.804997527081,
+      520.6518748601278,
+      177.54286968189737,
+      522.5661827723186
+     ],
+     "confidence": 0.5972831684809464,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Youre fathfully",
+     "bbox": [
+      175.6884196322897,
+      586.2753642400106,
+      304.85777601988417,
+      586.2753642400106,
+      304.85777601988417,
+      623.9329690933228,
+      175.6884196322897,
+      623.9329690933228
+     ],
+     "confidence": 0.7972088992595673,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "Prige Venkatecan",
+     "bbox": [
+      173.88311514647108,
+      623.71905930837,
+      318.1046565926593,
+      623.71905930837,
+      318.1046565926593,
+      661.7184406916301,
+      173.88311514647108,
+      661.7184406916301
+     ],
+     "confidence": 0.7329792305827141,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      690.790543431821,
+      629.5658435821533,
+      787.661749549534,
+      616.3488540649414,
+      792.5066217339556,
+      651.8975060780843,
+      695.6354156162428,
+      665.1144955952963
+     ],
+     "confidence": 0.9966995194554329,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "account_number": {
+   "value": "03637010772",
+   "value_en": null,
+   "normalized": "03637010772",
+   "confidence": 0.7134829766582698,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     177.51648246723673,
+     354.2398443222046,
+     463.21179087265676,
+     354.2398443222046,
+     463.21179087265676,
+     389.8747390111288,
+     177.51648246723673,
+     389.8747390111288
+    ],
+    "span": [
+     21,
+     32
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "09/05/2026",
+   "value_en": null,
+   "normalized": "2026-05-09",
+   "confidence": 0.6949423986512262,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     176.9025682055432,
+     391.24017318089807,
+     524.3025823676068,
+     391.24017318089807,
+     524.3025823676068,
+     423.197301864624,
+     176.9025682055432,
+     423.197301864624
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "prior_complaint_reference": {
+   "value": "3919826s5839",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.95,
+   "source": "slm",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     178.68970342304394,
+     456.61299482981366,
+     517.782246755517,
+     458.427285194397,
+     517.6127500534058,
+     490.1357425053915,
+     178.52023166158924,
+     488.3214521408081
+    ],
+    "span": [
+     27,
+     39
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.809,
+  "s1_ingest": 16.783,
+  "s15_quality": 192.32,
+  "s15_quality:p1": 192.32,
+  "s4_ocr": 683.156,
+  "s4_ocr:p1": 683.156,
+  "s2b_lid": 0.926,
+  "s2b_lid:p1": 0.926,
+  "s3_classify": 133.284,
+  "s3_classify:p1": 133.284,
+  "s5_validators": 3.908,
+  "s5_slm": 8557.088,
+  "e2e_total": 9575.399000000001
+ },
+ "warnings": [
+  "grounding_rejected:page=1:field=relief_sought:reason=empty"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_letter",
+ "summary_span_count": 3
+}

@@ -1,0 +1,375 @@
+{
+ "doc_id": "complaint_letter_en_v0_photo",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.4816388504350286,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.50/2.00 validator_failures=1(utr_rrn) quality_low handwriting=0.46 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "The Banking Oombudtiman,",
+     "bbox": [
+      224.08720779418945,
+      213.06089749336243,
+      418.85029220581055,
+      213.06089749336243,
+      418.85029220581055,
+      249.33286542892458,
+      224.08720779418945,
+      249.33286542892458
+     ],
+     "confidence": 0.88413734237353,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 0
+    },
+    {
+     "text": "Reterve Bank of Indio",
+     "bbox": [
+      223.34341621398926,
+      247.43352184295657,
+      403.16727447509766,
+      249.55691204071047,
+      402.70044136047363,
+      289.38536472320556,
+      222.87658309936523,
+      287.26197452545165
+     ],
+     "confidence": 0.8279716471831003,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "SubtUnauhaidhctrntranactn dbe",
+     "bbox": [
+      225.28125,
+      302.334375,
+      642.09375,
+      302.334375,
+      642.09375,
+      339.596875,
+      225.28125,
+      339.596875
+     ],
+     "confidence": 0.5089840971190354,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "RECEIVE",
+     "bbox": [
+      643.1749076843262,
+      310.6156484603882,
+      785.9790802001953,
+      304.1004898071289,
+      788.2705535888672,
+      354.6998754501343,
+      645.466381072998,
+      361.2150341033936
+     ],
+     "confidence": 0.6610776356288365,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "I hotd a tavings achount with State Bauk of Indka",
+     "bbox": [
+      223.4426794052124,
+      345.31038665771484,
+      605.5583553314209,
+      349.14566974639894,
+      605.174280166626,
+      387.6942474365235,
+      223.05860424041748,
+      383.8589643478394
+     ],
+     "confidence": 0.79421387460767,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "My accunt rem4er  68978631914858.",
+     "bbox": [
+      224.88254928588867,
+      384.92794761657717,
+      537.8674507141113,
+      384.92794761657717,
+      537.8674507141113,
+      417.90955238342286,
+      224.88254928588867,
+      417.90955238342286
+     ],
+     "confidence": 0.7858014291886127,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 5
+    },
+    {
+     "text": "On 18/07/2926 an amount of Rc 98,200 was",
+     "bbox": [
+      223.14512157440186,
+      417.0590849876404,
+      575.0424041748047,
+      417.0590849876404,
+      575.0424041748047,
+      450.14094085693364,
+      223.14512157440186,
+      450.14094085693364
+     ],
+     "confidence": 0.844213605672121,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "debited wthout my auhoricatin or conent",
+     "bbox": [
+      224.13255214691162,
+      448.09048404693607,
+      564.3002986907959,
+      451.9053499221802,
+      563.8986110687256,
+      487.98509883880615,
+      223.7309160232544,
+      484.17023296356206
+     ],
+     "confidence": 0.7074371507534614,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "The Crantactaw reference is 17935y340535.",
+     "bbox": [
+      226.01319694519043,
+      485.99403285980225,
+      568.7993030548096,
+      485.99403285980225,
+      568.7993030548096,
+      515.0122171401978,
+      226.01319694519043,
+      515.0122171401978
+     ],
+     "confidence": 0.805217808339654,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "Iedthit the branci",
+     "bbox": [
+      225.96041107177734,
+      519.8160514831543,
+      638.0394859313965,
+      519.8160514831543,
+      638.0394859313965,
+      548.9400951385499,
+      225.96041107177734,
+      548.9400951385499
+     ],
+     "confidence": 0.5393634802765317,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Iq",
+     "bbox": [
+      221.95535373687744,
+      551.5035150527955,
+      731.3500785827637,
+      549.5886388778687,
+      731.4870643615723,
+      586.303233909607,
+      222.09233951568604,
+      588.2181100845337
+     ],
+     "confidence": 0.5352694988250732,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": true,
+     "line_index": 10
+    },
+    {
+     "text": "Yours faithfly",
+     "bbox": [
+      220.21875,
+      612.290625,
+      351.84375,
+      612.290625,
+      351.84375,
+      651.246875,
+      220.21875,
+      651.246875
+     ],
+     "confidence": 0.8208253277199609,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "Rajech Kumar Sharma",
+     "bbox": [
+      222.4796848297119,
+      651.8224336624146,
+      401.8953151702881,
+      651.8224336624146,
+      401.8953151702881,
+      687.9338163375855,
+      222.4796848297119,
+      687.9338163375855
+     ],
+     "confidence": 0.7588859169106734,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "18/07/2926",
+   "value_en": null,
+   "normalized": "2926-07-18",
+   "confidence": 0.844213605672121,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     223.14512157440186,
+     417.0590849876404,
+     575.0424041748047,
+     417.0590849876404,
+     575.0424041748047,
+     450.14094085693364,
+     223.14512157440186,
+     450.14094085693364
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "98,200",
+   "value_en": null,
+   "normalized": "98200.00",
+   "confidence": 0.844213605672121,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     223.14512157440186,
+     417.0590849876404,
+     575.0424041748047,
+     417.0590849876404,
+     575.0424041748047,
+     450.14094085693364,
+     223.14512157440186,
+     450.14094085693364
+    ],
+    "span": [
+     30,
+     36
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "17935y340535",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.402608904169827,
+   "source": "regex_validator",
+   "validator_passed": false,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     226.01319694519043,
+     485.99403285980225,
+     568.7993030548096,
+     485.99403285980225,
+     568.7993030548096,
+     515.0122171401978,
+     226.01319694519043,
+     515.0122171401978
+    ],
+    "span": [
+     28,
+     40
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": [
+    "VALIDATOR_FAILED"
+   ]
+  }
+ },
+ "timings_ms": {
+  "s0_read": 1.378,
+  "s1_ingest": 22.308,
+  "s15_quality": 212.211,
+  "s15_quality:p1": 212.211,
+  "s4_ocr": 703.219,
+  "s4_ocr:p1": 703.219,
+  "s2b_lid": 0.882,
+  "s2b_lid:p1": 0.882,
+  "s3_classify": 139.345,
+  "s3_classify:p1": 139.345,
+  "s5_validators": 9.26,
+  "s5_slm": 7073.84,
+  "assemble": 0.204,
+  "s4b_vlm": 1523.814,
+  "s4b_vlm:p1": 1523.814,
+  "e2e_total": 9686.254
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_RESPONSE_INVALID",
+  "tier2_failed:page=1:reason=provider_error:code=PROVIDER_ERROR"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

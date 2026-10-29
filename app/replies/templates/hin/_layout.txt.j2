@@ -1,0 +1,42 @@
+{#-
+  हर हिंदी बाउंस स्वतः-उत्तर का साझा ढाँचा (PRD P1-2, WS-G).
+
+  Structure, identical to the English layout:
+    line 1            subject, from block `subject`
+    line 2            the literal separator `---`
+    everything after  the plain-text body
+
+  Blocks a child must define: `subject`, `defect`, `remedy`.
+  The Hindi here is written and reviewed by hand. It is never produced by the
+  MT engine (app/stages/s6_translate.py) - a machine-translated apology is
+  exactly the artefact nobody can be held to.
+-#}
+{% block subject %}{% endblock %}
+---
+महोदय / महोदया,
+
+हमें लिखने के लिए धन्यवाद। आपकी शिकायत के साथ भेजा गया दस्तावेज़ हम पढ़ नहीं
+सके, इसलिए उसमें दी गई जानकारी अभी तक दर्ज नहीं हुई है।
+
+हमें क्या मिला
+{% block defect %}{% endblock %}
+
+आप क्या कर सकते हैं
+{% block remedy %}{% endblock %}
+{%- if attachment_name %}
+
+प्राप्त संलग्नक: {{ attachment_name }}
+{%- endif %}
+{%- if page_numbers %}
+संबंधित पृष्ठ: {{ page_numbers | join(", ") }}
+{%- endif %}
+
+संदर्भ संख्या: {{ reference_id }}
+
+कृपया सुधारा हुआ दस्तावेज़ इसी संदेश के उत्तर में संलग्न करके भेजें और ऊपर दी
+गई संदर्भ संख्या का उल्लेख करें। आपकी शिकायत हमारे पास सुरक्षित है — वह
+बंद नहीं की गई है और न ही उस पर कोई निर्णय लिया गया है।
+
+शिकायत प्रसंस्करण डेस्क
+यह संदेश स्वचालित रूप से तैयार किया गया है। यदि इसमें कुछ स्पष्ट न हो, तो
+उत्तर दीजिए; उसे एक व्यक्ति पढ़ेगा।

@@ -1,0 +1,1197 @@
+{
+  "harness_version": "1.1.0",
+  "corpus": {
+    "dir": "E:\\pythonprojects\\python_ocr\\corpus",
+    "seed": 1729,
+    "generator_version": "1.2.0",
+    "documents_total": 295,
+    "caveat": "Font-rendered handwriting is not real handwriting. This corpus validates plumbing, schema, routing and throughput. It does NOT validate handwriting accuracy — measure that on iiit-indic-hw-words and real complaint pages."
+  },
+  "predictions_dir": "E:\\pythonprojects\\python_ocr\\docs\\eval\\predictions",
+  "split": {
+    "name": "dev",
+    "final": false,
+    "locked_variants": [
+      3,
+      4
+    ],
+    "documents_selected": 177,
+    "documents_withheld": 118,
+    "documents_scored": 177,
+    "missing_predictions": []
+  },
+  "settings": {
+    "iou_threshold": 0.5,
+    "escalation_reference": "quality_or_hand",
+    "rapidfuzz": true,
+    "envelope_field_aliases": {
+      "amount": "disputed_amount",
+      "utr_rrn": "transaction_reference",
+      "card_fragment": "card_last_four",
+      "prior_complaint_reference": "prior_complaint_ref"
+    }
+  },
+  "recognition": {
+    "overall": {
+      "lines": 4527,
+      "ref_chars": 74595,
+      "ref_words": 10719,
+      "cer": 0.4830216502446545,
+      "wer": 0.6284168299281649
+    },
+    "by_script": {
+      "Deva": {
+        "lines": 630,
+        "ref_chars": 15335,
+        "ref_words": 2676,
+        "cer": 0.5179002282360613,
+        "wer": 0.7324364723467862
+      },
+      "Latn": {
+        "lines": 3897,
+        "ref_chars": 59260,
+        "ref_words": 8043,
+        "cer": 0.4739959500506244,
+        "wer": 0.5938082804923536
+      }
+    },
+    "by_profile": {
+      "bounce": {
+        "lines": 762,
+        "ref_chars": 12496,
+        "ref_words": 1794,
+        "cer": 1.0,
+        "wer": 1.0
+      },
+      "clean": {
+        "lines": 717,
+        "ref_chars": 12081,
+        "ref_words": 1739,
+        "cer": 0.13591590100157272,
+        "wer": 0.21506612995974697
+      },
+      "heavy": {
+        "lines": 762,
+        "ref_chars": 12488,
+        "ref_words": 1796,
+        "cer": 0.5246636771300448,
+        "wer": 0.7371937639198218
+      },
+      "light": {
+        "lines": 762,
+        "ref_chars": 12508,
+        "ref_words": 1800,
+        "cer": 0.20546850015989768,
+        "wer": 0.37777777777777777
+      },
+      "photo": {
+        "lines": 762,
+        "ref_chars": 12503,
+        "ref_words": 1798,
+        "cer": 0.6542429816843958,
+        "wer": 0.8654060066740823
+      },
+      "scan": {
+        "lines": 762,
+        "ref_chars": 12519,
+        "ref_words": 1792,
+        "cer": 0.3667225816758527,
+        "wer": 0.5625
+      }
+    },
+    "by_script_modality_profile": {
+      "Deva|hand|bounce": {
+        "lines": 51,
+        "ref_chars": 1524,
+        "ref_words": 245,
+        "cer": 1.0,
+        "wer": 1.0
+      },
+      "Deva|hand|clean": {
+        "lines": 51,
+        "ref_chars": 1524,
+        "ref_words": 245,
+        "cer": 0.24868766404199474,
+        "wer": 0.4163265306122449
+      },
+      "Deva|hand|heavy": {
+        "lines": 51,
+        "ref_chars": 1527,
+        "ref_words": 245,
+        "cer": 0.7806155861165684,
+        "wer": 1.0326530612244897
+      },
+      "Deva|hand|light": {
+        "lines": 51,
+        "ref_chars": 1518,
+        "ref_words": 245,
+        "cer": 0.2595520421607378,
+        "wer": 0.4816326530612245
+      },
+      "Deva|hand|photo": {
+        "lines": 51,
+        "ref_chars": 1521,
+        "ref_words": 245,
+        "cer": 0.6495726495726496,
+        "wer": 0.9551020408163265
+      },
+      "Deva|hand|scan": {
+        "lines": 51,
+        "ref_chars": 1511,
+        "ref_words": 245,
+        "cer": 0.700198544010589,
+        "wer": 0.926530612244898
+      },
+      "Deva|print|bounce": {
+        "lines": 54,
+        "ref_chars": 1035,
+        "ref_words": 201,
+        "cer": 1.0,
+        "wer": 1.0
+      },
+      "Deva|print|clean": {
+        "lines": 54,
+        "ref_chars": 1035,
+        "ref_words": 201,
+        "cer": 0.0463768115942029,
+        "wer": 0.2537313432835821
+      },
+      "Deva|print|heavy": {
+        "lines": 54,
+        "ref_chars": 1035,
+        "ref_words": 201,
+        "cer": 0.28309178743961355,
+        "wer": 0.7263681592039801
+      },
+      "Deva|print|light": {
+        "lines": 54,
+        "ref_chars": 1035,
+        "ref_words": 201,
+        "cer": 0.08985507246376812,
+        "wer": 0.417910447761194
+      },
+      "Deva|print|photo": {
+        "lines": 54,
+        "ref_chars": 1035,
+        "ref_words": 201,
+        "cer": 0.7555555555555555,
+        "wer": 0.945273631840796
+      },
+      "Deva|print|scan": {
+        "lines": 54,
+        "ref_chars": 1035,
+        "ref_words": 201,
+        "cer": 0.15072463768115943,
+        "wer": 0.5422885572139303
+      },
+      "Latn|hand|bounce": {
+        "lines": 69,
+        "ref_chars": 1827,
+        "ref_words": 270,
+        "cer": 1.0,
+        "wer": 1.0
+      },
+      "Latn|hand|clean": {
+        "lines": 69,
+        "ref_chars": 1824,
+        "ref_words": 270,
+        "cer": 0.25548245614035087,
+        "wer": 0.3333333333333333
+      },
+      "Latn|hand|heavy": {
+        "lines": 69,
+        "ref_chars": 1820,
+        "ref_words": 270,
+        "cer": 0.6917582417582417,
+        "wer": 0.9111111111111111
+      },
+      "Latn|hand|light": {
+        "lines": 69,
+        "ref_chars": 1810,
+        "ref_words": 270,
+        "cer": 0.26464088397790053,
+        "wer": 0.40370370370370373
+      },
+      "Latn|hand|photo": {
+        "lines": 69,
+        "ref_chars": 1824,
+        "ref_words": 270,
+        "cer": 0.8125,
+        "wer": 1.0444444444444445
+      },
+      "Latn|hand|scan": {
+        "lines": 69,
+        "ref_chars": 1830,
+        "ref_words": 270,
+        "cer": 0.5644808743169399,
+        "wer": 0.7703703703703704
+      },
+      "Latn|print|bounce": {
+        "lines": 588,
+        "ref_chars": 8110,
+        "ref_words": 1078,
+        "cer": 1.0,
+        "wer": 1.0
+      },
+      "Latn|print|clean": {
+        "lines": 543,
+        "ref_chars": 7698,
+        "ref_words": 1023,
+        "cer": 0.09729799948038452,
+        "wer": 0.12805474095796676
+      },
+      "Latn|print|heavy": {
+        "lines": 588,
+        "ref_chars": 8106,
+        "ref_words": 1080,
+        "cer": 0.4697754749568221,
+        "wer": 0.6287037037037037
+      },
+      "Latn|print|light": {
+        "lines": 588,
+        "ref_chars": 8145,
+        "ref_words": 1084,
+        "cer": 0.1969306322897483,
+        "wer": 0.3404059040590406
+      },
+      "Latn|print|photo": {
+        "lines": 588,
+        "ref_chars": 8123,
+        "ref_words": 1082,
+        "cer": 0.6066724116705651,
+        "wer": 0.7855822550831792
+      },
+      "Latn|print|scan": {
+        "lines": 588,
+        "ref_chars": 8143,
+        "ref_words": 1076,
+        "cer": 0.2878545990421221,
+        "wer": 0.4312267657992565
+      }
+    }
+  },
+  "detection": {
+    "by_profile": {
+      "bounce": {
+        "gt_lines": 762,
+        "matched": 0,
+        "spurious": 0,
+        "mean_iou": null,
+        "line_recall": 0.0
+      },
+      "clean": {
+        "gt_lines": 717,
+        "matched": 717,
+        "spurious": 9,
+        "mean_iou": 0.7671733439436369,
+        "line_recall": 0.9553695955369595
+      },
+      "heavy": {
+        "gt_lines": 762,
+        "matched": 675,
+        "spurious": 91,
+        "mean_iou": 0.3562179921680852,
+        "line_recall": 0.2847769028871391
+      },
+      "light": {
+        "gt_lines": 762,
+        "matched": 754,
+        "spurious": 8,
+        "mean_iou": 0.5431524627146924,
+        "line_recall": 0.5761154855643045
+      },
+      "photo": {
+        "gt_lines": 762,
+        "matched": 672,
+        "spurious": 103,
+        "mean_iou": 0.2655138726005443,
+        "line_recall": 0.12335958005249344
+      },
+      "scan": {
+        "gt_lines": 762,
+        "matched": 736,
+        "spurious": 37,
+        "mean_iou": 0.4498702237470825,
+        "line_recall": 0.44750656167979
+      }
+    },
+    "overall": {
+      "gt_lines": 4527,
+      "matched": 3554,
+      "spurious": 248,
+      "mean_iou": 0.48102903665541413,
+      "line_recall": 0.39231278992710406
+    }
+  },
+  "fields": {
+    "gt_occurrences": {
+      "account_number": 126,
+      "bank_name": 123,
+      "card_last_four": 33,
+      "complainant_address": 54,
+      "complainant_contact": 54,
+      "complainant_name": 108,
+      "complaint_summary": 90,
+      "disputed_amount": 141,
+      "ifsc_code": 90,
+      "micr_code": 18,
+      "prior_complaint_ref": 72,
+      "relief_sought": 36,
+      "transaction_date": 123,
+      "transaction_reference": 123
+    },
+    "by_field": {
+      "account_number": {
+        "tp": 70,
+        "fp": 16,
+        "fn": 56,
+        "precision": 0.813953488372093,
+        "recall": 0.5555555555555556,
+        "f1": 0.6603773584905661
+      },
+      "bank_name": {
+        "tp": 81,
+        "fp": 13,
+        "fn": 42,
+        "precision": 0.8617021276595744,
+        "recall": 0.6585365853658537,
+        "f1": 0.7465437788018433
+      },
+      "card_last_four": {
+        "tp": 22,
+        "fp": 2,
+        "fn": 11,
+        "precision": 0.9166666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.7719298245614035
+      },
+      "complainant_address": {
+        "tp": 6,
+        "fp": 3,
+        "fn": 48,
+        "precision": 0.6666666666666666,
+        "recall": 0.1111111111111111,
+        "f1": 0.1904761904761905
+      },
+      "complainant_contact": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 54,
+        "precision": null,
+        "recall": 0.0,
+        "f1": null
+      },
+      "complainant_name": {
+        "tp": 7,
+        "fp": 2,
+        "fn": 101,
+        "precision": 0.7777777777777778,
+        "recall": 0.06481481481481481,
+        "f1": 0.11965811965811966
+      },
+      "complaint_summary": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 90,
+        "precision": null,
+        "recall": 0.0,
+        "f1": null
+      },
+      "disputed_amount": {
+        "tp": 67,
+        "fp": 19,
+        "fn": 74,
+        "precision": 0.7790697674418605,
+        "recall": 0.475177304964539,
+        "f1": 0.590308370044053
+      },
+      "ifsc_code": {
+        "tp": 62,
+        "fp": 7,
+        "fn": 28,
+        "precision": 0.8985507246376812,
+        "recall": 0.6888888888888889,
+        "f1": 0.779874213836478
+      },
+      "micr_code": {
+        "tp": 13,
+        "fp": 2,
+        "fn": 5,
+        "precision": 0.8666666666666667,
+        "recall": 0.7222222222222222,
+        "f1": 0.7878787878787877
+      },
+      "prior_complaint_ref": {
+        "tp": 13,
+        "fp": 5,
+        "fn": 59,
+        "precision": 0.7222222222222222,
+        "recall": 0.18055555555555555,
+        "f1": 0.28888888888888886
+      },
+      "relief_sought": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 35,
+        "precision": 0.25,
+        "recall": 0.027777777777777776,
+        "f1": 0.049999999999999996
+      },
+      "transaction_date": {
+        "tp": 101,
+        "fp": 43,
+        "fn": 22,
+        "precision": 0.7013888888888888,
+        "recall": 0.8211382113821138,
+        "f1": 0.7565543071161047
+      },
+      "transaction_reference": {
+        "tp": 65,
+        "fp": 7,
+        "fn": 58,
+        "precision": 0.9027777777777778,
+        "recall": 0.5284552845528455,
+        "f1": 0.6666666666666667
+      }
+    },
+    "by_source": {
+      "lookup_table": {
+        "tp": 81,
+        "fp": 13,
+        "fn": 1110,
+        "precision": 0.8617021276595744,
+        "recall": 0.06801007556675064,
+        "f1": 0.12607003891050583,
+        "gt_total": 1191
+      },
+      "regex_validator": {
+        "tp": 400,
+        "fp": 96,
+        "fn": 791,
+        "precision": 0.8064516129032258,
+        "recall": 0.33585222502099077,
+        "f1": 0.47421458209839956,
+        "gt_total": 1191
+      },
+      "slm": {
+        "tp": 27,
+        "fp": 13,
+        "fn": 1164,
+        "precision": 0.675,
+        "recall": 0.022670025188916875,
+        "f1": 0.0438667749796913,
+        "gt_total": 1191
+      }
+    },
+    "by_field_source": {
+      "account_number|regex_validator": {
+        "tp": 70,
+        "fp": 16,
+        "fn": 56,
+        "precision": 0.813953488372093,
+        "recall": 0.5555555555555556,
+        "f1": 0.6603773584905661,
+        "gt_total": 126
+      },
+      "bank_name|lookup_table": {
+        "tp": 81,
+        "fp": 13,
+        "fn": 42,
+        "precision": 0.8617021276595744,
+        "recall": 0.6585365853658537,
+        "f1": 0.7465437788018433,
+        "gt_total": 123
+      },
+      "card_last_four|regex_validator": {
+        "tp": 22,
+        "fp": 2,
+        "fn": 11,
+        "precision": 0.9166666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.7719298245614035,
+        "gt_total": 33
+      },
+      "complainant_address|slm": {
+        "tp": 6,
+        "fp": 3,
+        "fn": 48,
+        "precision": 0.6666666666666666,
+        "recall": 0.1111111111111111,
+        "f1": 0.1904761904761905,
+        "gt_total": 54
+      },
+      "complainant_name|slm": {
+        "tp": 7,
+        "fp": 2,
+        "fn": 101,
+        "precision": 0.7777777777777778,
+        "recall": 0.06481481481481481,
+        "f1": 0.11965811965811966,
+        "gt_total": 108
+      },
+      "disputed_amount|regex_validator": {
+        "tp": 67,
+        "fp": 19,
+        "fn": 74,
+        "precision": 0.7790697674418605,
+        "recall": 0.475177304964539,
+        "f1": 0.590308370044053,
+        "gt_total": 141
+      },
+      "ifsc_code|regex_validator": {
+        "tp": 62,
+        "fp": 7,
+        "fn": 28,
+        "precision": 0.8985507246376812,
+        "recall": 0.6888888888888889,
+        "f1": 0.779874213836478,
+        "gt_total": 90
+      },
+      "micr_code|regex_validator": {
+        "tp": 13,
+        "fp": 2,
+        "fn": 5,
+        "precision": 0.8666666666666667,
+        "recall": 0.7222222222222222,
+        "f1": 0.7878787878787877,
+        "gt_total": 18
+      },
+      "prior_complaint_ref|slm": {
+        "tp": 13,
+        "fp": 5,
+        "fn": 59,
+        "precision": 0.7222222222222222,
+        "recall": 0.18055555555555555,
+        "f1": 0.28888888888888886,
+        "gt_total": 72
+      },
+      "relief_sought|slm": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 35,
+        "precision": 0.25,
+        "recall": 0.027777777777777776,
+        "f1": 0.049999999999999996,
+        "gt_total": 36
+      },
+      "transaction_date|regex_validator": {
+        "tp": 101,
+        "fp": 43,
+        "fn": 22,
+        "precision": 0.7013888888888888,
+        "recall": 0.8211382113821138,
+        "f1": 0.7565543071161047,
+        "gt_total": 123
+      },
+      "transaction_reference|regex_validator": {
+        "tp": 65,
+        "fp": 7,
+        "fn": 58,
+        "precision": 0.9027777777777778,
+        "recall": 0.5284552845528455,
+        "f1": 0.6666666666666667,
+        "gt_total": 123
+      }
+    },
+    "bilingual": {
+      "gt_bilingual_fields": 198,
+      "claimed": 29,
+      "value_is_native": 13,
+      "value_is_translation": 0,
+      "value_en_correct": 9,
+      "value_en_wrong": 10,
+      "value_en_absent": 10
+    }
+  },
+  "schema": {
+    "checked": 177,
+    "valid": 177,
+    "validity_rate": 1.0,
+    "examples": []
+  },
+  "escalation": {
+    "reference_rule": "quality_or_hand",
+    "tp": 23,
+    "fp": 1,
+    "fn": 109,
+    "precision": 0.9583333333333334,
+    "recall": 0.17424242424242425,
+    "f1": 0.29487179487179493
+  },
+  "quality_gate": {
+    "scored": 177,
+    "expectation_satisfied_rate": 0.9152542372881356,
+    "confusion": {
+      "clean": {
+        "accept": 42,
+        "repair": 15,
+        "bounce": 0
+      },
+      "degraded": {
+        "accept": 15,
+        "repair": 75,
+        "bounce": 0
+      },
+      "bounce": {
+        "accept": 0,
+        "repair": 0,
+        "bounce": 30
+      }
+    }
+  },
+  "language_id": {
+    "overall": {
+      "gt_lines": 4527,
+      "matched": 3554,
+      "correct": 3055,
+      "accuracy_matched": 0.8595948227349466,
+      "accuracy_all_lines": 0.674839849790148,
+      "coverage": 0.7850673735365584
+    },
+    "by_script_modality": {
+      "Deva|hand": {
+        "gt_lines": 306,
+        "matched": 240,
+        "correct": 100,
+        "accuracy_matched": 0.4166666666666667,
+        "accuracy_all_lines": 0.32679738562091504,
+        "coverage": 0.7843137254901961
+      },
+      "Deva|print": {
+        "gt_lines": 324,
+        "matched": 261,
+        "correct": 197,
+        "accuracy_matched": 0.7547892720306514,
+        "accuracy_all_lines": 0.6080246913580247,
+        "coverage": 0.8055555555555556
+      },
+      "Latn|hand": {
+        "gt_lines": 414,
+        "matched": 319,
+        "correct": 284,
+        "accuracy_matched": 0.890282131661442,
+        "accuracy_all_lines": 0.6859903381642513,
+        "coverage": 0.7705314009661836
+      },
+      "Latn|print": {
+        "gt_lines": 3483,
+        "matched": 2734,
+        "correct": 2474,
+        "accuracy_matched": 0.9049012435991222,
+        "accuracy_all_lines": 0.7103072064312375,
+        "coverage": 0.7849554981337927
+      }
+    }
+  },
+  "latency_ms": {
+    "by_stage": {
+      "assemble": {
+        "n": 28,
+        "p50": 0.242,
+        "p95": 61.40144999999997
+      },
+      "e2e_total": {
+        "n": 177,
+        "p50": 5861.198,
+        "p95": 22608.61059999999
+      },
+      "s0_read": {
+        "n": 177,
+        "p50": 0.996,
+        "p95": 1.3795999999999997
+      },
+      "s15_quality": {
+        "n": 177,
+        "p50": 190.668,
+        "p95": 251.77439999999996
+      },
+      "s15_quality:p1": {
+        "n": 177,
+        "p50": 190.668,
+        "p95": 251.77439999999996
+      },
+      "s1_ingest": {
+        "n": 177,
+        "p50": 21.784,
+        "p95": 51.99319999999999
+      },
+      "s2b_lid": {
+        "n": 147,
+        "p50": 1.242,
+        "p95": 5.091399999999999
+      },
+      "s2b_lid:p1": {
+        "n": 147,
+        "p50": 1.242,
+        "p95": 5.091399999999999
+      },
+      "s3_classify": {
+        "n": 147,
+        "p50": 173.781,
+        "p95": 341.9386
+      },
+      "s3_classify:p1": {
+        "n": 147,
+        "p50": 173.781,
+        "p95": 341.9386
+      },
+      "s4_ocr": {
+        "n": 147,
+        "p50": 751.036,
+        "p95": 1727.1027
+      },
+      "s4_ocr:p1": {
+        "n": 147,
+        "p50": 751.036,
+        "p95": 1727.1027
+      },
+      "s4b_vlm": {
+        "n": 28,
+        "p50": 1517.0725,
+        "p95": 1777.08075
+      },
+      "s4b_vlm:p1": {
+        "n": 28,
+        "p50": 1517.0725,
+        "p95": 1777.08075
+      },
+      "s5_slm": {
+        "n": 147,
+        "p50": 5316.891,
+        "p95": 21845.131499999992
+      },
+      "s5_validators": {
+        "n": 147,
+        "p50": 5.53,
+        "p95": 15.509899999999996
+      }
+    },
+    "by_stage_profile": {
+      "assemble|clean": {
+        "n": 2,
+        "p50": 0.23349999999999999,
+        "p95": 0.24295
+      },
+      "assemble|heavy": {
+        "n": 6,
+        "p50": 0.225,
+        "p95": 0.31525000000000003
+      },
+      "assemble|light": {
+        "n": 7,
+        "p50": 0.24,
+        "p95": 0.5163999999999999
+      },
+      "assemble|photo": {
+        "n": 8,
+        "p50": 0.2965,
+        "p95": 31.925849999999972
+      },
+      "assemble|scan": {
+        "n": 5,
+        "p50": 0.345,
+        "p95": 69.08319999999999
+      },
+      "e2e_total|bounce": {
+        "n": 30,
+        "p50": 137.5435,
+        "p95": 182.49144999999996
+      },
+      "e2e_total|clean": {
+        "n": 27,
+        "p50": 5942.095,
+        "p95": 22606.433999999997
+      },
+      "e2e_total|heavy": {
+        "n": 30,
+        "p50": 6237.458500000001,
+        "p95": 26079.24084999998
+      },
+      "e2e_total|light": {
+        "n": 30,
+        "p50": 6994.714,
+        "p95": 18545.37435
+      },
+      "e2e_total|photo": {
+        "n": 30,
+        "p50": 8269.7305,
+        "p95": 23775.60079999999
+      },
+      "e2e_total|scan": {
+        "n": 30,
+        "p50": 6729.737499999999,
+        "p95": 22019.288399999994
+      },
+      "s0_read|bounce": {
+        "n": 30,
+        "p50": 0.944,
+        "p95": 1.4388999999999994
+      },
+      "s0_read|clean": {
+        "n": 27,
+        "p50": 1.122,
+        "p95": 1.4426999999999999
+      },
+      "s0_read|heavy": {
+        "n": 30,
+        "p50": 0.984,
+        "p95": 1.3113499999999998
+      },
+      "s0_read|light": {
+        "n": 30,
+        "p50": 1.0455,
+        "p95": 1.2839999999999998
+      },
+      "s0_read|photo": {
+        "n": 30,
+        "p50": 0.9495,
+        "p95": 1.4199499999999998
+      },
+      "s0_read|scan": {
+        "n": 30,
+        "p50": 0.992,
+        "p95": 1.2133
+      },
+      "s15_quality|bounce": {
+        "n": 30,
+        "p50": 135.7945,
+        "p95": 170.61349999999996
+      },
+      "s15_quality|clean": {
+        "n": 27,
+        "p50": 199.494,
+        "p95": 245.44289999999998
+      },
+      "s15_quality|heavy": {
+        "n": 30,
+        "p50": 195.72199999999998,
+        "p95": 264.05815
+      },
+      "s15_quality|light": {
+        "n": 30,
+        "p50": 204.7905,
+        "p95": 254.82969999999997
+      },
+      "s15_quality|photo": {
+        "n": 30,
+        "p50": 191.272,
+        "p95": 252.33299999999988
+      },
+      "s15_quality|scan": {
+        "n": 30,
+        "p50": 197.8655,
+        "p95": 234.7989
+      },
+      "s15_quality:p1|bounce": {
+        "n": 30,
+        "p50": 135.7945,
+        "p95": 170.61349999999996
+      },
+      "s15_quality:p1|clean": {
+        "n": 27,
+        "p50": 199.494,
+        "p95": 245.44289999999998
+      },
+      "s15_quality:p1|heavy": {
+        "n": 30,
+        "p50": 195.72199999999998,
+        "p95": 264.05815
+      },
+      "s15_quality:p1|light": {
+        "n": 30,
+        "p50": 204.7905,
+        "p95": 254.82969999999997
+      },
+      "s15_quality:p1|photo": {
+        "n": 30,
+        "p50": 191.272,
+        "p95": 252.33299999999988
+      },
+      "s15_quality:p1|scan": {
+        "n": 30,
+        "p50": 197.8655,
+        "p95": 234.7989
+      },
+      "s1_ingest|bounce": {
+        "n": 30,
+        "p50": 7.911,
+        "p95": 10.658399999999999
+      },
+      "s1_ingest|clean": {
+        "n": 27,
+        "p50": 43.707,
+        "p95": 64.2709
+      },
+      "s1_ingest|heavy": {
+        "n": 30,
+        "p50": 23.2195,
+        "p95": 31.59039999999999
+      },
+      "s1_ingest|light": {
+        "n": 30,
+        "p50": 44.754999999999995,
+        "p95": 57.87464999999998
+      },
+      "s1_ingest|photo": {
+        "n": 30,
+        "p50": 17.45,
+        "p95": 24.61604999999999
+      },
+      "s1_ingest|scan": {
+        "n": 30,
+        "p50": 33.8535,
+        "p95": 40.8195
+      },
+      "s2b_lid|clean": {
+        "n": 27,
+        "p50": 1.477,
+        "p95": 5.309099999999999
+      },
+      "s2b_lid|heavy": {
+        "n": 30,
+        "p50": 1.1425,
+        "p95": 4.99355
+      },
+      "s2b_lid|light": {
+        "n": 30,
+        "p50": 1.4095,
+        "p95": 4.93735
+      },
+      "s2b_lid|photo": {
+        "n": 30,
+        "p50": 1.1155,
+        "p95": 5.299449999999999
+      },
+      "s2b_lid|scan": {
+        "n": 30,
+        "p50": 1.1324999999999998,
+        "p95": 4.944399999999999
+      },
+      "s2b_lid:p1|clean": {
+        "n": 27,
+        "p50": 1.477,
+        "p95": 5.309099999999999
+      },
+      "s2b_lid:p1|heavy": {
+        "n": 30,
+        "p50": 1.1425,
+        "p95": 4.99355
+      },
+      "s2b_lid:p1|light": {
+        "n": 30,
+        "p50": 1.4095,
+        "p95": 4.93735
+      },
+      "s2b_lid:p1|photo": {
+        "n": 30,
+        "p50": 1.1155,
+        "p95": 5.299449999999999
+      },
+      "s2b_lid:p1|scan": {
+        "n": 30,
+        "p50": 1.1324999999999998,
+        "p95": 4.944399999999999
+      },
+      "s3_classify|clean": {
+        "n": 27,
+        "p50": 294.124,
+        "p95": 345.29040000000003
+      },
+      "s3_classify|heavy": {
+        "n": 30,
+        "p50": 156.643,
+        "p95": 198.9975
+      },
+      "s3_classify|light": {
+        "n": 30,
+        "p50": 304.6885,
+        "p95": 364.7314999999999
+      },
+      "s3_classify|photo": {
+        "n": 30,
+        "p50": 127.47800000000001,
+        "p95": 155.25674999999998
+      },
+      "s3_classify|scan": {
+        "n": 30,
+        "p50": 220.732,
+        "p95": 272.24485
+      },
+      "s3_classify:p1|clean": {
+        "n": 27,
+        "p50": 294.124,
+        "p95": 345.29040000000003
+      },
+      "s3_classify:p1|heavy": {
+        "n": 30,
+        "p50": 156.643,
+        "p95": 198.9975
+      },
+      "s3_classify:p1|light": {
+        "n": 30,
+        "p50": 304.6885,
+        "p95": 364.7314999999999
+      },
+      "s3_classify:p1|photo": {
+        "n": 30,
+        "p50": 127.47800000000001,
+        "p95": 155.25674999999998
+      },
+      "s3_classify:p1|scan": {
+        "n": 30,
+        "p50": 220.732,
+        "p95": 272.24485
+      },
+      "s4_ocr|clean": {
+        "n": 27,
+        "p50": 798.161,
+        "p95": 1969.0793
+      },
+      "s4_ocr|heavy": {
+        "n": 30,
+        "p50": 759.058,
+        "p95": 1545.78515
+      },
+      "s4_ocr|light": {
+        "n": 30,
+        "p50": 741.862,
+        "p95": 1731.4957
+      },
+      "s4_ocr|photo": {
+        "n": 30,
+        "p50": 700.768,
+        "p95": 1618.4670999999998
+      },
+      "s4_ocr|scan": {
+        "n": 30,
+        "p50": 745.653,
+        "p95": 1643.4692999999997
+      },
+      "s4_ocr:p1|clean": {
+        "n": 27,
+        "p50": 798.161,
+        "p95": 1969.0793
+      },
+      "s4_ocr:p1|heavy": {
+        "n": 30,
+        "p50": 759.058,
+        "p95": 1545.78515
+      },
+      "s4_ocr:p1|light": {
+        "n": 30,
+        "p50": 741.862,
+        "p95": 1731.4957
+      },
+      "s4_ocr:p1|photo": {
+        "n": 30,
+        "p50": 700.768,
+        "p95": 1618.4670999999998
+      },
+      "s4_ocr:p1|scan": {
+        "n": 30,
+        "p50": 745.653,
+        "p95": 1643.4692999999997
+      },
+      "s4b_vlm|clean": {
+        "n": 2,
+        "p50": 727.1265000000001,
+        "p95": 1001.9113500000001
+      },
+      "s4b_vlm|heavy": {
+        "n": 6,
+        "p50": 1721.0425,
+        "p95": 1779.53225
+      },
+      "s4b_vlm|light": {
+        "n": 7,
+        "p50": 1333.229,
+        "p95": 1438.9009999999998
+      },
+      "s4b_vlm|photo": {
+        "n": 8,
+        "p50": 1517.0725,
+        "p95": 1529.84945
+      },
+      "s4b_vlm|scan": {
+        "n": 5,
+        "p50": 1656.013,
+        "p95": 2255.4726
+      },
+      "s4b_vlm:p1|clean": {
+        "n": 2,
+        "p50": 727.1265000000001,
+        "p95": 1001.9113500000001
+      },
+      "s4b_vlm:p1|heavy": {
+        "n": 6,
+        "p50": 1721.0425,
+        "p95": 1779.53225
+      },
+      "s4b_vlm:p1|light": {
+        "n": 7,
+        "p50": 1333.229,
+        "p95": 1438.9009999999998
+      },
+      "s4b_vlm:p1|photo": {
+        "n": 8,
+        "p50": 1517.0725,
+        "p95": 1529.84945
+      },
+      "s4b_vlm:p1|scan": {
+        "n": 5,
+        "p50": 1656.013,
+        "p95": 2255.4726
+      },
+      "s5_slm|clean": {
+        "n": 27,
+        "p50": 4722.849,
+        "p95": 20127.099499999997
+      },
+      "s5_slm|heavy": {
+        "n": 30,
+        "p50": 5011.092000000001,
+        "p95": 23448.87344999999
+      },
+      "s5_slm|light": {
+        "n": 30,
+        "p50": 5349.0395,
+        "p95": 15922.44105
+      },
+      "s5_slm|photo": {
+        "n": 30,
+        "p50": 6185.4625,
+        "p95": 20182.776599999987
+      },
+      "s5_slm|scan": {
+        "n": 30,
+        "p50": 5011.947,
+        "p95": 19953.297599999987
+      },
+      "s5_validators|clean": {
+        "n": 27,
+        "p50": 5.842,
+        "p95": 13.3657
+      },
+      "s5_validators|heavy": {
+        "n": 30,
+        "p50": 5.49,
+        "p95": 22.115849999999966
+      },
+      "s5_validators|light": {
+        "n": 30,
+        "p50": 5.8345,
+        "p95": 14.776299999999996
+      },
+      "s5_validators|photo": {
+        "n": 30,
+        "p50": 5.4065,
+        "p95": 28.959049999999994
+      },
+      "s5_validators|scan": {
+        "n": 30,
+        "p50": 5.406000000000001,
+        "p95": 12.815299999999999
+      }
+    }
+  }
+}

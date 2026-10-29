@@ -1,0 +1,467 @@
+{
+ "doc_id": "photo_evidence_v0_photo",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.6148823440750449,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.50/2.00 validator_failures=1(utr_rrn) quality_low handwriting=0.07 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "ANSACTION RECEIPT",
+     "bbox": [
+      133.18324490597374,
+      73.76364199320476,
+      325.50754456771045,
+      73.76364199320476,
+      325.50754456771045,
+      101.22177467346191,
+      133.18324490597374,
+      101.22177467346191
+     ],
+     "confidence": 0.974746006376603,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "te",
+     "bbox": [
+      127.10402960526315,
+      126.57968749999999,
+      144.86307565789474,
+      126.57968749999999,
+      144.86307565789474,
+      144.69947916666666,
+      127.10402960526315,
+      144.69947916666666
+     ],
+     "confidence": 0.8377496898174286,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "16/03/2826",
+     "bbox": [
+      256.05923474462406,
+      121.4794040997823,
+      351.8075260865061,
+      121.4794040997823,
+      351.8075260865061,
+      145.6580959002177,
+      256.05923474462406,
+      145.6580959002177
+     ],
+     "confidence": 0.9033462405204773,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "ink",
+     "bbox": [
+      118.94596782483552,
+      155.530908203125,
+      149.97672954358552,
+      155.530908203125,
+      149.97672954358552,
+      180.97950846354166,
+      118.94596782483552,
+      180.97950846354166
+     ],
+     "confidence": 0.8645197749137878,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "State Bank of India",
+     "bbox": [
+      254.61869689037925,
+      152.95851332346598,
+      432.5764999891582,
+      154.1853531519572,
+      432.40864628239683,
+      179.53625113169352,
+      254.45081221429925,
+      178.3094113032023
+     ],
+     "confidence": 0.9528435029481587,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "K",
+     "bbox": [
+      112.66687654194078,
+      185.36385091145834,
+      142.048583984375,
+      185.36385091145834,
+      142.048583984375,
+      213.27156575520834,
+      112.66687654194078,
+      213.27156575520834
+     ],
+     "confidence": 0.550950288772583,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "xxxxxx1291",
+     "bbox": [
+      256.05923474462406,
+      185.67523743311563,
+      351.8075260865061,
+      185.67523743311563,
+      351.8075260865061,
+      209.853929233551,
+      256.05923474462406,
+      209.853929233551
+     ],
+     "confidence": 0.6709712624549866,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "Card",
+     "bbox": [
+      105.96414820771469,
+      216.83537651697793,
+      152.81053058724655,
+      216.83537651697793,
+      152.81053058724655,
+      248.06670681635538,
+      105.96414820771469,
+      248.06670681635538
+     ],
+     "confidence": 0.6589228585362434,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "xxxxx0x x00x6355",
+     "bbox": [
+      255.67321767305071,
+      218.4147123972575,
+      431.3481639058966,
+      218.4147123972575,
+      431.3481639058966,
+      243.38112093607583,
+      255.67321767305071,
+      243.38112093607583
+     ],
+     "confidence": 0.5975700132548809,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "Amount",
+     "bbox": [
+      105.73276868619416,
+      250.7680548032125,
+      172.3231523664374,
+      250.7680548032125,
+      172.3231523664374,
+      276.2590127309163,
+      105.73276868619416,
+      276.2590127309163
+     ],
+     "confidence": 0.9601772328217825,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "RS 4.:500.00",
+     "bbox": [
+      253.8851730949,
+      250.75909665425618,
+      369.20364269457366,
+      250.75909665425618,
+      369.20364269457366,
+      275.23257001241046,
+      253.8851730949,
+      275.23257001241046
+     ],
+     "confidence": 0.7695022324721018,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 10
+    },
+    {
+     "text": "RRN",
+     "bbox": [
+      102.25827437952945,
+      280.35631523132326,
+      148.39797562047053,
+      280.35631523132326,
+      148.39797562047053,
+      309.83118476867674,
+      102.25827437952945,
+      309.83118476867674
+     ],
+     "confidence": 0.8526221513748169,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "7305714220308",
+     "bbox": [
+      254.90632443679007,
+      282.8634909947713,
+      369.19729398426256,
+      282.8634909947713,
+      369.19729398426256,
+      307.3240090052287,
+      254.90632443679007,
+      307.3240090052287
+     ],
+     "confidence": 0.7900669826911046,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "Status",
+     "bbox": [
+      103.95307033940365,
+      312.31099630991616,
+      161.36752364509985,
+      315.97230396270754,
+      159.6705288636057,
+      343.67582988739014,
+      102.25607555790951,
+      340.0145222345988
+     ],
+     "confidence": 0.9524724185466766,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    },
+    {
+     "text": "FAIED",
+     "bbox": [
+      252.90273340124833,
+      313.95253365834554,
+      318.431148177699,
+      313.95253365834554,
+      318.431148177699,
+      339.3953830083211,
+      252.90273340124833,
+      339.3953830083211
+     ],
+     "confidence": 0.8851028323173523,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 14
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "16/03/2826",
+   "value_en": null,
+   "normalized": "2826-03-16",
+   "confidence": 0.9033462405204773,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     256.05923474462406,
+     121.4794040997823,
+     351.8075260865061,
+     121.4794040997823,
+     351.8075260865061,
+     145.6580959002177,
+     256.05923474462406,
+     145.6580959002177
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 2
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "bank_name": {
+   "value": "State Bank of India",
+   "value_en": null,
+   "normalized": "State Bank of India",
+   "confidence": 0.9528435029481587,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     254.61869689037925,
+     152.95851332346598,
+     432.5764999891582,
+     154.1853531519572,
+     432.40864628239683,
+     179.53625113169352,
+     254.45081221429925,
+     178.3094113032023
+    ],
+    "span": [
+     0,
+     19
+    ],
+    "line_index": 4
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "card_fragment": {
+   "value": "6355",
+   "value_en": null,
+   "normalized": "6355",
+   "confidence": 0.5378130119293928,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     255.67321767305071,
+     218.4147123972575,
+     431.3481639058966,
+     218.4147123972575,
+     431.3481639058966,
+     243.38112093607583,
+     255.67321767305071,
+     243.38112093607583
+    ],
+    "span": [
+     12,
+     16
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "RS 4",
+   "value_en": null,
+   "normalized": "4.00",
+   "confidence": 0.7695022324721018,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     253.8851730949,
+     250.75909665425618,
+     369.20364269457366,
+     250.75909665425618,
+     369.20364269457366,
+     275.23257001241046,
+     253.8851730949,
+     275.23257001241046
+    ],
+    "span": [
+     0,
+     4
+    ],
+    "line_index": 10
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "7305714220308",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.3950334913455523,
+   "source": "regex_validator",
+   "validator_passed": false,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     254.90632443679007,
+     282.8634909947713,
+     369.19729398426256,
+     282.8634909947713,
+     369.19729398426256,
+     307.3240090052287,
+     254.90632443679007,
+     307.3240090052287
+    ],
+    "span": [
+     0,
+     13
+    ],
+    "line_index": 12
+   },
+   "mt_engine": null,
+   "flags": [
+    "VALIDATOR_FAILED"
+   ]
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.851,
+  "s1_ingest": 5.89,
+  "s15_quality": 109.508,
+  "s15_quality:p1": 109.508,
+  "s4_ocr": 377.616,
+  "s4_ocr:p1": 377.616,
+  "s2b_lid": 0.749,
+  "s2b_lid:p1": 0.749,
+  "s3_classify": 54.96,
+  "s3_classify:p1": 54.96,
+  "s5_validators": 42.455,
+  "s5_slm": 0.014,
+  "assemble": 0.918,
+  "s4b_vlm": 0.122,
+  "s4b_vlm:p1": 0.122,
+  "e2e_total": 585.582
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+  "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

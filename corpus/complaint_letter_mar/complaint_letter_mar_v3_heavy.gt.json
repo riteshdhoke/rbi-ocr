@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_mar_v3_heavy",
+  "doc_type": "complaint_letter_mar",
+  "variant": 3,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Deva",
+  "primary_language": "mar",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-1.6deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:1.5",
+    "noise:0.03",
+    "downscale:0.7"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "सेवेत,",
+      "bbox": [
+        125.0,
+        99.0,
+        175.3,
+        100.4,
+        174.4,
+        130.8,
+        124.2,
+        129.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "मा. बँकिंग लोकपाल,",
+      "bbox": [
+        124.0,
+        138.1,
+        311.0,
+        143.4,
+        310.2,
+        173.9,
+        123.1,
+        168.6
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "भारतीय रिझर्व्ह बँक",
+      "bbox": [
+        122.8,
+        177.3,
+        299.2,
+        182.3,
+        298.3,
+        212.7,
+        122.0,
+        207.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "विषय: सावधि जमा नवीनीकरण पर घोषित ब्याज दर का पालन नहीं किया गया",
+      "bbox": [
+        121.2,
+        237.5,
+        834.5,
+        257.5,
+        833.7,
+        288.0,
+        120.3,
+        268.0
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "माझे बैंक ऑफ बड़ौदा येथे बचत खाते आहे.",
+      "bbox": [
+        119.7,
+        289.3,
+        511.1,
+        300.3,
+        510.2,
+        330.8,
+        118.9,
+        319.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "खाते क्रमांक 47079743467262 आहे.",
+      "bbox": [
+        118.6,
+        327.0,
+        465.9,
+        336.8,
+        465.1,
+        367.3,
+        117.8,
+        357.5
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "दिनांक 19/09/2026 रोजी रु. 4,500 रक्कम",
+      "bbox": [
+        117.6,
+        364.8,
+        513.2,
+        376.0,
+        512.3,
+        406.4,
+        116.7,
+        395.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "माझ्या संमतीशिवाय डेबिट करण्यात आली.",
+      "bbox": [
+        116.5,
+        402.6,
+        499.4,
+        413.4,
+        498.6,
+        443.9,
+        115.6,
+        433.1
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "संदर्भ क्रमांक 883936574218.",
+      "bbox": [
+        115.4,
+        440.4,
+        403.2,
+        448.5,
+        402.3,
+        478.9,
+        114.6,
+        470.9
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "बँकेकडे तक्रार करूनही निराकरण झाले नाही.",
+      "bbox": [
+        114.4,
+        478.2,
+        516.2,
+        489.5,
+        515.4,
+        520.0,
+        113.5,
+        508.7
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "bbox": [
+        113.3,
+        516.0,
+        501.1,
+        526.9,
+        500.2,
+        557.3,
+        112.5,
+        546.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "आपला विश्वासू,",
+      "bbox": [
+        111.3,
+        588.8,
+        250.3,
+        592.7,
+        249.5,
+        623.1,
+        110.4,
+        619.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "मीरा जोशी",
+      "bbox": [
+        110.1,
+        630.8,
+        206.0,
+        633.4,
+        205.2,
+        663.9,
+        109.3,
+        661.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "Bank of Baroda",
+    "ifsc_code": "BARB0948616",
+    "account_number": "47079743467262",
+    "card_last_four": "8466",
+    "disputed_amount": 4500,
+    "transaction_date": "19/09/2026",
+    "transaction_reference": "883936574218",
+    "complainant_name": "Meera Joshi",
+    "complainant_city": "Patna, Bihar",
+    "mobile": "9761711716",
+    "prior_complaint_ref": "CMS/2026/579177",
+    "ground_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "विषय: सावधि जमा नवीनीकरण पर घोषित ब्याज दर का पालन नहीं किया गया",
+      "value_en": "Subject: Non-adherence to the declared interest rate on a fixed deposit at ren",
+      "script": "Deva"
+    },
+    "account_number": {
+      "value": "47079743467262",
+      "value_en": "47079743467262",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "883936574218",
+      "value_en": "883936574218",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Deva"
+    },
+    "complainant_name": {
+      "value": "मीरा जोशी",
+      "value_en": "Meera Joshi",
+      "script": "Deva"
+    }
+  }
+}

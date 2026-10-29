@@ -1,0 +1,290 @@
+{
+  "doc_id": "cheque_v4_heavy",
+  "doc_type": "cheque",
+  "variant": 4,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-4.4deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:1.5",
+    "noise:0.03",
+    "downscale:0.7"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "Union Bank of India",
+      "bbox": [
+        58.9,
+        3.2,
+        279.4,
+        20.0,
+        277.3,
+        48.6,
+        56.8,
+        31.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "DATE",
+      "bbox": [
+        798.1,
+        68.0,
+        838.2,
+        71.0,
+        836.6,
+        92.5,
+        796.5,
+        89.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "15/02/2026",
+      "bbox": [
+        882.0,
+        72.9,
+        990.8,
+        81.3,
+        989.1,
+        104.5,
+        880.2,
+        96.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "A/C No.",
+      "bbox": [
+        55.7,
+        45.1,
+        110.0,
+        49.3,
+        108.5,
+        68.9,
+        54.2,
+        64.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "84709084205942",
+      "bbox": [
+        153.6,
+        51.2,
+        294.3,
+        61.9,
+        292.7,
+        83.3,
+        151.9,
+        72.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "PAY",
+      "bbox": [
+        51.4,
+        100.9,
+        79.9,
+        103.1,
+        78.3,
+        124.6,
+        49.8,
+        122.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Sanjay Deshpande",
+      "bbox": [
+        135.7,
+        100.4,
+        287.6,
+        111.9,
+        285.2,
+        142.3,
+        133.4,
+        130.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "RUPEES",
+      "bbox": [
+        46.1,
+        170.7,
+        106.8,
+        175.3,
+        105.1,
+        196.8,
+        44.5,
+        192.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12,750 only",
+      "bbox": [
+        158.3,
+        173.7,
+        254.8,
+        181.0,
+        252.5,
+        211.4,
+        156.0,
+        204.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "12,750.00",
+      "bbox": [
+        842.5,
+        223.0,
+        923.4,
+        229.2,
+        921.1,
+        257.7,
+        840.3,
+        251.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "MICR",
+      "bbox": [
+        33.5,
+        336.9,
+        71.9,
+        339.8,
+        70.4,
+        359.4,
+        32.0,
+        356.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "412847249",
+      "bbox": [
+        117.4,
+        341.9,
+        215.3,
+        349.3,
+        213.6,
+        372.5,
+        115.6,
+        365.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "micr_code"
+    },
+    {
+      "text": "911958  UBIN0412726  847090842",
+      "bbox": [
+        30.2,
+        380.2,
+        381.9,
+        406.9,
+        380.0,
+        432.0,
+        28.3,
+        405.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    }
+  ],
+  "fields": {
+    "bank_name": "Union Bank of India",
+    "complainant_name": "Sanjay Deshpande",
+    "transaction_date": "15/02/2026",
+    "account_number": "84709084205942",
+    "ifsc_code": "UBIN0412726",
+    "micr_code": "412847249",
+    "disputed_amount": 12750
+  },
+  "fields_bilingual": {
+    "bank_name": {
+      "value": "Union Bank of India",
+      "value_en": "Union Bank of India",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "15/02/2026",
+      "value_en": "15/02/2026",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "84709084205942",
+      "value_en": "84709084205942",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Sanjay Deshpande",
+      "value_en": "Sanjay Deshpande",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "12,750",
+      "value_en": "12,750",
+      "script": "Latn"
+    },
+    "micr_code": {
+      "value": "412847249",
+      "value_en": "412847249",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "UBIN0412726",
+      "value_en": "UBIN0412726",
+      "script": "Latn"
+    }
+  }
+}

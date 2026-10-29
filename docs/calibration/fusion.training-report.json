@@ -1,0 +1,78 @@
+{
+  "generator": "tools/train_page_classifier.py",
+  "corpus_dir": "E:\\pythonprojects\\python_ocr\\corpus",
+  "train_variants": [
+    0,
+    1,
+    2
+  ],
+  "excluded_profiles": [
+    "bounce"
+  ],
+  "sample_count": 147,
+  "labels": [
+    "complaint_form",
+    "complaint_letter",
+    "supporting_doc",
+    "photo_evidence"
+  ],
+  "labels_observed_in_corpus": [
+    "complaint_form",
+    "complaint_letter",
+    "supporting_doc"
+  ],
+  "labels_without_training_examples": [
+    "photo_evidence"
+  ],
+  "feature_names": [
+    "line_count_log",
+    "ink_density",
+    "aspect_ratio",
+    "has_table_lines",
+    "table_line_count_log",
+    "handwriting_ratio",
+    "text_coverage"
+  ],
+  "cnn_coefficients": "all zero — fitted with uniform CNN scores",
+  "l2": 0.001,
+  "iterations": 20000,
+  "class_counts": {
+    "complaint_form": 45,
+    "complaint_letter": 30,
+    "supporting_doc": 72
+  },
+  "majority_class_baseline": 0.4897959183673469,
+  "train_accuracy": 0.9727891156462585,
+  "holdout_accuracy_variant_2": 0.9591836734693877,
+  "leave_one_variant_out": {
+    "variant_0": 1.0,
+    "variant_1": 0.9183673469387755,
+    "variant_2": 0.9591836734693877
+  },
+  "leave_one_variant_out_mean": 0.9591836734693877,
+  "per_type_accuracy": {
+    "bank_statement": 1.0,
+    "bilingual_form": 1.0,
+    "cheque": 1.0,
+    "complaint_form_deva": 1.0,
+    "complaint_form_en": 1.0,
+    "complaint_letter_en": 0.8666666666666667,
+    "complaint_letter_mar": 1.0,
+    "email_printout": 0.8666666666666667,
+    "photo_evidence": 1.0,
+    "receipt": 1.0
+  },
+  "confusion_train": {
+    "complaint_form": {
+      "complaint_form": 45
+    },
+    "complaint_letter": {
+      "complaint_letter": 28,
+      "supporting_doc": 2
+    },
+    "supporting_doc": {
+      "supporting_doc": 70,
+      "complaint_letter": 2
+    }
+  }
+}

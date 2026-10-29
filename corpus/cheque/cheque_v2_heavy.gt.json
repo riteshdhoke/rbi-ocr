@@ -1,0 +1,290 @@
+{
+  "doc_id": "cheque_v2_heavy",
+  "doc_type": "cheque",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-3.3deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:1.5",
+    "noise:0.03",
+    "downscale:0.7"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "HDFC Bank Limited",
+      "bbox": [
+        54.7,
+        12.2,
+        268.0,
+        24.6,
+        266.3,
+        53.2,
+        53.1,
+        40.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "DATE",
+      "bbox": [
+        795.0,
+        63.8,
+        835.0,
+        66.1,
+        833.8,
+        87.6,
+        793.7,
+        85.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "22/05/2026",
+      "bbox": [
+        878.9,
+        67.3,
+        987.8,
+        73.6,
+        986.5,
+        96.9,
+        877.5,
+        90.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "A/C No.",
+      "bbox": [
+        52.3,
+        54.1,
+        106.6,
+        57.3,
+        105.5,
+        76.9,
+        51.1,
+        73.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "42796875960",
+      "bbox": [
+        150.1,
+        58.4,
+        260.9,
+        64.9,
+        259.6,
+        86.3,
+        148.9,
+        79.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "PAY",
+      "bbox": [
+        49.0,
+        110.0,
+        77.5,
+        111.6,
+        76.2,
+        133.1,
+        47.7,
+        131.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Abdul Rahman Shaikh",
+      "bbox": [
+        133.3,
+        107.9,
+        318.9,
+        118.7,
+        317.1,
+        149.2,
+        131.5,
+        138.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "RUPEES",
+      "bbox": [
+        44.9,
+        179.9,
+        105.6,
+        183.4,
+        104.4,
+        204.9,
+        43.7,
+        201.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,500 only",
+      "bbox": [
+        157.1,
+        180.8,
+        243.5,
+        185.8,
+        241.7,
+        216.3,
+        155.3,
+        211.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "4,500.00",
+      "bbox": [
+        842.0,
+        218.0,
+        913.3,
+        222.1,
+        911.6,
+        250.7,
+        840.3,
+        246.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "MICR",
+      "bbox": [
+        35.2,
+        346.2,
+        73.6,
+        348.5,
+        72.5,
+        368.1,
+        34.1,
+        365.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "912427491",
+      "bbox": [
+        119.1,
+        349.7,
+        217.2,
+        355.4,
+        215.9,
+        378.7,
+        117.8,
+        373.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "micr_code"
+    },
+    {
+      "text": "686941  HDFC0912799  427968759",
+      "bbox": [
+        32.7,
+        389.5,
+        384.8,
+        410.1,
+        383.4,
+        435.1,
+        31.2,
+        414.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    }
+  ],
+  "fields": {
+    "bank_name": "HDFC Bank Limited",
+    "complainant_name": "Abdul Rahman Shaikh",
+    "transaction_date": "22/05/2026",
+    "account_number": "42796875960",
+    "ifsc_code": "HDFC0912799",
+    "micr_code": "912427491",
+    "disputed_amount": 4500
+  },
+  "fields_bilingual": {
+    "bank_name": {
+      "value": "HDFC Bank Limited",
+      "value_en": "HDFC Bank Limited",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "22/05/2026",
+      "value_en": "22/05/2026",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "42796875960",
+      "value_en": "42796875960",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Abdul Rahman Shaikh",
+      "value_en": "Abdul Rahman Shaikh",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "micr_code": {
+      "value": "912427491",
+      "value_en": "912427491",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "HDFC0912799",
+      "value_en": "HDFC0912799",
+      "script": "Latn"
+    }
+  }
+}

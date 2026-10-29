@@ -1,0 +1,493 @@
+{
+  "doc_id": "bilingual_form_v3_clean",
+  "doc_type": "bilingual_form",
+  "variant": 3,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": true,
+  "degradations": [],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+      "bbox": [
+        110,
+        100,
+        943.75,
+        100,
+        943.75,
+        148.64,
+        110,
+        148.64
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank — Integrated Ombudsman Scheme, 2021 — Form I",
+      "bbox": [
+        110,
+        160,
+        876.015625,
+        160,
+        876.015625,
+        192.0,
+        110,
+        192.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. Name of complainant",
+      "bbox": [
+        110,
+        300,
+        391.5,
+        300,
+        391.5,
+        332.0,
+        110,
+        332.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "मीरा जोशी",
+      "bbox": [
+        720,
+        298,
+        849.6445535533275,
+        298,
+        849.6445535533275,
+        338.96,
+        720,
+        338.96
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. Address",
+      "bbox": [
+        110,
+        378,
+        232.078125,
+        378,
+        232.078125,
+        410.0,
+        110,
+        410.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "पटना, बिहार",
+      "bbox": [
+        720,
+        376,
+        873.7174620736663,
+        376,
+        873.7174620736663,
+        416.96,
+        720,
+        416.96
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. Mobile",
+      "bbox": [
+        110,
+        456,
+        217.671875,
+        456,
+        217.671875,
+        488.0,
+        110,
+        488.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9735838788",
+      "bbox": [
+        720,
+        454,
+        868.0576177995811,
+        454,
+        868.0576177995811,
+        494.96,
+        720,
+        494.96
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. Name of bank",
+      "bbox": [
+        110,
+        534,
+        302.921875,
+        534,
+        302.921875,
+        566.0,
+        110,
+        566.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "बैंक ऑफ बड़ौदा",
+      "bbox": [
+        720,
+        532,
+        914.469354167136,
+        532,
+        914.469354167136,
+        572.96,
+        720,
+        572.96
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC code",
+      "bbox": [
+        110,
+        612,
+        251.546875,
+        612,
+        251.546875,
+        644.0,
+        110,
+        644.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "BARB0700087",
+      "bbox": [
+        720,
+        610,
+        890.0054023915997,
+        610,
+        890.0054023915997,
+        650.96,
+        720,
+        650.96
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. Account number",
+      "bbox": [
+        110,
+        690,
+        333.109375,
+        690,
+        333.109375,
+        722.0,
+        110,
+        722.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "96025533049",
+      "bbox": [
+        720,
+        688,
+        878.0776929328866,
+        688,
+        878.0776929328866,
+        728.96,
+        720,
+        728.96
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "7. Amount in dispute (Rs.)",
+      "bbox": [
+        110,
+        768,
+        410.28125,
+        768,
+        410.28125,
+        800.0,
+        110,
+        800.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "250,000",
+      "bbox": [
+        720,
+        766,
+        813.9096193645009,
+        766,
+        813.9096193645009,
+        806.96,
+        720,
+        806.96
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. Date of transaction",
+      "bbox": [
+        110,
+        846,
+        362.03125,
+        846,
+        362.03125,
+        878.0,
+        110,
+        878.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "16/08/2026",
+      "bbox": [
+        720,
+        844,
+        858.0429218464781,
+        844,
+        858.0429218464781,
+        884.96,
+        720,
+        884.96
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. Transaction reference",
+      "bbox": [
+        110,
+        924,
+        392.109375,
+        924,
+        392.109375,
+        956.0,
+        110,
+        956.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "622617176495",
+      "bbox": [
+        720,
+        922,
+        895.487794544561,
+        922,
+        895.487794544561,
+        962.96,
+        720,
+        962.96
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. Previous complaint no.",
+      "bbox": [
+        110,
+        1002,
+        419.625,
+        1002,
+        419.625,
+        1034.0,
+        110,
+        1034.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2026/241379",
+      "bbox": [
+        720,
+        1000,
+        940.1287929071634,
+        1000,
+        940.1287929071634,
+        1040.96,
+        720,
+        1040.96
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. Nature of complaint",
+      "bbox": [
+        110,
+        1120,
+        387.25,
+        1120,
+        387.25,
+        1152.0,
+        110,
+        1152.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "सावधि जमा नवीनीकरण पर घोषित ब्याज दर का पालन नहीं किया गया",
+      "bbox": [
+        140,
+        1196,
+        1011.2782427382064,
+        1196,
+        1011.2782427382064,
+        1236.96,
+        140,
+        1236.96
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    }
+  ],
+  "fields": {
+    "bank_name": "Bank of Baroda",
+    "ifsc_code": "BARB0700087",
+    "account_number": "96025533049",
+    "card_last_four": "3291",
+    "disputed_amount": 250000,
+    "transaction_date": "16/08/2026",
+    "transaction_reference": "622617176495",
+    "complainant_name": "Meera Joshi",
+    "complainant_city": "Patna, Bihar",
+    "mobile": "9735838788",
+    "prior_complaint_ref": "CMS/2026/241379",
+    "ground_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "मीरा जोशी",
+      "value_en": "Meera Joshi",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "पटना, बिहार",
+      "value_en": "Patna, Bihar",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9735838788",
+      "value_en": "9735838788",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "बैंक ऑफ बड़ौदा",
+      "value_en": "Bank of Baroda",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "BARB0700087",
+      "value_en": "BARB0700087",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "96025533049",
+      "value_en": "96025533049",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "16/08/2026",
+      "value_en": "16/08/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "622617176495",
+      "value_en": "622617176495",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2026/241379",
+      "value_en": "CMS/2026/241379",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "सावधि जमा नवीनीकरण पर घोषित ब्याज दर का पालन नहीं किया गया",
+      "value_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal",
+      "script": "Deva"
+    }
+  }
+}

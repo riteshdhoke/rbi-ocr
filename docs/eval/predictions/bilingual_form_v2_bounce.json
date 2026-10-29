@@ -1,0 +1,40 @@
+{
+ "doc_id": "bilingual_form_v2_bounce",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "bounce",
+  "score": 0.13629193453317345,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "RESOLUTION_BELOW_FLOOR",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": []
+  }
+ ],
+ "fields": {},
+ "timings_ms": {
+  "s0_read": 0.981,
+  "s1_ingest": 7.92,
+  "s15_quality": 128.55,
+  "s15_quality:p1": 128.55,
+  "e2e_total": 127.72800000000001
+ },
+ "warnings": [],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": null,
+ "summary_span_count": 0
+}

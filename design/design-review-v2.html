@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docket ADR-2026-11 — RBI Complaint OCR Service, Design Review v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7E2D6;
+  --sheet:#F3F0E8;
+  --ink:#191E26;
+  --ink-soft:#4A5260;
+  --rule:#C0B7A2;
+  --rule-soft:#D8D2C2;
+  --stamp:#4B2E83;
+  --stamp-wash:#EFE9F6;
+  --strike:#8E2438;
+  --strike-wash:#F7E9EB;
+  --pass:#2C6247;
+  --pass-wash:#E7EFE9;
+  --rail:180px;
+  --gap:34px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(192,183,162,.28) 31px 32px);
+  color:var(--ink);
+  font-family:"Public Sans",system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.62;
+}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px 120px}
+
+/* ---------- masthead ---------- */
+.masthead{
+  border-bottom:3px double var(--ink);
+  padding:44px 0 20px;
+  margin-bottom:8px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:24px;
+  align-items:end;
+}
+.docket-no{
+  font-family:"JetBrains Mono",monospace;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--strike);
+}
+.masthead h1{
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:800;
+  font-size:clamp(30px,5.2vw,58px);
+  line-height:.98;
+  letter-spacing:-.025em;
+  margin:.18em 0 .1em;
+  max-width:16ch;
+}
+.masthead .deva{
+  font-family:"Noto Sans Devanagari",sans-serif;
+  font-weight:400;font-size:15px;color:var(--ink-soft);
+  letter-spacing:.01em;
+}
+.meta{
+  font-family:"JetBrains Mono",monospace;
+  font-size:11px;line-height:2;text-align:right;color:var(--ink-soft);
+  white-space:nowrap;
+}
+.meta b{color:var(--ink);font-weight:700}
+
+/* ---------- summary strip ---------- */
+.verdict-strip{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border:1px solid var(--ink);
+  background:var(--sheet);
+  margin:26px 0 52px;
+}
+.vs-cell{padding:14px 16px;border-right:1px solid var(--rule)}
+.vs-cell:last-child{border-right:0}
+.vs-cell .n{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+  font-size:34px;line-height:1;letter-spacing:-.03em;display:block;
+}
+.vs-cell .l{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+  display:block;margin-top:6px;
+}
+.vs-cell.strike .n{color:var(--strike)}
+.vs-cell.pass   .n{color:var(--pass)}
+.vs-cell.stamp  .n{color:var(--stamp)}
+
+/* ---------- clause layout ---------- */
+.clause{
+  display:grid;
+  grid-template-columns:var(--rail) 1fr;
+  gap:var(--gap);
+  padding:30px 0;
+  border-top:1px solid var(--rule);
+  position:relative;
+}
+.rail{position:sticky;top:22px;align-self:start}
+.rail .num{
+  font-family:"JetBrains Mono",monospace;font-weight:700;
+  font-size:12px;letter-spacing:.1em;color:var(--ink);
+  display:block;
+}
+.rail .kicker{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);
+  display:block;margin-top:4px;line-height:1.5;
+}
+.chip{
+  display:inline-block;margin-top:12px;
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:700;
+  letter-spacing:.11em;text-transform:uppercase;
+  padding:4px 8px;border:1px solid currentColor;
+}
+.chip.rev{color:var(--strike);background:var(--strike-wash)}
+.chip.keep{color:var(--pass);background:var(--pass-wash)}
+.chip.new{color:var(--stamp);background:var(--stamp-wash)}
+
+.body h2{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:clamp(21px,2.7vw,30px);line-height:1.1;letter-spacing:-.02em;
+  margin:0 0 4px;
+}
+.body h3{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:17px;letter-spacing:-.01em;margin:30px 0 8px;
+}
+.body h2 .sub{
+  display:block;font-family:"Noto Sans Devanagari",sans-serif;
+  font-weight:400;font-size:14px;color:var(--ink-soft);letter-spacing:0;
+  margin-top:6px;
+}
+.body p{margin:0 0 14px;max-width:74ch}
+.body ul{margin:0 0 16px;padding-left:19px;max-width:74ch}
+.body li{margin-bottom:7px}
+code,.mono{font-family:"JetBrains Mono",monospace;font-size:.86em}
+code{background:var(--sheet);border:1px solid var(--rule-soft);padding:1px 5px}
+strong{font-weight:700}
+
+/* ---------- callouts ---------- */
+.finding{
+  border-left:4px solid var(--strike);
+  background:var(--sheet);
+  padding:16px 20px;margin:0 0 18px;
+  position:relative;
+}
+.finding.fix{border-left-color:var(--pass)}
+.finding .tag{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--strike);
+  display:block;margin-bottom:6px;
+}
+.finding.fix .tag{color:var(--pass)}
+.finding p:last-child{margin-bottom:0}
+
+/* ---------- stamp signature element ---------- */
+.stamp-mark{
+  position:absolute;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;
+  border:3px solid currentColor;
+  padding:7px 13px 5px;
+  font-size:13px;line-height:1.15;
+  text-align:center;
+  opacity:.82;
+  pointer-events:none;
+  mix-blend-mode:multiply;
+  animation:settle .55s cubic-bezier(.2,1.4,.4,1) both;
+}
+.stamp-mark .d{
+  display:block;font-family:"Noto Sans Devanagari",sans-serif;
+  font-weight:400;font-size:10px;letter-spacing:0;margin-top:1px;opacity:.85;
+}
+.stamp-superseded{color:var(--stamp);transform:rotate(-7deg);top:12px;right:6px}
+.stamp-risk{color:var(--strike);transform:rotate(5deg);top:14px;right:10px}
+.stamp-added{color:var(--pass);transform:rotate(-4deg);top:12px;right:8px}
+@keyframes settle{
+  from{opacity:0;transform:scale(1.55) rotate(-16deg)}
+}
+@media (prefers-reduced-motion:reduce){
+  .stamp-mark{animation:none}
+}
+
+/* ---------- tables ---------- */
+.tbl-scroll{overflow-x:auto;margin:0 0 20px;border:1px solid var(--ink)}
+table{border-collapse:collapse;width:100%;background:var(--sheet);font-size:13.5px;min-width:640px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-soft)}
+th{
+  font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);border-bottom:0;
+}
+tbody tr:last-child td{border-bottom:0}
+td.mono-cell{font-family:"JetBrains Mono",monospace;font-size:12px}
+.v-rev{color:var(--strike);font-weight:700}
+.v-keep{color:var(--pass);font-weight:700}
+.v-new{color:var(--stamp);font-weight:700}
+
+/* ---------- figures ---------- */
+figure{margin:24px 0 26px;border:1px solid var(--ink);background:var(--sheet)}
+figure svg{display:block;width:100%;height:auto}
+figcaption{
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);
+  padding:9px 14px;border-top:1px solid var(--rule);
+}
+figcaption b{color:var(--ink)}
+
+/* ---------- code block ---------- */
+pre{
+  background:var(--ink);color:#DCE3EC;
+  font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.65;
+  padding:16px 18px;overflow-x:auto;margin:0 0 20px;
+  border-left:4px solid var(--stamp);
+}
+pre .c{color:#8794A6}
+pre .k{color:#C7A8F0}
+pre .s{color:#9ED7B4}
+
+/* ---------- footer ---------- */
+.sign-off{
+  margin-top:60px;border-top:3px double var(--ink);padding-top:22px;
+  display:grid;grid-template-columns:1fr 1fr;gap:30px;
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-soft);
+}
+.sign-off b{display:block;color:var(--ink);margin-bottom:5px;letter-spacing:.1em;font-size:9.5px;text-transform:uppercase}
+
+@media (max-width:820px){
+  :root{--gap:0px}
+  .clause{grid-template-columns:1fr;gap:14px}
+  .rail{position:static;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+  .rail .kicker{margin-top:0}
+  .chip{margin-top:0}
+  .stamp-mark{position:static;display:inline-block;margin:0 0 14px;transform:rotate(-2deg)}
+  .masthead{grid-template-columns:1fr}
+  .meta{text-align:left}
+}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div>
+    <span class="docket-no">Docket ADR-2026-11 · Adversarial design review · Supersedes v1</span>
+    <h1>Reading the complaint before the bank does.</h1>
+    <span class="deva">बैंकिंग लोकपाल शिकायत — दस्तावेज़ प्रसंस्करण सेवा · वास्तुकला समीक्षा</span>
+  </div>
+  <div class="meta">
+    <b>Service</b> ocr-as-a-service<br>
+    <b>Domain</b> RBI / RB-IOS 2021<br>
+    <b>Revision</b> v2.0 · 2026-08-07<br>
+    <b>Status</b> Ready for build<br>
+    <b>Reviewer</b> Adversarial pass, 1 of 1
+  </div>
+</header>
+
+<div class="verdict-strip">
+  <div class="vs-cell strike"><span class="n">9</span><span class="l">Findings raised</span></div>
+  <div class="vs-cell strike"><span class="n">5</span><span class="l">v1 decisions reversed</span></div>
+  <div class="vs-cell pass"><span class="n">7</span><span class="l">Repos to fork, not build</span></div>
+  <div class="vs-cell stamp"><span class="n">P0</span><span class="l">New phase added</span></div>
+  <div class="vs-cell"><span class="n">4</span><span class="l">Parallelism levels</span></div>
+</div>
+
+
+<!-- ============ 1 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">1.0</span>
+    <span class="kicker">Verdict<br>on v1</span>
+    <span class="chip rev">5 reversals</span>
+  </div>
+  <div class="body">
+    <h2>What survives the adversarial pass<span class="sub">समीक्षा का सारांश</span></h2>
+    <p>The v1 stage decomposition is sound and stays. The model matrix is mostly right. What v1 got wrong is not model selection — it is <strong>where the accuracy actually leaks</strong>, and it leaks in three places v1 barely mentions: scan quality, page-level language mixing, and an escalation router that cannot detect its own failures.</p>
+    <p>The single most important reframing: v1 spent its complexity budget on choosing between OCR models. In this domain, the dominant error source is not the recogniser. It is a phone photo of a form, taken at 15°, with a thumb over the account number.</p>
+
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>#</th><th>v1 decision</th><th>Verdict</th><th>v2 replacement</th></tr></thead>
+      <tbody>
+        <tr><td class="mono-cell">A1</td><td>Escalate to Tier-2 OCR on mean line confidence &lt; 0.72</td><td class="v-rev">Reversed</td><td>Escalate on <em>validator failure + structural signals</em>. CTC confidence is uncalibrated on Devanagari conjuncts. Add a 3% shadow sampler to measure the router's false-negative rate.</td></tr>
+        <tr><td class="mono-cell">A2</td><td><code>language</code> is a page-level attribute</td><td class="v-rev">Reversed</td><td>Language is a <em>line-level</em> attribute. Page-level is a derived summary only. Schema change.</td></tr>
+        <tr><td class="mono-cell">A3</td><td>SLM writes <code>complaint_summary</code></td><td class="v-rev">Reversed</td><td>Summary must be <em>extractive</em> — spans lifted verbatim from OCR. An abstractive summary of a legal complaint is a liability, not a feature.</td></tr>
+        <tr><td class="mono-cell">A4</td><td>Idempotency keyed on <code>Message-ID</code></td><td class="v-rev">Reversed</td><td>Content hash of attachment bytes + soft-dupe on (sender, normalised subject, day). Gateways rewrite Message-ID.</td></tr>
+        <tr><td class="mono-cell">A5</td><td>Preprocessing is a bullet inside Stage 1</td><td class="v-rev">Reversed</td><td>Promoted to <strong>Stage 1.5 — Quality Gate</strong>, with its own accept / repair / bounce decision and an auto-reply loop.</td></tr>
+        <tr><td class="mono-cell">A6</td><td>Chord fan-in returns one final result</td><td class="v-new">Amended</td><td>Two-stage delivery: <code>result_version 1</code> at fast-path SLA, incremented as escalated pages land. Adds <code>is_final</code> to the contract.</td></tr>
+        <tr><td class="mono-cell">A7</td><td>Fuzzy-match bank name against RBI master</td><td class="v-new">Amended</td><td>Require corroboration from the IFSC bank-code prefix. Free deterministic cross-check; kills a whole error class.</td></tr>
+        <tr><td class="mono-cell">A8</td><td>ClamAV covers untrusted input</td><td class="v-new">Amended</td><td>Add hard resource ceilings — page cap, pixel cap, decompression cap, wall-clock cap — enforced at the sandbox, not in Python.</td></tr>
+        <tr><td class="mono-cell">A9</td><td>Phase 1 = slice + golden set + two bake-offs in 5 weeks</td><td class="v-rev">Reversed</td><td>Not achievable; field-level labelling of 500 pages is 3–4 weeks of human effort alone. Split into <strong>Phase 0</strong> (synthetic + API-backed) and a slimmed Phase 1.</td></tr>
+        <tr><td class="mono-cell">—</td><td>PP-OCRv5 over v4; two-tier router; IndicTrans2-200M; deterministic extractors for identifiers; Surya excluded on licence</td><td class="v-keep">Upheld</td><td>No change. These were the right calls.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ 2 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">2.0</span>
+    <span class="kicker">Riskiest<br>assumption</span>
+    <span class="chip rev">Untested</span>
+  </div>
+  <div class="body">
+    <div class="stamp-mark stamp-risk">Risk<span class="d">जोखिम</span></div>
+    <h2>The assumption that, if wrong, kills the design</h2>
+    <p>Every other finding is survivable. This one is not: <strong>v1 assumes CPU-only inference can meet RBI-scale throughput, and offers no evidence for it.</strong> The figure "≥ 60 pages/min/node" appears as an exit criterion in Phase 3 — week 19 — which is the worst possible place to discover it is false. If it is false, the entire CPU-first premise collapses and the hardware budget, the deployment topology, and the phase plan all change.</p>
+
+    <div class="finding fix">
+      <span class="tag">Cheapest test — 1 day, week 1</span>
+      <p>Before writing any service code: take 100 representative pages, run <code>PP-OCRv5_mobile</code> INT8 under ONNX Runtime on the exact target instance type, with thread pinning applied, and measure p50/p95 wall-clock per page. Nothing else in Phase 0 starts until that number exists. It is a spike, not a milestone — one engineer, one day.</p>
+    </div>
+
+    <h3>The other assumptions, ranked by what they would cost to be wrong</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Assumption</th><th>Confidence</th><th>What disproves it</th><th>Cheapest test</th></tr></thead>
+      <tbody>
+        <tr><td>CPU-only meets throughput</td><td class="v-rev">Low</td><td>p95 &gt; 4 s/page at target concurrency</td><td>1-day spike, week 1</td></tr>
+        <tr><td>Sub-2B SLM extracts fields reliably enough</td><td class="v-rev">Low</td><td>Field F1 &lt; 0.80 on the free-text fields with grammar constraints on</td><td>Phase 0 bake-off via HF API — no local GPU needed</td></tr>
+        <tr><td>Indic handwriting reaches usable CER</td><td class="v-rev">Very low</td><td>CER &gt; 25% on real handwritten Devanagari</td><td>Run PP-OCRv5 against 50 real handwritten pages in Phase 1. Do not use synthetic data for this answer.</td></tr>
+        <tr><td>Attachment mix is ~30% digital PDF</td><td>Medium</td><td>&lt; 10% have a text layer</td><td>Profile 1,000 real mailbox items — read-only, week 1</td></tr>
+        <tr><td>Escalation stays under 15% of pages</td><td>Medium</td><td>Router fires on &gt; 30%</td><td>Falls out of the Phase 1 golden-set run</td></tr>
+        <tr><td>PaddleOCR script coverage matches complaint geography</td><td class="v-rev">Low</td><td>&gt; 15% of volume in Kannada / Malayalam / Gujarati / Gurmukhi / Odia</td><td>Language-tag 1,000 real mailbox items, week 1</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Three of six are low-confidence and all three are testable inside Phase 0 without a single GPU. That is the argument for Phase 0 existing.</p>
+  </div>
+</section>
+
+
+<!-- ============ 3 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">3.0</span>
+    <span class="kicker">Prior art<br>scan</span>
+    <span class="chip new">Fork, don't build</span>
+  </div>
+  <div class="body">
+    <h2>Somebody already wrote the plumbing</h2>
+    <p>A GitHub survey turned up no repository that does this end to end — the composition is genuinely novel. But roughly 60% of the code v1 implied writing already exists under permissive licences. The service skeleton in particular is a solved problem.</p>
+
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Repository</th><th>Licence</th><th>What it gives you</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td class="mono-cell">drmingler/<wbr>docling-api</td><td>MIT</td><td>FastAPI + Celery + Redis document-conversion service. Queue topology, worker pools, Flower monitoring, docker-compose, health endpoints — already assembled.</td><td class="v-new"><strong>Fork as the service skeleton.</strong> Saves ~2 weeks.</td></tr>
+        <tr><td class="mono-cell">PaddlePaddle/<wbr>PaddleOCR</td><td>Apache-2.0</td><td>PP-OCRv5 det/rec/orientation, Devanagari + Tamil + Telugu + Arabic heads, PaddleOCR-VL-0.9B, paddle2onnx export path.</td><td class="v-keep">Core dependency — Stages 2a and 4.</td></tr>
+        <tr><td class="mono-cell">AI4Bharat/<wbr>IndicTrans2</td><td>MIT</td><td>Distilled 200M translation models, RoPE variants, IndicTransToolkit preprocessing.</td><td class="v-keep">Core dependency — Stage 6.</td></tr>
+        <tr><td class="mono-cell">docling-project/<wbr>docling</td><td>MIT</td><td>Digital-PDF text-layer extraction and layout. The bypass path for the ~30% of mail that never needs OCR.</td><td class="v-keep">Stage 1 bypass.</td></tr>
+        <tr><td class="mono-cell">Bhashini-IITJ/<wbr>IndicPhotoOCR</td><td>MIT</td><td>Scene-text recognition across 11 Indian languages. Built for photographed text, not scans.</td><td class="v-new">Candidate for the photo-evidence path.</td></tr>
+        <tr><td class="mono-cell">Sanny26/<wbr>indic-htr</td><td>MIT</td><td>PyTorch handwriting-recognition baselines across Indic scripts, aligned to the IIIT datasets.</td><td class="v-new">Starting point for the Phase 3 HTR fine-tune.</td></tr>
+        <tr><td class="mono-cell">iitb-research-code/<wbr>indic-trocr</td><td>Apache-2.0</td><td>Transformer OCR for Indian languages.</td><td class="v-new">Tier-3 benchmark candidate.</td></tr>
+        <tr><td class="mono-cell">IITB-LEAP-OCR/<wbr>Indic-OCR-API</td><td class="v-rev">GPL-3.0</td><td>Handwritten + printed Indic recognition API over DocTR. Architecturally the closest public analogue.</td><td class="v-rev"><strong>Read for reference. Do not vendor.</strong> GPL-3.0 contaminates a proprietary service.</td></tr>
+        <tr><td class="mono-cell">baidu/Unlimited-OCR<br>deepseek-ai/DeepSeek-OCR<br>opendatalab/MinerU</td><td>MIT / MIT / <span class="v-rev">NOASSERTION</span></td><td>Recent high-capability parsers worth benchmarking against PaddleOCR-VL in the Tier-2 slot.</td><td>Bake-off entrants. Clear MinerU's licence before it enters the build.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="finding">
+      <span class="tag">Standing control</span>
+      <p>Add a dependency-licence gate to CI with an explicit allowlist — Apache-2.0, MIT, BSD-2/3, MPL-2.0. The build fails on anything else, including transitively. One GPL package pulled in by a helper library is a procurement incident at a bank, discovered months later.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ 4 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">4.0</span>
+    <span class="kicker">Phase 0<br>architecture</span>
+    <span class="chip new">Added</span>
+  </div>
+  <div class="body">
+    <div class="stamp-mark stamp-added">Added<span class="d">नया</span></div>
+    <h2>Laptop-first: the provider split<span class="sub">चरण शून्य — बिना GPU विकास</span></h2>
+    <p>The development machine has no GPU. The naive response is "put every model behind an API." That is wrong, and the reason matters:</p>
+
+    <div class="finding fix">
+      <span class="tag">The key insight</span>
+      <p><strong>OCR is the part that works on a laptop. The SLM is the part that does not.</strong> <code>PP-OCRv5_mobile</code> INT8 is roughly 25 MB across detector, orientation and recogniser, and runs at 1–3 s/page on any modern laptop CPU. IndicTrans2-dist-200M under CTranslate2 INT8 is ~200 MB and also runs fine. It is only the 1.7B SLM and the 0.9B VLM that will not load. So route <em>those two</em> to the Hugging Face API, and keep everything else local — which also means Phase 0 is testing the real OCR code path, not a mock.</p>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Provider abstraction diagram showing three deployment profiles">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#191E26"/>
+          </marker>
+          <marker id="arv" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#4B2E83"/>
+          </marker>
+        </defs>
+        <style>
+          .bx{fill:#F3F0E8;stroke:#191E26;stroke-width:1.5}
+          .bxv{fill:#EFE9F6;stroke:#4B2E83;stroke-width:1.5}
+          .bxg{fill:#E7EFE9;stroke:#2C6247;stroke-width:1.5}
+          .hd{font:700 12px "JetBrains Mono",monospace;fill:#191E26;letter-spacing:.08em}
+          .t{font:12.5px "Public Sans",sans-serif;fill:#191E26}
+          .ts{font:11px "Public Sans",sans-serif;fill:#4A5260}
+          .mn{font:11px "JetBrains Mono",monospace;fill:#4A5260}
+          .ln{stroke:#191E26;stroke-width:1.4;fill:none}
+          .lnv{stroke:#4B2E83;stroke-width:1.4;fill:none;stroke-dasharray:5 3}
+          .cap{font:700 10px "JetBrains Mono",monospace;letter-spacing:.14em;fill:#4A5260}
+        </style>
+
+        <!-- interface -->
+        <rect x="330" y="20" width="320" height="54" class="bx"/>
+        <text x="490" y="42" class="hd" text-anchor="middle">ModelProvider (Protocol)</text>
+        <text x="490" y="61" class="mn" text-anchor="middle">ocr() · classify() · extract() · translate()</text>
+
+        <line x1="490" y1="74" x2="490" y2="100" class="ln"/>
+        <line x1="165" y1="100" x2="815" y2="100" class="ln"/>
+        <line x1="165" y1="100" x2="165" y2="126" class="ln" marker-end="url(#ar)"/>
+        <line x1="490" y1="100" x2="490" y2="126" class="ln" marker-end="url(#ar)"/>
+        <line x1="815" y1="100" x2="815" y2="126" class="ln" marker-end="url(#ar)"/>
+
+        <!-- profile 1 -->
+        <rect x="25" y="130" width="280" height="300" class="bxv"/>
+        <text x="42" y="153" class="hd">PROFILE = laptop</text>
+        <text x="42" y="171" class="mn">Phase 0 · no GPU · synthetic data only</text>
+
+        <rect x="42" y="186" width="246" height="42" class="bx"/>
+        <text x="54" y="205" class="t">Stage 1–4  OCR + classifiers</text>
+        <text x="54" y="220" class="ts">LOCAL · ONNX CPU · ~25 MB</text>
+
+        <rect x="42" y="236" width="246" height="42" class="bx"/>
+        <text x="54" y="255" class="t">Stage 6  IndicTrans2-200M</text>
+        <text x="54" y="270" class="ts">LOCAL · CTranslate2 INT8 · ~200 MB</text>
+
+        <rect x="42" y="286" width="246" height="52" class="bxv"/>
+        <text x="54" y="305" class="t">Stage 5  SLM extraction</text>
+        <text x="54" y="320" class="ts">HF Inference Providers</text>
+        <text x="54" y="333" class="mn">OpenAI-compatible · 1 token</text>
+
+        <rect x="42" y="346" width="246" height="52" class="bxv"/>
+        <text x="54" y="365" class="t">Stage 4b  VLM escalation</text>
+        <text x="54" y="380" class="ts">HF API, or skipped in Phase 0</text>
+        <text x="54" y="393" class="mn">router logged, not executed</text>
+
+        <rect x="42" y="404" width="246" height="16" fill="#F7E9EB" stroke="#8E2438" stroke-width="1"/>
+        <text x="54" y="416" style="font:700 9.5px 'JetBrains Mono',monospace;fill:#8E2438">HARD GATE: SYNTHETIC_ONLY=true</text>
+
+        <!-- profile 2 -->
+        <rect x="350" y="130" width="280" height="300" class="bx"/>
+        <text x="367" y="153" class="hd">PROFILE = cpu_node</text>
+        <text x="367" y="171" class="mn">Phases 1–3 · production CPU</text>
+
+        <rect x="367" y="186" width="246" height="42" class="bx"/>
+        <text x="379" y="205" class="t">Stage 1–4  OCR + classifiers</text>
+        <text x="379" y="220" class="ts">LOCAL · ONNX / OpenVINO INT8</text>
+
+        <rect x="367" y="236" width="246" height="42" class="bx"/>
+        <text x="379" y="255" class="t">Stage 6  IndicTrans2-200M</text>
+        <text x="379" y="270" class="ts">LOCAL · CTranslate2 INT8</text>
+
+        <rect x="367" y="286" width="246" height="52" class="bx"/>
+        <text x="379" y="305" class="t">Stage 5  Qwen3-1.7B Q4_K_M</text>
+        <text x="379" y="320" class="ts">LOCAL · llama.cpp + GBNF grammar</text>
+        <text x="379" y="333" class="mn">~1.1 GB on disk · ~2.2 GB RSS</text>
+
+        <rect x="367" y="346" width="246" height="52" class="bx"/>
+        <text x="379" y="365" class="t">Stage 4b  PaddleOCR-VL-0.9B</text>
+        <text x="379" y="380" class="ts">LOCAL CPU · degraded, 20–60 s/page</text>
+        <text x="379" y="393" class="mn">isolated pool · long SLA</text>
+
+        <rect x="367" y="404" width="246" height="16" fill="#E7EFE9" stroke="#2C6247" stroke-width="1"/>
+        <text x="379" y="416" style="font:700 9.5px 'JetBrains Mono',monospace;fill:#2C6247">IN-COUNTRY · NO EGRESS</text>
+
+        <!-- profile 3 -->
+        <rect x="675" y="130" width="280" height="300" class="bxg"/>
+        <text x="692" y="153" class="hd">PROFILE = gpu_node</text>
+        <text x="692" y="171" class="mn">Phase 4 · escalation + NLP on GPU</text>
+
+        <rect x="692" y="186" width="246" height="42" class="bx"/>
+        <text x="704" y="205" class="t">Stage 1–4  OCR + classifiers</text>
+        <text x="704" y="220" class="ts">STAYS ON CPU — deliberately</text>
+
+        <rect x="692" y="236" width="246" height="42" class="bx"/>
+        <text x="704" y="255" class="t">Stage 6  IndicTrans2-200M</text>
+        <text x="704" y="270" class="ts">CTranslate2 GPU · beam 5–10</text>
+
+        <rect x="692" y="286" width="246" height="52" class="bxg"/>
+        <text x="704" y="305" class="t">Stage 5  Qwen3-1.7B</text>
+        <text x="704" y="320" class="ts">vLLM · continuous batching</text>
+        <text x="704" y="333" class="mn">where vLLM finally earns its place</text>
+
+        <rect x="692" y="346" width="246" height="52" class="bxg"/>
+        <text x="704" y="365" class="t">Stage 4b  PaddleOCR-VL-0.9B</text>
+        <text x="704" y="380" class="ts">vLLM · 30–50× faster</text>
+        <text x="704" y="393" class="mn">escalation threshold can be lowered</text>
+
+        <rect x="692" y="404" width="246" height="16" fill="#E7EFE9" stroke="#2C6247" stroke-width="1"/>
+        <text x="704" y="416" style="font:700 9.5px 'JetBrains Mono',monospace;fill:#2C6247">IN-COUNTRY · NO EGRESS</text>
+
+        <text x="490" y="452" class="cap" text-anchor="middle">ONE ENV VAR. NO CALL-SITE CHANGES. CONTRACT TESTS RUN AGAINST ALL THREE.</text>
+      </svg>
+      <figcaption><b>Fig. 1</b> — Provider abstraction. The interface is fixed in Phase 0 so that promoting a component from API to local, or CPU to GPU, is a configuration change and never a rewrite.</figcaption>
+    </figure>
+
+    <h3>The compliance gate that must exist in code, not in a policy document</h3>
+    <p>The HF API sends complaint text outside India. That is acceptable for synthetic data and unacceptable for anything else — under the DPDP Act and under any bank's data-residency clause. The control cannot be a wiki page.</p>
+<pre><span class="c"># app/providers/factory.py</span>
+<span class="k">def</span> get_provider(settings) -&gt; ModelProvider:
+    <span class="k">if</span> settings.PROVIDER_PROFILE == <span class="s">"laptop"</span> <span class="k">and not</span> settings.SYNTHETIC_ONLY:
+        <span class="k">raise</span> ResidencyViolation(
+            <span class="s">"laptop profile routes text to a non-Indian endpoint; "</span>
+            <span class="s">"it is permitted only with SYNTHETIC_ONLY=true"</span>
+        )
+    <span class="k">return</span> _REGISTRY[settings.PROVIDER_PROFILE](settings)</pre>
+    <p>Pair it with a startup banner, a Prometheus gauge <code>provider_profile{'{'}profile="laptop"{'}'}</code> that alerts if it is ever non-zero outside a dev namespace, and a corpus loader that refuses any file lacking a <code>synthetic: true</code> sidecar.</p>
+
+    <h3>Practical notes on the HF path</h3>
+    <ul>
+      <li><strong>Use the OpenAI-compatible surface</strong>, not a bespoke client. Point an <code>openai</code>-SDK client at the HF router base URL with the HF token as the key. Swapping to a local llama.cpp server later is then a base-URL change, because llama.cpp also speaks OpenAI-compatible.</li>
+      <li><strong>Free tier is a prototyping tier</strong> — a few hundred requests an hour, models under roughly 10B, cold starts on unpopular models. Pro at $9/month lifts the provider quota substantially. Budget for Pro from day one; the engineer's time is worth more than the tier difference.</li>
+      <li><strong>Cache aggressively in dev.</strong> Key on <code>sha256(model + prompt + params)</code> to a local SQLite store. Iterating on downstream parsing shouldn't re-bill or re-wait on identical calls. This single decision makes Phase 0 iteration feel local.</li>
+      <li><strong>Grammar constraints may not survive the API.</strong> Not every provider exposes GBNF or JSON-schema-constrained decoding. If the chosen provider does not, fall back to <code>response_format</code> JSON mode plus strict Pydantic validation with one repair retry — and record the schema-validity rate as a metric, because it is the number that will change when you move to local llama.cpp.</li>
+      <li><strong>Contract tests run against every profile.</strong> Same 40 golden prompts, same assertions. A provider swap that changes behaviour must fail CI, not surprise you in Phase 2.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============ 5 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">5.0</span>
+    <span class="kicker">Revised<br>pipeline</span>
+    <span class="chip new">Stage 1.5 added</span>
+  </div>
+  <div class="body">
+    <div class="stamp-mark stamp-superseded">Superseded<span class="d">अधिक्रमित</span></div>
+    <h2>Where the accuracy actually leaks</h2>
+    <p>Two structural changes from v1. First, a <strong>quality gate</strong> before any model runs, with the authority to bounce a document back to the complainant rather than guess at it. Second, <strong>language identification moves to the line level</strong>, because the defining property of an RBI complaint is a printed English form with handwritten Marathi in the free-text box, and a single page-level language label silently corrupts everything downstream of it.</p>
+
+    <figure>
+      <svg viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revised pipeline with quality gate and line-level language identification">
+        <defs>
+          <marker id="a2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#191E26"/></marker>
+          <marker id="a3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#8E2438"/></marker>
+          <marker id="a4" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4B2E83"/></marker>
+        </defs>
+        <style>
+          .n{fill:#F3F0E8;stroke:#191E26;stroke-width:1.5}
+          .nv{fill:#EFE9F6;stroke:#4B2E83;stroke-width:1.5}
+          .nr{fill:#F7E9EB;stroke:#8E2438;stroke-width:1.5}
+          .ng{fill:#E7EFE9;stroke:#2C6247;stroke-width:1.5}
+          .lane{fill:none;stroke:#C0B7A2;stroke-width:1;stroke-dasharray:4 4}
+          .h{font:700 11.5px "JetBrains Mono",monospace;fill:#191E26;letter-spacing:.06em}
+          .p{font:11.5px "Public Sans",sans-serif;fill:#4A5260}
+          .e{stroke:#191E26;stroke-width:1.4;fill:none}
+          .er{stroke:#8E2438;stroke-width:1.4;fill:none}
+          .ev{stroke:#4B2E83;stroke-width:1.4;fill:none;stroke-dasharray:5 3}
+          .lbl{font:700 9.5px "JetBrains Mono",monospace;fill:#4A5260;letter-spacing:.1em}
+        </style>
+
+        <!-- lane labels -->
+        <text x="14" y="42" class="lbl">INGEST</text>
+        <text x="14" y="150" class="lbl">GATE</text>
+        <text x="14" y="262" class="lbl">VISION</text>
+        <text x="14" y="404" class="lbl">NLP</text>
+        <text x="14" y="518" class="lbl">DELIVER</text>
+        <line x1="100" y1="88" x2="966" y2="88" class="lane"/>
+        <line x1="100" y1="196" x2="966" y2="196" class="lane"/>
+        <line x1="100" y1="352" x2="966" y2="352" class="lane"/>
+        <line x1="100" y1="470" x2="966" y2="470" class="lane"/>
+
+        <!-- ingest row -->
+        <rect x="110" y="18" width="150" height="52" class="n"/>
+        <text x="122" y="38" class="h">1  Mail poller</text>
+        <text x="122" y="55" class="p">IMAP / MS Graph delta</text>
+
+        <rect x="290" y="18" width="170" height="52" class="n"/>
+        <text x="302" y="38" class="h">Idempotency</text>
+        <text x="302" y="55" class="p">content hash, not Message-ID</text>
+
+        <rect x="490" y="18" width="160" height="52" class="n"/>
+        <text x="502" y="38" class="h">Sandbox unpack</text>
+        <text x="502" y="55" class="p">ClamAV + resource caps</text>
+
+        <rect x="680" y="18" width="180" height="52" class="ng"/>
+        <text x="692" y="38" class="h">Text-layer bypass</text>
+        <text x="692" y="55" class="p">~30% skip OCR entirely</text>
+
+        <line x1="260" y1="44" x2="288" y2="44" class="e" marker-end="url(#a2)"/>
+        <line x1="460" y1="44" x2="488" y2="44" class="e" marker-end="url(#a2)"/>
+        <line x1="650" y1="44" x2="678" y2="44" class="e" marker-end="url(#a2)"/>
+
+        <!-- gate row -->
+        <rect x="110" y="108" width="230" height="70" class="nr"/>
+        <text x="122" y="129" class="h">1.5  QUALITY GATE</text>
+        <text x="122" y="146" class="p">skew · blur · resolution · coverage</text>
+        <text x="122" y="162" class="p">occlusion · rotation · blank · dupe</text>
+
+        <rect x="380" y="108" width="150" height="70" class="n"/>
+        <text x="392" y="129" class="h">REPAIR</text>
+        <text x="392" y="146" class="p">deskew, dewarp,</text>
+        <text x="392" y="162" class="p">rotate, binarise</text>
+
+        <rect x="570" y="108" width="180" height="70" class="nr"/>
+        <text x="582" y="129" class="h">BOUNCE</text>
+        <text x="582" y="146" class="p">auto-reply: re-scan requested,</text>
+        <text x="582" y="162" class="p">with the specific reason</text>
+
+        <rect x="790" y="108" width="176" height="70" class="n"/>
+        <text x="802" y="129" class="h">ACCEPT</text>
+        <text x="802" y="146" class="p">quality_score recorded</text>
+        <text x="802" y="162" class="p">on every page</text>
+
+        <line x1="770" y1="70" x2="225" y2="104" class="e" marker-end="url(#a2)"/>
+        <line x1="340" y1="143" x2="378" y2="143" class="e" marker-end="url(#a2)"/>
+        <line x1="530" y1="143" x2="568" y2="143" class="er" marker-end="url(#a3)"/>
+        <line x1="750" y1="143" x2="788" y2="143" class="e" marker-end="url(#a2)"/>
+
+        <!-- vision row -->
+        <rect x="110" y="216" width="160" height="60" class="n"/>
+        <text x="122" y="237" class="h">2a  Script ID</text>
+        <text x="122" y="254" class="p">tiny CNN on line crops</text>
+        <text x="122" y="269" class="p">→ selects rec head</text>
+
+        <rect x="300" y="216" width="160" height="60" class="n"/>
+        <text x="312" y="237" class="h">3  Page class</text>
+        <text x="312" y="254" class="p">MobileNetV3-S + layout</text>
+        <text x="312" y="269" class="p">features, late fusion</text>
+
+        <rect x="490" y="216" width="190" height="60" class="n"/>
+        <text x="502" y="237" class="h">4a  PP-OCRv5</text>
+        <text x="502" y="254" class="p">det → BATCHED rec (16–32)</text>
+        <text x="502" y="269" class="p">per-line: text · bbox · script</text>
+
+        <rect x="710" y="216" width="256" height="60" class="nv"/>
+        <text x="722" y="237" class="h">ROUTER</text>
+        <text x="722" y="254" class="p">validator failure + structure,</text>
+        <text x="722" y="269" class="p">NOT raw CTC confidence</text>
+
+        <line x1="878" y1="178" x2="190" y2="212" class="e" marker-end="url(#a2)"/>
+        <line x1="270" y1="246" x2="298" y2="246" class="e" marker-end="url(#a2)"/>
+        <line x1="460" y1="246" x2="488" y2="246" class="e" marker-end="url(#a2)"/>
+        <line x1="680" y1="246" x2="708" y2="246" class="e" marker-end="url(#a2)"/>
+
+        <rect x="710" y="292" width="256" height="46" class="nv"/>
+        <text x="722" y="311" class="h">4b  PaddleOCR-VL-0.9B</text>
+        <text x="722" y="328" class="p">escalated pages · own pool · own SLA</text>
+        <line x1="838" y1="276" x2="838" y2="288" class="ev" marker-end="url(#a4)"/>
+
+        <rect x="490" y="292" width="190" height="46" class="nv"/>
+        <text x="502" y="311" class="h">SHADOW SAMPLER</text>
+        <text x="502" y="328" class="p">3% of PASSED pages → 4b</text>
+        <line x1="708" y1="315" x2="682" y2="315" class="ev" marker-end="url(#a4)"/>
+
+        <!-- nlp row -->
+        <rect x="110" y="372" width="180" height="60" class="n"/>
+        <text x="122" y="393" class="h">2b  LID per line</text>
+        <text x="122" y="410" class="p">fastText lid.176.ftz, 917 KB</text>
+        <text x="122" y="425" class="p">label set gated by script</text>
+
+        <rect x="320" y="372" width="200" height="60" class="ng"/>
+        <text x="332" y="393" class="h">5a  Validators</text>
+        <text x="332" y="410" class="p">IFSC · Luhn · UTR · amounts</text>
+        <text x="332" y="425" class="p">deterministic · parallel · 100% precision</text>
+
+        <rect x="550" y="372" width="200" height="60" class="nv"/>
+        <text x="562" y="393" class="h">5b  SLM, constrained</text>
+        <text x="562" y="410" class="p">free-text fields only</text>
+        <text x="562" y="425" class="p">EXTRACTIVE summary spans</text>
+
+        <rect x="780" y="372" width="186" height="60" class="n"/>
+        <text x="792" y="393" class="h">6  IndicTrans2</text>
+        <text x="792" y="410" class="p">per-field, entity-masked</text>
+        <text x="792" y="425" class="p">value_en is advisory only</text>
+
+        <line x1="838" y1="338" x2="200" y2="368" class="e" marker-end="url(#a2)"/>
+        <line x1="290" y1="402" x2="318" y2="402" class="e" marker-end="url(#a2)"/>
+        <line x1="520" y1="402" x2="548" y2="402" class="e" marker-end="url(#a2)"/>
+        <line x1="750" y1="402" x2="778" y2="402" class="e" marker-end="url(#a2)"/>
+
+        <!-- deliver -->
+        <rect x="110" y="490" width="230" height="50" class="n"/>
+        <text x="122" y="510" class="h">result_version 1</text>
+        <text x="122" y="527" class="p">fast path · is_final = false</text>
+
+        <rect x="380" y="490" width="230" height="50" class="n"/>
+        <text x="392" y="510" class="h">result_version N</text>
+        <text x="392" y="527" class="p">escalated pages merged in</text>
+
+        <rect x="650" y="490" width="316" height="50" class="ng"/>
+        <text x="662" y="510" class="h">HITL review → active learning</text>
+        <text x="662" y="527" class="p">corrections are the training set for the next quarter</text>
+
+        <line x1="340" y1="515" x2="378" y2="515" class="e" marker-end="url(#a2)"/>
+        <line x1="610" y1="515" x2="648" y2="515" class="e" marker-end="url(#a2)"/>
+        <line x1="873" y1="432" x2="873" y2="486" class="e" marker-end="url(#a2)"/>
+      </svg>
+      <figcaption><b>Fig. 2</b> — Revised pipeline. Red is the reject path. Violet is the escalation path, including the shadow sampler that makes router false-negatives measurable. Green paths are the ones that avoid work.</figcaption>
+    </figure>
+
+    <div class="finding">
+      <span class="tag">Finding A1 — the router cannot see its own failures</span>
+      <p>v1 escalates on mean line confidence. CTC confidence on Devanagari conjuncts is high and wrong: the model is confident about a plausible glyph sequence that is not the one on the page. A confidence-gated router therefore fails to escalate precisely the pages it exists to catch, and nothing in the system ever notices.</p>
+    </div>
+    <div class="finding fix">
+      <span class="tag">Fix</span>
+      <p>Escalate on evidence that is external to the model: a failed IFSC or Luhn check where the field was clearly present, a detected table or multi-column region, a handwriting flag from the detector, a script-classifier disagreement between lines, or a quality score below threshold. Then add the <strong>shadow sampler</strong> — route 3% of <em>passed</em> pages to Tier-2 anyway and diff the outputs. That percentage is the only honest estimate you will ever get of the router's false-negative rate, and it costs almost nothing.</p>
+    </div>
+
+    <div class="finding">
+      <span class="tag">Finding A3 — the summary is a liability</span>
+      <p>v1 has a sub-2B model write <code>complaint_summary</code> for a document that enters a regulatory adjudication. A generated sentence that subtly misstates the grievance is worse than no summary, and it is unattributable — there is no page or bbox to point at when someone asks where it came from.</p>
+    </div>
+    <div class="finding fix">
+      <span class="tag">Fix</span>
+      <p>Make the summary <strong>extractive</strong>. The SLM's job is to select spans, not compose prose: return line indices, and the assembler concatenates the verbatim OCR text of those lines. Every summary then carries bboxes and survives the "show me where this came from" question that an Ombudsman case officer will eventually ask.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ 6 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">6.0</span>
+    <span class="kicker">Parallelism</span>
+    <span class="chip new">Specified</span>
+  </div>
+  <div class="body">
+    <div class="stamp-mark stamp-added">Added<span class="d">नया</span></div>
+    <h2>Four levels, and one rule that overrides all of them</h2>
+    <p>v1 mentioned Celery concurrency and stopped there. Throughput on CPU is won at four distinct levels, and the largest single win is the one v1 omitted entirely: batching the recognition head.</p>
+
+    <figure>
+      <svg viewBox="0 0 980 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four levels of parallelism">
+        <style>
+          .b{fill:#F3F0E8;stroke:#191E26;stroke-width:1.5}
+          .bv{fill:#EFE9F6;stroke:#4B2E83;stroke-width:1.5}
+          .bg{fill:#E7EFE9;stroke:#2C6247;stroke-width:1.5}
+          .lv{font:700 26px "Bricolage Grotesque",sans-serif;fill:#4B2E83}
+          .hh{font:700 13px "JetBrains Mono",monospace;fill:#191E26;letter-spacing:.06em}
+          .pp{font:12px "Public Sans",sans-serif;fill:#4A5260}
+          .gain{font:700 11px "JetBrains Mono",monospace;fill:#2C6247;letter-spacing:.08em}
+          .rl{stroke:#C0B7A2;stroke-width:1}
+        </style>
+
+        <line x1="0" y1="88" x2="980" y2="88" class="rl"/>
+        <line x1="0" y1="176" x2="980" y2="176" class="rl"/>
+        <line x1="0" y1="264" x2="980" y2="264" class="rl"/>
+
+        <text x="20" y="46" class="lv">L1</text>
+        <text x="72" y="34" class="hh">DOCUMENT → PAGES</text>
+        <text x="72" y="54" class="pp">Celery chord fans every page of a document across the worker pool. Page N+1 preprocesses while page N is recognised.</text>
+        <text x="72" y="72" class="gain">SCALES WITH WORKER COUNT · THE OBVIOUS ONE</text>
+
+        <text x="20" y="134" class="lv">L2</text>
+        <text x="72" y="122" class="hh">LINE CROPS → ONE BATCHED TENSOR</text>
+        <text x="72" y="142" class="pp">Detection yields 40–120 line crops per page. Bucket them by aspect ratio, pad, and run recognition as batches of 16–32 in a single ONNX call.</text>
+        <text x="72" y="160" class="gain">3–5× ON THE HOTTEST PATH · THE BIGGEST SINGLE WIN AFTER INT8 · OMITTED FROM V1</text>
+
+        <text x="20" y="222" class="lv">L3</text>
+        <text x="72" y="210" class="hh">FIELD GROUPS → CONCURRENT</text>
+        <text x="72" y="230" class="pp">Deterministic extractors are mutually independent — run them as a thread pool over the OCR text. Independent SLM field groups issue as concurrent requests.</text>
+        <text x="72" y="248" class="gain">LATENCY, NOT THROUGHPUT · DOMINANT IN API MODE WHERE EVERY CALL IS 1–3 s OF WAITING</text>
+
+        <text x="20" y="310" class="lv">L4</text>
+        <text x="72" y="298" class="hh">STAGES → PIPELINED</text>
+        <text x="72" y="318" class="pp">Translation of page 1's fields overlaps OCR of page 3. Escalated pages never block the fast-path result — they arrive as a later result_version.</text>
+        <text x="72" y="336" class="gain">CUTS TAIL LATENCY · REQUIRES THE VERSIONED RESULT CONTRACT FROM §5</text>
+
+        <rect x="72" y="352" width="880" height="34" class="bv"/>
+        <text x="86" y="374" style="font:700 12.5px 'JetBrains Mono',monospace;fill:#4B2E83">THE OVERRIDING RULE — BATCH, DO NOT THREAD. intra_op_num_threads stays at 2 in every profile.</text>
+      </svg>
+      <figcaption><b>Fig. 3</b> — Parallelism model. Levels 1 and 2 buy throughput; levels 3 and 4 buy latency. Adding threads inside the inference runtime buys neither.</figcaption>
+    </figure>
+
+    <div class="finding">
+      <span class="tag">The failure mode this prevents</span>
+      <p>ONNX Runtime, OpenVINO, llama.cpp and OpenBLAS each default independently to <code>nproc</code> threads. Celery prefork with concurrency 4 on an 8-core box therefore produces 32 threads contending for 8 cores, and the system runs 3–5× slower than a single-threaded version. Every profile must set <code>OMP_NUM_THREADS</code> before any numeric library is imported, and CI must assert the invariant <code>concurrency × intra_op_threads ≤ physical_cores</code>.</p>
+    </div>
+
+    <h3>Async versus processes — do not mix them by accident</h3>
+    <ul>
+      <li><strong>API profile (Phase 0):</strong> the NLP worker is I/O-bound. Use <code>asyncio.gather</code> over field groups inside a single process; concurrency 2–4 is plenty. Adding processes just multiplies your rate-limit exposure.</li>
+      <li><strong>Local profile (Phases 1–3):</strong> the NLP worker is CPU-bound. Use prefork processes, one model instance each, no asyncio fan-out. A single Qwen3 instance saturates its threads; concurrent requests to it queue anyway.</li>
+      <li>The same code path must serve both. Put the fan-out behind <code>provider.extract_batch(groups)</code> and let the provider decide whether that means <code>gather</code> or a sequential loop.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============ 7 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">7.0</span>
+    <span class="kicker">Test data</span>
+    <span class="chip new">Reframed</span>
+  </div>
+  <div class="body">
+    <h2>Synthesise it, don't generate it<span class="sub">परीक्षण डेटा — संश्लेषण की रणनीति</span></h2>
+    <p>The instinct is to ask an image model for "a scanned RBI complaint form, handwritten Marathi." Resist it, for three reasons that all point the same way:</p>
+    <ul>
+      <li><strong>No ground truth.</strong> A generated image has no label. You would then pay humans to transcribe your own synthetic data, which is the expense the synthetic data was supposed to avoid.</li>
+      <li><strong>Indic script comes out as noise.</strong> Diffusion models render Devanagari as glyph-shaped nonsense. Training or evaluating a Devanagari recogniser on it is worse than useless — it is actively misleading.</li>
+      <li><strong>Not reproducible.</strong> Regression testing needs the same corpus every run, versioned in git alongside the code.</li>
+    </ul>
+    <div class="finding fix">
+      <span class="tag">The reframe</span>
+      <p><strong>Render, then degrade.</strong> Compose each document from real text you control, using real Unicode fonts, then apply a physical-degradation pipeline — skew, blur, JPEG artefacts, shadow gradients, fold lines, staple holes, stamp overlays, thumb occlusion. Because you rendered it, you know every character's position: <em>ground truth falls out for free</em>. Ten document types × five variants × a degradation matrix gives you several hundred fully-labelled pages in an afternoon, against three to four weeks of human labelling.</p>
+    </div>
+    <div class="finding">
+      <span class="tag">The honest limit</span>
+      <p>Font-rendered handwriting with per-glyph jitter is not real handwriting. It validates the plumbing, the schema, the router and the throughput numbers. It does <strong>not</strong> validate handwriting accuracy. Any CER claim for handwritten Indic must be measured on real pages — IIIT's <code>iiit-indic-hw-words</code> for word-level, and a real complaint sample for page-level. Phase 1's exit criteria say so explicitly.</p>
+    </div>
+    <p>Full generator specification, degradation matrix, and the sidecar ground-truth format are in the separate test-data document.</p>
+  </div>
+</section>
+
+
+<!-- ============ 8 ============ -->
+<section class="clause">
+  <div class="rail">
+    <span class="num">8.0</span>
+    <span class="kicker">Scope</span>
+    <span class="chip keep">Converged</span>
+  </div>
+  <div class="body">
+    <h2>What we are building, and what we are refusing to build</h2>
+    <p>Convergence, after all the divergence above. Three things get built in the first release; four tempting things explicitly do not.</p>
+
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>In scope, v1 release</th><th>Why it survives the cut</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Printed English + printed Devanagari</strong> complaint extraction with deterministic identifier validation</td><td>Covers the largest slice of volume at the accuracy the domain requires. Everything else is a long tail.</td></tr>
+        <tr><td><strong>Quality gate with a bounce path</strong></td><td>Highest ROI intervention in the whole system, and the only one that improves the input rather than tolerating it.</td></tr>
+        <tr><td><strong>Supporting-document tagging</strong> (not extraction)</td><td>Cheap, useful, and it keeps the expensive path focused on the documents that carry the claim.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Explicitly out of scope</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>Production-grade Indic <strong>handwriting</strong> accuracy</td><td>No open model reaches it. Handwritten pages route to human review by design, and that is stated in the SLA rather than hidden in the error rate. Revisit after the Phase 3 fine-tune produces evidence.</td></tr>
+        <tr><td>Scripts beyond Devanagari, Tamil, Telugu, Arabic</td><td>PaddleOCR ships no head for them. Adding one is a fine-tuning project per script, gated on the volume profile from week 1.</td></tr>
+        <tr><td>Abstractive summarisation or complaint <strong>adjudication</strong></td><td>The service extracts and attributes. It does not form views about a complaint's merit. That boundary is what makes it deployable inside a regulated process.</td></tr>
+        <tr><td>Any cloud LLM API on real complainant data</td><td>Data residency. Non-negotiable, enforced in code, and the reason the whole model strategy is small-and-local.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>Set aside, deliberately, for a later conversation</h3>
+    <ul>
+      <li><strong>Complainant-facing pre-submission validator</strong> — the quality gate, moved upstream into the RBI CMS portal so the form is checked before it is ever emailed. Strictly better than anything downstream, and entirely outside this service's control. Worth raising with the RBI CMS team; not worth blocking on.</li>
+      <li><strong>Cross-complaint linking</strong> — the same account number across multiple complaints is a signal about a bank, not just a complaint. Interesting, out of scope, and the schema's stable <code>normalized</code> field keeps the door open.</li>
+      <li><strong>Bhashini integration</strong> — India's national language-services stack as a translation or OCR fallback. Government-operated, so it may satisfy residency where a commercial API cannot. Worth an evaluation spike in Phase 2.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="sign-off">
+  <div>
+    <b>Companion documents</b>
+    PRD-rbi-ocr-service-v1.md — scope, stories, acceptance criteria<br>
+    TEST-DATA-SPEC.md — synthetic corpus + degradation matrix<br>
+    BUILD-BRIEF.md — implementation brief for the coding agent<br>
+    generate_test_corpus.py — runnable generator
+  </div>
+  <div>
+    <b>Standing decisions</b>
+    Apache-2.0 / MIT / BSD / MPL-2.0 dependencies only<br>
+    No model weights under non-commercial or GPL terms<br>
+    No complainant data leaves Indian infrastructure<br>
+    Every extracted value carries page, bbox and source
+  </div>
+</div>
+
+</div>
+</body>
+</html>

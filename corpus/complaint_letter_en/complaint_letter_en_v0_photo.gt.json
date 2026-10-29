@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_en_v0_photo",
+  "doc_type": "complaint_letter_en",
+  "variant": 0,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-11.6deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "To,",
+      "bbox": [
+        228.0,
+        27.3,
+        249.1,
+        31.7,
+        243.7,
+        58.2,
+        222.5,
+        53.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The Banking Ombudsman,",
+      "bbox": [
+        221.0,
+        61.4,
+        406.0,
+        99.5,
+        400.6,
+        125.9,
+        215.5,
+        87.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank of India",
+      "bbox": [
+        214.0,
+        95.4,
+        375.7,
+        128.7,
+        370.2,
+        155.1,
+        208.5,
+        121.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Subject: Unauthorised electronic transaction debited from my savings account",
+      "bbox": [
+        203.2,
+        147.6,
+        759.7,
+        262.3,
+        754.2,
+        288.7,
+        197.7,
+        174.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "I hold a savings account with State Bank of India.",
+      "bbox": [
+        193.9,
+        192.5,
+        557.9,
+        267.5,
+        552.5,
+        293.9,
+        188.5,
+        219.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "My account number is 68978631914858.",
+      "bbox": [
+        187.2,
+        225.3,
+        485.1,
+        286.8,
+        479.7,
+        313.2,
+        181.7,
+        251.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "On 18/07/2026 an amount of Rs. 98,200 was",
+      "bbox": [
+        180.4,
+        258.1,
+        509.8,
+        326.0,
+        504.3,
+        352.4,
+        175.0,
+        284.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "debited without my authorisation or consent.",
+      "bbox": [
+        173.7,
+        290.9,
+        493.3,
+        356.7,
+        487.8,
+        383.2,
+        168.2,
+        317.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The transaction reference is 174357340535.",
+      "bbox": [
+        166.9,
+        323.7,
+        497.0,
+        391.7,
+        491.5,
+        418.1,
+        161.4,
+        350.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "I raised this with the branch but received no resolution.",
+      "bbox": [
+        160.1,
+        356.5,
+        562.2,
+        439.3,
+        556.7,
+        465.7,
+        154.7,
+        382.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "I request that the amount be reversed and compensation considered.",
+      "bbox": [
+        153.4,
+        389.3,
+        643.6,
+        490.3,
+        638.2,
+        516.7,
+        147.9,
+        415.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "Yours faithfully,",
+      "bbox": [
+        140.4,
+        452.4,
+        254.6,
+        476.0,
+        249.1,
+        502.4,
+        134.9,
+        478.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Rajesh Kumar Sharma",
+      "bbox": [
+        132.9,
+        488.9,
+        295.6,
+        522.4,
+        290.2,
+        548.8,
+        127.4,
+        515.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "State Bank of India",
+    "ifsc_code": "SBIN0694492",
+    "account_number": "68978631914858",
+    "card_last_four": "6598",
+    "disputed_amount": 98200,
+    "transaction_date": "18/07/2026",
+    "transaction_reference": "174357340535",
+    "complainant_name": "Rajesh Kumar Sharma",
+    "complainant_city": "Panvel, Maharashtra",
+    "mobile": "9480020119",
+    "prior_complaint_ref": "CMS/2025/246602",
+    "ground_en": "Unauthorised electronic transaction debited from my savings account"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "Subject: Unauthorised electronic transaction debited from my savings account",
+      "value_en": "Subject: Unauthorised electronic transaction debited from my savings account",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "68978631914858",
+      "value_en": "68978631914858",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "98,200",
+      "value_en": "98,200",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "174357340535",
+      "value_en": "174357340535",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "I request that the amount be reversed and compensation considered.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Rajesh Kumar Sharma",
+      "value_en": "Rajesh Kumar Sharma",
+      "script": "Latn"
+    }
+  }
+}

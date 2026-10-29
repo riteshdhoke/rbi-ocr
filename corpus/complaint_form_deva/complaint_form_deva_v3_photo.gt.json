@@ -1,0 +1,519 @@
+{
+  "doc_id": "complaint_form_deva_v3_photo",
+  "doc_type": "complaint_form_deva",
+  "variant": 3,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Deva",
+  "primary_language": "hin",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-1.6deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "बैंकिंग लोकपाल को शिकायत",
+      "bbox": [
+        87.4,
+        49.5,
+        365.2,
+        57.5,
+        364.3,
+        89.2,
+        86.5,
+        81.2
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "एकीकृत लोकपाल योजना 2021 — प्रपत्र I",
+      "bbox": [
+        86.4,
+        86.7,
+        333.2,
+        93.8,
+        332.6,
+        114.4,
+        85.7,
+        107.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. शिकायतकर्ता का नाम",
+      "bbox": [
+        83.9,
+        173.5,
+        219.4,
+        177.3,
+        218.9,
+        197.2,
+        83.3,
+        193.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "मीरा जोशी",
+      "bbox": [
+        461.9,
+        184.3,
+        522.0,
+        186.1,
+        521.4,
+        206.6,
+        461.3,
+        205.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. पता",
+      "bbox": [
+        82.5,
+        221.8,
+        120.8,
+        222.9,
+        120.3,
+        242.7,
+        81.9,
+        241.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "पटना, बिहार",
+      "bbox": [
+        460.5,
+        232.7,
+        532.1,
+        234.7,
+        531.5,
+        255.3,
+        459.9,
+        253.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. मोबाइल",
+      "bbox": [
+        81.1,
+        270.1,
+        142.0,
+        271.9,
+        141.5,
+        291.7,
+        80.5,
+        290.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9594434610",
+      "bbox": [
+        459.1,
+        281.0,
+        551.3,
+        283.6,
+        550.7,
+        304.3,
+        458.6,
+        301.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. बैंक का नाम",
+      "bbox": [
+        79.7,
+        318.5,
+        163.0,
+        320.9,
+        162.4,
+        340.7,
+        79.1,
+        338.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "बैंक ऑफ बड़ौदा",
+      "bbox": [
+        457.7,
+        329.3,
+        551.4,
+        332.0,
+        550.7,
+        352.7,
+        457.1,
+        350.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC कोड",
+      "bbox": [
+        78.3,
+        366.8,
+        154.8,
+        369.0,
+        154.3,
+        388.9,
+        77.7,
+        386.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "BARB0444592",
+      "bbox": [
+        456.4,
+        377.7,
+        562.2,
+        380.7,
+        561.6,
+        401.3,
+        455.8,
+        398.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. खाता संख्या",
+      "bbox": [
+        76.9,
+        415.2,
+        159.7,
+        417.5,
+        159.2,
+        437.3,
+        76.4,
+        435.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "84481195306168",
+      "bbox": [
+        455.0,
+        426.0,
+        584.0,
+        429.7,
+        583.4,
+        450.4,
+        454.4,
+        446.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. विवादित राशि (₹)",
+      "bbox": [
+        75.5,
+        463.5,
+        191.0,
+        466.8,
+        190.5,
+        486.6,
+        75.0,
+        483.4
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,500",
+      "bbox": [
+        453.6,
+        474.4,
+        494.8,
+        475.5,
+        494.2,
+        496.2,
+        453.0,
+        495.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. लेनदेन दिनांक",
+      "bbox": [
+        74.2,
+        511.8,
+        167.6,
+        514.5,
+        167.0,
+        534.4,
+        73.6,
+        531.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "05/07/2026",
+      "bbox": [
+        452.2,
+        522.7,
+        537.9,
+        525.1,
+        537.4,
+        545.8,
+        451.6,
+        543.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. लेनदेन संदर्भ",
+      "bbox": [
+        72.7,
+        560.2,
+        159.0,
+        562.6,
+        158.5,
+        582.5,
+        72.2,
+        580.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "242252835948",
+      "bbox": [
+        450.8,
+        571.0,
+        561.4,
+        574.2,
+        560.9,
+        594.8,
+        450.2,
+        591.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. पूर्व शिकायत सं.",
+      "bbox": [
+        71.4,
+        608.5,
+        185.0,
+        611.8,
+        184.4,
+        631.6,
+        70.8,
+        628.4
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2026/276803",
+      "bbox": [
+        449.4,
+        619.4,
+        587.3,
+        623.3,
+        586.6,
+        644.0,
+        448.8,
+        640.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. शिकायत का विवरण",
+      "bbox": [
+        69.3,
+        681.6,
+        205.5,
+        685.5,
+        205.0,
+        705.4,
+        68.7,
+        701.5
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "सावधि जमा नवीनीकरण पर घोषित ब्याज दर का पालन नहीं किया गया",
+      "bbox": [
+        86.5,
+        729.3,
+        484.5,
+        740.7,
+        484.0,
+        761.4,
+        85.9,
+        749.9
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "हस्ताक्षर",
+      "bbox": [
+        61.6,
+        949.3,
+        100.8,
+        950.5,
+        100.3,
+        967.9,
+        61.1,
+        966.8
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "Bank of Baroda",
+    "ifsc_code": "BARB0444592",
+    "account_number": "84481195306168",
+    "card_last_four": "2646",
+    "disputed_amount": 4500,
+    "transaction_date": "05/07/2026",
+    "transaction_reference": "242252835948",
+    "complainant_name": "Meera Joshi",
+    "complainant_city": "Patna, Bihar",
+    "mobile": "9594434610",
+    "prior_complaint_ref": "CMS/2026/276803",
+    "ground_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "मीरा जोशी",
+      "value_en": "Meera Joshi",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "पटना, बिहार",
+      "value_en": "Patna, Bihar",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9594434610",
+      "value_en": "9594434610",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "बैंक ऑफ बड़ौदा",
+      "value_en": "Bank of Baroda",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "BARB0444592",
+      "value_en": "BARB0444592",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "84481195306168",
+      "value_en": "84481195306168",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "05/07/2026",
+      "value_en": "05/07/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "242252835948",
+      "value_en": "242252835948",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2026/276803",
+      "value_en": "CMS/2026/276803",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "सावधि जमा नवीनीकरण पर घोषित ब्याज दर का पालन नहीं किया गया",
+      "value_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal",
+      "script": "Deva"
+    }
+  }
+}

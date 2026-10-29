@@ -1,0 +1,40 @@
+{
+ "doc_id": "complaint_form_deva_v1_bounce",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "bounce",
+  "score": 0.11578732532126226,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "RESOLUTION_BELOW_FLOOR",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": []
+  }
+ ],
+ "fields": {},
+ "timings_ms": {
+  "s0_read": 0.875,
+  "s1_ingest": 7.595,
+  "s15_quality": 142.985,
+  "s15_quality:p1": 142.985,
+  "e2e_total": 142.477
+ },
+ "warnings": [],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": null,
+ "summary_span_count": 0
+}

@@ -1,0 +1,125 @@
+{
+  "file_count": 30,
+  "files": {
+    "SKILL.md": {
+      "sha256": "5b355d6c3b26515858ccaaccb1ce6adf58b106fd9706918a0faca4b596461003",
+      "bytes": 7291
+    },
+    "app/field_selection.py": {
+      "sha256": "dca9e49676ab5c46f82b715e8b91bbb3979c966e2fd49ebf578b02a7b76a2c12",
+      "bytes": 3224
+    },
+    "app/stages/s5_discover.py": {
+      "sha256": "ed32b87ab21c843c2a68ce37aba0e1388cf661ba170bc4e2d687ca3d6f5ad161",
+      "bytes": 6017
+    },
+    "docs/OPEN-FIELD-EXTRACTION.md": {
+      "sha256": "c9fd96fe0d30717a8133ee12467ac50e0de8b8a4ccc28f22fa675add53517212",
+      "bytes": 6209
+    },
+    "tests/unit/test_field_selection.py": {
+      "sha256": "48264f394769fe12e390d26cdb0b24205402fa3ae2e32386e82f56028b04fc16",
+      "bytes": 3260
+    },
+    "tests/unit/test_s5_discover.py": {
+      "sha256": "185d107476a50180a398a6d15ecf68c7404b3fcf7c612b2e5c3429a72da05eb4",
+      "bytes": 5473
+    },
+    "app/api/routes.py": {
+      "sha256": "5a211f551baff90c23864792d6877c81169aa26897a2696df800481757eab512",
+      "bytes": 17642
+    },
+    "app/api/schemas.py": {
+      "sha256": "df57d95f62bbab8559684fb5e3cdc8d3479c736013e52ff010f94176d0da431d",
+      "bytes": 5451
+    },
+    "app/contracts/envelope.py": {
+      "sha256": "e32ebfaa0f54491619fff2610969d2a82c73379686461ce8992065885cd5a212",
+      "bytes": 24228
+    },
+    "app/contracts/ocr.py": {
+      "sha256": "d397bee210a4d75d9902047c91ddcc33d45a64a3dfff515ea95920f8100a031a",
+      "bytes": 22185
+    },
+    "app/pipeline.py": {
+      "sha256": "65662272bf4d2ee55b389aa8c71ac1eafc70f3ad45ff66014ba4c4ea19ff333f",
+      "bytes": 52724
+    },
+    "app/providers/hf_api.py": {
+      "sha256": "6a341c80e8e7df5681ecc7fc8d2da9b4f568871d9a72047b13941f685f80e4be",
+      "bytes": 49035
+    },
+    "app/review_ui/__init__.py": {
+      "sha256": "1f8587dede692898c2cb9b7ad25573fde83617c6eec0ed2cffee94d0746cbfd9",
+      "bytes": 4565
+    },
+    "app/review_ui/static/review_ui.js": {
+      "sha256": "a401a018f26d6efdc0bf1f8464716dcaa6012fc65e8ac0db16c7f52f2342083e",
+      "bytes": 29587
+    },
+    "app/review_ui/static/test_page.html": {
+      "sha256": "992d6b35dd4aea2c83c3d67ecef0b9c80f83d9ff3c8ae8ee48be892eeef2d155",
+      "bytes": 16146
+    },
+    "app/settings.py": {
+      "sha256": "0df55ae8caccb701781a8b6c851405ab5f6f44b82d718e320d6c7a29e4d3ed6a",
+      "bytes": 33975
+    },
+    "app/stages/assemble.py": {
+      "sha256": "c31844b61a5adc9713b4b16f229079a6c6f41821362cedf9a74c088676a46341",
+      "bytes": 23602
+    },
+    "app/stages/s5_slm.py": {
+      "sha256": "0a398fb3469f84874a7f53199e4a243037a7d525343e3202a79ee8abbec35e37",
+      "bytes": 29035
+    },
+    ".env.example": {
+      "sha256": "2d417062c15eed2413cfce9b36db938e2e87d860bd751adab3d6767f801617f0",
+      "bytes": 3564
+    },
+    "docs/AIR-GAPPED-DEPLOY.md": {
+      "sha256": "4817e696118819e9167e4de873636b31826602e1c46a42ab19fb80cb6dde582f",
+      "bytes": 96549
+    },
+    "docs/API.md": {
+      "sha256": "9479dbf268adbb0bd813be22cf3c449a25f075aa486ef6ff185892d965bd5628",
+      "bytes": 63015
+    },
+    "docs/schema/result_envelope.schema.json": {
+      "sha256": "211679edfb3376e18a7ba4650cddd0d4e5d7f10dfe5a2cdb2aaa1883de225c3a",
+      "bytes": 20148
+    },
+    "tests/unit/test_api.py": {
+      "sha256": "5a519e9140a7241caf492be5510114668f4f3b17b7f5e2d76b6cbaaf9dcaab70",
+      "bytes": 26131
+    },
+    "tests/unit/test_assemble.py": {
+      "sha256": "b884957a1c64438dfbf267067b16828aa47269fc26f7d23c80a04fd4be89f92e",
+      "bytes": 36957
+    },
+    "tests/unit/test_contracts_envelope.py": {
+      "sha256": "c513ec223668cbe54a3cc1919d21fce4b60fa63a1ba9ac72ef533ae5eb606bd0",
+      "bytes": 21019
+    },
+    "tests/unit/test_contracts_schema.py": {
+      "sha256": "6566e6b82c737150beb8a8ade5762f2ca3b9299b8e8eb931192d5b1d632a0121",
+      "bytes": 7733
+    },
+    "tests/unit/test_pipeline.py": {
+      "sha256": "323d62c2fea8af8792722cc6c4e51ea6ca591d58c2d5f54a6d560c38066fc4dc",
+      "bytes": 51527
+    },
+    "tests/unit/test_review_ui_static.py": {
+      "sha256": "fcfb2c94672bac9ac6de2ab95fe5ab9d360fd59fd1e6f9fbff293c805d67ee1a",
+      "bytes": 13918
+    },
+    "tests/unit/test_s5_slm.py": {
+      "sha256": "0e51bc1b377b6c6c535149cf86c100d6ca2e56a0ba294da115df971b79dd9c67",
+      "bytes": 28626
+    },
+    "corpus/index.json": {
+      "sha256": "bfe9b2559a74cb722f4c54cf8290bb372e5281b511dbe0b3450b7c5500946494",
+      "bytes": 114660
+    }
+  }
+}

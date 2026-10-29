@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_mar_v2_photo",
+  "doc_type": "complaint_letter_mar",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Deva",
+  "primary_language": "mar",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+5.7deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "सेवेत,",
+      "bbox": [
+        33.2,
+        143.7,
+        76.6,
+        139.4,
+        79.3,
+        166.3,
+        35.9,
+        170.6
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "मा. बँकिंग लोकपाल,",
+      "bbox": [
+        36.6,
+        178.3,
+        202.2,
+        161.8,
+        204.8,
+        188.7,
+        39.3,
+        205.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "भारतीय रिझर्व्ह बँक",
+      "bbox": [
+        40.1,
+        212.8,
+        194.7,
+        197.5,
+        197.4,
+        224.3,
+        42.7,
+        239.7
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "विषय: असफल एटीएम निकासी की राशि निर्धारित अवधि में जमा नहीं की गई",
+      "bbox": [
+        45.3,
+        265.9,
+        671.0,
+        203.8,
+        673.7,
+        230.6,
+        48.0,
+        292.8
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "माझे एचडीएफसी बैंक लिमिटेड येथे बचत खाते आहे.",
+      "bbox": [
+        49.8,
+        311.6,
+        471.1,
+        269.7,
+        473.7,
+        296.6,
+        52.5,
+        338.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "खाते क्रमांक 1674054082466141 आहे.",
+      "bbox": [
+        53.2,
+        344.8,
+        372.2,
+        313.2,
+        374.9,
+        340.0,
+        55.9,
+        371.7
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "दिनांक 24/10/2026 रोजी रु. 4,500 रक्कम",
+      "bbox": [
+        56.5,
+        378.2,
+        408.9,
+        343.2,
+        411.6,
+        370.0,
+        59.1,
+        405.0
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "माझ्या संमतीशिवाय डेबिट करण्यात आली.",
+      "bbox": [
+        59.8,
+        411.5,
+        398.4,
+        377.9,
+        401.1,
+        404.7,
+        62.4,
+        438.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "संदर्भ क्रमांक 437356031325.",
+      "bbox": [
+        63.1,
+        444.8,
+        311.2,
+        420.2,
+        313.9,
+        447.0,
+        65.8,
+        471.7
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "बँकेकडे तक्रार करूनही निराकरण झाले नाही.",
+      "bbox": [
+        66.4,
+        478.1,
+        421.3,
+        442.9,
+        424.0,
+        469.8,
+        69.1,
+        505.0
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "bbox": [
+        69.8,
+        511.4,
+        414.2,
+        477.2,
+        416.9,
+        504.1,
+        72.4,
+        538.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "आपला विश्वासू,",
+      "bbox": [
+        76.1,
+        575.6,
+        199.5,
+        563.3,
+        202.2,
+        590.2,
+        78.7,
+        602.5
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "अब्दुल रहमान शेख",
+      "bbox": [
+        79.8,
+        612.6,
+        231.7,
+        597.6,
+        234.4,
+        624.4,
+        82.5,
+        639.5
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "HDFC Bank Limited",
+    "ifsc_code": "HDFC0992875",
+    "account_number": "1674054082466141",
+    "card_last_four": "4147",
+    "disputed_amount": 4500,
+    "transaction_date": "24/10/2026",
+    "transaction_reference": "437356031325",
+    "complainant_name": "Abdul Rahman Shaikh",
+    "complainant_city": "Nagpur, Maharashtra",
+    "mobile": "9220665605",
+    "prior_complaint_ref": "CMS/2025/939531",
+    "ground_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "विषय: असफल एटीएम निकासी की राशि निर्धारित अवधि में जमा नहीं की गई",
+      "value_en": "Subject: Failure to credit the amount of a failed ATM withdrawal within the pr",
+      "script": "Deva"
+    },
+    "account_number": {
+      "value": "1674054082466141",
+      "value_en": "1674054082466141",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "437356031325",
+      "value_en": "437356031325",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Deva"
+    },
+    "complainant_name": {
+      "value": "अब्दुल रहमान शेख",
+      "value_en": "Abdul Rahman Shaikh",
+      "script": "Deva"
+    }
+  }
+}

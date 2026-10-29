@@ -1,0 +1,11 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- MALFORMED_PDF - ingestion: truncated or structurally invalid PDF -#}
+{% block subject %}We could not open your PDF: the file appears to be incomplete{% endblock %}
+{% block defect %}The PDF attached to your message could not be opened. Part of the file is
+missing or was damaged on the way to us, so the pages inside it cannot be
+read.{% endblock %}
+{% block remedy %}Please open the PDF on your own device to confirm that every page
+displays. If it opens correctly for you, send it again — the copy that
+reached us was most likely damaged during the upload. If it does not open
+for you either, please create the PDF again from the original scan or
+document and send the new file.{% endblock %}

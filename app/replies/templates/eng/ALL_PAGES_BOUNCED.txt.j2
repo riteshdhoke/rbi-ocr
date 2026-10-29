@@ -1,0 +1,7 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- ALL_PAGES_BOUNCED - document level: every page was refused by the quality gate -#}
+{% block subject %}None of the pages you sent could be read{% endblock %}
+{% block defect %}Every page in the document had something that prevented it from being read,
+so nothing could be taken from the attachment.{% endblock %}
+{% block remedy %}Please scan the whole document again at {{ recommended_dpi }} DPI, in good
+light, with each page flat and complete, and send the new file.{% endblock %}

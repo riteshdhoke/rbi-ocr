@@ -1,0 +1,217 @@
+# Deployment topology — CONFIG-COMPLETE AND UNTESTED ON THIS MACHINE.
+#
+# PLAN.md D2: the dev laptop has no Docker, so nothing in this file has ever
+# been brought up here. It is written from the BUILD-BRIEF sec. 5 topology and
+# is the deployment artefact, not a verified one. Treat every image tag, health
+# check and volume path as a first draft to be confirmed on the target node.
+#
+# What IS exercised on the laptop, and therefore is not guesswork:
+#   * the Celery app configuration, the four queue names and the routing table
+#     (app/tasks.py, asserted by tests/unit/test_tasks_eager.py);
+#   * the SQLAlchemy models and every query, against SQLite — the same
+#     declarative models run on Postgres unchanged;
+#   * the webhook signing, retry and DLQ policy, through an injected transport.
+#
+# What is NOT exercised anywhere yet:
+#   * these images actually starting and finding each other;
+#   * the Postgres migration running against a real server;
+#   * MinIO. It is provisioned here for the page store that Phase 2 needs;
+#     Phase 0/1 keeps rasterised pages in the process that produced them and
+#     persists only the envelope, so no service reads S3 today. The bucket is
+#     created so the first code that needs it does not also need a runbook
+#     change.
+#
+# One queue per worker POOL, never per task (BUILD-BRIEF sec. 5): that is what
+# keeps each worker's resident model set fixed and removes any need to load or
+# unload a model on the hot path.
+#
+# Thread budget (PRD P0-11): concurrency x ORT_INTRA_OP_THREADS <= physical
+# cores, per container. The values below assume a 8-core node; recompute them
+# before deploying anywhere else — Settings.assert_thread_budget() is the
+# check, and CI should call it with the target node's core count.
+
+name: rbi-ocr
+
+x-app-env: &app-env
+  PROVIDER_PROFILE: cpu_node          # air-gapped: everything local, no egress
+  SYNTHETIC_ONLY: "false"             # legal on cpu_node ONLY (invariant 6)
+  DATABASE_URL: postgresql+psycopg://rbi:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}@postgres:5432/rbi
+  REDIS_URL: redis://redis:6379/0
+  CELERY_TASK_ALWAYS_EAGER: "false"
+  MODELS_DIR: /models
+  IFSC_MASTER_PATH: /data/ifsc/RBI_IFSC.csv   # the real list; see OPEN-QUESTIONS Q8
+  OMP_NUM_THREADS: "2"
+  MKL_NUM_THREADS: "2"
+  ORT_INTRA_OP_THREADS: "2"
+  LOG_LEVEL: INFO
+  WEBHOOK_URL: ${WEBHOOK_URL:-}
+  WEBHOOK_HMAC_SECRET: ${WEBHOOK_HMAC_SECRET:-}
+  WEBHOOK_DELIVERY_MODE: celery
+
+x-app-build: &app-build
+  build:
+    context: .
+    dockerfile: Dockerfile            # NOT WRITTEN YET — WS-I packaging owns it
+  volumes:
+    - models:/models:ro               # populated offline; never downloaded here
+    - ifsc:/data/ifsc:ro
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  restart: unless-stopped
+
+services:
+  api:
+    <<: *app-build
+    environment:
+      <<: *app-env
+    command: >
+      uvicorn app.api:app --host 0.0.0.0 --port 8000 --workers 2
+    ports:
+      - "8000:8000"
+    healthcheck:
+      # /healthz reports "degraded" when weights are missing and still answers
+      # 200 — the container is up, the mount is not. Do not tighten this to
+      # require "ok" or a missing volume becomes a restart loop.
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+
+  # --- worker pools: one queue each, fixed resident model set -----------------
+
+  worker-preprocess:
+    <<: *app-build
+    environment:
+      <<: *app-env
+    # No ONNX session in this pool: ingest, bypass and the quality gate are
+    # OpenCV and pypdfium2 only, so it can run at higher concurrency.
+    command: >
+      celery -A app.tasks:celery_app worker
+      --queues q.preprocess --concurrency 4 --hostname preprocess@%h
+      --loglevel INFO --max-tasks-per-child 200
+
+  worker-vision:
+    <<: *app-build
+    environment:
+      <<: *app-env
+    # PP-OCRv5 det + rec heads resident. concurrency x intra_op = 2 x 2 = 4.
+    command: >
+      celery -A app.tasks:celery_app worker
+      --queues q.vision --concurrency 2 --hostname vision@%h
+      --loglevel INFO --max-tasks-per-child 100
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+
+  worker-ocr-heavy:
+    <<: *app-build
+    environment:
+      <<: *app-env
+    # Tier-2 VLM. Its own pool precisely so a q.vision worker never loads it.
+    command: >
+      celery -A app.tasks:celery_app worker
+      --queues q.ocr_heavy --concurrency 1 --hostname ocrheavy@%h
+      --loglevel INFO --max-tasks-per-child 50
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+
+  worker-nlp:
+    <<: *app-build
+    environment:
+      <<: *app-env
+    # Validators, SLM, IndicTrans2, assembly, webhook delivery.
+    command: >
+      celery -A app.tasks:celery_app worker
+      --queues q.nlp --concurrency 2 --hostname nlp@%h
+      --loglevel INFO --max-tasks-per-child 100
+    deploy:
+      resources:
+        limits:
+          memory: 6G
+
+  # --- infrastructure ---------------------------------------------------------
+
+  redis:
+    image: redis:7-alpine
+    command: >
+      redis-server --appendonly yes --maxmemory 512mb
+      --maxmemory-policy noeviction
+    # noeviction, deliberately: an evicted task message is a document that
+    # silently never completes. Prefer a broker that refuses writes and alerts.
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: rbi
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+      POSTGRES_DB: rbi
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rbi -d rbi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  migrate:
+    <<: *app-build
+    environment:
+      <<: *app-env
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    # create_all() is NOT a substitute: it produces whatever the models say
+    # today with no record of how it got there (app/storage/database.py).
+    command: alembic -c alembic/alembic.ini upgrade head
+
+  minio:
+    # Provisioned for the Phase 2 page store. Nothing reads it in Phase 0/1 —
+    # see the header. Kept here so the first code that needs a bucket does not
+    # also need a runbook change.
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-rbi}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?set MINIO_ROOT_PASSWORD}
+    volumes:
+      - minio-data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+  minio-data:
+  models:
+    # Populated offline and mounted read-only. NOTHING in this stack downloads
+    # a model: the target is air-gapped (PLAN.md), and a container that can
+    # reach a model hub is a container that can reach anything.
+    external: false
+  ifsc:
+    # The real RBI IFSC list, dropped in as a CSV. IFSC_MASTER_PATH points here
+    # and the loader takes it with no code change (OPEN-QUESTIONS Q8, D-E3-8).
+    external: false

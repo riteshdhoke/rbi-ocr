@@ -1,0 +1,312 @@
+{
+  "doc_id": "receipt_v3_photo",
+  "doc_type": "receipt",
+  "variant": 3,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-1.4deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "TRANSACTION RECEIPT",
+      "bbox": [
+        47.2,
+        38.8,
+        260.0,
+        43.8,
+        259.4,
+        67.6,
+        46.7,
+        62.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        46.1,
+        88.4,
+        79.0,
+        89.2,
+        78.6,
+        108.3,
+        45.6,
+        107.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "23/09/2026",
+      "bbox": [
+        194.8,
+        91.9,
+        284.1,
+        94.1,
+        283.6,
+        113.1,
+        194.4,
+        111.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "Bank",
+      "bbox": [
+        45.3,
+        120.7,
+        80.4,
+        121.5,
+        80.0,
+        140.5,
+        44.8,
+        139.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Bank of Baroda",
+      "bbox": [
+        194.1,
+        124.2,
+        319.1,
+        127.1,
+        318.6,
+        146.1,
+        193.6,
+        143.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "A/C",
+      "bbox": [
+        44.5,
+        152.9,
+        69.0,
+        153.4,
+        68.5,
+        172.5,
+        44.1,
+        171.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXXXX9743",
+      "bbox": [
+        193.3,
+        156.4,
+        282.6,
+        158.5,
+        282.2,
+        177.6,
+        192.8,
+        175.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Card",
+      "bbox": [
+        43.8,
+        185.1,
+        76.5,
+        185.9,
+        76.1,
+        204.9,
+        43.3,
+        204.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXX XXXX XXXX 3293",
+      "bbox": [
+        192.5,
+        188.6,
+        362.2,
+        192.6,
+        361.7,
+        211.7,
+        192.1,
+        207.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "card_last_four"
+    },
+    {
+      "text": "Amount",
+      "bbox": [
+        43.0,
+        217.3,
+        99.2,
+        218.7,
+        98.7,
+        237.7,
+        42.5,
+        236.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Rs. 4,500.00",
+      "bbox": [
+        191.8,
+        220.8,
+        298.9,
+        223.4,
+        298.5,
+        242.4,
+        191.3,
+        239.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "RRN",
+      "bbox": [
+        42.2,
+        249.6,
+        72.0,
+        250.3,
+        71.6,
+        269.3,
+        41.8,
+        268.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "527638181752",
+      "bbox": [
+        191.0,
+        253.1,
+        298.2,
+        255.6,
+        297.7,
+        274.7,
+        190.5,
+        272.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "Status",
+      "bbox": [
+        41.5,
+        281.8,
+        85.1,
+        282.8,
+        84.6,
+        301.9,
+        41.0,
+        300.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "FAILED",
+      "bbox": [
+        190.2,
+        285.3,
+        243.8,
+        286.6,
+        243.3,
+        305.6,
+        189.8,
+        304.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "transaction_date": "23/09/2026",
+    "bank_name": "Bank of Baroda",
+    "card_last_four": "3293",
+    "disputed_amount": 4500,
+    "transaction_reference": "527638181752"
+  },
+  "fields_bilingual": {
+    "transaction_date": {
+      "value": "23/09/2026",
+      "value_en": "23/09/2026",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "Bank of Baroda",
+      "value_en": "Bank of Baroda",
+      "script": "Latn"
+    },
+    "card_last_four": {
+      "value": "3293",
+      "value_en": "3293",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "Rs. 4,500.00",
+      "value_en": "Rs. 4,500.00",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "527638181752",
+      "value_en": "527638181752",
+      "script": "Latn"
+    }
+  }
+}

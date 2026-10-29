@@ -1,0 +1,10 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- DECOMPRESSION_BOMB - ingestion: decompressed:compressed ratio above the cap -#}
+{% block subject %}We stopped reading your file because it expands unexpectedly{% endblock %}
+{% block defect %}The attachment expands to far more data than its size suggests. We stop
+reading a file that behaves this way rather than put at risk the system that
+handles everybody's complaints, so nothing inside it was opened.{% endblock %}
+{% block remedy %}Please create the document again from the original: scan the pages at
+{{ recommended_dpi }} DPI and save them as a fresh PDF, or attach each page
+as a separate .jpg or .png picture. Files exported straight from a scanner
+or a phone camera do not behave this way.{% endblock %}

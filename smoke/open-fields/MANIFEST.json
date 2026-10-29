@@ -1,0 +1,304 @@
+{
+  "tool": "tools/run_corpus_eval.py",
+  "tool_version": "1.0.0",
+  "harness_version": "1.1.0",
+  "git_sha": "HEAD",
+  "run": {
+    "started_at": "2026-10-25T06:23:25.349486+00:00",
+    "finished_at": "2026-10-25T06:23:28.577885+00:00",
+    "duration_s": 3.2,
+    "documents_selected": 2,
+    "documents_written": 2,
+    "documents_ok": 2,
+    "documents_failed": 0,
+    "status_counts": {
+      "ok": 2
+    },
+    "quality_verdict_counts": {
+      "accept": 1,
+      "repair": 1
+    },
+    "warning_counts": {
+      "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED": 2
+    },
+    "overlap_events": 0,
+    "wall_ms_per_doc": {
+      "n": 2,
+      "min": 1549.7,
+      "p50": 1612.5,
+      "p95": 1669.0,
+      "max": 1675.2,
+      "mean": 1612.5
+    },
+    "wall_ms_per_doc_by_model_path": {
+      "live": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "max": null,
+        "mean": null
+      },
+      "cached": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "max": null,
+        "mean": null
+      },
+      "none": {
+        "n": 2,
+        "min": 1549.7,
+        "p50": 1612.5,
+        "p95": 1669.0,
+        "max": 1675.2,
+        "mean": 1612.5
+      }
+    },
+    "slm_tokens_total": 0
+  },
+  "config": {
+    "corpus_dir": "/Users/ritesh/Documents/work/sanjivani/rbi-ocr/corpus",
+    "out_dir": "smoke/open-fields/predictions",
+    "split": "dev",
+    "final": false,
+    "limit": 2,
+    "types": [],
+    "profiles": [],
+    "no_slm": true,
+    "dry_run": false,
+    "resume": false,
+    "doc_timeout_s": 180.0,
+    "doc_grace_s": 180.0,
+    "progress_every": 10,
+    "slm_failures_before_fallback": 5
+  },
+  "models": {
+    "slm": null,
+    "slm_fallback_configured": "google/gemma-3-4b-it",
+    "slm_fallback_engaged": null,
+    "slm_fallback_reason": null,
+    "hf_base_url": "https://router.huggingface.co/v1",
+    "hf_token_present": true,
+    "models_dir": "models",
+    "files": [
+      {
+        "path": "classifier/fusion.json",
+        "size_bytes": 1442
+      },
+      {
+        "path": "lid/lid.176.ftz",
+        "size_bytes": 938013
+      },
+      {
+        "path": "mt/indic-en/config.json",
+        "size_bytes": 197
+      },
+      {
+        "path": "mt/indic-en/model.SRC",
+        "size_bytes": 3256903
+      },
+      {
+        "path": "mt/indic-en/model.TGT",
+        "size_bytes": 759425
+      },
+      {
+        "path": "mt/indic-en/model.bin",
+        "size_bytes": 847167702
+      },
+      {
+        "path": "mt/indic-en/source_vocabulary.json",
+        "size_bytes": 4532115
+      },
+      {
+        "path": "mt/indic-en/target_vocabulary.json",
+        "size_bytes": 543196
+      },
+      {
+        "path": "ocr/det.onnx",
+        "size_bytes": 4826518
+      },
+      {
+        "path": "ocr/rec_deva.onnx",
+        "size_bytes": 7912311
+      },
+      {
+        "path": "ocr/rec_deva_dict.txt",
+        "size_bytes": 2511
+      },
+      {
+        "path": "ocr/rec_latn.onnx",
+        "size_bytes": 7848423
+      },
+      {
+        "path": "ocr/rec_latn_dict.txt",
+        "size_bytes": 1852
+      }
+    ],
+    "provenance": {
+      "artifacts": [
+        {
+          "destination": "mt\\indic-en",
+          "group": "mt",
+          "licence": "MIT",
+          "licence_in_code_allowlist": true,
+          "note": "pre-converted CTranslate2 build from adalat-ai/ct2-rotary-indictrans2-indic-en-dist-200M:indic-en-200m-ct2/ctranslate2_model; INT8 applied at load time (compute_type='int8')",
+          "revision": "524aade4f724dccbc6cd5ffb5e3c5c832a2baee4",
+          "role": "indictrans2-indic-en-dist-200M-ct2-int8",
+          "sha256": "a88c1c56918d267c4003279b2b3d4ed47f7e18a859d38ebb8491da6c422e4de8",
+          "size_bytes": 856259538,
+          "source": "adalat-ai/ct2-rotary-indictrans2-indic-en-dist-200M",
+          "status": "ok"
+        }
+      ],
+      "generated_at": "2026-08-07T03:35:12.074452+00:00",
+      "generated_by": "tools/fetch_models.py",
+      "licence_allowlist": [
+        "Apache-2.0",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "ISC",
+        "MIT",
+        "MPL-2.0",
+        "PSF"
+      ],
+      "problems": []
+    }
+  },
+  "cache": {
+    "path": "/Users/ritesh/Documents/work/sanjivani/rbi-ocr/.cache/provider.sqlite",
+    "enabled": true,
+    "rows_before": 0,
+    "rows_after": 0,
+    "stats_before": {
+      "hits": 0,
+      "misses": 0,
+      "stores": 0,
+      "invalidations": 0,
+      "lookups": 0,
+      "hit_rate": 0.0
+    },
+    "stats_after": {
+      "hits": 0,
+      "misses": 0,
+      "stores": 0,
+      "invalidations": 0,
+      "lookups": 0,
+      "hit_rate": 0.0
+    }
+  },
+  "corpus": {
+    "dir": "/Users/ritesh/Documents/work/sanjivani/rbi-ocr/corpus",
+    "seed": 1729,
+    "generator_version": "1.2.0",
+    "hand_shaping": "cluster",
+    "count": 295,
+    "caveat": "Font-rendered handwriting is not real handwriting. This corpus validates plumbing, schema, routing and throughput. It does NOT validate handwriting accuracy — measure that on iiit-indic-hw-words and real complaint pages.",
+    "caveats": {
+      "handwriting": "Font-rendered handwriting is not real handwriting. This corpus validates plumbing, schema, routing and throughput. It does NOT validate handwriting accuracy — measure that on iiit-indic-hw-words and real complaint pages.",
+      "hand_shaping": "Handwritten lines are drawn one grapheme cluster at a time so per-unit jitter can be applied. Each cluster is shaped by Raqm (Devanagari matras and conjuncts are correct), but kerning and ligation ACROSS clusters is absent on handwritten lines. Printed lines are drawn as whole strings and are fully shaped.",
+      "photo_evidence_forced_profile": "photo_evidence is forced to the `photo` degradation profile: a `clean` request for that type is rewritten to `photo`, which then collides with the real `photo` page, so photo_evidence emits 5 pages per variant instead of 6 and has no clean baseline. Intentional — the type exists to exercise the photographed-input path, and a pristine phone photo is not a condition the quality gate needs measuring on. Any consumer computing per-type page counts must special-case it.",
+      "field_ground_truth": "Two field blocks per document. `fields` holds the canonical English/ASCII facts as plain scalars (v1.1.0-compatible). `fields_bilingual` holds {value, value_en, script} where `value` is the string the page actually drew, verbatim, and `value_en` is its English equivalent from the parallel fact pool — equal to `value` on Latin pages. `fields_bilingual` is built from the draw calls, so it can never name a field the renderer did not render; `fields` may still name a fact that is on the page only in masked or truncated form. Where a field is drawn twice (the cheque's amount, in words and in figures) `fields_bilingual` keeps the first spelling and the second is reachable through lines[].field. Score a native-script claim against `value` and a translation against `value_en`."
+    }
+  },
+  "settings": {
+    "PROVIDER_PROFILE": "cpu_node",
+    "SYNTHETIC_ONLY": false,
+    "HF_BASE_URL": "https://router.huggingface.co/v1",
+    "SLM_MODEL": "meta-llama/Llama-3.1-8B-Instruct",
+    "SLM_MODEL_FALLBACK": "google/gemma-3-4b-it",
+    "SLM_MAX_TOKENS": 512,
+    "SLM_TEMPERATURE": 0.0,
+    "JOB_TOKEN_BUDGET": 8000,
+    "OMP_NUM_THREADS": 2,
+    "MKL_NUM_THREADS": 2,
+    "ORT_INTRA_OP_THREADS": 2,
+    "OCR_BATCH_SIZE": 4,
+    "REC_HEAD_CACHE_SIZE": 3,
+    "ESCALATION_SHADOW_RATE": 0.03,
+    "CODE_MIX_THRESHOLD": 0.15,
+    "QUALITY_BOUNCE_THRESHOLD": 0.35,
+    "QUALITY_BLUR_LAPLACIAN_FLOOR": 9500.0,
+    "QUALITY_CONTRAST_FLOOR": 17.0,
+    "QUALITY_EFFECTIVE_DPI_FLOOR": 30.0,
+    "QUALITY_TEXT_COVERAGE_FLOOR": 0.004,
+    "QUALITY_SKEW_REPAIR_DEG": 0.75,
+    "QUALITY_SKEW_BOUNCE_DEG": 25.0,
+    "GROUNDING_MAX_EDIT_DISTANCE": 2,
+    "MAX_WALL_CLOCK_SECONDS": 900.0,
+    "IFSC_MASTER_PATH": "app/resources/ifsc_master_sample.json"
+  },
+  "environment": {
+    "python": "3.12.15",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "processor": "arm",
+    "cpu_count": 8
+  },
+  "schema_violations": {
+    "complaint_form_en_v0_clean": [
+      "fields['name_of_complainant'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['address'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['mobile'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['name_of_bank'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['amount_in_dispute_rs'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['date_of_transaction'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')"
+    ],
+    "complaint_form_en_v0_light": [
+      "fields['name_of_complainant'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['address'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['mobile'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['name_of_bank'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['amount_in_dispute_rs'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')",
+      "fields['date_of_transaction'].source 'ocr_label' not in ('regex_validator', 'lookup_table', 'slm', 'classifier', 'human')"
+    ]
+  },
+  "documents": [
+    {
+      "doc_id": "complaint_form_en_v0_clean",
+      "type": "complaint_form_en",
+      "variant": 0,
+      "profile": "clean",
+      "status": "ok",
+      "wall_ms": 1675.2,
+      "pipeline_ms": 1674.1,
+      "line_count": 25,
+      "field_count": 15,
+      "result_versions": 1,
+      "escalated": false,
+      "shadow_sampled": false,
+      "quality_verdict": "accept",
+      "slm_tokens": 0,
+      "slm_model": null,
+      "cache_hits": 0,
+      "cache_misses": 0,
+      "model_path": "none",
+      "warnings": [
+        "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v0_light",
+      "type": "complaint_form_en",
+      "variant": 0,
+      "profile": "light",
+      "status": "ok",
+      "wall_ms": 1549.7,
+      "pipeline_ms": 1548.3,
+      "line_count": 25,
+      "field_count": 15,
+      "result_versions": 1,
+      "escalated": false,
+      "shadow_sampled": false,
+      "quality_verdict": "repair",
+      "slm_tokens": 0,
+      "slm_model": null,
+      "cache_hits": 0,
+      "cache_misses": 0,
+      "model_path": "none",
+      "warnings": [
+        "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+      ]
+    }
+  ]
+}

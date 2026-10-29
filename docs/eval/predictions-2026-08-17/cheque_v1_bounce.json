@@ -1,0 +1,40 @@
+{
+ "doc_id": "cheque_v1_bounce",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "bounce",
+  "score": 0.1838770081229801,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "RESOLUTION_BELOW_FLOOR",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": []
+  }
+ ],
+ "fields": {},
+ "timings_ms": {
+  "s0_read": 0.793,
+  "s1_ingest": 1.944,
+  "s15_quality": 37.656,
+  "s15_quality:p1": 37.656,
+  "e2e_total": 32.190999999999995
+ },
+ "warnings": [],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": null,
+ "summary_span_count": 0
+}

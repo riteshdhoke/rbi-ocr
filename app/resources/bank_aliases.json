@@ -1,0 +1,381 @@
+{
+  "schema": "bank-aliases/1",
+  "notes": "Display name plus the spellings an OCR'd Indian complaint actually carries, keyed by IFSC bank code. The real RBI IFSC master carries one canonical bank spelling and no native-script rendering, so this table stays separate from ifsc_master_sample.json and survives a real-list drop-in. Aliases are matched with rapidfuzz; adding a spelling is a data change, never a code change. Point BANK_ALIASES_PATH at a replacement to override this file without editing the installed package.",
+  "coverage_note": "Scheduled commercial banks (public sector, private, small finance, payments and the foreign banks that appear on Indian retail statements), the largest urban co-operative banks, and the pre-amalgamation names that still appear on documents predating the 2017-2020 mergers. Regional Rural Banks are NOT enumerated - there are more than forty and they are named after their sponsor bank and state, so an RRB complaint yields no bank_name rather than a wrong one. That is the intended failure: absence, never a neighbouring bank.",
+  "non_party_note": "Institutions that appear on a complaint but are never the bank complained about. Every RB-IOS complaint is ADDRESSED to the Reserve Bank of India, and 'Bank of India' is a literal substring of 'Reserve Bank of India' - so without this list the addressee block of every letter yields a confident, wrong bank_name. Matched by the same longest-literal-wins rule as the bank aliases: when the longest exact match on a line is one of these, no bank is claimed for that span.",
+  "non_party_institutions": [
+    "Reserve Bank of India",
+    "The Reserve Bank of India",
+    "Reserve Bank",
+    "RBI",
+    "भारतीय रिज़र्व बैंक",
+    "भारतीय रिजर्व बैंक",
+    "रिज़र्व बैंक ऑफ इंडिया",
+    "रिजर्व बैंक ऑफ इंडिया",
+    "Banking Ombudsman",
+    "The Banking Ombudsman",
+    "Office of the Banking Ombudsman",
+    "बैंकिंग लोकपाल",
+    "Reserve Bank - Integrated Ombudsman Scheme",
+    "National Payments Corporation of India",
+    "NPCI",
+    "Deposit Insurance and Credit Guarantee Corporation",
+    "DICGC",
+    "Securities and Exchange Board of India",
+    "Insurance Regulatory and Development Authority"
+  ],
+  "legacy_note": "Amalgamated banks (ANDB, CORP, ORBC, UTBI, ALLA, SYNB, VIJB, DENA, BOMH) keep their OWN historical code and name. A complaint naming 'Andhra Bank' is reported verbatim as Andhra Bank, not silently rewritten to the successor. If such a document also carries a post-merger IFSC, the bank_name/IFSC cross-check raises BANK_NAME_IFSC_DISAGREEMENT for a reviewer to adjudicate - which is the correct outcome, because the document genuinely names two different institutions.",
+  "banks": [
+    {
+      "code": "SBIN",
+      "name": "State Bank of India",
+      "aliases": ["State Bank of India", "SBI", "State Bank", "स्टेट बैंक ऑफ इंडिया", "स्टेट बँक ऑफ इंडिया", "भारतीय स्टेट बैंक"]
+    },
+    {
+      "code": "PUNB",
+      "name": "Punjab National Bank",
+      "aliases": ["Punjab National Bank", "PNB", "पंजाब नेशनल बैंक", "पंजाब नॅशनल बँक", "पंजाब नैशनल बैंक"]
+    },
+    {
+      "code": "BARB",
+      "name": "Bank of Baroda",
+      "aliases": ["Bank of Baroda", "BoB", "बैंक ऑफ बड़ौदा", "बँक ऑफ बडोदा", "बैंक ऑफ बडौदा"]
+    },
+    {
+      "code": "UBIN",
+      "name": "Union Bank of India",
+      "aliases": ["Union Bank of India", "Union Bank", "यूनियन बैंक ऑफ इंडिया", "युनियन बँक ऑफ इंडिया"]
+    },
+    {
+      "code": "BKID",
+      "name": "Bank of India",
+      "aliases": ["Bank of India", "BOI", "बैंक ऑफ इंडिया", "बँक ऑफ इंडिया"]
+    },
+    {
+      "code": "CNRB",
+      "name": "Canara Bank",
+      "aliases": ["Canara Bank", "केनरा बैंक", "कॅनरा बँक"]
+    },
+    {
+      "code": "CBIN",
+      "name": "Central Bank of India",
+      "aliases": ["Central Bank of India", "सेंट्रल बैंक ऑफ इंडिया", "सेंट्रल बँक ऑफ इंडिया"]
+    },
+    {
+      "code": "IDIB",
+      "name": "Indian Bank",
+      "aliases": ["Indian Bank", "इंडियन बैंक", "इंडियन बँक"]
+    },
+    {
+      "code": "IOBA",
+      "name": "Indian Overseas Bank",
+      "aliases": ["Indian Overseas Bank", "IOB", "इंडियन ओवरसीज बैंक"]
+    },
+    {
+      "code": "MAHB",
+      "name": "Bank of Maharashtra",
+      "aliases": ["Bank of Maharashtra", "बैंक ऑफ महाराष्ट्र", "बँक ऑफ महाराष्ट्र"]
+    },
+    {
+      "code": "UCBA",
+      "name": "UCO Bank",
+      "aliases": ["UCO Bank", "यूको बैंक", "युको बँक"]
+    },
+    {
+      "code": "PSIB",
+      "name": "Punjab & Sind Bank",
+      "aliases": ["Punjab & Sind Bank", "Punjab and Sind Bank", "पंजाब एंड सिंध बैंक", "पंजाब अँड सिंध बँक"]
+    },
+
+    {
+      "code": "HDFC",
+      "name": "HDFC Bank Limited",
+      "aliases": ["HDFC Bank Limited", "HDFC Bank Ltd", "HDFC Bank", "एचडीएफसी बैंक लिमिटेड", "एचडीएफसी बैंक", "एचडीएफसी बँक"]
+    },
+    {
+      "code": "ICIC",
+      "name": "ICICI Bank Limited",
+      "aliases": ["ICICI Bank Limited", "ICICI Bank Ltd", "ICICI Bank", "आईसीआईसीआई बैंक", "आयसीआयसीआय बँक"]
+    },
+    {
+      "code": "UTIB",
+      "name": "Axis Bank Limited",
+      "aliases": ["Axis Bank Limited", "Axis Bank Ltd", "Axis Bank", "एक्सिस बैंक", "अ‍ॅक्सिस बँक"]
+    },
+    {
+      "code": "KKBK",
+      "name": "Kotak Mahindra Bank Limited",
+      "aliases": ["Kotak Mahindra Bank Limited", "Kotak Mahindra Bank", "Kotak Bank", "कोटक महिंद्रा बैंक", "कोटक महिंद्रा बँक"]
+    },
+    {
+      "code": "INDB",
+      "name": "IndusInd Bank Limited",
+      "aliases": ["IndusInd Bank Limited", "IndusInd Bank", "इंडसइंड बैंक", "इंडसइंड बँक"]
+    },
+    {
+      "code": "IBKL",
+      "name": "IDBI Bank Limited",
+      "aliases": ["IDBI Bank Limited", "IDBI Bank", "IDBI", "आईडीबीआई बैंक"]
+    },
+    {
+      "code": "YESB",
+      "name": "Yes Bank Limited",
+      "aliases": ["Yes Bank Limited", "Yes Bank", "यस बैंक", "येस बँक"]
+    },
+    {
+      "code": "IDFB",
+      "name": "IDFC FIRST Bank Limited",
+      "aliases": ["IDFC FIRST Bank Limited", "IDFC FIRST Bank", "IDFC First Bank", "IDFC Bank", "आईडीएफसी फर्स्ट बैंक"]
+    },
+    {
+      "code": "FDRL",
+      "name": "The Federal Bank Limited",
+      "aliases": ["The Federal Bank Limited", "Federal Bank Limited", "Federal Bank", "फेडरल बैंक", "फेडरल बँक"]
+    },
+    {
+      "code": "SIBL",
+      "name": "The South Indian Bank Limited",
+      "aliases": ["The South Indian Bank Limited", "South Indian Bank Limited", "South Indian Bank", "साउथ इंडियन बैंक"]
+    },
+    {
+      "code": "KVBL",
+      "name": "The Karur Vysya Bank Limited",
+      "aliases": ["The Karur Vysya Bank Limited", "Karur Vysya Bank", "KVB", "करूर वैश्य बैंक"]
+    },
+    {
+      "code": "CIUB",
+      "name": "City Union Bank Limited",
+      "aliases": ["City Union Bank Limited", "City Union Bank", "सिटी यूनियन बैंक"]
+    },
+    {
+      "code": "RATN",
+      "name": "RBL Bank Limited",
+      "aliases": ["RBL Bank Limited", "RBL Bank", "Ratnakar Bank", "आरबीएल बैंक"]
+    },
+    {
+      "code": "BDBL",
+      "name": "Bandhan Bank Limited",
+      "aliases": ["Bandhan Bank Limited", "Bandhan Bank", "बंधन बैंक", "बंधन बँक"]
+    },
+    {
+      "code": "DCBL",
+      "name": "DCB Bank Limited",
+      "aliases": ["DCB Bank Limited", "DCB Bank", "Development Credit Bank", "डीसीबी बैंक"]
+    },
+    {
+      "code": "KARB",
+      "name": "The Karnataka Bank Limited",
+      "aliases": ["The Karnataka Bank Limited", "Karnataka Bank Limited", "Karnataka Bank", "कर्नाटक बैंक"]
+    },
+    {
+      "code": "TMBL",
+      "name": "Tamilnad Mercantile Bank Limited",
+      "aliases": ["Tamilnad Mercantile Bank Limited", "Tamilnad Mercantile Bank", "TMB"]
+    },
+    {
+      "code": "JAKA",
+      "name": "The Jammu & Kashmir Bank Limited",
+      "aliases": ["The Jammu & Kashmir Bank Limited", "Jammu & Kashmir Bank", "Jammu and Kashmir Bank", "J&K Bank", "जम्मू एंड कश्मीर बैंक"]
+    },
+    {
+      "code": "CSBK",
+      "name": "CSB Bank Limited",
+      "aliases": ["CSB Bank Limited", "CSB Bank", "Catholic Syrian Bank"]
+    },
+    {
+      "code": "DLXB",
+      "name": "Dhanlaxmi Bank Limited",
+      "aliases": ["Dhanlaxmi Bank Limited", "Dhanlaxmi Bank", "धनलक्ष्मी बैंक"]
+    },
+    {
+      "code": "NAIN",
+      "name": "The Nainital Bank Limited",
+      "aliases": ["The Nainital Bank Limited", "Nainital Bank", "नैनीताल बैंक"]
+    },
+
+    {
+      "code": "AUBL",
+      "name": "AU Small Finance Bank Limited",
+      "aliases": ["AU Small Finance Bank Limited", "AU Small Finance Bank", "AU Bank", "एयू स्मॉल फाइनेंस बैंक"]
+    },
+    {
+      "code": "ESFB",
+      "name": "Equitas Small Finance Bank Limited",
+      "aliases": ["Equitas Small Finance Bank Limited", "Equitas Small Finance Bank", "Equitas Bank"]
+    },
+    {
+      "code": "UJVN",
+      "name": "Ujjivan Small Finance Bank Limited",
+      "aliases": ["Ujjivan Small Finance Bank Limited", "Ujjivan Small Finance Bank", "Ujjivan Bank"]
+    },
+    {
+      "code": "JSFB",
+      "name": "Jana Small Finance Bank Limited",
+      "aliases": ["Jana Small Finance Bank Limited", "Jana Small Finance Bank", "Jana Bank"]
+    },
+    {
+      "code": "SURY",
+      "name": "Suryoday Small Finance Bank Limited",
+      "aliases": ["Suryoday Small Finance Bank Limited", "Suryoday Small Finance Bank"]
+    },
+    {
+      "code": "UTKS",
+      "name": "Utkarsh Small Finance Bank Limited",
+      "aliases": ["Utkarsh Small Finance Bank Limited", "Utkarsh Small Finance Bank"]
+    },
+    {
+      "code": "ESMF",
+      "name": "ESAF Small Finance Bank Limited",
+      "aliases": ["ESAF Small Finance Bank Limited", "ESAF Small Finance Bank"]
+    },
+    {
+      "code": "FINF",
+      "name": "Fincare Small Finance Bank Limited",
+      "aliases": ["Fincare Small Finance Bank Limited", "Fincare Small Finance Bank"]
+    },
+
+    {
+      "code": "IPOS",
+      "name": "India Post Payments Bank Limited",
+      "aliases": ["India Post Payments Bank Limited", "India Post Payments Bank", "IPPB", "इंडिया पोस्ट पेमेंट्स बैंक"]
+    },
+    {
+      "code": "AIRP",
+      "name": "Airtel Payments Bank Limited",
+      "aliases": ["Airtel Payments Bank Limited", "Airtel Payments Bank", "एयरटेल पेमेंट्स बैंक"]
+    },
+    {
+      "code": "PYTM",
+      "name": "Paytm Payments Bank Limited",
+      "aliases": ["Paytm Payments Bank Limited", "Paytm Payments Bank", "पेटीएम पेमेंट्स बैंक"]
+    },
+    {
+      "code": "FINO",
+      "name": "Fino Payments Bank Limited",
+      "aliases": ["Fino Payments Bank Limited", "Fino Payments Bank"]
+    },
+    {
+      "code": "NSPB",
+      "name": "NSDL Payments Bank Limited",
+      "aliases": ["NSDL Payments Bank Limited", "NSDL Payments Bank"]
+    },
+
+    {
+      "code": "SCBL",
+      "name": "Standard Chartered Bank",
+      "aliases": ["Standard Chartered Bank", "Standard Chartered", "स्टैंडर्ड चार्टर्ड बैंक"]
+    },
+    {
+      "code": "CITI",
+      "name": "Citibank N.A.",
+      "aliases": ["Citibank N.A.", "Citibank NA", "Citibank", "सिटी बैंक"]
+    },
+    {
+      "code": "HSBC",
+      "name": "The Hongkong and Shanghai Banking Corporation Limited",
+      "aliases": ["The Hongkong and Shanghai Banking Corporation Limited", "HSBC Bank", "HSBC"]
+    },
+    {
+      "code": "DEUT",
+      "name": "Deutsche Bank AG",
+      "aliases": ["Deutsche Bank AG", "Deutsche Bank", "डॉयचे बैंक"]
+    },
+    {
+      "code": "DBSS",
+      "name": "DBS Bank India Limited",
+      "aliases": ["DBS Bank India Limited", "DBS Bank India", "DBS Bank"]
+    },
+    {
+      "code": "BARC",
+      "name": "Barclays Bank PLC",
+      "aliases": ["Barclays Bank PLC", "Barclays Bank", "Barclays"]
+    },
+
+    {
+      "code": "SRCB",
+      "name": "Saraswat Co-operative Bank Limited",
+      "aliases": ["Saraswat Co-operative Bank Limited", "Saraswat Co-operative Bank", "Saraswat Bank", "सारस्वत बँक"]
+    },
+    {
+      "code": "COSB",
+      "name": "The Cosmos Co-operative Bank Limited",
+      "aliases": ["The Cosmos Co-operative Bank Limited", "Cosmos Co-operative Bank", "Cosmos Bank", "कॉसमॉस बँक"]
+    },
+    {
+      "code": "ABHY",
+      "name": "Abhyudaya Co-operative Bank Limited",
+      "aliases": ["Abhyudaya Co-operative Bank Limited", "Abhyudaya Co-operative Bank", "Abhyudaya Bank"]
+    },
+    {
+      "code": "SVCB",
+      "name": "SVC Co-operative Bank Limited",
+      "aliases": ["SVC Co-operative Bank Limited", "SVC Co-operative Bank", "SVC Bank", "Shamrao Vithal Co-operative Bank"]
+    },
+    {
+      "code": "TJSB",
+      "name": "TJSB Sahakari Bank Limited",
+      "aliases": ["TJSB Sahakari Bank Limited", "TJSB Sahakari Bank", "TJSB Bank", "Thane Janata Sahakari Bank"]
+    },
+    {
+      "code": "BACB",
+      "name": "The Bassein Catholic Co-operative Bank Limited",
+      "aliases": ["The Bassein Catholic Co-operative Bank Limited", "Bassein Catholic Co-operative Bank", "BCC Bank"]
+    },
+    {
+      "code": "NKGS",
+      "name": "NKGSB Co-operative Bank Limited",
+      "aliases": ["NKGSB Co-operative Bank Limited", "NKGSB Co-operative Bank", "NKGSB Bank"]
+    },
+    {
+      "code": "KCCB",
+      "name": "The Kalupur Commercial Co-operative Bank Limited",
+      "aliases": ["The Kalupur Commercial Co-operative Bank Limited", "Kalupur Commercial Co-operative Bank", "Kalupur Bank"]
+    },
+
+    {
+      "code": "ANDB",
+      "name": "Andhra Bank",
+      "aliases": ["Andhra Bank", "आंध्रा बैंक"]
+    },
+    {
+      "code": "CORP",
+      "name": "Corporation Bank",
+      "aliases": ["Corporation Bank", "कॉरपोरेशन बैंक"]
+    },
+    {
+      "code": "ORBC",
+      "name": "Oriental Bank of Commerce",
+      "aliases": ["Oriental Bank of Commerce", "OBC", "ओरिएंटल बैंक ऑफ कॉमर्स"]
+    },
+    {
+      "code": "UTBI",
+      "name": "United Bank of India",
+      "aliases": ["United Bank of India", "यूनाइटेड बैंक ऑफ इंडिया"]
+    },
+    {
+      "code": "ALLA",
+      "name": "Allahabad Bank",
+      "aliases": ["Allahabad Bank", "इलाहाबाद बैंक"]
+    },
+    {
+      "code": "SYNB",
+      "name": "Syndicate Bank",
+      "aliases": ["Syndicate Bank", "सिंडिकेट बैंक"]
+    },
+    {
+      "code": "VIJB",
+      "name": "Vijaya Bank",
+      "aliases": ["Vijaya Bank", "विजया बैंक"]
+    },
+    {
+      "code": "DENA",
+      "name": "Dena Bank",
+      "aliases": ["Dena Bank", "देना बैंक"]
+    },
+    {
+      "code": "BOMH",
+      "name": "State Bank of Hyderabad",
+      "aliases": ["State Bank of Hyderabad", "स्टेट बैंक ऑफ हैदराबाद"]
+    }
+  ]
+}

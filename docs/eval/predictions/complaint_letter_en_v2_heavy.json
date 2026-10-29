@@ -1,0 +1,346 @@
+{
+ "doc_id": "complaint_letter_en_v2_heavy",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.9905146356340986,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.00/2.00 quality_low handwriting=0.54 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "To",
+     "bbox": [
+      166.53645371307024,
+      151.78263432979583,
+      193.18229628692973,
+      151.78263432979583,
+      193.18229628692973,
+      181.66111567020417,
+      166.53645371307024,
+      181.66111567020417
+     ],
+     "confidence": 0.9685004651546478,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Banking Ombussoman",
+     "bbox": [
+      160.14125189997932,
+      183.11897685527802,
+      377.6201255971735,
+      183.11897685527802,
+      377.6201255971735,
+      225.618523144722,
+      160.14125189997932,
+      225.618523144722
+     ],
+     "confidence": 0.8618522625077855,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 1
+    },
+    {
+     "text": "Reserve Bank of India",
+     "bbox": [
+      158.39992095123637,
+      224.42570027510325,
+      363.01057655161077,
+      224.42570027510325,
+      363.01057655161077,
+      266.77636938095094,
+      158.39992095123637,
+      266.77636938095094
+     ],
+     "confidence": 0.8625839863504682,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "I holda savings account with HDFC Bank Limited.",
+     "bbox": [
+      160.2508768818595,
+      337.40006712277733,
+      588.2547772147439,
+      337.40006712277733,
+      588.2547772147439,
+      372.5124328772227,
+      160.2508768818595,
+      372.5124328772227
+     ],
+     "confidence": 0.9000586708809467,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "My account number is 509008s1027445.",
+     "bbox": [
+      157.85218414393339,
+      370.88732592264813,
+      517.9829045209017,
+      370.88732592264813,
+      517.9829045209017,
+      414.3189240773519,
+      157.85218414393339,
+      414.3189240773519
+     ],
+     "confidence": 0.8475699482692612,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "Or 04/07/2025 an am0unt of R. 4,300 was",
+     "bbox": [
+      159.4817001061006,
+      411.51095131238304,
+      545.6505921970714,
+      413.7263969898224,
+      545.4259365255182,
+      451.8553687254588,
+      159.25704443454742,
+      449.6399230480194
+     ],
+     "confidence": 0.8411840353256617,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 5
+    },
+    {
+     "text": "debited without my autherisation or consent.",
+     "bbox": [
+      162.1130461909554,
+      452.17820722262064,
+      544.6071519851685,
+      452.17820722262064,
+      544.6071519851685,
+      487.20098679860433,
+      162.1130461909554,
+      487.20098679860433
+     ],
+     "confidence": 0.8982793695547364,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 6
+    },
+    {
+     "text": "The trancaction referenc s 336463952695.",
+     "bbox": [
+      163.92777001857758,
+      489.8230853398641,
+      548.2426706660877,
+      489.8230853398641,
+      548.2426706660877,
+      524.8498313268026,
+      163.92777001857758,
+      524.8498313268026
+     ],
+     "confidence": 0.8937991693615913,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "Irated this with the branch but receivd o resolution",
+     "bbox": [
+      160.2156427556818,
+      527.3923828125,
+      631.8923117897727,
+      527.3923828125,
+      631.8923117897727,
+      562.5742838541667,
+      160.2156427556818,
+      562.5742838541667
+     ],
+     "confidence": 0.7155613446464906,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 8
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      806.1393423513932,
+      521.02834482193,
+      917.5896238413724,
+      530.7319914182027,
+      914.1558073650706,
+      569.1337428092957,
+      802.7055258750916,
+      559.4300962130229
+     ],
+     "confidence": 0.9972088560461998,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": " ",
+     "bbox": [
+      161.21874807097694,
+      567.2730857531229,
+      734.2299560200084,
+      564.0786204338074,
+      734.4442992643876,
+      601.5120204607646,
+      161.43309131535617,
+      604.7064857800801
+     ],
+     "confidence": 0.4224683344364166,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "Yours faithfully",
+     "bbox": [
+      162.53026980703527,
+      635.4461706797282,
+      309.82767087763006,
+      635.4461706797282,
+      309.82767087763006,
+      676.8163293202718,
+      162.53026980703527,
+      676.8163293202718
+     ],
+     "confidence": 0.9286492355167866,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 11
+    },
+    {
+     "text": "Aldut Rahman Shackh",
+     "bbox": [
+      158.42329024184832,
+      676.2112464904785,
+      359.3537122553045,
+      676.2112464904785,
+      359.3537122553045,
+      718.5158368428548,
+      158.42329024184832,
+      718.5158368428548
+     ],
+     "confidence": 0.9010251415403265,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "HDFC Bank",
+   "value_en": null,
+   "normalized": "HDFC Bank Limited",
+   "confidence": 0.9000586708809467,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     160.2508768818595,
+     337.40006712277733,
+     588.2547772147439,
+     337.40006712277733,
+     588.2547772147439,
+     372.5124328772227,
+     160.2508768818595,
+     372.5124328772227
+    ],
+    "span": [
+     29,
+     38
+    ],
+    "line_index": 3
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "04/07/2025",
+   "value_en": null,
+   "normalized": "2025-07-04",
+   "confidence": 0.8411840353256617,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     159.4817001061006,
+     411.51095131238304,
+     545.6505921970714,
+     413.7263969898224,
+     545.4259365255182,
+     451.8553687254588,
+     159.25704443454742,
+     449.6399230480194
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.85,
+  "s1_ingest": 22.672,
+  "s15_quality": 196.606,
+  "s15_quality:p1": 196.606,
+  "s4_ocr": 654.775,
+  "s4_ocr:p1": 654.775,
+  "s2b_lid": 0.893,
+  "s2b_lid:p1": 0.893,
+  "s3_classify": 174.688,
+  "s3_classify:p1": 174.688,
+  "s5_validators": 8.984,
+  "s5_slm": 8064.416,
+  "assemble": 0.202,
+  "s4b_vlm": 1785.661,
+  "s4b_vlm:p1": 1785.661,
+  "e2e_total": 10911.625
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_RESPONSE_INVALID",
+  "tier2_failed:page=1:reason=provider_error:code=PROVIDER_ERROR"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

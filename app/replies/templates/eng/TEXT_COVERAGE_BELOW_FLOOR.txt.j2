@@ -1,0 +1,8 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- TEXT_COVERAGE_BELOW_FLOOR - quality gate: share of page area carrying text below the floor -#}
+{% block subject %}Very little of the page you sent carries any writing{% endblock %}
+{% block defect %}Almost none of the page area carries writing or print. The page may have
+been cropped down to a corner, or only its margin may have been captured.{% endblock %}
+{% block remedy %}Please send the complete page, with all four edges inside the frame, scanned
+at {{ recommended_dpi }} DPI. Please do not crop or zoom into one part of
+the page — the whole sheet is what we need.{% endblock %}

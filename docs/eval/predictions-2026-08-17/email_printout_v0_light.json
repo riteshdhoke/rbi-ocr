@@ -1,0 +1,308 @@
+{
+ "doc_id": "email_printout_v0_light",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "accept",
+  "score": 1.0,
+  "flags": []
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "From:",
+     "bbox": [
+      105.67752020699636,
+      104.61052227020264,
+      184.75700360252742,
+      104.61052227020264,
+      184.75700360252742,
+      141.47176939646403,
+      105.67752020699636,
+      141.47176939646403
+     ],
+     "confidence": 0.9992217898368836,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 0
+    },
+    {
+     "text": "customercare@bank:example.in",
+     "bbox": [
+      257.6589140664963,
+      106.4334512035052,
+      625.9512049811227,
+      106.4334512035052,
+      625.9512049811227,
+      142.0852987964948,
+      257.6589140664963,
+      142.0852987964948
+     ],
+     "confidence": 0.9951718556029456,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "To:",
+     "bbox": [
+      107.13173064731416,
+      147.46984159946442,
+      151.30576935268584,
+      147.46984159946442,
+      151.30576935268584,
+      183.88849173386893,
+      107.13173064731416,
+      183.88849173386893
+     ],
+     "confidence": 0.9941297968228658,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": true,
+     "line_index": 2
+    },
+    {
+     "text": "rajesh@example.com ",
+     "bbox": [
+      257.8337776093256,
+      150.4627899010976,
+      524.862650962103,
+      150.4627899010976,
+      524.862650962103,
+      185.76846009890238,
+      257.8337776093256,
+      185.76846009890238
+     ],
+     "confidence": 0.961734276068838,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "Date:",
+     "bbox": [
+      108.45145089285714,
+      192.63248697916666,
+      179.52176339285714,
+      192.63248697916666,
+      179.52176339285714,
+      228.87480468750002,
+      108.45145089285714,
+      228.87480468750002
+     ],
+     "confidence": 0.9987748861312866,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "16/12/2026",
+     "bbox": [
+      259.49723466237384,
+      191.09278480211893,
+      397.672408194769,
+      191.09278480211893,
+      397.672408194769,
+      230.41450686454775,
+      259.49723466237384,
+      230.41450686454775
+     ],
+     "confidence": 0.9993787050247193,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "Subject:",
+     "bbox": [
+      107.42715088526407,
+      235.47477905750276,
+      212.543087209974,
+      235.47477905750276,
+      212.543087209974,
+      273.74501260916395,
+      107.42715088526407,
+      273.74501260916395
+     ],
+     "confidence": 0.9973393529653549,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "Re: Service Request CMs/2025/765620",
+     "bbox": [
+      257.584439323062,
+      237.9284691174825,
+      697.4036559150333,
+      237.9284691174825,
+      697.4036559150333,
+      273.7277808825175,
+      257.584439323062,
+      273.7277808825175
+     ],
+     "confidence": 0.9913150157247271,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "Dear Customer,",
+     "bbox": [
+      107.2645120166597,
+      337.7079364776611,
+      297.2522114799136,
+      341.796409924825,
+      296.40767615182057,
+      380.25323686599734,
+      106.41997668856666,
+      376.16476341883345
+     ],
+     "confidence": 0.9854436474187034,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": ": We acknowledge your complaint regarding the disputed transaction.",
+     "bbox": [
+      98.72230964615231,
+      384.43654987017317,
+      918.0947420029413,
+      390.1485605398814,
+      917.8069081987653,
+      430.6103648662567,
+      98.43445706367493,
+      424.8983541965485
+     ],
+     "confidence": 0.9738034961828544,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Your service request number is ciMs/2025/765620:",
+     "bbox": [
+      107.34501459485008,
+      432.7465784867605,
+      702.4257248469761,
+      432.7465784867605,
+      702.4257248469761,
+      468.7429304917654,
+      107.34501459485008,
+      468.7429304917654
+     ],
+     "confidence": 0.971954899529616,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "The matter is under investigation and we will revert within 30 days.",
+     "bbox": [
+      106.19241184280033,
+      476.24737532933557,
+      898.2414954957508,
+      481.2413416226705,
+      897.9834065210251,
+      521.3502580324808,
+      105.93434164637611,
+      516.356291739146
+     ],
+     "confidence": 0.977364644408226,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "Regards, Customer Care",
+     "bbox": [
+      105.99408481234596,
+      523.9947239398956,
+      401.03567709241594,
+      523.9947239398956,
+      401.03567709241594,
+      565.1021510601043,
+      105.99408481234596,
+      565.1021510601043
+     ],
+     "confidence": 0.9821987721053037,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "16/12/2026",
+   "value_en": null,
+   "normalized": "2026-12-16",
+   "confidence": 0.9993787050247193,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     259.49723466237384,
+     191.09278480211893,
+     397.672408194769,
+     191.09278480211893,
+     397.672408194769,
+     230.41450686454775,
+     259.49723466237384,
+     230.41450686454775
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 40.226,
+  "s1_ingest": 51.323,
+  "s15_quality": 216.993,
+  "s15_quality:p1": 216.993,
+  "s4_ocr": 582.404,
+  "s4_ocr:p1": 582.404,
+  "s2b_lid": 0.957,
+  "s2b_lid:p1": 0.957,
+  "s3_classify": 302.174,
+  "s3_classify:p1": 302.174,
+  "s5_validators": 22.121,
+  "s5_slm": 0.012,
+  "e2e_total": 1218.484
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "supporting_doc",
+ "summary_span_count": 0
+}

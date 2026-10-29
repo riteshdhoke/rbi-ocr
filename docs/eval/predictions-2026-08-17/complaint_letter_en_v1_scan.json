@@ -1,0 +1,438 @@
+{
+ "doc_id": "complaint_letter_en_v1_scan",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "accept",
+  "score": 1.0,
+  "flags": []
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "To",
+     "bbox": [
+      122.36528402283076,
+      139.8357414563497,
+      159.88918026288349,
+      139.8357414563497,
+      159.88918026288349,
+      170.7892585436503,
+      122.36528402283076,
+      170.7892585436503
+     ],
+     "confidence": 0.8711373209953308,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Banking Ombudsman",
+     "bbox": [
+      117.77487170128595,
+      172.89075813293456,
+      393.71692884536014,
+      181.25738487243652,
+      392.1827929360526,
+      230.894820022583,
+      116.24073579197837,
+      222.52819328308104
+     ],
+     "confidence": 0.9158936242262522,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 1
+    },
+    {
+     "text": "Reserve Bank of India",
+     "bbox": [
+      116.6595302025477,
+      227.3718976020813,
+      355.85534277416406,
+      227.3718976020813,
+      355.85534277416406,
+      271.69891993204754,
+      116.6595302025477,
+      271.69891993204754
+     ],
+     "confidence": 0.966655379249936,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 2
+    },
+    {
+     "text": "Subject: Credit card annual feelevied without prior consent orintimation",
+     "bbox": [
+      117.96891973132178,
+      299.07714023590086,
+      858.4224174136207,
+      299.07714023590086,
+      858.4224174136207,
+      344.9520264307658,
+      117.96891973132178,
+      344.9520264307658
+     ],
+     "confidence": 0.9143053893413808,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "Ihold a savings acount with Punjab National Bank.",
+     "bbox": [
+      119.56612723214285,
+      362.78411458333335,
+      662.3832775297618,
+      362.78411458333335,
+      662.3832775297618,
+      403.42421874999997,
+      119.56612723214285,
+      403.42421874999997
+     ],
+     "confidence": 0.9377239735759034,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "My account numberis 49981774021497.",
+     "bbox": [
+      121.35053963888258,
+      411.6615132013957,
+      547.311854589553,
+      407.99281152089435,
+      547.6719720023018,
+      449.0131077448527,
+      121.71065705163137,
+      452.681809425354
+     ],
+     "confidence": 0.9521909815924509,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 5
+    },
+    {
+     "text": "On 03/06/2026 an amount of Rs 250,000 was",
+     "bbox": [
+      119.61235421044485,
+      456.01740067799886,
+      605.8861895969935,
+      456.01740067799886,
+      605.8861895969935,
+      496.56593265533445,
+      119.61235421044485,
+      496.56593265533445
+     ],
+     "confidence": 0.8919538979123278,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 6
+    },
+    {
+     "text": "debited without imy authorisation or consent.",
+     "bbox": [
+      119.63235718863349,
+      503.6663795471191,
+      584.9584166208903,
+      503.6663795471191,
+      584.9584166208903,
+      544.1752871195475,
+      119.63235718863349,
+      544.1752871195475
+     ],
+     "confidence": 0.9396910998556349,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "The transaction reference is 825988062973",
+     "bbox": [
+      121.71694187890914,
+      547.1477494557698,
+      593.3277009782337,
+      547.1477494557698,
+      593.3277009782337,
+      587.6689172108968,
+      121.71694187890914,
+      587.6689172108968
+     ],
+     "confidence": 0.9598014209328628,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "I raised this with the branch but recelived no resolutian",
+     "bbox": [
+      122.28184257234845,
+      596.9972099304199,
+      690.8240032196044,
+      594.3284083048502,
+      691.0064865293956,
+      632.4693311055502,
+      122.46432588213965,
+      635.1381327311198
+     ],
+     "confidence": 0.954388159408904,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 9
+    },
+    {
+     "text": "Irequest that the amount be reversed and compensation considered",
+     "bbox": [
+      120.17285233452205,
+      641.3628297170003,
+      805.7315740131196,
+      636.3515748341878,
+      806.0660416739327,
+      681.2422969818115,
+      120.50731999533515,
+      686.253551864624
+     ],
+     "confidence": 0.9308226886205375,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "Yours faithfully,",
+     "bbox": [
+      116.7837432736442,
+      722.4241242726644,
+      295.09870517821537,
+      722.4241242726644,
+      295.09870517821537,
+      774.7883757273356,
+      116.7837432736442,
+      774.7883757273356
+     ],
+     "confidence": 0.8884911081370186,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "Priya Venkatesan",
+     "bbox": [
+      116.57806671801066,
+      773.9912110646566,
+      312.0305722100394,
+      773.9912110646566,
+      312.0305722100394,
+      826.76295560201,
+      116.57806671801066,
+      826.76295560201
+     ],
+     "confidence": 0.9471432492136955,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      940.2412339619227,
+      819.448808670044,
+      1075.2647822243825,
+      819.448808670044,
+      1075.2647822243825,
+      866.2095246632894,
+      940.2412339619227,
+      866.2095246632894
+     ],
+     "confidence": 0.9967167899012566,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "Punjab National Bank",
+   "value_en": null,
+   "normalized": "Punjab National Bank",
+   "confidence": 0.9377239735759034,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     119.56612723214285,
+     362.78411458333335,
+     662.3832775297618,
+     362.78411458333335,
+     662.3832775297618,
+     403.42421874999997,
+     119.56612723214285,
+     403.42421874999997
+    ],
+    "span": [
+     28,
+     48
+    ],
+    "line_index": 4
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "account_number": {
+   "value": "49981774021497",
+   "value_en": null,
+   "normalized": "49981774021497",
+   "confidence": 0.8569718834332057,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     121.35053963888258,
+     411.6615132013957,
+     547.311854589553,
+     407.99281152089435,
+     547.6719720023018,
+     449.0131077448527,
+     121.71065705163137,
+     452.681809425354
+    ],
+    "span": [
+     20,
+     34
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "03/06/2026",
+   "value_en": null,
+   "normalized": "2026-06-03",
+   "confidence": 0.8919538979123278,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     119.61235421044485,
+     456.01740067799886,
+     605.8861895969935,
+     456.01740067799886,
+     605.8861895969935,
+     496.56593265533445,
+     119.61235421044485,
+     496.56593265533445
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "Rs 250,000",
+   "value_en": null,
+   "normalized": "250000.00",
+   "confidence": 0.8919538979123278,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     119.61235421044485,
+     456.01740067799886,
+     605.8861895969935,
+     456.01740067799886,
+     605.8861895969935,
+     496.56593265533445,
+     119.61235421044485,
+     496.56593265533445
+    ],
+    "span": [
+     27,
+     37
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "825988062973",
+   "value_en": null,
+   "normalized": "825988062973",
+   "confidence": 0.9598014209328628,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     121.71694187890914,
+     547.1477494557698,
+     593.3277009782337,
+     547.1477494557698,
+     593.3277009782337,
+     587.6689172108968,
+     121.71694187890914,
+     587.6689172108968
+    ],
+    "span": [
+     29,
+     41
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 40.219,
+  "s1_ingest": 39.305,
+  "s15_quality": 210.838,
+  "s15_quality:p1": 210.838,
+  "s4_ocr": 701.641,
+  "s4_ocr:p1": 701.641,
+  "s2b_lid": 1.034,
+  "s2b_lid:p1": 1.034,
+  "s3_classify": 227.596,
+  "s3_classify:p1": 227.596,
+  "s5_validators": 25.848,
+  "s5_slm": 0.013,
+  "e2e_total": 1238.7220000000002
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

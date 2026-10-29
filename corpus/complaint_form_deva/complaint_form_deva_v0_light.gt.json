@@ -1,0 +1,514 @@
+{
+  "doc_id": "complaint_form_deva_v0_light",
+  "doc_type": "complaint_form_deva",
+  "variant": 0,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Deva",
+  "primary_language": "hin",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-0.8deg",
+    "blur:0.4",
+    "noise:0.004"
+  ],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "बैंकिंग लोकपाल को शिकायत",
+      "bbox": [
+        125.5,
+        89.7,
+        573.8,
+        96.2,
+        573.0,
+        147.4,
+        124.8,
+        140.9
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "एकीकृत लोकपाल योजना 2021 — प्रपत्र I",
+      "bbox": [
+        124.7,
+        149.7,
+        522.9,
+        155.5,
+        522.4,
+        188.8,
+        124.2,
+        183.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. शिकायतकर्ता का नाम",
+      "bbox": [
+        122.7,
+        289.7,
+        341.4,
+        292.9,
+        340.9,
+        324.9,
+        122.2,
+        321.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "राजेश कुमार शर्मा",
+      "bbox": [
+        732.6,
+        298.5,
+        893.3,
+        300.9,
+        892.8,
+        334.1,
+        732.1,
+        331.8
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. पता",
+      "bbox": [
+        121.5,
+        367.7,
+        183.4,
+        368.6,
+        183.0,
+        400.6,
+        121.1,
+        399.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "पनवेल, महाराष्ट्र",
+      "bbox": [
+        731.5,
+        376.5,
+        875.1,
+        378.6,
+        874.6,
+        411.9,
+        731.0,
+        409.8
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. मोबाइल",
+      "bbox": [
+        120.4,
+        445.7,
+        218.8,
+        447.1,
+        218.3,
+        479.1,
+        119.9,
+        477.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9916165191",
+      "bbox": [
+        730.3,
+        454.5,
+        879.1,
+        456.7,
+        878.6,
+        490.0,
+        729.9,
+        487.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. बैंक का नाम",
+      "bbox": [
+        119.3,
+        523.7,
+        253.7,
+        525.6,
+        253.2,
+        557.6,
+        118.8,
+        555.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "स्टेट बैंक ऑफ इंडिया",
+      "bbox": [
+        729.2,
+        532.5,
+        922.5,
+        535.3,
+        922.0,
+        568.6,
+        728.7,
+        565.8
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC कोड",
+      "bbox": [
+        118.1,
+        601.7,
+        241.6,
+        603.5,
+        241.1,
+        635.5,
+        117.7,
+        633.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "SBIN0963561",
+      "bbox": [
+        728.1,
+        610.5,
+        892.0,
+        612.9,
+        891.5,
+        646.2,
+        727.6,
+        643.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. खाता संख्या",
+      "bbox": [
+        117.0,
+        679.7,
+        250.6,
+        681.6,
+        250.2,
+        713.6,
+        116.5,
+        711.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "2935832288280354",
+      "bbox": [
+        726.9,
+        688.5,
+        964.9,
+        691.9,
+        964.4,
+        725.2,
+        726.5,
+        721.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. विवादित राशि (₹)",
+      "bbox": [
+        115.9,
+        757.7,
+        302.2,
+        760.4,
+        301.8,
+        792.4,
+        115.4,
+        789.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,500",
+      "bbox": [
+        725.8,
+        766.5,
+        792.3,
+        767.5,
+        791.8,
+        800.7,
+        725.3,
+        799.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. लेनदेन दिनांक",
+      "bbox": [
+        114.8,
+        835.7,
+        265.5,
+        837.8,
+        265.0,
+        869.8,
+        114.3,
+        867.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "16/11/2026",
+      "bbox": [
+        724.7,
+        844.5,
+        863.0,
+        846.5,
+        862.5,
+        879.8,
+        724.2,
+        877.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. लेनदेन संदर्भ",
+      "bbox": [
+        113.6,
+        913.7,
+        252.8,
+        915.7,
+        252.4,
+        947.7,
+        113.2,
+        945.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "287463955644",
+      "bbox": [
+        723.6,
+        922.5,
+        902.0,
+        925.1,
+        901.6,
+        958.3,
+        723.1,
+        955.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. पूर्व शिकायत सं.",
+      "bbox": [
+        112.5,
+        991.6,
+        295.9,
+        994.3,
+        295.4,
+        1026.3,
+        112.0,
+        1023.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2026/817617",
+      "bbox": [
+        722.4,
+        1000.5,
+        944.8,
+        1003.7,
+        944.3,
+        1037.0,
+        722.0,
+        1033.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. शिकायत का विवरण",
+      "bbox": [
+        110.8,
+        1109.6,
+        330.7,
+        1112.8,
+        330.2,
+        1144.8,
+        110.3,
+        1141.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "मेरे बचत खाते से अनधिकृत इलेक्ट्रॉनिक लेनदेन डेबिट किया गया",
+      "bbox": [
+        139.7,
+        1186.1,
+        724.5,
+        1194.5,
+        724.0,
+        1227.8,
+        139.2,
+        1219.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "हस्ताक्षर",
+      "bbox": [
+        104.5,
+        1541.6,
+        167.8,
+        1542.5,
+        167.4,
+        1570.7,
+        104.1,
+        1569.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "State Bank of India",
+    "ifsc_code": "SBIN0963561",
+    "account_number": "2935832288280354",
+    "card_last_four": "3394",
+    "disputed_amount": 4500,
+    "transaction_date": "16/11/2026",
+    "transaction_reference": "287463955644",
+    "complainant_name": "Rajesh Kumar Sharma",
+    "complainant_city": "Panvel, Maharashtra",
+    "mobile": "9916165191",
+    "prior_complaint_ref": "CMS/2026/817617",
+    "ground_en": "Unauthorised electronic transaction debited from my savings account"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "राजेश कुमार शर्मा",
+      "value_en": "Rajesh Kumar Sharma",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "पनवेल, महाराष्ट्र",
+      "value_en": "Panvel, Maharashtra",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9916165191",
+      "value_en": "9916165191",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "स्टेट बैंक ऑफ इंडिया",
+      "value_en": "State Bank of India",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "SBIN0963561",
+      "value_en": "SBIN0963561",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "2935832288280354",
+      "value_en": "2935832288280354",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "16/11/2026",
+      "value_en": "16/11/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "287463955644",
+      "value_en": "287463955644",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2026/817617",
+      "value_en": "CMS/2026/817617",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "मेरे बचत खाते से अनधिकृत इलेक्ट्रॉनिक लेनदेन डेबिट किया गया",
+      "value_en": "Unauthorised electronic transaction debited from my savings account",
+      "script": "Deva"
+    }
+  }
+}

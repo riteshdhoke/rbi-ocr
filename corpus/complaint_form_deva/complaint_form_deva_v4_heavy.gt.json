@@ -1,0 +1,519 @@
+{
+  "doc_id": "complaint_form_deva_v4_heavy",
+  "doc_type": "complaint_form_deva",
+  "variant": 4,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Deva",
+  "primary_language": "hin",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-0.7deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:1.5",
+    "noise:0.03",
+    "downscale:0.7"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "बैंकिंग लोकपाल को शिकायत",
+      "bbox": [
+        85.5,
+        64.3,
+        399.3,
+        67.9,
+        398.9,
+        103.7,
+        85.2,
+        100.2
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "एकीकृत लोकपाल योजना 2021 — प्रपत्र I",
+      "bbox": [
+        85.1,
+        106.3,
+        363.9,
+        109.5,
+        363.6,
+        132.8,
+        84.8,
+        129.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. शिकायतकर्ता का नाम",
+      "bbox": [
+        84.0,
+        204.3,
+        237.1,
+        206.1,
+        236.8,
+        228.5,
+        83.7,
+        226.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "संजय देशपांडे",
+      "bbox": [
+        510.9,
+        209.2,
+        598.8,
+        210.2,
+        598.6,
+        233.4,
+        510.6,
+        232.5
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. पता",
+      "bbox": [
+        83.4,
+        258.9,
+        126.7,
+        259.4,
+        126.4,
+        281.8,
+        83.1,
+        281.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "इंदौर, मध्य प्रदेश",
+      "bbox": [
+        510.3,
+        263.8,
+        616.1,
+        265.0,
+        615.9,
+        288.3,
+        510.1,
+        287.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. मोबाइल",
+      "bbox": [
+        82.7,
+        313.5,
+        151.6,
+        314.3,
+        151.3,
+        336.7,
+        82.5,
+        335.9
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9673278197",
+      "bbox": [
+        509.7,
+        318.4,
+        613.8,
+        319.5,
+        613.5,
+        342.9,
+        509.5,
+        341.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. बैंक का नाम",
+      "bbox": [
+        82.1,
+        368.1,
+        176.2,
+        369.2,
+        176.0,
+        391.6,
+        81.8,
+        390.5
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "यूनियन बैंक ऑफ इंडिया",
+      "bbox": [
+        509.1,
+        373.0,
+        665.0,
+        374.8,
+        664.7,
+        398.0,
+        508.8,
+        396.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC कोड",
+      "bbox": [
+        81.5,
+        422.7,
+        167.9,
+        423.7,
+        167.6,
+        446.1,
+        81.2,
+        445.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "UBIN0194167",
+      "bbox": [
+        508.5,
+        427.6,
+        626.5,
+        428.9,
+        626.2,
+        452.2,
+        508.2,
+        450.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. खाता संख्या",
+      "bbox": [
+        80.8,
+        477.3,
+        174.4,
+        478.4,
+        174.2,
+        500.8,
+        80.6,
+        499.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "91360278204",
+      "bbox": [
+        507.8,
+        482.2,
+        622.4,
+        483.5,
+        622.1,
+        506.8,
+        507.6,
+        505.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. विवादित राशि (₹)",
+      "bbox": [
+        80.2,
+        531.9,
+        210.7,
+        533.4,
+        210.4,
+        555.8,
+        80.0,
+        554.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,500",
+      "bbox": [
+        507.2,
+        536.8,
+        553.7,
+        537.3,
+        553.5,
+        560.6,
+        506.9,
+        560.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. लेनदेन दिनांक",
+      "bbox": [
+        79.6,
+        586.5,
+        185.1,
+        587.7,
+        184.9,
+        610.1,
+        79.4,
+        608.9
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12/03/2026",
+      "bbox": [
+        506.6,
+        591.4,
+        603.4,
+        592.5,
+        603.2,
+        615.8,
+        506.3,
+        614.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. लेनदेन संदर्भ",
+      "bbox": [
+        79.0,
+        641.1,
+        176.5,
+        642.2,
+        176.2,
+        664.6,
+        78.8,
+        663.5
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "312008472284",
+      "bbox": [
+        506.0,
+        646.0,
+        630.9,
+        647.4,
+        630.6,
+        670.7,
+        505.7,
+        669.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. पूर्व शिकायत सं.",
+      "bbox": [
+        78.4,
+        695.7,
+        206.7,
+        697.1,
+        206.5,
+        719.5,
+        78.1,
+        718.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2026/451068",
+      "bbox": [
+        505.3,
+        700.6,
+        661.0,
+        702.3,
+        660.7,
+        725.6,
+        505.0,
+        723.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. शिकायत का विवरण",
+      "bbox": [
+        77.4,
+        778.3,
+        231.3,
+        780.0,
+        231.1,
+        802.4,
+        77.1,
+        800.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "ऋण खाता बंद करने और मूल संपत्ति दस्तावेज़ लौटाने में देरी",
+      "bbox": [
+        97.8,
+        831.7,
+        478.5,
+        836.1,
+        478.2,
+        859.3,
+        97.6,
+        855.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "हस्ताक्षर",
+      "bbox": [
+        74.0,
+        1080.7,
+        118.3,
+        1081.1,
+        118.0,
+        1100.9,
+        73.8,
+        1100.4
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "Union Bank of India",
+    "ifsc_code": "UBIN0194167",
+    "account_number": "91360278204",
+    "card_last_four": "6011",
+    "disputed_amount": 4500,
+    "transaction_date": "12/03/2026",
+    "transaction_reference": "312008472284",
+    "complainant_name": "Sanjay Deshpande",
+    "complainant_city": "Indore, Madhya Pradesh",
+    "mobile": "9673278197",
+    "prior_complaint_ref": "CMS/2026/451068",
+    "ground_en": "Delay in closure of loan account and release of original property documents"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "संजय देशपांडे",
+      "value_en": "Sanjay Deshpande",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "इंदौर, मध्य प्रदेश",
+      "value_en": "Indore, Madhya Pradesh",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9673278197",
+      "value_en": "9673278197",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "यूनियन बैंक ऑफ इंडिया",
+      "value_en": "Union Bank of India",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "UBIN0194167",
+      "value_en": "UBIN0194167",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "91360278204",
+      "value_en": "91360278204",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "12/03/2026",
+      "value_en": "12/03/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "312008472284",
+      "value_en": "312008472284",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2026/451068",
+      "value_en": "CMS/2026/451068",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "ऋण खाता बंद करने और मूल संपत्ति दस्तावेज़ लौटाने में देरी",
+      "value_en": "Delay in closure of loan account and release of original property documents",
+      "script": "Deva"
+    }
+  }
+}

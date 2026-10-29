@@ -1,0 +1,310 @@
+{
+ "doc_id": "photo_evidence_v0_heavy",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "accept",
+  "score": 0.4341033319302814,
+  "flags": [
+   "RESOLUTION_BELOW_FLOOR",
+   "BLUR_ABOVE_CEILING",
+   "OCCLUSION_DETECTED",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.00/2.00 validator_failures=1(amount) quality_low escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "RANSACTION RECEIPT",
+     "bbox": [
+      0.0,
+      77.97310471534729,
+      225.66303227742515,
+      47.44747281074524,
+      230.18325856526693,
+      80.06659388542175,
+      3.988307126363119,
+      110.5922257900238
+     ],
+     "confidence": 0.9795517557197146,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "15/0272026",
+     "bbox": [
+      153.3581330617269,
+      110.66802859306335,
+      264.0026966094971,
+      97.56537556648254,
+      267.5672695159912,
+      126.87928080558777,
+      156.92270596822104,
+      139.98193383216858
+     ],
+     "confidence": 0.9282942593097687,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "State Bank of India",
+     "bbox": [
+      157.1264258066813,
+      148.67942094802856,
+      354.7960759480794,
+      123.50925207138062,
+      358.4256240844727,
+      151.267831325531,
+      160.75594011942547,
+      176.43800020217896
+     ],
+     "confidence": 0.9455522361554598,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "xxxxxx1065",
+     "bbox": [
+      160.3164525349935,
+      184.178364276886,
+      271.96020050048827,
+      170.4065203666687,
+      275.49734242757165,
+      198.33129167556763,
+      163.85359446207684,
+      212.1031355857849
+     ],
+     "confidence": 0.7706916570663452,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "xxxxxxxx0xx3955.",
+     "bbox": [
+      163.1254727681478,
+      220.41812896728516,
+      367.33568649291993,
+      193.82826805114746,
+      371.22442525227865,
+      222.9130458831787,
+      167.01421152750652,
+      249.5029067993164
+     ],
+     "confidence": 0.6368201542645693,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "Card",
+     "bbox": [
+      3.4781260013580324,
+      240.776104927063,
+      46.3968718846639,
+      240.776104927063,
+      46.3968718846639,
+      265.630145072937,
+      3.4781260013580324,
+      265.630145072937
+     ],
+     "confidence": 0.9637112617492676,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "Rs. 98,20008",
+     "bbox": [
+      168.685302734375,
+      255.61916828155518,
+      311.679007212321,
+      237.98014640808105,
+      315.3495157877604,
+      266.957745552063,
+      172.35581130981447,
+      284.5967674255371
+     ],
+     "confidence": 0.8465970754623413,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "Amount",
+     "bbox": [
+      5.366622940699259,
+      278.6561107635498,
+      76.07642211914063,
+      270.60462474823,
+      79.2161953608195,
+      297.4579429626465,
+      8.506396182378134,
+      305.50939559936523
+     ],
+     "confidence": 0.9827745159467062,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "863158112155",
+     "bbox": [
+      169.23097966512046,
+      292.86638259887695,
+      304.57032470703126,
+      274.8179221153259,
+      308.5520785013835,
+      303.8950729370117,
+      173.21273345947267,
+      321.9435501098633
+     ],
+     "confidence": 0.9953195701042811,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "RRN",
+     "bbox": [
+      10.500000111262004,
+      314.424352645874,
+      53.783331108093265,
+      314.424352645874,
+      53.783331108093265,
+      337.450647354126,
+      10.500000111262004,
+      337.450647354126
+     ],
+     "confidence": 0.9970729351043701,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "FAILED",
+     "bbox": [
+      177.09467366536458,
+      329.17882919311523,
+      251.25522282918297,
+      318.72385025024414,
+      255.39909337361655,
+      347.34920501708984,
+      181.2385442097982,
+      357.80418395996094
+     ],
+     "confidence": 0.994251032670339,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "State Bank of India",
+   "value_en": null,
+   "normalized": "State Bank of India",
+   "confidence": 0.9455522361554598,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     157.1264258066813,
+     148.67942094802856,
+     354.7960759480794,
+     123.50925207138062,
+     358.4256240844727,
+     151.267831325531,
+     160.75594011942547,
+     176.43800020217896
+    ],
+    "span": [
+     0,
+     19
+    ],
+    "line_index": 2
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "863158112155",
+   "value_en": null,
+   "normalized": "863158112155.00",
+   "confidence": 0.9953195701042811,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     169.23097966512046,
+     292.86638259887695,
+     304.57032470703126,
+     274.8179221153259,
+     308.5520785013835,
+     303.8950729370117,
+     173.21273345947267,
+     321.9435501098633
+    ],
+    "span": [
+     0,
+     12
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.793,
+  "s1_ingest": 7.075,
+  "s15_quality": 131.451,
+  "s15_quality:p1": 131.451,
+  "s4_ocr": 318.689,
+  "s4_ocr:p1": 318.689,
+  "s2b_lid": 0.656,
+  "s2b_lid:p1": 0.656,
+  "s3_classify": 44.652,
+  "s3_classify:p1": 44.652,
+  "s5_validators": 31.309,
+  "s5_slm": 0.013,
+  "assemble": 0.184,
+  "s4b_vlm": 0.095,
+  "s4b_vlm:p1": 0.095,
+  "e2e_total": 537.966
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+  "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

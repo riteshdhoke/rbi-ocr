@@ -1,0 +1,514 @@
+{
+  "doc_id": "complaint_form_en_v3_light",
+  "doc_type": "complaint_form_en",
+  "variant": 3,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+0.8deg",
+    "blur:0.4",
+    "noise:0.004"
+  ],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+      "bbox": [
+        95.4,
+        110.0,
+        929.0,
+        98.5,
+        929.7,
+        147.1,
+        96.0,
+        158.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank — Integrated Ombudsman Scheme, 2021 — Form I",
+      "bbox": [
+        96.2,
+        170.0,
+        862.1,
+        159.4,
+        862.6,
+        191.4,
+        96.6,
+        202.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. Name of complainant",
+      "bbox": [
+        98.1,
+        309.9,
+        379.6,
+        306.1,
+        380.0,
+        338.1,
+        98.5,
+        341.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Meera Joshi",
+      "bbox": [
+        708.1,
+        301.6,
+        850.6,
+        299.6,
+        851.0,
+        332.9,
+        708.5,
+        334.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. Address",
+      "bbox": [
+        99.2,
+        387.9,
+        221.2,
+        386.3,
+        221.7,
+        418.3,
+        99.6,
+        419.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Patna, Bihar",
+      "bbox": [
+        709.1,
+        379.5,
+        858.2,
+        377.5,
+        858.7,
+        410.8,
+        709.6,
+        412.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. Mobile",
+      "bbox": [
+        100.3,
+        465.9,
+        207.9,
+        464.4,
+        208.4,
+        496.4,
+        100.7,
+        497.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9118318404",
+      "bbox": [
+        710.2,
+        457.5,
+        858.9,
+        455.5,
+        859.4,
+        488.8,
+        710.7,
+        490.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. Name of bank",
+      "bbox": [
+        101.3,
+        543.9,
+        294.2,
+        541.3,
+        294.7,
+        573.3,
+        101.8,
+        575.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Bank of Baroda",
+      "bbox": [
+        711.3,
+        535.5,
+        898.9,
+        533.0,
+        899.4,
+        566.2,
+        711.7,
+        568.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC code",
+      "bbox": [
+        102.4,
+        621.9,
+        243.9,
+        620.0,
+        244.4,
+        652.0,
+        102.8,
+        653.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "BARB0238122",
+      "bbox": [
+        712.3,
+        613.5,
+        883.0,
+        611.2,
+        883.5,
+        644.5,
+        712.8,
+        646.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. Account number",
+      "bbox": [
+        103.5,
+        699.9,
+        326.6,
+        696.8,
+        327.0,
+        728.8,
+        103.9,
+        731.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "72949689084358",
+      "bbox": [
+        713.4,
+        691.5,
+        921.6,
+        688.7,
+        922.1,
+        721.9,
+        713.9,
+        724.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. Amount in dispute (Rs.)",
+      "bbox": [
+        104.5,
+        777.9,
+        404.8,
+        773.8,
+        405.2,
+        805.8,
+        105.0,
+        809.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "250,000",
+      "bbox": [
+        714.5,
+        769.5,
+        810.7,
+        768.2,
+        811.2,
+        801.5,
+        714.9,
+        802.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. Date of transaction",
+      "bbox": [
+        105.6,
+        855.9,
+        357.6,
+        852.4,
+        358.1,
+        884.4,
+        106.1,
+        887.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "08/11/2026",
+      "bbox": [
+        715.6,
+        847.5,
+        853.9,
+        845.6,
+        854.3,
+        878.9,
+        716.0,
+        880.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. Transaction reference",
+      "bbox": [
+        106.7,
+        933.9,
+        388.8,
+        930.0,
+        389.2,
+        962.0,
+        107.1,
+        965.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "378237596907",
+      "bbox": [
+        716.6,
+        925.5,
+        895.1,
+        923.0,
+        895.6,
+        956.3,
+        717.1,
+        958.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. Previous complaint no.",
+      "bbox": [
+        107.8,
+        1011.9,
+        417.4,
+        1007.6,
+        417.8,
+        1039.6,
+        108.2,
+        1043.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2026/919908",
+      "bbox": [
+        717.7,
+        1003.5,
+        940.1,
+        1000.4,
+        940.5,
+        1033.7,
+        718.2,
+        1036.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. Nature of complaint",
+      "bbox": [
+        109.4,
+        1129.9,
+        386.6,
+        1126.1,
+        387.1,
+        1158.0,
+        109.8,
+        1161.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Non-adherence to the declared interest rate on a fixed deposit at renewal",
+      "bbox": [
+        140.4,
+        1205.4,
+        1034.6,
+        1193.1,
+        1035.1,
+        1226.4,
+        140.9,
+        1238.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        115.3,
+        1561.8,
+        215.1,
+        1560.5,
+        215.5,
+        1588.6,
+        115.7,
+        1590.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "Bank of Baroda",
+    "ifsc_code": "BARB0238122",
+    "account_number": "72949689084358",
+    "card_last_four": "5056",
+    "disputed_amount": 250000,
+    "transaction_date": "08/11/2026",
+    "transaction_reference": "378237596907",
+    "complainant_name": "Meera Joshi",
+    "complainant_city": "Patna, Bihar",
+    "mobile": "9118318404",
+    "prior_complaint_ref": "CMS/2026/919908",
+    "ground_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "Meera Joshi",
+      "value_en": "Meera Joshi",
+      "script": "Latn"
+    },
+    "complainant_address": {
+      "value": "Patna, Bihar",
+      "value_en": "Patna, Bihar",
+      "script": "Latn"
+    },
+    "complainant_contact": {
+      "value": "9118318404",
+      "value_en": "9118318404",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "Bank of Baroda",
+      "value_en": "Bank of Baroda",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "BARB0238122",
+      "value_en": "BARB0238122",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "72949689084358",
+      "value_en": "72949689084358",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "08/11/2026",
+      "value_en": "08/11/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "378237596907",
+      "value_en": "378237596907",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2026/919908",
+      "value_en": "CMS/2026/919908",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "Non-adherence to the declared interest rate on a fixed deposit at renewal",
+      "value_en": "Non-adherence to the declared interest rate on a fixed deposit at renewal",
+      "script": "Latn"
+    }
+  }
+}

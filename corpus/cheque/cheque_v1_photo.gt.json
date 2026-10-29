@@ -1,0 +1,290 @@
+{
+  "doc_id": "cheque_v1_photo",
+  "doc_type": "cheque",
+  "variant": 1,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-9.8deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "Punjab National Bank",
+      "bbox": [
+        74.6,
+        -38.4,
+        286.1,
+        -1.8,
+        281.8,
+        23.2,
+        70.2,
+        -13.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "DATE",
+      "bbox": [
+        720.9,
+        81.0,
+        756.0,
+        87.0,
+        752.7,
+        105.8,
+        717.6,
+        99.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12/03/2026",
+      "bbox": [
+        794.4,
+        92.4,
+        889.7,
+        108.9,
+        886.2,
+        129.3,
+        790.9,
+        112.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "A/C No.",
+      "bbox": [
+        68.3,
+        -1.7,
+        115.8,
+        6.4,
+        112.8,
+        23.7,
+        65.3,
+        15.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1205867853031976",
+      "bbox": [
+        154.0,
+        11.8,
+        294.8,
+        36.2,
+        291.5,
+        55.0,
+        150.7,
+        30.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "PAY",
+      "bbox": [
+        59.8,
+        47.1,
+        84.7,
+        51.5,
+        81.5,
+        70.2,
+        56.5,
+        65.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Priya Venkatesan",
+      "bbox": [
+        134.2,
+        53.7,
+        259.2,
+        75.3,
+        254.6,
+        101.9,
+        129.5,
+        80.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "RUPEES",
+      "bbox": [
+        49.2,
+        108.2,
+        102.2,
+        117.4,
+        99.0,
+        136.2,
+        45.9,
+        127.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "98,200 only",
+      "bbox": [
+        147.8,
+        120.2,
+        233.6,
+        135.1,
+        229.0,
+        161.7,
+        143.2,
+        146.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "98,200.00",
+      "bbox": [
+        746.9,
+        221.4,
+        818.8,
+        233.9,
+        814.4,
+        258.9,
+        742.6,
+        246.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "MICR",
+      "bbox": [
+        24.1,
+        253.6,
+        57.7,
+        259.4,
+        54.7,
+        276.6,
+        21.1,
+        270.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "702120750",
+      "bbox": [
+        97.6,
+        265.1,
+        183.3,
+        279.9,
+        179.8,
+        300.3,
+        94.1,
+        285.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "micr_code"
+    },
+    {
+      "text": "121619  PUNB0702372  120586785",
+      "bbox": [
+        17.5,
+        291.5,
+        325.3,
+        344.8,
+        321.5,
+        366.7,
+        13.7,
+        313.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    }
+  ],
+  "fields": {
+    "bank_name": "Punjab National Bank",
+    "complainant_name": "Priya Venkatesan",
+    "transaction_date": "12/03/2026",
+    "account_number": "1205867853031976",
+    "ifsc_code": "PUNB0702372",
+    "micr_code": "702120750",
+    "disputed_amount": 98200
+  },
+  "fields_bilingual": {
+    "bank_name": {
+      "value": "Punjab National Bank",
+      "value_en": "Punjab National Bank",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "12/03/2026",
+      "value_en": "12/03/2026",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "1205867853031976",
+      "value_en": "1205867853031976",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Priya Venkatesan",
+      "value_en": "Priya Venkatesan",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "98,200",
+      "value_en": "98,200",
+      "script": "Latn"
+    },
+    "micr_code": {
+      "value": "702120750",
+      "value_en": "702120750",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "PUNB0702372",
+      "value_en": "PUNB0702372",
+      "script": "Latn"
+    }
+  }
+}

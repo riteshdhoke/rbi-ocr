@@ -1,0 +1,10 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- SKEW_UNRECOVERABLE - quality gate: skew beyond the angle deskew can be trusted for -#}
+{% block subject %}The page is at too steep an angle for us to straighten{% endblock %}
+{% block defect %}The page reached us at a strong angle. We straighten pages automatically,
+but past a certain tilt the correction cannot be relied on and the lines of
+writing run into one another.{% endblock %}
+{% block remedy %}Please place the page square against the edge of the scanner glass or the
+feeder guide, and scan at {{ recommended_dpi }} DPI. If you are
+photographing the page, hold the camera directly above it and line the edges
+of the page up with the edges of the frame.{% endblock %}

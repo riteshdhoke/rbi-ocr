@@ -1,0 +1,9 @@
+{% extends "hin/_layout.txt.j2" %}
+{#- RESOLUTION_BELOW_FLOOR - quality gate: effective resolution below the readability floor -#}
+{% block subject %}आपके भेजे पृष्ठ पढ़ने के लिए बहुत छोटे हैं{% endblock %}
+{% block defect %}पृष्ठ इतने कम रिज़ॉल्यूशन पर मिले कि उनकी लिखावट भरोसे के साथ पढ़ी नहीं जा
+सकती। अक्षर आपस में मिल जाते हैं और खाता संख्या तथा राशि के अंक अलग-अलग नहीं
+पहचाने जाते।{% endblock %}
+{% block remedy %}कृपया दस्तावेज़ को {{ recommended_dpi }} DPI पर दोबारा स्कैन करके भेजें। यदि
+आप पृष्ठ का छायाचित्र ले रहे हैं, तो कैमरा इतनी दूरी पर रखें कि पूरा पृष्ठ
+फ़्रेम में भर जाए, और अच्छी रोशनी में चित्र लें।{% endblock %}

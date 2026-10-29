@@ -1,0 +1,753 @@
+{
+  "$defs": {
+    "BounceDecision": {
+      "additionalProperties": false,
+      "description": "Accept / repair / bounce with a **machine-readable** reason (PRD P0-3).",
+      "properties": {
+        "decision": {
+          "$ref": "#/$defs/QualityVerdict"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BounceReason"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "decision"
+      ],
+      "title": "BounceDecision",
+      "type": "object"
+    },
+    "BounceReason": {
+      "description": "Why a document was refused, in terms an auto-reply can name (P1-2).\n\nDeliberately one flat vocabulary spanning ingestion rejections and\nquality-gate defects: the complainant receiving the bounce does not care\nwhich subsystem produced it, and the template lookup should not have to\njoin two enums.  :data:`BOUNCE_REASON_FOR_REJECTION` and\n:data:`BOUNCE_REASON_FOR_QUALITY_FLAG` are the total/partial mappings in.",
+      "enum": [
+        "EMPTY_FILE",
+        "MALFORMED_PDF",
+        "MIME_MISMATCH",
+        "ENCRYPTED_PDF",
+        "PAGE_CAP_EXCEEDED",
+        "PIXEL_CAP_EXCEEDED",
+        "DECOMPRESSION_BOMB",
+        "WALL_CLOCK_EXCEEDED",
+        "RESOLUTION_BELOW_FLOOR",
+        "BLANK_PAGE",
+        "BLUR_ABOVE_CEILING",
+        "SKEW_UNRECOVERABLE",
+        "TEXT_COVERAGE_BELOW_FLOOR",
+        "OCCLUSION_DETECTED",
+        "QUALITY_SCORE_BELOW_THRESHOLD",
+        "ALL_PAGES_BOUNCED",
+        "NO_TEXT_DETECTED"
+      ],
+      "title": "BounceReason",
+      "type": "string"
+    },
+    "ComplaintSummary": {
+      "additionalProperties": false,
+      "description": "Extractive summary — PLAN.md invariant 2, enforced not asserted.\n\nThe model returns line indices; the assembler concatenates the verbatim OCR\ntext of those lines.  :meth:`_verbatim_concatenation` re-derives ``text``\nfrom ``spans`` and rejects any mismatch, so a prose summary produced by a\nmodel that ignored its instructions cannot be represented in the envelope.",
+      "properties": {
+        "separator": {
+          "default": "\n",
+          "title": "Separator",
+          "type": "string"
+        },
+        "spans": {
+          "items": {
+            "$ref": "#/$defs/SummarySpan"
+          },
+          "minItems": 1,
+          "title": "Spans",
+          "type": "array"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "spans"
+      ],
+      "title": "ComplaintSummary",
+      "type": "object"
+    },
+    "DocumentResult": {
+      "additionalProperties": false,
+      "description": "The extracted content of one document — fields, class, summary.",
+      "properties": {
+        "complaint_summary": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ComplaintSummary"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "document_class": {
+          "$ref": "#/$defs/PageClassLabel"
+        },
+        "document_class_confidence": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Document Class Confidence",
+          "type": "number"
+        },
+        "extracted_fields": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/Field"
+            },
+            "type": "array"
+          },
+          "title": "Extracted Fields",
+          "type": "object"
+        },
+        "fields": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Field"
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "is_code_mixed": {
+          "default": false,
+          "title": "Is Code Mixed",
+          "type": "boolean"
+        },
+        "language_distribution": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Language Distribution",
+          "type": "object"
+        },
+        "missing_fields": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Fields",
+          "type": "array"
+        },
+        "other_fields": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Field"
+          },
+          "title": "Other Fields",
+          "type": "object"
+        },
+        "page_count": {
+          "minimum": 0,
+          "title": "Page Count",
+          "type": "integer"
+        },
+        "primary_language": {
+          "anyOf": [
+            {
+              "description": "ISO 639-3 language code.",
+              "pattern": "^[a-z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary Language"
+        },
+        "primary_script": {
+          "anyOf": [
+            {
+              "description": "ISO 15924 script code.",
+              "pattern": "^[A-Z][a-z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary Script"
+        },
+        "supporting_doc_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Supporting Doc Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "document_class",
+        "document_class_confidence",
+        "page_count"
+      ],
+      "title": "DocumentResult",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "description": "Where a value physically is: page, box, character span.\n\nNever optional on a :class:`Field`.  A value we cannot point at is a value\na case officer cannot check, which is the failure mode this whole service\nexists to remove.",
+      "properties": {
+        "bbox": {
+          "description": "8 floats: 4 corners (x, y) clockwise from top-left.",
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 8,
+          "minItems": 8,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "page_no": {
+          "description": "1-based page number.",
+          "minimum": 1,
+          "title": "Page No",
+          "type": "integer"
+        },
+        "span": {
+          "$ref": "#/$defs/TextSpan"
+        }
+      },
+      "required": [
+        "page_no",
+        "bbox",
+        "span"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Field": {
+      "additionalProperties": false,
+      "description": "One extracted value with its full provenance — BUILD-BRIEF sec. 3.3.\n\nFrozen: ``value`` is immutable by construction (invariant 10).  Use\n:meth:`with_translation` and :meth:`with_flags`, which return revalidated\ncopies, rather than mutating.",
+      "properties": {
+        "confidence": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "$ref": "#/$defs/Evidence"
+        },
+        "flags": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/FieldFlag"
+          },
+          "title": "Flags",
+          "type": "array"
+        },
+        "mt_engine": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mt Engine"
+        },
+        "normalized": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized"
+        },
+        "source": {
+          "enum": [
+            "regex_validator",
+            "ocr_label",
+            "lookup_table",
+            "slm",
+            "classifier",
+            "human"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "validator_passed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validator Passed"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        },
+        "value_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value En"
+        }
+      },
+      "required": [
+        "value",
+        "confidence",
+        "source",
+        "evidence"
+      ],
+      "title": "Field",
+      "type": "object"
+    },
+    "FieldFlag": {
+      "description": "Why a field needs a human, in machine-readable form.\n\nExtension to BUILD-BRIEF sec. 3.3: invariants 8 and 9 both say a value is\n\"flagged\", and a free-text note is not something a review queue can filter\non.  ``VALIDATOR_FAILED`` is attached automatically whenever\n``validator_passed is False`` so invariant 9 cannot be forgotten.",
+      "enum": [
+        "VALIDATOR_FAILED",
+        "CHECKSUM_FAILED",
+        "GROUNDING_REJECTED",
+        "LOW_CONFIDENCE",
+        "BANK_NAME_IFSC_DISAGREEMENT",
+        "IFSC_NOT_IN_MASTER",
+        "MULTIPLE_CANDIDATES",
+        "ESCALATED_PAGE",
+        "TRANSLATION_UNAVAILABLE",
+        "HANDWRITTEN_SOURCE"
+      ],
+      "title": "FieldFlag",
+      "type": "string"
+    },
+    "OCRTier": {
+      "description": "Which mechanism produced a page's lines (PRD P0-4, P0-6).",
+      "enum": [
+        "bypass",
+        "tier1",
+        "tier2",
+        "none"
+      ],
+      "title": "OCRTier",
+      "type": "string"
+    },
+    "PageClassLabel": {
+      "description": "Closed page/document class set, matching TEST-DATA-SPEC sec. 2 classes.",
+      "enum": [
+        "complaint_form",
+        "complaint_letter",
+        "supporting_doc",
+        "photo_evidence",
+        "unknown"
+      ],
+      "title": "PageClassLabel",
+      "type": "string"
+    },
+    "PageResult": {
+      "additionalProperties": false,
+      "description": "Per-page record: quality, tier, and the derived language summary.\n\nThis is the *only* place page-level language may appear.  It is derived in\n``assemble.py`` from :class:`app.contracts.ocr.OCRLine` values; the OCR\npage model refuses to carry it (invariant 1).",
+      "properties": {
+        "escalated": {
+          "default": false,
+          "title": "Escalated",
+          "type": "boolean"
+        },
+        "is_code_mixed": {
+          "default": false,
+          "title": "Is Code Mixed",
+          "type": "boolean"
+        },
+        "language_distribution": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Language Distribution",
+          "type": "object"
+        },
+        "line_count": {
+          "minimum": 0,
+          "title": "Line Count",
+          "type": "integer"
+        },
+        "ocr_tier": {
+          "$ref": "#/$defs/OCRTier"
+        },
+        "page_no": {
+          "description": "1-based page number.",
+          "minimum": 1,
+          "title": "Page No",
+          "type": "integer"
+        },
+        "primary_language": {
+          "anyOf": [
+            {
+              "description": "ISO 639-3 language code.",
+              "pattern": "^[a-z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary Language"
+        },
+        "primary_script": {
+          "anyOf": [
+            {
+              "description": "ISO 15924 script code.",
+              "pattern": "^[A-Z][a-z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary Script"
+        },
+        "quality_flags": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/QualityFlag"
+          },
+          "title": "Quality Flags",
+          "type": "array"
+        },
+        "quality_score": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Quality Score",
+          "type": "number"
+        },
+        "quality_verdict": {
+          "$ref": "#/$defs/QualityVerdict"
+        },
+        "repairs_applied": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Repairs Applied",
+          "type": "array"
+        },
+        "shadow_sampled": {
+          "default": false,
+          "title": "Shadow Sampled",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "page_no",
+        "quality_score",
+        "quality_verdict",
+        "ocr_tier",
+        "line_count"
+      ],
+      "title": "PageResult",
+      "type": "object"
+    },
+    "ProcessingStats": {
+      "additionalProperties": false,
+      "description": "Counters the eval harness and Prometheus read; never business data.",
+      "properties": {
+        "duration_ms": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Ms"
+        },
+        "finished_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Finished At"
+        },
+        "pages_bounced": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Pages Bounced",
+          "type": "integer"
+        },
+        "pages_escalated": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Pages Escalated",
+          "type": "integer"
+        },
+        "pages_processed": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Pages Processed",
+          "type": "integer"
+        },
+        "stage_timings_ms": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Stage Timings Ms",
+          "type": "object"
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Started At"
+        },
+        "tokens_used": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Tokens Used",
+          "type": "integer"
+        }
+      },
+      "title": "ProcessingStats",
+      "type": "object"
+    },
+    "QualityFlag": {
+      "description": "Machine-readable quality-gate observations.\n\nPresent on **every** page record including accepted ones (PRD P0-3), so a\ndrift in flag frequency is visible before it becomes a drift in accuracy.\nFlags ending ``_REPAIRED`` record what the gate fixed, not what is wrong.",
+      "enum": [
+        "RESOLUTION_BELOW_FLOOR",
+        "BLUR_ABOVE_CEILING",
+        "SKEW_DETECTED",
+        "SKEW_REPAIRED",
+        "SKEW_UNRECOVERABLE",
+        "ROTATION_DETECTED",
+        "ROTATION_REPAIRED",
+        "INVERTED_REPAIRED",
+        "TEXT_COVERAGE_BELOW_FLOOR",
+        "OCCLUSION_DETECTED",
+        "SHADOW_DETECTED",
+        "EXPOSURE_OUT_OF_RANGE",
+        "NOISE_ABOVE_CEILING",
+        "BLANK_PAGE",
+        "DUPLICATE_PAGE",
+        "JUNK_TEXT_LAYER"
+      ],
+      "title": "QualityFlag",
+      "type": "string"
+    },
+    "QualityVerdict": {
+      "description": "Stage 1.5 decision (design-review A5).",
+      "enum": [
+        "accept",
+        "repair",
+        "bounce"
+      ],
+      "title": "QualityVerdict",
+      "type": "string"
+    },
+    "SummarySpan": {
+      "additionalProperties": false,
+      "description": "One selected OCR line span and its **verbatim** text.",
+      "properties": {
+        "evidence": {
+          "$ref": "#/$defs/Evidence"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence",
+        "text"
+      ],
+      "title": "SummarySpan",
+      "type": "object"
+    },
+    "TextSpan": {
+      "additionalProperties": false,
+      "description": "A character range within one OCR line — the atom of evidence.\n\n``end`` is exclusive.  ``line_index`` refers to\n:attr:`OCRLine.line_index`, not to a position in ``OCRPage.lines``.",
+      "properties": {
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "line_index": {
+          "description": "0-based index within a page.",
+          "minimum": 0,
+          "title": "Line Index",
+          "type": "integer"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "line_index",
+        "start",
+        "end"
+      ],
+      "title": "TextSpan",
+      "type": "object"
+    }
+  },
+  "$id": "https://rbi-ocr-service.invalid/schema/result_envelope/1.0.0/result_envelope.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "The versioned, evidence-bearing result — PRD P0-10.\n\n``result_version`` starts at 1 and increments as escalated pages land or\na changed requested-field list triggers another extraction;\n``is_final`` is true only on the last one.  A consumer may act on version 1\nand reconcile later.",
+  "properties": {
+    "bounce_decision": {
+      "$ref": "#/$defs/BounceDecision"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "document": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DocumentResult"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "document_id": {
+      "minLength": 1,
+      "title": "Document Id",
+      "type": "string"
+    },
+    "escalation_flag": {
+      "default": false,
+      "title": "Escalation Flag",
+      "type": "boolean"
+    },
+    "is_final": {
+      "title": "Is Final",
+      "type": "boolean"
+    },
+    "job_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Job Id"
+    },
+    "pages": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/PageResult"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "processing": {
+      "$ref": "#/$defs/ProcessingStats"
+    },
+    "provider_profile": {
+      "minLength": 1,
+      "title": "Provider Profile",
+      "type": "string"
+    },
+    "requested_fields": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Requested Fields",
+      "type": "array"
+    },
+    "result_version": {
+      "minimum": 1,
+      "title": "Result Version",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "warnings": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "result_version",
+    "is_final",
+    "document_id",
+    "provider_profile",
+    "bounce_decision"
+  ],
+  "title": "ResultEnvelope",
+  "type": "object",
+  "x-schema-version": "1.0.0"
+}

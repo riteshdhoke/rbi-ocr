@@ -1,0 +1,18 @@
+{
+  "purpose": "ingestion hardening \u2014 these must be rejected with typed errors, never crash a worker",
+  "synthetic": true,
+  "expected_behaviour": {
+    "zero_byte.pdf": "reject: EMPTY_FILE",
+    "truncated.pdf": "reject: MALFORMED_PDF",
+    "not_a_pdf.pdf": "reject: MIME_MISMATCH",
+    "html_disguised_as_pdf.pdf": "reject: MIME_MISMATCH, script never evaluated",
+    "tiny_lowres.png": "bounce: RESOLUTION_BELOW_FLOOR",
+    "blank_page.png": "drop page: BLANK_PAGE, do not bill OCR",
+    "inverted.png": "repair: auto-invert, then process"
+  },
+  "not_included_generate_locally": {
+    "zip_bomb.zip": "42.zip or equivalent \u2014 decompression-ratio cap must trigger",
+    "pdf_5000_pages.pdf": "page cap must trigger",
+    "password_protected.pdf": "reject: ENCRYPTED_DOCUMENT"
+  }
+}

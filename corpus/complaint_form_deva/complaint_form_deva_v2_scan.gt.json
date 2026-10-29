@@ -1,0 +1,518 @@
+{
+  "doc_id": "complaint_form_deva_v2_scan",
+  "doc_type": "complaint_form_deva",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Deva",
+  "primary_language": "hin",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+2.4deg",
+    "holes",
+    "fold",
+    "stamp",
+    "blur:0.8",
+    "noise:0.012",
+    "downscale:0.85"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "बैंकिंग लोकपाल को शिकायत",
+      "bbox": [
+        56.3,
+        111.1,
+        437.0,
+        95.3,
+        438.8,
+        138.7,
+        58.1,
+        154.5
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "एकीकृत लोकपाल योजना 2021 — प्रपत्र I",
+      "bbox": [
+        58.4,
+        162.0,
+        396.6,
+        148.0,
+        397.8,
+        176.2,
+        59.6,
+        190.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. शिकायतकर्ता का नाम",
+      "bbox": [
+        63.3,
+        280.9,
+        249.1,
+        273.2,
+        250.2,
+        300.4,
+        64.5,
+        308.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "अब्दुल रहमान शेख",
+      "bbox": [
+        581.4,
+        259.4,
+        729.3,
+        253.3,
+        730.4,
+        281.5,
+        582.6,
+        287.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. पता",
+      "bbox": [
+        66.1,
+        347.1,
+        118.7,
+        345.0,
+        119.8,
+        372.1,
+        67.2,
+        374.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "नागपुर, महाराष्ट्र",
+      "bbox": [
+        584.1,
+        325.6,
+        706.1,
+        320.6,
+        707.3,
+        348.8,
+        585.3,
+        353.9
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. मोबाइल",
+      "bbox": [
+        68.8,
+        413.4,
+        152.4,
+        410.0,
+        153.5,
+        437.2,
+        70.0,
+        440.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9868616186",
+      "bbox": [
+        586.9,
+        391.9,
+        713.2,
+        386.7,
+        714.4,
+        414.9,
+        588.1,
+        420.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. बैंक का नाम",
+      "bbox": [
+        71.6,
+        479.7,
+        185.8,
+        474.9,
+        186.9,
+        502.1,
+        72.8,
+        506.9
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "एचडीएफसी बैंक लिमिटेड",
+      "bbox": [
+        589.6,
+        458.1,
+        786.9,
+        449.9,
+        788.1,
+        478.2,
+        590.8,
+        486.4
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC कोड",
+      "bbox": [
+        74.4,
+        545.9,
+        179.3,
+        541.5,
+        180.4,
+        568.7,
+        75.5,
+        573.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "HDFC0102826",
+      "bbox": [
+        592.4,
+        524.4,
+        738.7,
+        518.3,
+        739.9,
+        546.5,
+        593.6,
+        552.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. खाता संख्या",
+      "bbox": [
+        77.1,
+        612.2,
+        190.6,
+        607.4,
+        191.8,
+        634.6,
+        78.2,
+        639.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "64347781729438",
+      "bbox": [
+        595.2,
+        590.7,
+        772.1,
+        583.3,
+        773.2,
+        611.6,
+        596.4,
+        618.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. विवादित राशि (₹)",
+      "bbox": [
+        79.9,
+        678.4,
+        238.2,
+        671.8,
+        239.3,
+        699.0,
+        81.0,
+        705.6
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "98,200",
+      "bbox": [
+        597.9,
+        656.9,
+        667.0,
+        654.0,
+        668.2,
+        682.3,
+        599.1,
+        685.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. लेनदेन दिनांक",
+      "bbox": [
+        82.6,
+        744.6,
+        210.6,
+        739.3,
+        211.8,
+        766.4,
+        83.7,
+        771.8
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "01/05/2026",
+      "bbox": [
+        600.7,
+        723.1,
+        718.2,
+        718.2,
+        719.4,
+        746.5,
+        601.8,
+        751.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. लेनदेन संदर्भ",
+      "bbox": [
+        85.3,
+        810.9,
+        203.6,
+        806.0,
+        204.8,
+        833.2,
+        86.5,
+        838.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "392020544466",
+      "bbox": [
+        603.4,
+        789.4,
+        755.1,
+        783.0,
+        756.2,
+        811.3,
+        604.6,
+        817.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. पूर्व शिकायत सं.",
+      "bbox": [
+        88.1,
+        877.1,
+        243.9,
+        870.7,
+        245.0,
+        897.9,
+        89.2,
+        904.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2026/984508",
+      "bbox": [
+        606.1,
+        855.6,
+        795.0,
+        847.8,
+        796.2,
+        876.0,
+        607.3,
+        883.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. शिकायत का विवरण",
+      "bbox": [
+        92.3,
+        977.3,
+        279.1,
+        969.6,
+        280.2,
+        996.7,
+        93.4,
+        1004.5
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "असफल एटीएम निकासी की राशि निर्धारित अवधि में जमा नहीं की गई",
+      "bbox": [
+        120.4,
+        1040.8,
+        658.6,
+        1018.5,
+        659.8,
+        1046.7,
+        121.6,
+        1069.0
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "हस्ताक्षर",
+      "bbox": [
+        107.5,
+        1344.2,
+        161.2,
+        1342.0,
+        162.3,
+        1365.9,
+        108.5,
+        1368.2
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "HDFC Bank Limited",
+    "ifsc_code": "HDFC0102826",
+    "account_number": "64347781729438",
+    "card_last_four": "5683",
+    "disputed_amount": 98200,
+    "transaction_date": "01/05/2026",
+    "transaction_reference": "392020544466",
+    "complainant_name": "Abdul Rahman Shaikh",
+    "complainant_city": "Nagpur, Maharashtra",
+    "mobile": "9868616186",
+    "prior_complaint_ref": "CMS/2026/984508",
+    "ground_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "अब्दुल रहमान शेख",
+      "value_en": "Abdul Rahman Shaikh",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "नागपुर, महाराष्ट्र",
+      "value_en": "Nagpur, Maharashtra",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9868616186",
+      "value_en": "9868616186",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "एचडीएफसी बैंक लिमिटेड",
+      "value_en": "HDFC Bank Limited",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "HDFC0102826",
+      "value_en": "HDFC0102826",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "64347781729438",
+      "value_en": "64347781729438",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "98,200",
+      "value_en": "98,200",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "01/05/2026",
+      "value_en": "01/05/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "392020544466",
+      "value_en": "392020544466",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2026/984508",
+      "value_en": "CMS/2026/984508",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "असफल एटीएम निकासी की राशि निर्धारित अवधि में जमा नहीं की गई",
+      "value_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period",
+      "script": "Deva"
+    }
+  }
+}

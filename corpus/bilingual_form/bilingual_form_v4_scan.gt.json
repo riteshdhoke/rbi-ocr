@@ -1,0 +1,501 @@
+{
+  "doc_id": "bilingual_form_v4_scan",
+  "doc_type": "bilingual_form",
+  "variant": 4,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": true,
+  "degradations": [
+    "skew:-2.0deg",
+    "holes",
+    "fold",
+    "stamp",
+    "blur:0.8",
+    "noise:0.012",
+    "downscale:0.85"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+      "bbox": [
+        125.5,
+        64.3,
+        833.9,
+        89.0,
+        832.4,
+        130.3,
+        124.2,
+        105.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank — Integrated Ombudsman Scheme, 2021 — Form I",
+      "bbox": [
+        123.8,
+        115.3,
+        774.5,
+        138.0,
+        773.6,
+        165.2,
+        122.8,
+        142.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. Name of complainant",
+      "bbox": [
+        119.7,
+        234.2,
+        358.8,
+        242.5,
+        357.8,
+        269.7,
+        118.7,
+        261.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "संजय देशपांडे",
+      "bbox": [
+        637.9,
+        250.6,
+        775.9,
+        255.4,
+        774.6,
+        290.2,
+        636.6,
+        285.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. Address",
+      "bbox": [
+        117.3,
+        300.5,
+        221.1,
+        304.0,
+        220.1,
+        331.2,
+        116.4,
+        327.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "इंदौर, मध्य प्रदेश",
+      "bbox": [
+        635.5,
+        316.9,
+        804.2,
+        322.7,
+        803.0,
+        357.5,
+        634.4,
+        351.6
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. Mobile",
+      "bbox": [
+        115.0,
+        366.7,
+        206.5,
+        369.9,
+        205.5,
+        397.1,
+        114.1,
+        393.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9657312716",
+      "bbox": [
+        633.2,
+        383.1,
+        759.6,
+        387.5,
+        758.5,
+        422.3,
+        632.1,
+        417.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. Name of bank",
+      "bbox": [
+        112.7,
+        433.0,
+        276.6,
+        438.7,
+        275.7,
+        465.9,
+        111.8,
+        460.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "यूनियन बैंक ऑफ इंडिया",
+      "bbox": [
+        631.0,
+        449.4,
+        884.8,
+        458.2,
+        883.6,
+        493.0,
+        629.8,
+        484.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC code",
+      "bbox": [
+        110.4,
+        499.2,
+        230.6,
+        503.5,
+        229.7,
+        530.6,
+        109.5,
+        526.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "UBIN0386394",
+      "bbox": [
+        628.7,
+        515.6,
+        772.2,
+        520.6,
+        770.9,
+        555.4,
+        627.5,
+        550.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. Account number",
+      "bbox": [
+        108.1,
+        565.5,
+        297.6,
+        572.1,
+        296.6,
+        599.2,
+        107.1,
+        592.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9688572668661809",
+      "bbox": [
+        626.4,
+        581.9,
+        826.8,
+        588.9,
+        825.6,
+        623.6,
+        625.1,
+        616.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "7. Amount in dispute (Rs.)",
+      "bbox": [
+        105.7,
+        631.7,
+        360.8,
+        640.6,
+        359.9,
+        667.8,
+        104.8,
+        658.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "45,000",
+      "bbox": [
+        624.0,
+        648.1,
+        692.8,
+        650.5,
+        691.6,
+        685.4,
+        622.8,
+        682.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. Date of transaction",
+      "bbox": [
+        103.4,
+        698.0,
+        317.6,
+        705.5,
+        316.6,
+        732.7,
+        102.5,
+        725.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "03/07/2026",
+      "bbox": [
+        621.7,
+        714.4,
+        738.4,
+        718.5,
+        737.2,
+        753.3,
+        620.5,
+        749.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. Transaction reference",
+      "bbox": [
+        101.1,
+        764.2,
+        340.8,
+        772.6,
+        339.8,
+        799.9,
+        100.2,
+        791.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "535568465749",
+      "bbox": [
+        619.4,
+        780.6,
+        768.3,
+        785.8,
+        767.1,
+        820.7,
+        618.2,
+        815.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. Previous complaint no.",
+      "bbox": [
+        98.9,
+        830.5,
+        361.8,
+        839.7,
+        360.9,
+        866.9,
+        97.9,
+        857.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2025/936400",
+      "bbox": [
+        617.1,
+        846.9,
+        805.8,
+        853.5,
+        804.6,
+        888.3,
+        615.8,
+        881.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. Nature of complaint",
+      "bbox": [
+        95.4,
+        930.8,
+        330.8,
+        939.0,
+        329.9,
+        966.2,
+        94.3,
+        957.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "ऋण खाता बंद करने और मूल संपत्ति दस्तावेज़ लौटाने में देरी",
+      "bbox": [
+        118.6,
+        996.2,
+        752.0,
+        1018.3,
+        750.7,
+        1053.1,
+        117.4,
+        1031.0
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    }
+  ],
+  "fields": {
+    "bank_name": "Union Bank of India",
+    "ifsc_code": "UBIN0386394",
+    "account_number": "9688572668661809",
+    "card_last_four": "5664",
+    "disputed_amount": 45000,
+    "transaction_date": "03/07/2026",
+    "transaction_reference": "535568465749",
+    "complainant_name": "Sanjay Deshpande",
+    "complainant_city": "Indore, Madhya Pradesh",
+    "mobile": "9657312716",
+    "prior_complaint_ref": "CMS/2025/936400",
+    "ground_en": "Delay in closure of loan account and release of original property documents"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "संजय देशपांडे",
+      "value_en": "Sanjay Deshpande",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "इंदौर, मध्य प्रदेश",
+      "value_en": "Indore, Madhya Pradesh",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9657312716",
+      "value_en": "9657312716",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "यूनियन बैंक ऑफ इंडिया",
+      "value_en": "Union Bank of India",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "UBIN0386394",
+      "value_en": "UBIN0386394",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "9688572668661809",
+      "value_en": "9688572668661809",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "45,000",
+      "value_en": "45,000",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "03/07/2026",
+      "value_en": "03/07/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "535568465749",
+      "value_en": "535568465749",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2025/936400",
+      "value_en": "CMS/2025/936400",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "ऋण खाता बंद करने और मूल संपत्ति दस्तावेज़ लौटाने में देरी",
+      "value_en": "Delay in closure of loan account and release of original property documents",
+      "script": "Deva"
+    }
+  }
+}

@@ -1,0 +1,359 @@
+{
+ "doc_id": "complaint_letter_en_v2_photo",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.48448665972486776,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "To",
+     "bbox": [
+      157.73690273450768,
+      142.902836449941,
+      189.60005378723145,
+      142.902836449941,
+      189.60005378723145,
+      172.12633021672565,
+      157.73690273450768,
+      172.12633021672565
+     ],
+     "confidence": 0.971871018409729,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Banking Ombudsman",
+     "bbox": [
+      156.50729224992835,
+      170.58227709929147,
+      350.2889034022456,
+      170.58227709929147,
+      350.2889034022456,
+      208.7385684967041,
+      156.50729224992835,
+      208.7385684967041
+     ],
+     "confidence": 0.8618950801236289,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 1
+    },
+    {
+     "text": "Reere Bank of India",
+     "bbox": [
+      155.00989018315855,
+      207.63286876678467,
+      334.4194576429284,
+      207.63286876678467,
+      334.4194576429284,
+      245.62338123321533,
+      155.00989018315855,
+      245.62338123321533
+     ],
+     "confidence": 0.789681392280679,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "S",
+     "bbox": [
+      158.53863931738812,
+      262.6586225827535,
+      739.8010345956553,
+      262.6586225827535,
+      739.8010345956553,
+      298.28616908391314,
+      158.53863931738812,
+      298.28616908391314
+     ],
+     "confidence": 0.41750383377075195,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "Ihatd a saings accunt with HOFl Bank linted",
+     "bbox": [
+      156.62274665417877,
+      308.9268980503082,
+      534.893545648326,
+      308.9268980503082,
+      534.893545648326,
+      340.41893528302506,
+      156.62274665417877,
+      340.41893528302506
+     ],
+     "confidence": 0.6881924621587576,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "My account-umberis 7065439783334930.",
+     "bbox": [
+      157.76467924532682,
+      345.4498641490936,
+      491.12388362055236,
+      345.4498641490936,
+      491.12388362055236,
+      373.00951085090634,
+      157.76467924532682,
+      373.00951085090634
+     ],
+     "confidence": 0.7460265747374959,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "On 08/06/2025 an am04mtof R0. 12.750 was",
+     "bbox": [
+      157.75188711415166,
+      379.1899662017822,
+      506.9246951393459,
+      379.1899662017822,
+      506.9246951393459,
+      406.77565879821776,
+      157.75188711415166,
+      406.77565879821776
+     ],
+     "confidence": 0.7623171500861645,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "debited wthout my authariention or comcent.",
+     "bbox": [
+      158.01692031777424,
+      409.41124827067057,
+      492.6360050698985,
+      411.380337524414,
+      492.45166347337806,
+      443.8469621022542,
+      157.83257872125375,
+      441.8778728485107
+     ],
+     "confidence": 0.7067576809677967,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "The Cransaction referece is 632074832442.",
+     "bbox": [
+      158.23959012653518,
+      443.97812353769933,
+      496.9642262666122,
+      443.97812353769933,
+      496.9642262666122,
+      475.39270979563395,
+      158.23959012653518,
+      475.39270979563395
+     ],
+     "confidence": 0.8388181299698062,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 8
+    },
+    {
+     "text": "I thihthe ranh  ed e n",
+     "bbox": [
+      158.1741719867872,
+      477.66463775634764,
+      571.2334607995075,
+      477.66463775634764,
+      571.2334607995075,
+      509.21244557698566,
+      158.1741719867872,
+      509.21244557698566
+     ],
+     "confidence": 0.5413791036063974,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 9
+    },
+    {
+     "text": "qu",
+     "bbox": [
+      156.7600271805473,
+      509.9252496083577,
+      664.0952750496242,
+      508.1442205429077,
+      664.2176555135976,
+      544.2808146794637,
+      156.88240764452064,
+      546.0618437449137
+     ],
+     "confidence": 0.5495233833789825,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "Yourt fwthfully",
+     "bbox": [
+      154.75279484624448,
+      573.8336345036824,
+      284.1548138494077,
+      573.8336345036824,
+      284.1548138494077,
+      607.5257404963176,
+      154.75279484624448,
+      607.5257404963176
+     ],
+     "confidence": 0.7819435040156046,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      777.7262585681417,
+      581.2669660568237,
+      873.9852870443593,
+      572.0798775990804,
+      876.815070276675,
+      602.8091281890869,
+      780.5560418004575,
+      611.9962166468302
+     ],
+     "confidence": 0.9966273382306099,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "Adul Rahen Sraikh",
+     "bbox": [
+      154.4618039753126,
+      607.2330552736918,
+      332.3004688180011,
+      609.159078057607,
+      331.87411262678063,
+      649.9605851173401,
+      154.0354477840921,
+      648.0345623334248
+     ],
+     "confidence": 0.6329624705454883,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "account_number": {
+   "value": "7065439783334930",
+   "value_en": null,
+   "normalized": "7065439783334930",
+   "confidence": 0.6714239172637463,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     157.76467924532682,
+     345.4498641490936,
+     491.12388362055236,
+     345.4498641490936,
+     491.12388362055236,
+     373.00951085090634,
+     157.76467924532682,
+     373.00951085090634
+    ],
+    "span": [
+     19,
+     35
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "08/06/2025",
+   "value_en": null,
+   "normalized": "2025-06-08",
+   "confidence": 0.7623171500861645,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     157.75188711415166,
+     379.1899662017822,
+     506.9246951393459,
+     379.1899662017822,
+     506.9246951393459,
+     406.77565879821776,
+     157.75188711415166,
+     406.77565879821776
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.847,
+  "s1_ingest": 17.222,
+  "s15_quality": 190.144,
+  "s15_quality:p1": 190.144,
+  "s4_ocr": 698.317,
+  "s4_ocr:p1": 698.317,
+  "s2b_lid": 0.914,
+  "s2b_lid:p1": 0.914,
+  "s3_classify": 142.244,
+  "s3_classify:p1": 142.244,
+  "s5_validators": 3.972,
+  "s5_slm": 8316.744,
+  "e2e_total": 9376.423
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_RESPONSE_INVALID"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

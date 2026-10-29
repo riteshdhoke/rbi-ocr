@@ -1,0 +1,16 @@
+{
+  "app/field_selection.py": "dca9e49676ab5c46f82b715e8b91bbb3979c966e2fd49ebf578b02a7b76a2c12",
+  "app/stages/s5_discover.py": "ed32b87ab21c843c2a68ce37aba0e1388cf661ba170bc4e2d687ca3d6f5ad161",
+  "app/settings.py": "0df55ae8caccb701781a8b6c851405ab5f6f44b82d718e320d6c7a29e4d3ed6a",
+  "app/contracts/ocr.py": "d397bee210a4d75d9902047c91ddcc33d45a64a3dfff515ea95920f8100a031a",
+  "app/contracts/envelope.py": "e32ebfaa0f54491619fff2610969d2a82c73379686461ce8992065885cd5a212",
+  "app/stages/s5_slm.py": "0a398fb3469f84874a7f53199e4a243037a7d525343e3202a79ee8abbec35e37",
+  "app/providers/hf_api.py": "6a341c80e8e7df5681ecc7fc8d2da9b4f568871d9a72047b13941f685f80e4be",
+  "app/stages/assemble.py": "c31844b61a5adc9713b4b16f229079a6c6f41821362cedf9a74c088676a46341",
+  "app/pipeline.py": "65662272bf4d2ee55b389aa8c71ac1eafc70f3ad45ff66014ba4c4ea19ff333f",
+  "app/api/routes.py": "5a211f551baff90c23864792d6877c81169aa26897a2696df800481757eab512",
+  "app/api/schemas.py": "df57d95f62bbab8559684fb5e3cdc8d3479c736013e52ff010f94176d0da431d",
+  "app/review_ui/__init__.py": "1f8587dede692898c2cb9b7ad25573fde83617c6eec0ed2cffee94d0746cbfd9",
+  "app/review_ui/static/review_ui.js": "a401a018f26d6efdc0bf1f8464716dcaa6012fc65e8ac0db16c7f52f2342083e",
+  "app/review_ui/static/test_page.html": "992d6b35dd4aea2c83c3d67ecef0b9c80f83d9ff3c8ae8ee48be892eeef2d155"
+}

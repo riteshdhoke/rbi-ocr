@@ -1,0 +1,501 @@
+{
+  "doc_id": "bilingual_form_v2_scan",
+  "doc_type": "bilingual_form",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": true,
+  "degradations": [
+    "skew:-2.4deg",
+    "holes",
+    "fold",
+    "stamp",
+    "blur:0.8",
+    "noise:0.012",
+    "downscale:0.85"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+      "bbox": [
+        131.9,
+        60.4,
+        840.0,
+        89.9,
+        838.3,
+        131.2,
+        130.1,
+        101.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank — Integrated Ombudsman Scheme, 2021 — Form I",
+      "bbox": [
+        129.8,
+        111.3,
+        780.3,
+        138.5,
+        779.2,
+        165.7,
+        128.6,
+        138.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. Name of complainant",
+      "bbox": [
+        124.8,
+        230.3,
+        363.9,
+        240.2,
+        362.8,
+        267.4,
+        123.7,
+        257.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "अब्दुल रहमान शेख",
+      "bbox": [
+        642.9,
+        250.2,
+        842.3,
+        258.5,
+        840.8,
+        293.2,
+        641.5,
+        284.9
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. Address",
+      "bbox": [
+        122.1,
+        296.5,
+        225.8,
+        300.8,
+        224.6,
+        328.0,
+        121.0,
+        323.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "नागपुर, महाराष्ट्र",
+      "bbox": [
+        640.1,
+        316.4,
+        808.8,
+        323.4,
+        807.3,
+        358.2,
+        638.7,
+        351.2
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. Mobile",
+      "bbox": [
+        119.3,
+        362.8,
+        210.7,
+        366.5,
+        209.6,
+        393.7,
+        118.1,
+        389.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9602423165",
+      "bbox": [
+        637.4,
+        382.7,
+        763.1,
+        387.9,
+        761.7,
+        422.7,
+        636.0,
+        417.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. Name of bank",
+      "bbox": [
+        116.5,
+        429.0,
+        280.3,
+        435.8,
+        279.2,
+        463.0,
+        115.4,
+        456.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "एचडीएफसी बैंक लिमिटेड",
+      "bbox": [
+        634.6,
+        448.9,
+        893.6,
+        459.7,
+        892.2,
+        494.4,
+        633.2,
+        483.6
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC code",
+      "bbox": [
+        113.7,
+        495.2,
+        234.0,
+        500.2,
+        232.8,
+        527.4,
+        112.6,
+        522.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "HDFC0317594",
+      "bbox": [
+        631.9,
+        515.1,
+        774.7,
+        521.0,
+        773.2,
+        555.9,
+        630.4,
+        549.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. Account number",
+      "bbox": [
+        111.0,
+        561.5,
+        300.5,
+        569.3,
+        299.4,
+        596.5,
+        109.9,
+        588.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9384696201233220",
+      "bbox": [
+        629.1,
+        581.4,
+        826.7,
+        589.6,
+        825.3,
+        624.4,
+        627.6,
+        616.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "7. Amount in dispute (Rs.)",
+      "bbox": [
+        108.2,
+        627.7,
+        363.3,
+        638.4,
+        362.1,
+        665.5,
+        107.1,
+        654.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "250,000",
+      "bbox": [
+        626.4,
+        647.6,
+        706.2,
+        650.9,
+        704.7,
+        685.7,
+        624.9,
+        682.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. Date of transaction",
+      "bbox": [
+        105.5,
+        693.9,
+        319.5,
+        702.9,
+        318.4,
+        730.1,
+        104.4,
+        721.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "01/07/2026",
+      "bbox": [
+        623.6,
+        713.8,
+        742.6,
+        718.8,
+        741.1,
+        753.6,
+        622.1,
+        748.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. Transaction reference",
+      "bbox": [
+        102.7,
+        760.2,
+        342.3,
+        770.2,
+        341.2,
+        797.4,
+        101.6,
+        787.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "694945125995",
+      "bbox": [
+        620.8,
+        780.1,
+        769.9,
+        786.3,
+        768.5,
+        821.1,
+        619.4,
+        814.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. Previous complaint no.",
+      "bbox": [
+        100.0,
+        826.5,
+        362.9,
+        837.4,
+        361.8,
+        864.5,
+        98.9,
+        853.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2025/184789",
+      "bbox": [
+        618.1,
+        846.3,
+        807.8,
+        854.2,
+        806.3,
+        889.0,
+        616.6,
+        881.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. Nature of complaint",
+      "bbox": [
+        95.8,
+        926.7,
+        331.2,
+        936.4,
+        330.1,
+        963.6,
+        94.7,
+        953.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "असफल एटीएम निकासी की राशि निर्धारित अवधि में जमा नहीं की गई",
+      "bbox": [
+        118.6,
+        992.3,
+        859.8,
+        1023.1,
+        858.3,
+        1057.9,
+        117.1,
+        1027.1
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    }
+  ],
+  "fields": {
+    "bank_name": "HDFC Bank Limited",
+    "ifsc_code": "HDFC0317594",
+    "account_number": "9384696201233220",
+    "card_last_four": "2519",
+    "disputed_amount": 250000,
+    "transaction_date": "01/07/2026",
+    "transaction_reference": "694945125995",
+    "complainant_name": "Abdul Rahman Shaikh",
+    "complainant_city": "Nagpur, Maharashtra",
+    "mobile": "9602423165",
+    "prior_complaint_ref": "CMS/2025/184789",
+    "ground_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "अब्दुल रहमान शेख",
+      "value_en": "Abdul Rahman Shaikh",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "नागपुर, महाराष्ट्र",
+      "value_en": "Nagpur, Maharashtra",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9602423165",
+      "value_en": "9602423165",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "एचडीएफसी बैंक लिमिटेड",
+      "value_en": "HDFC Bank Limited",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "HDFC0317594",
+      "value_en": "HDFC0317594",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "9384696201233220",
+      "value_en": "9384696201233220",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "01/07/2026",
+      "value_en": "01/07/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "694945125995",
+      "value_en": "694945125995",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2025/184789",
+      "value_en": "CMS/2025/184789",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "असफल एटीएम निकासी की राशि निर्धारित अवधि में जमा नहीं की गई",
+      "value_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period",
+      "script": "Deva"
+    }
+  }
+}

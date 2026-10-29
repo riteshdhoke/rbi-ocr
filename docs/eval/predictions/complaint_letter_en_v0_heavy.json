@@ -1,0 +1,434 @@
+{
+ "doc_id": "complaint_letter_en_v0_heavy",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.9783228165514055,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=4.50/2.00 validator_failures=3(transaction_date,utr_rrn,utr_rrn) quality_low handwriting=0.46 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "To",
+     "bbox": [
+      211.6347769032354,
+      188.06332766215007,
+      237.06087527067766,
+      188.06332766215007,
+      237.06087527067766,
+      211.4783390045166,
+      211.6347769032354,
+      211.4783390045166
+     ],
+     "confidence": 0.9610660672187805,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Banking Ombudsiman",
+     "bbox": [
+      205.23761517068615,
+      217.01293182373047,
+      426.67542830757475,
+      217.01293182373047,
+      426.67542830757475,
+      256.86206817626953,
+      205.23761517068615,
+      256.86206817626953
+     ],
+     "confidence": 0.9610580395568501,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 1
+    },
+    {
+     "text": "Reserve Bank of India",
+     "bbox": [
+      205.32147117283034,
+      259.8379648844401,
+      409.7654710852582,
+      259.8379648844401,
+      409.7654710852582,
+      299.52036844889324,
+      205.32147117283034,
+      299.52036844889324
+     ],
+     "confidence": 0.9413598917779469,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "I hold a cavings account with State Bank of India",
+     "bbox": [
+      203.70487179963487,
+      371.773171488444,
+      639.2733154296875,
+      369.51819559733076,
+      639.470267917799,
+      407.110484568278,
+      203.90182428774628,
+      409.3654604593913
+     ],
+     "confidence": 0.9250598622828113,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "My account namber is 12250473465.",
+     "bbox": [
+      204.30739693019703,
+      411.2133021036784,
+      530.4317335045856,
+      411.2133021036784,
+      530.4317335045856,
+      447.33669789632165,
+      204.30739693019703,
+      447.33669789632165
+     ],
+     "confidence": 0.9183397202780752,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "On 07/19/2026 an amount of Rc. 98,200 was",
+     "bbox": [
+      204.83921714451003,
+      447.45213483174643,
+      600.5194901176121,
+      443.3337782541911,
+      600.9382709005605,
+      483.08636271158855,
+      205.2579979274584,
+      487.20477600097655
+     ],
+     "confidence": 0.8646004577962364,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "debited withoul my authorisation or consent.",
+     "bbox": [
+      207.97043078878653,
+      485.4709818522136,
+      588.4643660835599,
+      485.4709818522136,
+      588.4643660835599,
+      521.7456848144532,
+      207.97043078878653,
+      521.7456848144532
+     ],
+     "confidence": 0.8748102540319617,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 6
+    },
+    {
+     "text": "The transaction reference is 396g29749492.",
+     "bbox": [
+      211.1370040230129,
+      523.9268786112467,
+      590.9064742378567,
+      523.9268786112467,
+      590.9064742378567,
+      555.7647880554199,
+      211.1370040230129,
+      555.7647880554199
+     ],
+     "confidence": 0.910702835945856,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "Iraisedthisith the branch bu ee o esoln",
+     "bbox": [
+      210.0346377828847,
+      562.9810284932455,
+      679.5109597911006,
+      558.8695340474446,
+      679.8200245732846,
+      593.7378969828288,
+      210.34370256506878,
+      597.8493914286296
+     ],
+     "confidence": 0.5898335331525558,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 8
+    },
+    {
+     "text": "Iq ",
+     "bbox": [
+      206.791211998981,
+      600.6116546630859,
+      780.02234152089,
+      595.8234746297201,
+      780.3561109459919,
+      635.3048914591471,
+      207.1249814240829,
+      640.093071492513
+     ],
+     "confidence": 0.4327116012573242,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Your's faithbully",
+     "bbox": [
+      205.66877680239472,
+      669.1761469523112,
+      356.3086746879246,
+      666.5492548624675,
+      357.0939742378567,
+      711.0435440063477,
+      206.45407635232678,
+      713.6704360961915
+     ],
+     "confidence": 0.9088467043988845,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 10
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      933.0518002717391,
+      683.7675910949707,
+      1040.6711585003397,
+      670.3959617614746,
+      1045.4660273012908,
+      708.5245745340983,
+      937.8466690726902,
+      721.8962038675944
+     ],
+     "confidence": 0.9969945475459099,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "Rajech Kumar Sharma",
+     "bbox": [
+      203.8082975304645,
+      710.9693649291993,
+      411.60302867060125,
+      704.8945068359375,
+      413.0528431768003,
+      753.8920557657877,
+      205.25811203666356,
+      759.9669138590496
+     ],
+     "confidence": 0.8810734403760809,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "State Bank",
+   "value_en": null,
+   "normalized": "State Bank of India",
+   "confidence": 0.9250598622828113,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     203.70487179963487,
+     371.773171488444,
+     639.2733154296875,
+     369.51819559733076,
+     639.470267917799,
+     407.110484568278,
+     203.90182428774628,
+     409.3654604593913
+    ],
+    "span": [
+     30,
+     40
+    ],
+    "line_index": 3
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "account_number": {
+   "value": "12250473465",
+   "value_en": null,
+   "normalized": "12250473465",
+   "confidence": 0.8265057482502677,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     204.30739693019703,
+     411.2133021036784,
+     530.4317335045856,
+     411.2133021036784,
+     530.4317335045856,
+     447.33669789632165,
+     204.30739693019703,
+     447.33669789632165
+    ],
+    "span": [
+     21,
+     32
+    ],
+    "line_index": 4
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "07/19/2026",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.4323002288981182,
+   "source": "regex_validator",
+   "validator_passed": false,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     204.83921714451003,
+     447.45213483174643,
+     600.5194901176121,
+     443.3337782541911,
+     600.9382709005605,
+     483.08636271158855,
+     205.2579979274584,
+     487.20477600097655
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": [
+    "VALIDATOR_FAILED"
+   ]
+  },
+  "amount": {
+   "value": "98,200",
+   "value_en": null,
+   "normalized": "98200.00",
+   "confidence": 0.8646004577962364,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     204.83921714451003,
+     447.45213483174643,
+     600.5194901176121,
+     443.3337782541911,
+     600.9382709005605,
+     483.08636271158855,
+     205.2579979274584,
+     487.20477600097655
+    ],
+    "span": [
+     31,
+     37
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "396g29749492",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.455351417972928,
+   "source": "regex_validator",
+   "validator_passed": false,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     211.1370040230129,
+     523.9268786112467,
+     590.9064742378567,
+     523.9268786112467,
+     590.9064742378567,
+     555.7647880554199,
+     211.1370040230129,
+     555.7647880554199
+    ],
+    "span": [
+     29,
+     41
+    ],
+    "line_index": 7
+   },
+   "mt_engine": null,
+   "flags": [
+    "VALIDATOR_FAILED"
+   ]
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.864,
+  "s1_ingest": 22.818,
+  "s15_quality": 198.943,
+  "s15_quality:p1": 198.943,
+  "s4_ocr": 788.094,
+  "s4_ocr:p1": 788.094,
+  "s2b_lid": 0.88,
+  "s2b_lid:p1": 0.88,
+  "s3_classify": 174.769,
+  "s3_classify:p1": 174.769,
+  "s5_validators": 15.611,
+  "s5_slm": 8142.855,
+  "assemble": 0.229,
+  "s4b_vlm": 1682.744,
+  "s4b_vlm:p1": 1682.744,
+  "e2e_total": 11029.214
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_RESPONSE_INVALID",
+  "tier2_failed:page=1:reason=provider_error:code=PROVIDER_ERROR"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

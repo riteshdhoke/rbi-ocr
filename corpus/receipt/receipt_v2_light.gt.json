@@ -1,0 +1,307 @@
+{
+  "doc_id": "receipt_v2_light",
+  "doc_type": "receipt",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+1.0deg",
+    "blur:0.4",
+    "noise:0.004"
+  ],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "TRANSACTION RECEIPT",
+      "bbox": [
+        47.8,
+        75.9,
+        390.9,
+        69.7,
+        391.6,
+        108.1,
+        48.5,
+        114.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        49.3,
+        155.9,
+        102.4,
+        154.9,
+        103.0,
+        185.6,
+        49.8,
+        186.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "22/07/2026",
+      "bbox": [
+        289.2,
+        151.5,
+        433.3,
+        148.9,
+        433.8,
+        179.7,
+        289.8,
+        182.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "Bank",
+      "bbox": [
+        50.2,
+        207.8,
+        106.9,
+        206.8,
+        107.4,
+        237.5,
+        50.7,
+        238.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "HDFC Bank Limited",
+      "bbox": [
+        290.2,
+        203.5,
+        535.0,
+        199.1,
+        535.6,
+        229.8,
+        290.7,
+        234.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "A/C",
+      "bbox": [
+        51.1,
+        259.8,
+        90.6,
+        259.1,
+        91.1,
+        289.8,
+        51.7,
+        290.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXXXX1506",
+      "bbox": [
+        291.1,
+        255.5,
+        435.1,
+        252.9,
+        435.7,
+        283.6,
+        291.6,
+        286.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Card",
+      "bbox": [
+        52.1,
+        311.8,
+        104.9,
+        310.9,
+        105.4,
+        341.6,
+        52.6,
+        342.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXX XXXX XXXX 7991",
+      "bbox": [
+        292.0,
+        307.5,
+        565.7,
+        302.6,
+        566.2,
+        333.3,
+        292.6,
+        338.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "card_last_four"
+    },
+    {
+      "text": "Amount",
+      "bbox": [
+        53.0,
+        363.8,
+        143.6,
+        362.2,
+        144.1,
+        392.9,
+        53.5,
+        394.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Rs. 4,500.00",
+      "bbox": [
+        293.0,
+        359.5,
+        465.8,
+        356.4,
+        466.4,
+        387.1,
+        293.5,
+        390.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "RRN",
+      "bbox": [
+        53.9,
+        415.8,
+        102.0,
+        414.9,
+        102.6,
+        445.7,
+        54.5,
+        446.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "583889836639",
+      "bbox": [
+        293.9,
+        411.5,
+        466.7,
+        408.4,
+        467.3,
+        439.1,
+        294.4,
+        442.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "Status",
+      "bbox": [
+        54.9,
+        467.8,
+        125.1,
+        466.5,
+        125.7,
+        497.3,
+        55.4,
+        498.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "FAILED",
+      "bbox": [
+        294.8,
+        463.5,
+        381.3,
+        461.9,
+        381.8,
+        492.6,
+        295.4,
+        494.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "transaction_date": "22/07/2026",
+    "bank_name": "HDFC Bank Limited",
+    "card_last_four": "7991",
+    "disputed_amount": 4500,
+    "transaction_reference": "583889836639"
+  },
+  "fields_bilingual": {
+    "transaction_date": {
+      "value": "22/07/2026",
+      "value_en": "22/07/2026",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "HDFC Bank Limited",
+      "value_en": "HDFC Bank Limited",
+      "script": "Latn"
+    },
+    "card_last_four": {
+      "value": "7991",
+      "value_en": "7991",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "Rs. 4,500.00",
+      "value_en": "Rs. 4,500.00",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "583889836639",
+      "value_en": "583889836639",
+      "script": "Latn"
+    }
+  }
+}

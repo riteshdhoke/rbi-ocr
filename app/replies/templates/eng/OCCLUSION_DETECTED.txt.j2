@@ -1,0 +1,11 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- OCCLUSION_DETECTED - quality gate: part of the page is covered or falls outside the frame -#}
+{% block subject %}Part of your document is covered and cannot be read{% endblock %}
+{% block defect %}Something is covering part of the page — commonly a finger over an edge, a
+shadow across the sheet, a note stuck on top, or the page running off the
+side of the picture. The details of a complaint are often in exactly the
+part that is covered.{% endblock %}
+{% block remedy %}Please take anything resting on the page away, keep your fingers outside the
+frame, and make sure the whole sheet including all four corners is visible.
+Then scan or photograph it again at {{ recommended_dpi }} DPI in even light,
+so that no shadow falls across the page.{% endblock %}

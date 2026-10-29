@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_en_v4_bounce",
+  "doc_type": "complaint_letter_en",
+  "variant": 4,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-5.3deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:3.4",
+    "noise:0.07",
+    "downscale:0.42"
+  ],
+  "quality_expectation": "bounce",
+  "lines": [
+    {
+      "text": "To,",
+      "bbox": [
+        103.2,
+        42.8,
+        117.7,
+        44.2,
+        116.0,
+        62.4,
+        101.5,
+        61.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The Banking Ombudsman,",
+      "bbox": [
+        101.1,
+        66.3,
+        228.4,
+        78.0,
+        226.8,
+        96.2,
+        99.4,
+        84.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank of India",
+      "bbox": [
+        98.9,
+        89.7,
+        209.0,
+        99.9,
+        207.3,
+        118.1,
+        97.2,
+        107.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Subject: Delay in closure of loan account and release of original property doc",
+      "bbox": [
+        95.5,
+        125.7,
+        469.2,
+        160.2,
+        467.5,
+        178.4,
+        93.9,
+        143.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "I hold a savings account with Union Bank of India.",
+      "bbox": [
+        92.7,
+        156.6,
+        343.3,
+        179.8,
+        341.6,
+        197.9,
+        91.0,
+        174.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "My account number is 95229062189266.",
+      "bbox": [
+        90.6,
+        179.2,
+        296.9,
+        198.2,
+        295.2,
+        216.4,
+        88.9,
+        197.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "On 23/10/2026 an amount of Rs. 250,000 was",
+      "bbox": [
+        88.5,
+        201.8,
+        324.4,
+        223.6,
+        322.7,
+        241.8,
+        86.9,
+        220.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "debited without my authorisation or consent.",
+      "bbox": [
+        86.4,
+        224.4,
+        307.1,
+        244.7,
+        305.5,
+        262.9,
+        84.8,
+        242.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The transaction reference is 369601711910.",
+      "bbox": [
+        84.3,
+        246.9,
+        308.4,
+        267.6,
+        306.7,
+        285.8,
+        82.7,
+        265.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "I raised this with the branch but received no resolution.",
+      "bbox": [
+        82.3,
+        269.5,
+        355.7,
+        294.8,
+        354.0,
+        313.0,
+        80.6,
+        287.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "I request that the amount be reversed and compensation considered.",
+      "bbox": [
+        80.2,
+        292.1,
+        413.2,
+        322.9,
+        411.5,
+        341.1,
+        78.5,
+        310.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "Yours faithfully,",
+      "bbox": [
+        76.1,
+        335.6,
+        156.6,
+        343.0,
+        154.9,
+        361.2,
+        74.5,
+        353.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Sanjay Deshpande",
+      "bbox": [
+        73.8,
+        360.7,
+        164.8,
+        369.1,
+        163.2,
+        387.3,
+        72.2,
+        378.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "Union Bank of India",
+    "ifsc_code": "UBIN0714236",
+    "account_number": "95229062189266",
+    "card_last_four": "1907",
+    "disputed_amount": 250000,
+    "transaction_date": "23/10/2026",
+    "transaction_reference": "369601711910",
+    "complainant_name": "Sanjay Deshpande",
+    "complainant_city": "Indore, Madhya Pradesh",
+    "mobile": "9176948328",
+    "prior_complaint_ref": "CMS/2026/783726",
+    "ground_en": "Delay in closure of loan account and release of original property documents"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "Subject: Delay in closure of loan account and release of original property doc",
+      "value_en": "Subject: Delay in closure of loan account and release of original property doc",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "95229062189266",
+      "value_en": "95229062189266",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "369601711910",
+      "value_en": "369601711910",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "I request that the amount be reversed and compensation considered.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Sanjay Deshpande",
+      "value_en": "Sanjay Deshpande",
+      "script": "Latn"
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "doc_id": "email_printout_v2_bounce",
+  "doc_type": "email_printout",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+4.1deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:3.4",
+    "noise:0.07",
+    "downscale:0.42"
+  ],
+  "quality_expectation": "bounce",
+  "lines": [
+    {
+      "text": "From:",
+      "bbox": [
+        14.8,
+        69.1,
+        43.5,
+        67.1,
+        44.5,
+        79.9,
+        15.8,
+        82.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "customercare@bank.example.in",
+      "bbox": [
+        77.6,
+        64.6,
+        229.2,
+        53.6,
+        230.1,
+        66.5,
+        78.6,
+        77.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "To:",
+      "bbox": [
+        16.1,
+        87.6,
+        30.3,
+        86.6,
+        31.3,
+        99.4,
+        17.1,
+        100.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "abdul@example.com",
+      "bbox": [
+        79.0,
+        83.0,
+        178.1,
+        75.9,
+        179.0,
+        88.7,
+        79.9,
+        95.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Date:",
+      "bbox": [
+        17.5,
+        106.0,
+        44.1,
+        104.1,
+        45.0,
+        117.0,
+        18.4,
+        118.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "26/02/2026",
+      "bbox": [
+        80.3,
+        101.5,
+        133.8,
+        97.6,
+        134.7,
+        110.5,
+        81.2,
+        114.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "Subject:",
+      "bbox": [
+        18.8,
+        124.4,
+        58.6,
+        121.5,
+        59.6,
+        134.4,
+        19.7,
+        137.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Re: Service Request CMS/2025/477856",
+      "bbox": [
+        81.6,
+        119.9,
+        262.0,
+        106.8,
+        263.0,
+        119.7,
+        82.6,
+        132.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "Dear Customer,",
+      "bbox": [
+        22.0,
+        168.0,
+        97.8,
+        162.5,
+        98.8,
+        175.9,
+        22.9,
+        181.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "We acknowledge your complaint regarding the disputed transaction.",
+      "bbox": [
+        23.4,
+        187.3,
+        360.3,
+        162.8,
+        361.3,
+        176.2,
+        24.3,
+        200.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Your service request number is CMS/2025/477856.",
+      "bbox": [
+        24.8,
+        206.6,
+        272.2,
+        188.6,
+        273.2,
+        202.0,
+        25.7,
+        220.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "The matter is under investigation and we will revert within 30 days.",
+      "bbox": [
+        26.2,
+        225.8,
+        354.9,
+        202.0,
+        355.9,
+        215.4,
+        27.1,
+        239.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Regards, Customer Care",
+      "bbox": [
+        27.6,
+        245.1,
+        146.9,
+        236.4,
+        147.8,
+        249.9,
+        28.5,
+        258.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "transaction_date": "26/02/2026",
+    "prior_complaint_ref": "CMS/2025/477856"
+  },
+  "fields_bilingual": {
+    "transaction_date": {
+      "value": "26/02/2026",
+      "value_en": "26/02/2026",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2025/477856",
+      "value_en": "CMS/2025/477856",
+      "script": "Latn"
+    }
+  }
+}

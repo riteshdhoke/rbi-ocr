@@ -1,0 +1,519 @@
+{
+  "doc_id": "complaint_form_en_v2_photo",
+  "doc_type": "complaint_form_en",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+3.1deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+      "bbox": [
+        32.9,
+        87.0,
+        549.1,
+        59.0,
+        550.7,
+        89.2,
+        34.5,
+        117.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank — Integrated Ombudsman Scheme, 2021 — Form I",
+      "bbox": [
+        35.0,
+        124.2,
+        509.2,
+        98.5,
+        510.3,
+        118.3,
+        36.0,
+        144.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. Name of complainant",
+      "bbox": [
+        39.6,
+        210.9,
+        213.9,
+        201.4,
+        215.0,
+        221.2,
+        40.7,
+        230.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Abdul Rahman Shaikh",
+      "bbox": [
+        417.3,
+        190.4,
+        583.4,
+        181.3,
+        584.5,
+        202.0,
+        418.4,
+        211.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. Address",
+      "bbox": [
+        42.3,
+        259.2,
+        117.9,
+        255.1,
+        118.9,
+        274.8,
+        43.3,
+        279.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Nagpur, Maharashtra",
+      "bbox": [
+        419.9,
+        238.7,
+        580.3,
+        230.0,
+        581.4,
+        250.6,
+        421.0,
+        259.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. Mobile",
+      "bbox": [
+        44.9,
+        307.5,
+        111.5,
+        303.9,
+        112.6,
+        323.6,
+        45.9,
+        327.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9478545849",
+      "bbox": [
+        422.5,
+        286.9,
+        514.6,
+        282.0,
+        515.7,
+        302.6,
+        423.6,
+        307.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. Name of bank",
+      "bbox": [
+        47.5,
+        355.8,
+        167.0,
+        349.2,
+        168.0,
+        369.1,
+        48.6,
+        375.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "HDFC Bank Limited",
+      "bbox": [
+        425.1,
+        335.2,
+        570.3,
+        327.4,
+        571.5,
+        348.0,
+        426.2,
+        355.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC code",
+      "bbox": [
+        50.1,
+        404.1,
+        137.8,
+        399.3,
+        138.8,
+        419.1,
+        51.2,
+        423.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "HDFC0182417",
+      "bbox": [
+        427.8,
+        383.5,
+        534.4,
+        377.8,
+        535.6,
+        398.4,
+        428.9,
+        404.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. Account number",
+      "bbox": [
+        52.8,
+        452.4,
+        190.9,
+        444.9,
+        192.0,
+        464.6,
+        53.8,
+        472.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "8076199704757514",
+      "bbox": [
+        430.4,
+        431.8,
+        577.7,
+        423.8,
+        578.8,
+        444.4,
+        431.5,
+        452.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. Amount in dispute (Rs.)",
+      "bbox": [
+        55.4,
+        500.6,
+        241.2,
+        490.5,
+        242.4,
+        510.3,
+        56.4,
+        520.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,500",
+      "bbox": [
+        433.0,
+        480.1,
+        474.2,
+        477.9,
+        475.3,
+        498.5,
+        434.1,
+        500.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. Date of transaction",
+      "bbox": [
+        58.0,
+        548.9,
+        214.0,
+        540.5,
+        215.1,
+        560.2,
+        59.1,
+        568.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "15/12/2026",
+      "bbox": [
+        435.6,
+        528.4,
+        521.3,
+        523.8,
+        522.4,
+        544.4,
+        436.7,
+        549.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. Transaction reference",
+      "bbox": [
+        60.6,
+        597.2,
+        235.2,
+        587.7,
+        236.3,
+        607.5,
+        61.7,
+        617.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "553475873649",
+      "bbox": [
+        438.3,
+        576.7,
+        548.8,
+        570.7,
+        549.9,
+        591.3,
+        439.4,
+        597.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. Previous complaint no.",
+      "bbox": [
+        63.2,
+        645.5,
+        254.9,
+        635.1,
+        256.0,
+        654.9,
+        64.3,
+        665.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2025/123427",
+      "bbox": [
+        440.9,
+        625.0,
+        578.5,
+        617.5,
+        579.6,
+        638.1,
+        442.0,
+        645.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. Nature of complaint",
+      "bbox": [
+        67.2,
+        718.5,
+        238.8,
+        709.2,
+        239.9,
+        729.1,
+        68.3,
+        738.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period",
+      "bbox": [
+        88.3,
+        764.6,
+        720.5,
+        730.3,
+        721.6,
+        750.9,
+        89.4,
+        785.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        81.7,
+        986.0,
+        143.5,
+        982.6,
+        144.5,
+        1000.1,
+        82.6,
+        1003.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "HDFC Bank Limited",
+    "ifsc_code": "HDFC0182417",
+    "account_number": "8076199704757514",
+    "card_last_four": "8273",
+    "disputed_amount": 4500,
+    "transaction_date": "15/12/2026",
+    "transaction_reference": "553475873649",
+    "complainant_name": "Abdul Rahman Shaikh",
+    "complainant_city": "Nagpur, Maharashtra",
+    "mobile": "9478545849",
+    "prior_complaint_ref": "CMS/2025/123427",
+    "ground_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "Abdul Rahman Shaikh",
+      "value_en": "Abdul Rahman Shaikh",
+      "script": "Latn"
+    },
+    "complainant_address": {
+      "value": "Nagpur, Maharashtra",
+      "value_en": "Nagpur, Maharashtra",
+      "script": "Latn"
+    },
+    "complainant_contact": {
+      "value": "9478545849",
+      "value_en": "9478545849",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "HDFC Bank Limited",
+      "value_en": "HDFC Bank Limited",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "HDFC0182417",
+      "value_en": "HDFC0182417",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "8076199704757514",
+      "value_en": "8076199704757514",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "4,500",
+      "value_en": "4,500",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "15/12/2026",
+      "value_en": "15/12/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "553475873649",
+      "value_en": "553475873649",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2025/123427",
+      "value_en": "CMS/2025/123427",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period",
+      "value_en": "Failure to credit the amount of a failed ATM withdrawal within the prescribed period",
+      "script": "Latn"
+    }
+  }
+}

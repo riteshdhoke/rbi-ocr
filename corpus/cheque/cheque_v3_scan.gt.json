@@ -1,0 +1,289 @@
+{
+  "doc_id": "cheque_v3_scan",
+  "doc_type": "cheque",
+  "variant": 3,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+0.3deg",
+    "holes",
+    "fold",
+    "stamp",
+    "blur:0.8",
+    "noise:0.012",
+    "downscale:0.85"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "Bank of Baroda",
+      "bbox": [
+        49.6,
+        54.7,
+        256.6,
+        53.5,
+        256.9,
+        88.3,
+        49.7,
+        89.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "DATE",
+      "bbox": [
+        950.6,
+        59.6,
+        999.3,
+        59.3,
+        999.5,
+        85.4,
+        950.7,
+        85.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "14/03/2026",
+      "bbox": [
+        1052.6,
+        57.3,
+        1185.2,
+        56.5,
+        1185.3,
+        84.8,
+        1052.7,
+        85.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "A/C No.",
+      "bbox": [
+        49.9,
+        105.7,
+        116.0,
+        105.3,
+        116.1,
+        129.3,
+        50.0,
+        129.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "86492556806",
+      "bbox": [
+        168.8,
+        103.3,
+        303.5,
+        102.5,
+        303.7,
+        128.6,
+        169.0,
+        129.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "PAY",
+      "bbox": [
+        50.2,
+        173.7,
+        84.9,
+        173.5,
+        85.1,
+        199.6,
+        50.4,
+        199.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Meera Joshi",
+      "bbox": [
+        152.2,
+        164.6,
+        273.3,
+        163.9,
+        273.4,
+        200.9,
+        152.4,
+        201.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "RUPEES",
+      "bbox": [
+        50.7,
+        258.7,
+        124.6,
+        258.2,
+        124.7,
+        284.4,
+        50.9,
+        284.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12,750 only",
+      "bbox": [
+        186.7,
+        251.1,
+        305.8,
+        250.4,
+        306.0,
+        287.4,
+        186.9,
+        288.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "12,750.00",
+      "bbox": [
+        1019.7,
+        242.8,
+        1117.7,
+        242.2,
+        1117.9,
+        277.0,
+        1019.9,
+        277.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "MICR",
+      "bbox": [
+        51.9,
+        461.0,
+        98.7,
+        460.7,
+        98.9,
+        484.7,
+        52.1,
+        484.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "109864737",
+      "bbox": [
+        153.9,
+        458.7,
+        273.2,
+        458.0,
+        273.4,
+        486.3,
+        154.1,
+        487.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "micr_code"
+    },
+    {
+      "text": "241345  BARB0109095  864925568",
+      "bbox": [
+        52.3,
+        513.7,
+        480.6,
+        511.2,
+        480.8,
+        541.6,
+        52.4,
+        544.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    }
+  ],
+  "fields": {
+    "bank_name": "Bank of Baroda",
+    "complainant_name": "Meera Joshi",
+    "transaction_date": "14/03/2026",
+    "account_number": "86492556806",
+    "ifsc_code": "BARB0109095",
+    "micr_code": "109864737",
+    "disputed_amount": 12750
+  },
+  "fields_bilingual": {
+    "bank_name": {
+      "value": "Bank of Baroda",
+      "value_en": "Bank of Baroda",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "14/03/2026",
+      "value_en": "14/03/2026",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "86492556806",
+      "value_en": "86492556806",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Meera Joshi",
+      "value_en": "Meera Joshi",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "12,750",
+      "value_en": "12,750",
+      "script": "Latn"
+    },
+    "micr_code": {
+      "value": "109864737",
+      "value_en": "109864737",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "BARB0109095",
+      "value_en": "BARB0109095",
+      "script": "Latn"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- BLUR_ABOVE_CEILING - quality gate: variance of Laplacian below the sharpness floor -#}
+{% block subject %}The writing in your document is too blurred to read{% endblock %}
+{% block defect %}The writing on the pages is out of focus. Individual characters cannot be
+separated from one another, so nothing could be read with confidence — and a
+guessed account number would be worse for you than none at all.{% endblock %}
+{% block remedy %}Please rescan the document at {{ recommended_dpi }} DPI. If you are using a
+phone, rest your elbows on a table, tap the screen on the writing so that
+the camera focuses on it, and take the picture in daylight or under a bright
+lamp.{% endblock %}

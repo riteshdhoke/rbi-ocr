@@ -1,0 +1,2731 @@
+{
+  "schema_version": 1,
+  "tool": "tools/slm_bakeoff.py",
+  "answers": [
+    "BUILD-BRIEF M7 (SLM bake-off)",
+    "OPEN-QUESTIONS Q5"
+  ],
+  "mode": "measured",
+  "generated_at": "2026-08-07T18:02:42.779000+00:00",
+  "started_at": "2026-08-07T17:55:50.906530+00:00",
+  "settings": {
+    "provider_profile": "laptop",
+    "synthetic_only": true,
+    "base_url": "https://router.huggingface.co/v1",
+    "configured_slm_model": "Qwen/Qwen3-1.7B-Instruct",
+    "configured_slm_model_fallback": "Qwen/Qwen3-0.6B-Instruct",
+    "slm_max_tokens": 512,
+    "slm_temperature": 0.0,
+    "job_token_budget": 8000,
+    "grounding_max_edit_distance": 2
+  },
+  "sample": {
+    "source": "corpus .gt.json OCR lines (not real OCR output)",
+    "profile": "clean",
+    "variants": [
+      0,
+      1,
+      2
+    ],
+    "locked_test_variants_excluded": [
+      3,
+      4
+    ],
+    "documents": 18,
+    "by_type": {
+      "bilingual_form": 3,
+      "complaint_form_deva": 3,
+      "complaint_form_en": 3,
+      "complaint_letter_en": 3,
+      "complaint_letter_mar": 3,
+      "email_printout": 3
+    },
+    "by_script": {
+      "Deva": 6,
+      "Latn": 12
+    },
+    "doc_ids": [
+      "complaint_form_en_v0_clean",
+      "complaint_form_en_v1_clean",
+      "complaint_form_en_v2_clean",
+      "complaint_form_deva_v0_clean",
+      "complaint_form_deva_v1_clean",
+      "complaint_form_deva_v2_clean",
+      "complaint_letter_en_v0_clean",
+      "complaint_letter_en_v1_clean",
+      "complaint_letter_en_v2_clean",
+      "complaint_letter_mar_v0_clean",
+      "complaint_letter_mar_v1_clean",
+      "complaint_letter_mar_v2_clean",
+      "bilingual_form_v0_clean",
+      "bilingual_form_v1_clean",
+      "bilingual_form_v2_clean",
+      "email_printout_v0_clean",
+      "email_printout_v1_clean",
+      "email_printout_v2_clean"
+    ],
+    "target_fields": [
+      "complainant_address",
+      "complainant_name",
+      "complaint_summary",
+      "prior_complaint_reference",
+      "relief_sought"
+    ]
+  },
+  "router": {
+    "url": "https://router.huggingface.co/v1/models",
+    "model_count": 131,
+    "configured_models_served": {
+      "Qwen/Qwen3-1.7B-Instruct": false,
+      "Qwen/Qwen3-0.6B-Instruct": false
+    }
+  },
+  "ranking_weights": {
+    "schema_validity_final": 0.3,
+    "grounding_pass_rate": 0.3,
+    "line_attribution_accuracy": 0.2,
+    "summary_f1": 0.2
+  },
+  "ranking": [
+    {
+      "model": "google/gemma-3-4b-it",
+      "composite_score": 0.7721,
+      "schema_validity_final": 0.5625,
+      "schema_validity_denominator": 16,
+      "grounding_pass_rate": 0.9,
+      "line_attribution_accuracy": 1.0,
+      "summary_f1": 0.6666,
+      "latency_p95": 0.0,
+      "available": true,
+      "rank": 1
+    },
+    {
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "composite_score": 0.7482,
+      "schema_validity_final": 1.0,
+      "schema_validity_denominator": 18,
+      "grounding_pass_rate": 0.5556,
+      "line_attribution_accuracy": 1.0,
+      "summary_f1": 0.4075,
+      "latency_p95": 0.0,
+      "available": true,
+      "rank": 2
+    },
+    {
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "composite_score": 0.5048,
+      "schema_validity_final": 0.4,
+      "schema_validity_denominator": 15,
+      "grounding_pass_rate": 0.5417,
+      "line_attribution_accuracy": 1.0,
+      "summary_f1": 0.1112,
+      "latency_p95": 0.0,
+      "available": true,
+      "rank": 3
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "composite_score": 0.0,
+      "schema_validity_final": 0.0,
+      "schema_validity_denominator": 14,
+      "grounding_pass_rate": 0.0,
+      "line_attribution_accuracy": 0.0,
+      "summary_f1": 0.0,
+      "latency_p95": 0.0,
+      "available": true,
+      "rank": 4
+    },
+    {
+      "model": "Qwen/Qwen3-0.6B-Instruct",
+      "composite_score": 0.0,
+      "schema_validity_final": 0.0,
+      "schema_validity_denominator": 0,
+      "grounding_pass_rate": 0.0,
+      "line_attribution_accuracy": 0.0,
+      "summary_f1": 0.0,
+      "latency_p95": 0.0,
+      "available": false,
+      "rank": 5
+    },
+    {
+      "model": "Qwen/Qwen3-1.7B-Instruct",
+      "composite_score": 0.0,
+      "schema_validity_final": 0.0,
+      "schema_validity_denominator": 0,
+      "grounding_pass_rate": 0.0,
+      "line_attribution_accuracy": 0.0,
+      "summary_f1": 0.0,
+      "latency_p95": 0.0,
+      "available": false,
+      "rank": 6
+    }
+  ],
+  "candidates": [
+    {
+      "model": "Qwen/Qwen3-1.7B-Instruct",
+      "available": false,
+      "notes": "",
+      "fatal_error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-1.7B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}",
+      "circuit_broken": false,
+      "documents": {
+        "attempted": 0,
+        "completed": 0,
+        "model_responded": 0,
+        "api_errors": 0,
+        "cached": 0,
+        "live": 0
+      },
+      "errors_by_class": {},
+      "errors_by_message": {},
+      "schema_validity_first_attempt": 0.0,
+      "schema_validity_first_attempt_denominator": 0,
+      "schema_validity_final": 0.0,
+      "schema_validity_denominator": 0,
+      "schema_validity_observed_this_run": 0,
+      "schema_validity_note": "computed over every document whose outcome has been observed by this run or a previous one (docs/bakeoff/schema_outcomes.json). Scoring only this run's fresh answers would report 0.0 on a warm cache (the failures are exactly what the cache never stores) and scoring only its cache hits would report 1.0",
+      "repair_turns_used": 0,
+      "grounding_pass_rate": 0.0,
+      "value_fields_proposed": 0,
+      "value_fields_grounded": 0,
+      "line_attribution_accuracy": 0.0,
+      "line_attribution_denominator": 0,
+      "value_agreement_exact": 0.0,
+      "value_agreement_fuzzy": 0.0,
+      "value_agreement_denominator": 0,
+      "value_agreement_by_script": {},
+      "summary_precision": 0.0,
+      "summary_recall": 0.0,
+      "summary_f1": 0.0,
+      "fields_invented_on_documents_without_them": 0,
+      "identifier_leaks": 0,
+      "unclaimed_pii_in_prompt": 0,
+      "unclaimed_pii_fields": [],
+      "latency_seconds": {
+        "n_live": 0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "tokens_per_document": {
+        "mean": 0,
+        "max": 0,
+        "budget": 8000
+      },
+      "q5_json_mode": {
+        "variants": {
+          "json_object": {
+            "status_code": 400,
+            "latency_seconds": 0.604,
+            "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-1.7B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+          },
+          "none": {
+            "status_code": 400,
+            "latency_seconds": 0.614,
+            "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-1.7B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+          },
+          "json_schema": {
+            "status_code": 400,
+            "latency_seconds": 0.61,
+            "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-1.7B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+          }
+        },
+        "json_object_accepted": false,
+        "json_object_yields_json": false,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": false,
+        "probed_at": "2026-08-07T15:48:35.844125+00:00"
+      },
+      "router": {},
+      "documents_detail": []
+    },
+    {
+      "model": "Qwen/Qwen3-0.6B-Instruct",
+      "available": false,
+      "notes": "",
+      "fatal_error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-0.6B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}",
+      "circuit_broken": false,
+      "documents": {
+        "attempted": 0,
+        "completed": 0,
+        "model_responded": 0,
+        "api_errors": 0,
+        "cached": 0,
+        "live": 0
+      },
+      "errors_by_class": {},
+      "errors_by_message": {},
+      "schema_validity_first_attempt": 0.0,
+      "schema_validity_first_attempt_denominator": 0,
+      "schema_validity_final": 0.0,
+      "schema_validity_denominator": 0,
+      "schema_validity_observed_this_run": 0,
+      "schema_validity_note": "computed over every document whose outcome has been observed by this run or a previous one (docs/bakeoff/schema_outcomes.json). Scoring only this run's fresh answers would report 0.0 on a warm cache (the failures are exactly what the cache never stores) and scoring only its cache hits would report 1.0",
+      "repair_turns_used": 0,
+      "grounding_pass_rate": 0.0,
+      "value_fields_proposed": 0,
+      "value_fields_grounded": 0,
+      "line_attribution_accuracy": 0.0,
+      "line_attribution_denominator": 0,
+      "value_agreement_exact": 0.0,
+      "value_agreement_fuzzy": 0.0,
+      "value_agreement_denominator": 0,
+      "value_agreement_by_script": {},
+      "summary_precision": 0.0,
+      "summary_recall": 0.0,
+      "summary_f1": 0.0,
+      "fields_invented_on_documents_without_them": 0,
+      "identifier_leaks": 0,
+      "unclaimed_pii_in_prompt": 0,
+      "unclaimed_pii_fields": [],
+      "latency_seconds": {
+        "n_live": 0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "tokens_per_document": {
+        "mean": 0,
+        "max": 0,
+        "budget": 8000
+      },
+      "q5_json_mode": {
+        "variants": {
+          "json_object": {
+            "status_code": 400,
+            "latency_seconds": 0.614,
+            "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-0.6B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+          },
+          "none": {
+            "status_code": 400,
+            "latency_seconds": 0.603,
+            "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-0.6B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+          },
+          "json_schema": {
+            "status_code": 400,
+            "latency_seconds": 0.636,
+            "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-0.6B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+          }
+        },
+        "json_object_accepted": false,
+        "json_object_yields_json": false,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": false,
+        "probed_at": "2026-08-07T15:48:37.704044+00:00"
+      },
+      "router": {},
+      "documents_detail": []
+    },
+    {
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "available": true,
+      "notes": "closest live relative of the configured Qwen3-1.7B-Instruct; smallest instruct model on the router with advertised structured output",
+      "fatal_error": null,
+      "circuit_broken": false,
+      "documents": {
+        "attempted": 18,
+        "completed": 6,
+        "model_responded": 12,
+        "api_errors": 6,
+        "cached": 6,
+        "live": 0
+      },
+      "errors_by_class": {
+        "ProviderError": 6,
+        "ProviderResponseInvalid": 6
+      },
+      "errors_by_message": {
+        "Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, su": 6,
+        "produced output that failed validation twice for extract_fields: 1 validation error for RawField Value error, complaint_summary must be selected line indices, n": 5,
+        "produced output that failed validation twice for extract_fields: 1 validation error for RawField Value error, complaint_summary requires at least one selected l": 1
+      },
+      "schema_validity_first_attempt": 0.0,
+      "schema_validity_first_attempt_denominator": 9,
+      "schema_validity_final": 0.4,
+      "schema_validity_denominator": 15,
+      "schema_validity_observed_this_run": 6,
+      "schema_validity_note": "computed over every document whose outcome has been observed by this run or a previous one (docs/bakeoff/schema_outcomes.json). Scoring only this run's fresh answers would report 0.0 on a warm cache (the failures are exactly what the cache never stores) and scoring only its cache hits would report 1.0",
+      "repair_turns_used": 0,
+      "grounding_pass_rate": 0.5417,
+      "value_fields_proposed": 24,
+      "value_fields_grounded": 13,
+      "line_attribution_accuracy": 1.0,
+      "line_attribution_denominator": 13,
+      "value_agreement_exact": 0.3077,
+      "value_agreement_fuzzy": 0.6923,
+      "value_agreement_denominator": 13,
+      "value_agreement_by_script": {
+        "Deva": {
+          "documents": 2,
+          "exact": 0.0,
+          "fuzzy": 0.5,
+          "grounding_pass_rate": 0.5,
+          "compared": 4
+        },
+        "Latn": {
+          "documents": 4,
+          "exact": 0.4444,
+          "fuzzy": 0.7778,
+          "grounding_pass_rate": 0.5625,
+          "compared": 9
+        }
+      },
+      "summary_precision": 0.0667,
+      "summary_recall": 0.3333,
+      "summary_f1": 0.1112,
+      "fields_invented_on_documents_without_them": 0,
+      "identifier_leaks": 0,
+      "unclaimed_pii_in_prompt": 9,
+      "unclaimed_pii_fields": [
+        "mobile"
+      ],
+      "latency_seconds": {
+        "n_live": 0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "tokens_per_document": {
+        "mean": 0.0,
+        "max": 0,
+        "budget": 8000
+      },
+      "q5_json_mode": {
+        "variants": {
+          "json_object": {
+            "status_code": 200,
+            "latency_seconds": 1.17,
+            "usage": {
+              "completion_tokens": 38,
+              "prompt_tokens": 66,
+              "prompt_tokens_details": null,
+              "total_tokens": 104
+            },
+            "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+            "parses_as_json": true
+          },
+          "none": {
+            "status_code": 200,
+            "latency_seconds": 1.381,
+            "usage": {
+              "completion_tokens": 38,
+              "prompt_tokens": 66,
+              "prompt_tokens_details": null,
+              "total_tokens": 104
+            },
+            "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+            "parses_as_json": true
+          },
+          "json_schema": {
+            "status_code": 200,
+            "latency_seconds": 1.263,
+            "usage": {
+              "completion_tokens": 38,
+              "prompt_tokens": 66,
+              "prompt_tokens_details": null,
+              "total_tokens": 104
+            },
+            "content_preview": "{\"fields\": [{\"confidence\": 1.0, \"line_indices\": [0], \"name\": \"complainant_name\", \"value\": \"Asha Patil\"}]}",
+            "parses_as_json": true
+          }
+        },
+        "json_object_accepted": true,
+        "json_object_yields_json": true,
+        "json_schema_accepted": true,
+        "unconstrained_yields_json": true,
+        "probed_at": "2026-08-07T15:48:41.507846+00:00"
+      },
+      "router": {
+        "owned_by": "Qwen",
+        "input_modalities": [
+          "text"
+        ],
+        "providers": [
+          {
+            "provider": "nscale",
+            "status": "live",
+            "context_length": 262144,
+            "supports_structured_output": true,
+            "pricing_usd_per_million": {
+              "input": 0.01,
+              "output": 0.03
+            }
+          },
+          {
+            "provider": "featherless-ai",
+            "status": "live",
+            "context_length": null,
+            "supports_structured_output": null,
+            "pricing_usd_per_million": null
+          }
+        ],
+        "advertises_structured_output": true
+      },
+      "documents_detail": [
+        {
+          "doc_id": "bilingual_form_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.339,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "bilingual_form_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "bilingual_form_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 9.142,
+          "tokens": 2160,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "Qwen/Qwen3-4B-Instruct-2507 produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [23], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_form_deva_v0_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 5.111,
+          "tokens": 2453,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "Qwen/Qwen3-4B-Instruct-2507 produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [23], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_form_deva_v1_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 5.728,
+          "tokens": 2395,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "Qwen/Qwen3-4B-Instruct-2507 produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [23], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_form_deva_v2_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.258,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_form_en_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 4.527,
+          "tokens": 1882,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "Qwen/Qwen3-4B-Instruct-2507 produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [23], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_form_en_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 3.922,
+          "tokens": 1897,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "Qwen/Qwen3-4B-Instruct-2507 produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [23], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_form_en_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.303,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_en_v0_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.041,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            6,
+            7
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_en_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_en_v2_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_mar_v0_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_mar_v1_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.278,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_mar_v2_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "email_printout_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 5.216,
+          "tokens": 1615,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "Qwen/Qwen3-4B-Instruct-2507 produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary requires at least one selected line_index (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...ices': [], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "email_printout_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.334,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "email_printout_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.335,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ]
+    },
+    {
+      "model": "google/gemma-3-4b-it",
+      "available": true,
+      "notes": "same weight class, different vendor and tokenizer; Gemma's Devanagari coverage is the reason it is here",
+      "fatal_error": null,
+      "circuit_broken": false,
+      "documents": {
+        "attempted": 18,
+        "completed": 9,
+        "model_responded": 13,
+        "api_errors": 5,
+        "cached": 9,
+        "live": 0
+      },
+      "errors_by_class": {
+        "ProviderError": 5,
+        "ProviderResponseInvalid": 4
+      },
+      "errors_by_message": {
+        "Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, su": 5,
+        "produced output that failed validation twice for extract_fields: 1 validation error for RawField Value error, complaint_summary must be selected line indices, n": 4
+      },
+      "schema_validity_first_attempt": 0.0,
+      "schema_validity_first_attempt_denominator": 8,
+      "schema_validity_final": 0.5625,
+      "schema_validity_denominator": 16,
+      "schema_validity_observed_this_run": 4,
+      "schema_validity_note": "computed over every document whose outcome has been observed by this run or a previous one (docs/bakeoff/schema_outcomes.json). Scoring only this run's fresh answers would report 0.0 on a warm cache (the failures are exactly what the cache never stores) and scoring only its cache hits would report 1.0",
+      "repair_turns_used": 1,
+      "grounding_pass_rate": 0.9,
+      "value_fields_proposed": 20,
+      "value_fields_grounded": 18,
+      "line_attribution_accuracy": 1.0,
+      "line_attribution_denominator": 18,
+      "value_agreement_exact": 0.3889,
+      "value_agreement_fuzzy": 0.4444,
+      "value_agreement_denominator": 18,
+      "value_agreement_by_script": {
+        "Deva": {
+          "documents": 4,
+          "exact": 0.3,
+          "fuzzy": 0.4,
+          "grounding_pass_rate": 0.9091,
+          "compared": 10
+        },
+        "Latn": {
+          "documents": 5,
+          "exact": 0.5,
+          "fuzzy": 0.5,
+          "grounding_pass_rate": 0.8889,
+          "compared": 8
+        }
+      },
+      "summary_precision": 0.5333,
+      "summary_recall": 0.8889,
+      "summary_f1": 0.6666,
+      "fields_invented_on_documents_without_them": 0,
+      "identifier_leaks": 0,
+      "unclaimed_pii_in_prompt": 9,
+      "unclaimed_pii_fields": [
+        "mobile"
+      ],
+      "latency_seconds": {
+        "n_live": 0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "tokens_per_document": {
+        "mean": 0.0,
+        "max": 0,
+        "budget": 8000
+      },
+      "q5_json_mode": {
+        "variants": {
+          "json_object": {
+            "status_code": 402,
+            "latency_seconds": 0.576,
+            "error": "{\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+          },
+          "none": {
+            "status_code": 402,
+            "latency_seconds": 0.65,
+            "error": "{\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+          },
+          "json_schema": {
+            "status_code": 402,
+            "latency_seconds": 0.615,
+            "error": "{\"error\":\"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.\"}"
+          }
+        },
+        "json_object_accepted": false,
+        "json_object_yields_json": false,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": false,
+        "probed_at": "2026-08-07T17:57:51.902928+00:00"
+      },
+      "router": {
+        "owned_by": "google",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "providers": [
+          {
+            "provider": "featherless-ai",
+            "status": "live",
+            "context_length": null,
+            "supports_structured_output": null,
+            "pricing_usd_per_million": null
+          },
+          {
+            "provider": "deepinfra",
+            "status": "live",
+            "context_length": 131072,
+            "supports_structured_output": true,
+            "pricing_usd_per_million": {
+              "input": 0.05,
+              "output": 0.1
+            }
+          }
+        ],
+        "advertises_structured_output": true
+      },
+      "documents_detail": [
+        {
+          "doc_id": "bilingual_form_v0_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 3,
+          "grounded": 3,
+          "rejected": [],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "bilingual_form_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 1,
+          "grounded": 1,
+          "rejected": [],
+          "attributed": "1/1",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "bilingual_form_v2_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_deva_v0_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 3,
+          "grounded": 3,
+          "rejected": [],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_deva_v1_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 3,
+          "grounded": 3,
+          "rejected": [],
+          "attributed": "3/3",
+          "summary_predicted": [
+            22
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_deva_v2_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 3,
+          "grounded": 3,
+          "rejected": [],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_en_v0_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 1,
+          "grounded": 1,
+          "rejected": [],
+          "attributed": "1/1",
+          "summary_predicted": [
+            23,
+            24
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_en_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_en_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.439,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_en_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 9.653,
+          "tokens": 1638,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "google/gemma-3-4b-it produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...ices': [], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_letter_en_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 7.572,
+          "tokens": 1757,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "google/gemma-3-4b-it produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...3, 9, 10], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_letter_en_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.358,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_mar_v0_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 2,
+          "grounded": 1,
+          "rejected": [
+            "prior_complaint_reference"
+          ],
+          "attributed": "1/1",
+          "summary_predicted": [
+            3,
+            4,
+            6,
+            7,
+            9,
+            10
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_mar_v1_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.283,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_mar_v2_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.279,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "email_printout_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 2.558,
+          "tokens": 1430,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "google/gemma-3-4b-it produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...ces': [9], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "email_printout_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 5.359,
+          "tokens": 1747,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "google/gemma-3-4b-it produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa..., 10, 11], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "email_printout_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.338,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ]
+    },
+    {
+      "model": "meta-llama/Llama-3.1-8B-Instruct",
+      "available": true,
+      "notes": "8B reference point: shows what the extra parameters buy on an extractive task",
+      "fatal_error": null,
+      "circuit_broken": false,
+      "documents": {
+        "attempted": 18,
+        "completed": 18,
+        "model_responded": 18,
+        "api_errors": 0,
+        "cached": 18,
+        "live": 0
+      },
+      "errors_by_class": {},
+      "errors_by_message": {},
+      "schema_validity_first_attempt": 0.0,
+      "schema_validity_first_attempt_denominator": 0,
+      "schema_validity_final": 1.0,
+      "schema_validity_denominator": 18,
+      "schema_validity_observed_this_run": 0,
+      "schema_validity_note": "computed over every document whose outcome has been observed by this run or a previous one (docs/bakeoff/schema_outcomes.json). Scoring only this run's fresh answers would report 0.0 on a warm cache (the failures are exactly what the cache never stores) and scoring only its cache hits would report 1.0",
+      "repair_turns_used": 0,
+      "grounding_pass_rate": 0.5556,
+      "value_fields_proposed": 72,
+      "value_fields_grounded": 40,
+      "line_attribution_accuracy": 1.0,
+      "line_attribution_denominator": 39,
+      "value_agreement_exact": 0.4615,
+      "value_agreement_fuzzy": 0.6154,
+      "value_agreement_denominator": 39,
+      "value_agreement_by_script": {
+        "Deva": {
+          "documents": 6,
+          "exact": 0.2,
+          "fuzzy": 0.4,
+          "grounding_pass_rate": 0.625,
+          "compared": 15
+        },
+        "Latn": {
+          "documents": 12,
+          "exact": 0.625,
+          "fuzzy": 0.75,
+          "grounding_pass_rate": 0.5208,
+          "compared": 24
+        }
+      },
+      "summary_precision": 0.2821,
+      "summary_recall": 0.7333,
+      "summary_f1": 0.4075,
+      "fields_invented_on_documents_without_them": 1,
+      "identifier_leaks": 0,
+      "unclaimed_pii_in_prompt": 9,
+      "unclaimed_pii_fields": [
+        "mobile"
+      ],
+      "latency_seconds": {
+        "n_live": 0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "tokens_per_document": {
+        "mean": 0.0,
+        "max": 0,
+        "budget": 8000
+      },
+      "q5_json_mode": {
+        "variants": {
+          "json_object": {
+            "status_code": 200,
+            "latency_seconds": 2.857,
+            "usage": {
+              "prompt_tokens": 68,
+              "total_tokens": 106,
+              "completion_tokens": 38,
+              "estimated_cost": 2.8799999999999995e-06,
+              "prompt_tokens_details": null
+            },
+            "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+            "parses_as_json": true
+          },
+          "none": {
+            "status_code": 200,
+            "latency_seconds": 3.53,
+            "usage": {
+              "prompt_tokens": 68,
+              "total_tokens": 106,
+              "completion_tokens": 38,
+              "estimated_cost": 2.8799999999999995e-06,
+              "prompt_tokens_details": null
+            },
+            "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+            "parses_as_json": true
+          },
+          "json_schema": {
+            "status_code": 405,
+            "latency_seconds": 0.737,
+            "error": "{\"error\":{\"message\":\"json_schema response format is not supported for model: meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo\",\"type\":\"invalid_request_error\",\"param\":\"response_format\",\"code\":null}}"
+          }
+        },
+        "json_object_accepted": true,
+        "json_object_yields_json": true,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": true,
+        "probed_at": "2026-08-07T16:34:16.550032+00:00"
+      },
+      "router": {
+        "owned_by": "meta-llama",
+        "input_modalities": [
+          "text"
+        ],
+        "providers": [
+          {
+            "provider": "novita",
+            "status": "live",
+            "context_length": 16384,
+            "supports_structured_output": false,
+            "pricing_usd_per_million": {
+              "input": 0.02,
+              "output": 0.05
+            }
+          },
+          {
+            "provider": "nscale",
+            "status": "live",
+            "context_length": 131072,
+            "supports_structured_output": true,
+            "pricing_usd_per_million": {
+              "input": 0.06,
+              "output": 0.06
+            }
+          },
+          {
+            "provider": "deepinfra",
+            "status": "live",
+            "context_length": 131072,
+            "supports_structured_output": false,
+            "pricing_usd_per_million": {
+              "input": 0.02,
+              "output": 0.05
+            }
+          }
+        ],
+        "advertises_structured_output": true
+      },
+      "documents_detail": [
+        {
+          "doc_id": "bilingual_form_v0_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 4,
+          "rejected": [],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [
+            "relief_sought"
+          ],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "bilingual_form_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "bilingual_form_v2_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            22,
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_deva_v0_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_deva_v1_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_deva_v2_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            22,
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_en_v0_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            22,
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_en_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_form_en_v2_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 3,
+          "rejected": [
+            "relief_sought"
+          ],
+          "attributed": "3/3",
+          "summary_predicted": [
+            23
+          ],
+          "summary_expected": [
+            23
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_en_v0_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_en_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            9,
+            10
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_en_v2_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_mar_v0_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            9
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_mar_v1_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            3
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "complaint_letter_mar_v2_clean",
+          "script": "Deva",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 2,
+          "rejected": [
+            "complainant_address",
+            "prior_complaint_reference"
+          ],
+          "attributed": "2/2",
+          "summary_predicted": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "summary_expected": [
+            3
+          ],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "email_printout_v0_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 0,
+          "rejected": [
+            "complainant_address",
+            "complainant_name",
+            "prior_complaint_reference",
+            "relief_sought"
+          ],
+          "attributed": "0/0",
+          "summary_predicted": [
+            8,
+            9
+          ],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "email_printout_v1_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 0,
+          "rejected": [
+            "complainant_address",
+            "complainant_name",
+            "prior_complaint_reference",
+            "relief_sought"
+          ],
+          "attributed": "0/0",
+          "summary_predicted": [
+            9
+          ],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        },
+        {
+          "doc_id": "email_printout_v2_clean",
+          "script": "Latn",
+          "ok": true,
+          "cached": true,
+          "latency_seconds": 0.0,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 4,
+          "grounded": 0,
+          "rejected": [
+            "complainant_address",
+            "complainant_name",
+            "prior_complaint_reference",
+            "relief_sought"
+          ],
+          "attributed": "0/0",
+          "summary_predicted": [
+            9
+          ],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "available": true,
+      "notes": "previous-generation 7B, as a check that 'newer' is doing the work",
+      "fatal_error": null,
+      "circuit_broken": false,
+      "documents": {
+        "attempted": 18,
+        "completed": 0,
+        "model_responded": 5,
+        "api_errors": 13,
+        "cached": 0,
+        "live": 0
+      },
+      "errors_by_class": {
+        "ProviderError": 13,
+        "ProviderResponseInvalid": 5
+      },
+      "errors_by_message": {
+        "Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, su": 13,
+        "produced output that failed validation twice for extract_fields: 1 validation error for RawField Value error, complaint_summary must be selected line indices, n": 4,
+        "produced output that failed validation twice for extract_fields: 1 validation error for _ExtractionPayload fields.2.value Input should be a valid string [type=s": 1
+      },
+      "schema_validity_first_attempt": 0.0,
+      "schema_validity_first_attempt_denominator": 14,
+      "schema_validity_final": 0.0,
+      "schema_validity_denominator": 14,
+      "schema_validity_observed_this_run": 5,
+      "schema_validity_note": "computed over every document whose outcome has been observed by this run or a previous one (docs/bakeoff/schema_outcomes.json). Scoring only this run's fresh answers would report 0.0 on a warm cache (the failures are exactly what the cache never stores) and scoring only its cache hits would report 1.0",
+      "repair_turns_used": 0,
+      "grounding_pass_rate": 0.0,
+      "value_fields_proposed": 0,
+      "value_fields_grounded": 0,
+      "line_attribution_accuracy": 0.0,
+      "line_attribution_denominator": 0,
+      "value_agreement_exact": 0.0,
+      "value_agreement_fuzzy": 0.0,
+      "value_agreement_denominator": 0,
+      "value_agreement_by_script": {},
+      "summary_precision": 0.0,
+      "summary_recall": 0.0,
+      "summary_f1": 0.0,
+      "fields_invented_on_documents_without_them": 0,
+      "identifier_leaks": 0,
+      "unclaimed_pii_in_prompt": 9,
+      "unclaimed_pii_fields": [
+        "mobile"
+      ],
+      "latency_seconds": {
+        "n_live": 0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "tokens_per_document": {
+        "mean": 0,
+        "max": 0,
+        "budget": 8000
+      },
+      "q5_json_mode": {
+        "variants": {
+          "json_object": {
+            "status_code": 200,
+            "latency_seconds": 1.612,
+            "usage": {
+              "prompt_tokens": 66,
+              "completion_tokens": 38,
+              "total_tokens": 104,
+              "cached_tokens": 0
+            },
+            "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+            "parses_as_json": true
+          },
+          "none": {
+            "status_code": 200,
+            "latency_seconds": 1.26,
+            "usage": {
+              "prompt_tokens": 66,
+              "completion_tokens": 38,
+              "total_tokens": 104,
+              "cached_tokens": 0
+            },
+            "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+            "parses_as_json": true
+          },
+          "json_schema": {
+            "status_code": 422,
+            "latency_seconds": 0.754,
+            "error": "{\n  \"id\": \"ovG9CNp-6Ng1vN-a27776db9977d641\",\n  \"error\": {\n    \"message\": \"Input validation error: grammar is not valid: failed to compile grammar\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": null\n  }\n}"
+          }
+        },
+        "json_object_accepted": true,
+        "json_object_yields_json": true,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": true,
+        "probed_at": "2026-08-07T15:55:11.572463+00:00"
+      },
+      "router": {
+        "owned_by": "Qwen",
+        "input_modalities": [
+          "text"
+        ],
+        "providers": [
+          {
+            "provider": "together",
+            "status": "live",
+            "context_length": 32768,
+            "supports_structured_output": true,
+            "pricing_usd_per_million": {
+              "input": 0.3,
+              "output": 0.3
+            }
+          },
+          {
+            "provider": "featherless-ai",
+            "status": "live",
+            "context_length": null,
+            "supports_structured_output": null,
+            "pricing_usd_per_million": null
+          }
+        ],
+        "advertises_structured_output": true
+      },
+      "documents_detail": [
+        {
+          "doc_id": "bilingual_form_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.336,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "bilingual_form_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.303,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "bilingual_form_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.333,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_form_deva_v0_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.331,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_form_deva_v1_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 4.25,
+          "tokens": 2299,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "Qwen/Qwen2.5-7B-Instruct produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [23], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_form_deva_v2_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 4.271,
+          "tokens": 2268,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "Qwen/Qwen2.5-7B-Instruct produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [23], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_form_en_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.334,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_form_en_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.317,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_form_en_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.31,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [
+            "mobile"
+          ],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_en_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.334,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_en_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.264,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_en_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.336,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "complaint_letter_mar_v0_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 3.846,
+          "tokens": 2120,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "Qwen/Qwen2.5-7B-Instruct produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...[3, 7, 9], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "complaint_letter_mar_v1_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 4.266,
+          "tokens": 2100,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "Qwen/Qwen2.5-7B-Instruct produced output that failed validation twice for extract_fields: 1 validation error for _ExtractionPayload\nfields.2.value\n  Input should be a valid string [type=string_type, input_value=[3, 7, 9], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+        },
+        {
+          "doc_id": "complaint_letter_mar_v2_clean",
+          "script": "Deva",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.31,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "email_printout_v0_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 3.613,
+          "tokens": 1511,
+          "first_attempt_valid": false,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "Qwen/Qwen2.5-7B-Instruct produced output that failed validation twice for extract_fields: 1 validation error for RawField\n  Value error, complaint_summary must be selected line indices, not prose: RawField.value must be None and line_indices non-empty (PLAN.md invariant 2) [type=value_error, input_value={'name': 'complaint_summa...es': [10], 'span': None}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+        },
+        {
+          "doc_id": "email_printout_v1_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.329,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "doc_id": "email_printout_v2_clean",
+          "script": "Latn",
+          "ok": false,
+          "cached": false,
+          "latency_seconds": 0.335,
+          "tokens": 0,
+          "first_attempt_valid": true,
+          "repaired": false,
+          "proposed": 0,
+          "grounded": 0,
+          "rejected": [],
+          "attributed": "0/0",
+          "summary_predicted": [],
+          "summary_expected": [],
+          "invented": [],
+          "identifier_leaks": [],
+          "unclaimed_pii": [],
+          "error": "endpoint rejected the request with 402: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ]
+    }
+  ],
+  "q5_answer": {
+    "question": "Does the HF router support grammars (GBNF) or JSON mode only?",
+    "per_model": {
+      "Qwen/Qwen3-1.7B-Instruct": {
+        "conclusive": true,
+        "probed_at": "2026-08-07T15:48:35.844125+00:00",
+        "json_object_accepted": false,
+        "json_object_yields_json": false,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": false,
+        "router_advertises_structured_output": null,
+        "schema_validity_first_attempt": null
+      },
+      "Qwen/Qwen3-0.6B-Instruct": {
+        "conclusive": true,
+        "probed_at": "2026-08-07T15:48:37.704044+00:00",
+        "json_object_accepted": false,
+        "json_object_yields_json": false,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": false,
+        "router_advertises_structured_output": null,
+        "schema_validity_first_attempt": null
+      },
+      "Qwen/Qwen3-4B-Instruct-2507": {
+        "conclusive": true,
+        "probed_at": "2026-08-07T15:48:41.507846+00:00",
+        "json_object_accepted": true,
+        "json_object_yields_json": true,
+        "json_schema_accepted": true,
+        "unconstrained_yields_json": true,
+        "router_advertises_structured_output": true,
+        "schema_validity_first_attempt": 0.0
+      },
+      "google/gemma-3-4b-it": {
+        "conclusive": false,
+        "probed_at": "2026-08-07T17:57:51.902928+00:00",
+        "json_object_accepted": false,
+        "json_object_yields_json": false,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": false,
+        "router_advertises_structured_output": true,
+        "schema_validity_first_attempt": 0.0
+      },
+      "meta-llama/Llama-3.1-8B-Instruct": {
+        "conclusive": true,
+        "probed_at": "2026-08-07T16:34:16.550032+00:00",
+        "json_object_accepted": true,
+        "json_object_yields_json": true,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": true,
+        "router_advertises_structured_output": true,
+        "schema_validity_first_attempt": 0.0
+      },
+      "Qwen/Qwen2.5-7B-Instruct": {
+        "conclusive": true,
+        "probed_at": "2026-08-07T15:55:11.572463+00:00",
+        "json_object_accepted": true,
+        "json_object_yields_json": true,
+        "json_schema_accepted": false,
+        "unconstrained_yields_json": true,
+        "router_advertises_structured_output": true,
+        "schema_validity_first_attempt": 0.0
+      }
+    },
+    "models_probed": 5,
+    "models_inconclusive": 1,
+    "json_object_accepted_count": 3,
+    "json_schema_accepted_count": 1,
+    "verdict": "mixed: 1/5 probed models accepted response_format=json_schema and 3/5 accepted json_object. Keep JSON mode plus Pydantic plus one repair retry as the portable baseline and use json_schema opportunistically where the chosen provider serves it"
+  },
+  "coverage": {
+    "candidates": 6,
+    "candidates_with_any_result": 3,
+    "documents_attempted": 72,
+    "documents_completed": 33,
+    "documents_model_responded": 48,
+    "api_errors": 24,
+    "observation_rate": 0.6667,
+    "completion_rate": 0.4583,
+    "endpoint_failure_messages": {
+      "Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, su": 24,
+      "produced output that failed validation twice for extract_fields: 1 validation error for RawField Value error, complaint_summary must be selected line indices, n": 13,
+      "produced output that failed validation twice for extract_fields: 1 validation error for RawField Value error, complaint_summary requires at least one selected l": 1,
+      "produced output that failed validation twice for extract_fields: 1 validation error for _ExtractionPayload fields.2.value Input should be a valid string [type=s": 1
+    },
+    "note": "observation_rate is the share of the matrix the models actually answered; completion_rate is the share whose answer also validated — the difference between them is the schema-validity finding, not missing data. A candidate observed on a handful of documents is a data point, not a verdict. Re-running the tool resumes: the response cache keeps every answer that already validated."
+  },
+  "prompt_hygiene": {
+    "invariant_7_identifier_leaks": 0,
+    "masked_by_validators": [
+      "account_number",
+      "disputed_amount",
+      "ifsc_code",
+      "transaction_date",
+      "transaction_reference"
+    ],
+    "unclaimed_pii_fields": [
+      "mobile"
+    ],
+    "note": "invariant_7_identifier_leaks must be 0: those values are sentinel-masked before the page is serialised. The unclaimed list is personal data no validator owns, so nothing masks it and it crosses the network verbatim under the laptop profile."
+  }
+}

@@ -1,0 +1,464 @@
+{
+ "doc_id": "photo_evidence_v2_heavy",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 1.0,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "TRANSACTION RECEIPT",
+     "bbox": [
+      55.15915359556675,
+      55.64902174472809,
+      302.2138848900795,
+      55.64902174472809,
+      302.2138848900795,
+      85.24160325527191,
+      55.15915359556675,
+      85.24160325527191
+     ],
+     "confidence": 0.9946658705410204,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "Date",
+     "bbox": [
+      51.754946798086166,
+      107.68333220481873,
+      102.19036570191383,
+      107.68333220481873,
+      102.19036570191383,
+      137.48854279518127,
+      51.754946798086166,
+      137.48854279518127
+     ],
+     "confidence": 0.9860646724700928,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "04/08/2026",
+     "bbox": [
+      221.7648482322693,
+      107.24995720386505,
+      333.5378861427307,
+      107.24995720386505,
+      333.5378861427307,
+      135.70316779613495,
+      221.7648482322693,
+      135.70316779613495
+     ],
+     "confidence": 0.9015957832336425,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "Bank",
+     "bbox": [
+      48.146396316587925,
+      143.9802384376526,
+      104.6993026137352,
+      143.9802384376526,
+      104.6993026137352,
+      174.4103865623474,
+      48.146396316587925,
+      174.4103865623474
+     ],
+     "confidence": 0.9843938946723938,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "HDFC Bank Limited",
+     "bbox": [
+      221.76614019274712,
+      144.63855743408203,
+      402.99331229925156,
+      146.07822608947754,
+      402.77377969026566,
+      174.20600128173828,
+      221.54660758376122,
+      172.76633262634277
+     ],
+     "confidence": 0.9307644051664016,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "AC",
+     "bbox": [
+      47.926725283265114,
+      178.14922881126404,
+      96.12210284173489,
+      178.14922881126404,
+      96.12210284173489,
+      211.24139618873596,
+      47.926725283265114,
+      211.24139618873596
+     ],
+     "confidence": 0.7989751100540161,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "xxxxxx3879",
+     "bbox": [
+      220.6448695063591,
+      181.55754041671753,
+      334.6578648686409,
+      181.55754041671753,
+      334.6578648686409,
+      210.05183458328247,
+      220.6448695063591,
+      210.05183458328247
+     ],
+     "confidence": 0.7678916692733765,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "Card",
+     "bbox": [
+      48.057741820812225,
+      213.87335181236267,
+      108.78060576319695,
+      217.2768051624298,
+      106.9228840470314,
+      251.0128014087677,
+      46.20002010464668,
+      247.60934805870056
+     ],
+     "confidence": 0.9872224032878876,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "xxxx×xxxxxxx4094",
+     "bbox": [
+      220.93762439489365,
+      218.46227025985718,
+      420.13464123010635,
+      218.46227025985718,
+      420.13464123010635,
+      245.25647974014282,
+      220.93762439489365,
+      245.25647974014282
+     ],
+     "confidence": 0.6400543507188559,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "Amount",
+     "bbox": [
+      49.60774623602629,
+      253.06393313407898,
+      127.42936733365059,
+      253.06393313407898,
+      127.42936733365059,
+      284.9829249382019,
+      49.60774623602629,
+      284.9829249382019
+     ],
+     "confidence": 0.9244835178057352,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Rs12.750.00",
+     "bbox": [
+      220.02660769224167,
+      255.2619128227234,
+      362.76636105775833,
+      255.2619128227234,
+      362.76636105775833,
+      281.6755871772766,
+      220.02660769224167,
+      281.6755871772766
+     ],
+     "confidence": 0.8833516917445443,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "RRN",
+     "bbox": [
+      48.75714546442032,
+      288.81515741348267,
+      100.78972953557968,
+      288.81515741348267,
+      100.78972953557968,
+      322.45046758651733,
+      48.75714546442032,
+      322.45046758651733
+     ],
+     "confidence": 0.906976560751597,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "884029128780",
+     "bbox": [
+      220.5223178267479,
+      290.1526503562927,
+      350.1749477982521,
+      290.1526503562927,
+      350.1749477982521,
+      318.8942246437073,
+      220.5223178267479,
+      318.8942246437073
+     ],
+     "confidence": 0.9954005926847458,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "Status",
+     "bbox": [
+      49.88986761868,
+      329.89544773101807,
+      113.95192925632,
+      329.89544773101807,
+      113.95192925632,
+      356.80767726898193,
+      49.88986761868,
+      356.80767726898193
+     ],
+     "confidence": 0.9275218645731608,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    },
+    {
+     "text": "FAILED",
+     "bbox": [
+      220.45379358530045,
+      325.05611753463745,
+      296.94023644924164,
+      328.9144186973572,
+      295.4988783597946,
+      357.99800062179565,
+      219.01240193843842,
+      354.1396994590759
+     ],
+     "confidence": 0.9676626026630402,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 14
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "04/08/2026",
+   "value_en": null,
+   "normalized": "2026-08-04",
+   "confidence": 0.9015957832336425,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     221.7648482322693,
+     107.24995720386505,
+     333.5378861427307,
+     107.24995720386505,
+     333.5378861427307,
+     135.70316779613495,
+     221.7648482322693,
+     135.70316779613495
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 2
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "bank_name": {
+   "value": "HDFC Bank Limited",
+   "value_en": null,
+   "normalized": "HDFC Bank Limited",
+   "confidence": 0.9307644051664016,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     221.76614019274712,
+     144.63855743408203,
+     402.99331229925156,
+     146.07822608947754,
+     402.77377969026566,
+     174.20600128173828,
+     221.54660758376122,
+     172.76633262634277
+    ],
+    "span": [
+     0,
+     17
+    ],
+    "line_index": 4
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "card_fragment": {
+   "value": "4094",
+   "value_en": null,
+   "normalized": "4094",
+   "confidence": 0.5760489156469702,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     220.93762439489365,
+     218.46227025985718,
+     420.13464123010635,
+     218.46227025985718,
+     420.13464123010635,
+     245.25647974014282,
+     220.93762439489365,
+     245.25647974014282
+    ],
+    "span": [
+     12,
+     16
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "Rs12.75",
+   "value_en": null,
+   "normalized": "12.75",
+   "confidence": 0.8833516917445443,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     220.02660769224167,
+     255.2619128227234,
+     362.76636105775833,
+     255.2619128227234,
+     362.76636105775833,
+     281.6755871772766,
+     220.02660769224167,
+     281.6755871772766
+    ],
+    "span": [
+     0,
+     7
+    ],
+    "line_index": 10
+   },
+   "mt_engine": null,
+   "flags": [
+    "MULTIPLE_CANDIDATES"
+   ]
+  },
+  "utr_rrn": {
+   "value": "884029128780",
+   "value_en": null,
+   "normalized": "884029128780",
+   "confidence": 0.9954005926847458,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     220.5223178267479,
+     290.1526503562927,
+     350.1749477982521,
+     290.1526503562927,
+     350.1749477982521,
+     318.8942246437073,
+     220.5223178267479,
+     318.8942246437073
+    ],
+    "span": [
+     0,
+     12
+    ],
+    "line_index": 12
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 1.482,
+  "s1_ingest": 7.24,
+  "s15_quality": 130.208,
+  "s15_quality:p1": 130.208,
+  "s4_ocr": 351.249,
+  "s4_ocr:p1": 351.249,
+  "s2b_lid": 0.947,
+  "s2b_lid:p1": 0.947,
+  "s3_classify": 48.625,
+  "s3_classify:p1": 48.625,
+  "s5_validators": 17.613,
+  "s5_slm": 0.012,
+  "e2e_total": 557.5409999999999
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

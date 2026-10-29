@@ -1,0 +1,9 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- EMPTY_FILE - ingestion: zero-byte attachment -#}
+{% block subject %}We could not read your attachment: the file was empty{% endblock %}
+{% block defect %}The file attached to your message contains no data at all; its size is
+zero bytes. This usually happens when a file is attached before it has
+finished saving, or when the upload stops part way.{% endblock %}
+{% block remedy %}Please open the document on your computer or phone to check that it
+displays correctly, then attach it again and send it to us. If you scanned
+the document, save the scan first and attach the saved file.{% endblock %}

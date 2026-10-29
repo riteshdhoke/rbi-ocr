@@ -1,0 +1,140 @@
+# constraints.txt — the exact versions of the virtual environment this
+# repository was built and verified in.
+#
+# Generated 2026-08-08 by:
+#     .venv\Scripts\python.exe -m pip freeze > constraints.txt
+# on Windows 11 / CPython 3.12.4 — the interpreter that produced every number in
+# docs/eval/REPORT.md and the test-suite result recorded in
+# docs/AIR-GAPPED-DEPLOY.md section 8.
+#
+# WHAT A CONSTRAINTS FILE IS (in one sentence): it installs nothing by itself; it
+# tells pip which version it is allowed to pick for any package that does get
+# installed, whether you asked for that package directly or it arrived as
+# somebody else's dependency. requirements.txt says WHAT to install, this file
+# says WHICH VERSION. Always pass both:
+#
+#     pip install -r requirements.txt -c constraints.txt
+#
+# TWO PACKAGES ARE DELIBERATELY PRUNED from the raw freeze:
+#
+#   torch==2.13.0     490 MB installed, measured. It entered this venv only
+#                     while OPEN-QUESTIONS A-9 was being investigated — the
+#                     abandoned "download the fp32 IndicTrans2 checkpoint and
+#                     convert it to CTranslate2 locally" path. The translation
+#                     artifact that actually ships is a pre-converted CTranslate2
+#                     build (models/mt/indic-en), and nothing under app/ or
+#                     tools/ imports torch. Leaving it pinned here would add
+#                     ~490 MB to an offline wheelhouse for code that never
+#                     executes. It is an OPTIONAL extra of transformers /
+#                     huggingface_hub / safetensors, never a hard requirement,
+#                     so dropping the pin cannot break the install.
+#
+#   networkx==3.6.1   A dependency of torch and of nothing else in this tree.
+#
+# If you ever re-enable the legacy conversion flow
+# (tools/fetch_models.py --mt-repo ai4bharat/indictrans2-indic-en-dist-200M),
+# you need torch back — install and pin it yourself on the connected machine.
+#
+# TO REGENERATE after changing any dependency:
+#     .venv\Scripts\python.exe -m pip freeze > constraints.txt
+# then delete the torch and networkx lines again.
+
+alembic==1.19.0
+amqp==5.3.1
+annotated-doc==0.0.5
+annotated-types==0.8.0
+anyio==4.14.2
+ast_serialize==0.7.0
+billiard==4.2.4
+celery==5.6.3
+certifi==2026.7.22
+charset-normalizer==3.4.9
+click==8.4.2
+click-didyoumean==0.3.1
+click-plugins==1.1.1.2
+click-repl==0.3.0
+colorama==0.4.6
+ctranslate2==4.8.1
+distro==1.9.0
+fastapi==0.141.1
+fasttext-predict==0.9.2.4
+filelock==3.32.2
+flatbuffers==25.12.19
+fonttools==4.63.0
+fsspec==2026.7.0
+greenlet==3.5.4
+h11==0.16.0
+hf-xet==1.6.0
+httpcore==1.0.9
+httptools==0.8.0
+httpx==0.28.1
+huggingface_hub==0.36.2
+hypothesis==6.165.2
+idna==3.18
+iniconfig==2.3.0
+Jinja2==3.1.6
+jiter==0.16.0
+kombu==5.6.2
+librt==0.14.0
+Mako==1.4.1
+markdown-it-py==4.2.0
+MarkupSafe==3.0.3
+mdurl==0.1.2
+mpmath==1.3.0
+mypy==2.3.0
+mypy_extensions==1.1.0
+numpy==2.5.1
+onnxruntime==1.28.0
+openai==2.53.0
+opencv-python-headless==5.0.0.93
+packaging==26.3
+pathspec==1.1.1
+pillow==12.3.0
+pip-licenses==5.5.5
+pluggy==1.6.0
+prettytable==3.18.0
+prometheus_client==0.26.0
+prompt_toolkit==3.0.53
+protobuf==7.35.1
+pydantic==2.13.4
+pydantic-settings==2.14.2
+pydantic_core==2.46.4
+Pygments==2.20.0
+pypdfium2==5.12.1
+pytest==9.1.1
+pytest-asyncio==1.4.0
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+python-multipart==0.0.32
+PyYAML==6.0.3
+RapidFuzz==3.14.5
+redis==6.4.0
+regex==2026.7.19
+requests==2.34.2
+rich==15.0.0
+ruff==0.16.1
+safetensors==0.8.0
+sentencepiece==0.2.2
+setuptools==83.0.0
+shellingham==1.5.4
+six==1.17.0
+sniffio==1.3.1
+sortedcontainers==2.4.0
+SQLAlchemy==2.0.51
+starlette==1.4.1
+sympy==1.14.0
+tokenizers==0.22.2
+tqdm==4.70.0
+transformers==4.57.6
+truststore==0.10.4
+typer==0.27.1
+typing-inspection==0.4.2
+typing_extensions==4.16.0
+tzdata==2026.3
+tzlocal==5.4.4
+urllib3==2.7.0
+uvicorn==0.52.1
+vine==5.1.0
+watchfiles==1.2.0
+wcwidth==0.8.2
+websockets==17.0.1

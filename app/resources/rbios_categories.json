@@ -1,0 +1,159 @@
+{
+  "schema": "rbios-categories/1",
+  "taxonomy_id": "rbios-placeholder",
+  "version": "0.1.0-PLACEHOLDER",
+  "status": "SYNTHETIC_PLACEHOLDER",
+  "authoritative": false,
+  "not_production": true,
+  "source": "INVENTED FOR DEVELOPMENT. These codes, labels and keywords were written by the build agent so that the categorisation slot in the pipeline has a closed tag set to return. They are NOT the RB-IOS grounds of complaint, they are not derived from any RBI publication, and no complaint may be routed, prioritised or disposed of on the basis of them.",
+  "notes": "PRD P1-4 categorises against the RB-IOS ground list with a distilled encoder classifier, and names 'RB-IOS ground taxonomy, confirmed and versioned' as a hard dependency that BLOCKS that requirement. Until that list arrives this file stands in so that the interface, the envelope field (DocumentResult.supporting_doc_tags) and the tests exist. Replacing it is a data change: keep the schema, swap taxonomy_id/version/source, set authoritative=true and not_production=false. app.stages.s7_categorise refuses to call itself production while not_production is true.",
+  "blocking_dependency": "RB-IOS ground taxonomy, confirmed and versioned (PRD hard dependencies, blocks P1-4)",
+  "fallback_code": "OTHER",
+  "keyword_note": "keywords_en are matched on ASCII word boundaries after case folding; keywords_hi are matched as substrings because Devanagari inflection makes a word-boundary match miss the same stem. Both lists are hand-written placeholders, not learned features.",
+  "categories": [
+    {
+      "code": "UNAUTHORISED_ELECTRONIC_TRANSACTION",
+      "label_en": "Unauthorised electronic transaction",
+      "label_hi": "अनधिकृत इलेक्ट्रॉनिक लेनदेन",
+      "description": "PLACEHOLDER. Money debited without the customer's authority: card-not-present fraud, OTP-based fraud, account takeover.",
+      "keywords_en": ["unauthorised", "unauthorized", "fraudulent transaction", "without my consent", "without my knowledge", "otp", "phishing", "someone else", "not done by me", "fraud"],
+      "keywords_hi": ["अनधिकृत", "बिना मेरी अनुमति", "बिना मेरी जानकारी", "धोखाधड़ी", "फ्रॉड", "ओटीपी", "मैंने नहीं किया", "अनधिकृत व्यवहार"]
+    },
+    {
+      "code": "ATM_CASH_NOT_DISPENSED",
+      "label_en": "ATM cash not dispensed",
+      "label_hi": "एटीएम से नकदी न निकलना",
+      "description": "PLACEHOLDER. Account debited at an ATM or cash recycler without cash being paid out, or short payment.",
+      "keywords_en": ["atm", "cash not dispensed", "cash was not dispensed", "no cash", "money not received", "short cash", "withdrawal failed", "cash recycler"],
+      "keywords_hi": ["एटीएम", "नकदी नहीं निकली", "पैसे नहीं निकले", "रुपये नहीं मिले", "कैश नहीं मिला", "निकासी विफल"]
+    },
+    {
+      "code": "UPI_OR_IMPS_CREDIT_FAILURE",
+      "label_en": "UPI/IMPS transfer debited but not credited",
+      "label_hi": "यूपीआई/आईएमपीएस से राशि कटी पर जमा नहीं हुई",
+      "description": "PLACEHOLDER. Instant-payment transfer where the sender was debited and the beneficiary was not credited, or the reversal did not arrive.",
+      "keywords_en": ["upi", "imps", "gpay", "phonepe", "paytm", "not credited", "beneficiary did not receive", "amount debited but", "reversal not received", "vpa"],
+      "keywords_hi": ["यूपीआई", "आईएमपीएस", "जमा नहीं हुआ", "खाते में नहीं आया", "राशि कट गई", "वापस नहीं आया", "लाभार्थी को नहीं मिला"]
+    },
+    {
+      "code": "CARD_ISSUE",
+      "label_en": "Debit or credit card issue",
+      "label_hi": "डेबिट या क्रेडिट कार्ड संबंधी शिकायत",
+      "description": "PLACEHOLDER. Card not delivered, blocked without notice, wrong billing, annual fee dispute, EMI conversion not honoured.",
+      "keywords_en": ["credit card", "debit card", "card blocked", "card not delivered", "annual fee", "billing statement", "emi", "card limit", "card issued without"],
+      "keywords_hi": ["क्रेडिट कार्ड", "डेबिट कार्ड", "कार्ड बंद", "कार्ड नहीं मिला", "वार्षिक शुल्क", "बिल विवरण", "ईएमआई"]
+    },
+    {
+      "code": "ACCOUNT_OPERATION",
+      "label_en": "Deposit account operation",
+      "label_hi": "जमा खाते का संचालन",
+      "description": "PLACEHOLDER. Refusal to open or close an account, unexplained freeze or debit-freeze, KYC re-verification, dormancy, nominee change.",
+      "keywords_en": ["account opening", "account closure", "account frozen", "account blocked", "kyc", "dormant", "inoperative", "nominee", "signature mismatch", "minimum balance"],
+      "keywords_hi": ["खाता खोलने", "खाता बंद", "खाता फ्रीज", "खाता निष्क्रिय", "केवाईसी", "नामांकित", "न्यूनतम शेष", "हस्ताक्षर"]
+    },
+    {
+      "code": "DEPOSIT_AND_INTEREST",
+      "label_en": "Deposits and interest",
+      "label_hi": "जमा एवं ब्याज",
+      "description": "PLACEHOLDER. Fixed or recurring deposit not matured, interest not paid or wrongly computed, premature closure penalty, TDS wrongly deducted.",
+      "keywords_en": ["fixed deposit", "recurring deposit", "maturity", "interest not paid", "interest rate", "premature closure", "tds", "term deposit"],
+      "keywords_hi": ["सावधि जमा", "आवर्ती जमा", "परिपक्वता", "ब्याज नहीं मिला", "ब्याज दर", "समय पूर्व", "टीडीएस"]
+    },
+    {
+      "code": "LOAN_AND_ADVANCES",
+      "label_en": "Loans and advances",
+      "label_hi": "ऋण एवं अग्रिम",
+      "description": "PLACEHOLDER. Sanction or disbursal delay, wrong interest or penal charge, non-return of title documents, foreclosure charges, NOC not issued.",
+      "keywords_en": ["loan", "home loan", "personal loan", "emi", "sanction", "disbursement", "foreclosure", "prepayment", "no objection certificate", "noc", "title deed", "penal interest"],
+      "keywords_hi": ["ऋण", "गृह ऋण", "किस्त", "स्वीकृति", "वितरण", "पूर्व भुगतान", "अनापत्ति प्रमाण", "दस्तावेज़ वापस", "दंडात्मक ब्याज"]
+    },
+    {
+      "code": "SERVICE_CHARGES_AND_FEES",
+      "label_en": "Charges levied without notice",
+      "label_hi": "बिना सूचना के लगाए गए शुल्क",
+      "description": "PLACEHOLDER. Fees or charges debited without prior intimation or contrary to the published schedule of charges.",
+      "keywords_en": ["service charge", "charges debited", "hidden charges", "without intimation", "schedule of charges", "penalty charge", "sms charges", "maintenance charge"],
+      "keywords_hi": ["सेवा शुल्क", "शुल्क काटा", "बिना सूचना", "छिपे शुल्क", "जुर्माना", "रखरखाव शुल्क"]
+    },
+    {
+      "code": "CHEQUE_AND_DRAFT",
+      "label_en": "Cheque, draft and clearing",
+      "label_hi": "चेक, ड्राफ्ट एवं समाशोधन",
+      "description": "PLACEHOLDER. Cheque wrongly returned, delayed collection, stop-payment ignored, draft lost, wrong dishonour reason.",
+      "keywords_en": ["cheque", "check bounced", "cheque returned", "stop payment", "demand draft", "clearing", "dishonour", "dishonor", "micr", "payee"],
+      "keywords_hi": ["चेक", "चेक वापस", "भुगतान रोकने", "डिमांड ड्राफ्ट", "समाशोधन", "अनादरण"]
+    },
+    {
+      "code": "REMITTANCE_AND_TRANSFER",
+      "label_en": "NEFT/RTGS and other remittances",
+      "label_hi": "एनईएफटी/आरटीजीएस एवं अन्य विप्रेषण",
+      "description": "PLACEHOLDER. Delay or failure in NEFT, RTGS, inward or outward remittance, wrong beneficiary credit, delayed reversal.",
+      "keywords_en": ["neft", "rtgs", "remittance", "transfer failed", "wrong beneficiary", "utr", "inward remittance", "outward remittance", "swift"],
+      "keywords_hi": ["एनईएफटी", "आरटीजीएस", "विप्रेषण", "स्थानांतरण विफल", "गलत लाभार्थी", "यूटीआर"]
+    },
+    {
+      "code": "MOBILE_AND_INTERNET_BANKING",
+      "label_en": "Mobile and internet banking",
+      "label_hi": "मोबाइल एवं इंटरनेट बैंकिंग",
+      "description": "PLACEHOLDER. Net-banking or app access denied, transaction failed in the channel, credentials reset not honoured, standing instruction not executed.",
+      "keywords_en": ["net banking", "internet banking", "mobile banking", "mobile app", "login", "password reset", "standing instruction", "auto debit", "mandate", "e-mandate"],
+      "keywords_hi": ["नेट बैंकिंग", "इंटरनेट बैंकिंग", "मोबाइल बैंकिंग", "लॉगिन", "पासवर्ड", "स्थायी निर्देश", "स्वतः डेबिट"]
+    },
+    {
+      "code": "MIS_SELLING_OF_PRODUCTS",
+      "label_en": "Mis-selling of third-party products",
+      "label_hi": "अन्य कंपनियों के उत्पादों की गलत बिक्री",
+      "description": "PLACEHOLDER. Insurance or investment product sold with the account, sold without consent, or sold on a misdescribed benefit.",
+      "keywords_en": ["insurance", "policy was sold", "mis-selling", "mis selling", "without explaining", "mutual fund", "ulip", "was not told", "forced to buy"],
+      "keywords_hi": ["बीमा", "पॉलिसी", "गलत बिक्री", "बिना बताए", "म्यूचुअल फंड", "जबरदस्ती", "बिना सहमति"]
+    },
+    {
+      "code": "PENSION_PAYMENT",
+      "label_en": "Pension payment",
+      "label_hi": "पेंशन भुगतान",
+      "description": "PLACEHOLDER. Pension credited late, arrears not paid, life-certificate handling, wrong revision.",
+      "keywords_en": ["pension", "pensioner", "arrears", "life certificate", "jeevan pramaan", "family pension", "dearness relief"],
+      "keywords_hi": ["पेंशन", "पेंशनभोगी", "बकाया", "जीवन प्रमाण", "पारिवारिक पेंशन", "महँगाई राहत"]
+    },
+    {
+      "code": "RECOVERY_AGENT_CONDUCT",
+      "label_en": "Conduct of recovery agents",
+      "label_hi": "वसूली एजेंटों का आचरण",
+      "description": "PLACEHOLDER. Recovery or collection agent contacting outside permitted hours, contacting relatives or employers, intimidation.",
+      "keywords_en": ["recovery agent", "collection agent", "harassment", "threatening", "calls at night", "visited my house", "abusive", "contacted my relatives"],
+      "keywords_hi": ["वसूली एजेंट", "उत्पीड़न", "धमकी", "रात में फोन", "घर आकर", "रिश्तेदारों को फोन"]
+    },
+    {
+      "code": "CREDIT_INFORMATION_REPORTING",
+      "label_en": "Credit information reporting",
+      "label_hi": "ऋण सूचना रिपोर्टिंग",
+      "description": "PLACEHOLDER. Wrong or stale data reported to a credit information company, closed loan still shown outstanding, correction not carried out.",
+      "keywords_en": ["cibil", "credit score", "credit report", "credit information", "wrongly reported", "still showing outstanding", "default reported"],
+      "keywords_hi": ["सिबिल", "क्रेडिट स्कोर", "क्रेडिट रिपोर्ट", "गलत रिपोर्ट", "बकाया दिखा"]
+    },
+    {
+      "code": "PREPAID_INSTRUMENT_AND_WALLET",
+      "label_en": "Prepaid instruments and wallets",
+      "label_hi": "प्रीपेड साधन एवं वॉलेट",
+      "description": "PLACEHOLDER. Wallet or prepaid card balance not refunded, load failed, closure balance not returned.",
+      "keywords_en": ["wallet", "prepaid card", "gift card", "balance not refunded", "wallet closure", "load failed", "ppi"],
+      "keywords_hi": ["वॉलेट", "प्रीपेड कार्ड", "उपहार कार्ड", "शेष वापस नहीं", "बटुआ"]
+    },
+    {
+      "code": "DELAY_OR_NON_RESPONSE",
+      "label_en": "No reply or delayed reply from the bank",
+      "label_hi": "बैंक से उत्तर न मिलना या विलंब से मिलना",
+      "description": "PLACEHOLDER. The bank did not reply within the prescribed period, or replied without addressing the grievance; escalation to the Ombudsman on that ground.",
+      "keywords_en": ["no reply", "no response", "not replied", "reminder", "thirty days", "30 days", "grievance redressal", "escalation", "ombudsman", "nodal officer", "follow up"],
+      "keywords_hi": ["कोई उत्तर नहीं", "जवाब नहीं", "अनुस्मारक", "तीस दिन", "शिकायत निवारण", "लोकपाल", "नोडल अधिकारी"]
+    },
+    {
+      "code": "OTHER",
+      "label_en": "Not categorised",
+      "label_hi": "श्रेणीबद्ध नहीं",
+      "description": "PLACEHOLDER FALLBACK. Nothing in this placeholder list matched. This is the honest answer, not a guess: a real taxonomy will re-cut every one of these boundaries.",
+      "keywords_en": [],
+      "keywords_hi": []
+    }
+  ]
+}

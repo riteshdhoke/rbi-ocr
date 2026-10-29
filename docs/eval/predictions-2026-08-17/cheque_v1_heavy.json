@@ -1,0 +1,376 @@
+{
+ "doc_id": "cheque_v1_heavy",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 1.0,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.50/2.00 validator_failures=1(transaction_date) quality_low handwriting=0.31 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "Punjab National Bank",
+     "bbox": [
+      51.02912292480469,
+      78.72038510640462,
+      304.17088623046874,
+      78.72038510640462,
+      304.17088623046874,
+      112.97961489359538,
+      51.02912292480469,
+      112.97961489359538
+     ],
+     "confidence": 0.974566388130188,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 0
+    },
+    {
+     "text": "DATE",
+     "bbox": [
+      794.3561279296874,
+      85.15671017964681,
+      844.8438720703125,
+      85.15671017964681,
+      844.8438720703125,
+      112.45995648701985,
+      794.3561279296874,
+      112.45995648701985
+     ],
+     "confidence": 0.9846191555261612,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "20/18/2026",
+     "bbox": [
+      870.7676513671875,
+      83.59032287597657,
+      997.6323486328124,
+      83.59032287597657,
+      997.6323486328124,
+      114.0263437906901,
+      870.7676513671875,
+      114.0263437906901
+     ],
+     "confidence": 0.9485294580459595,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "ACNO.",
+     "bbox": [
+      49.07368469238281,
+      117.02543907165527,
+      120.12631530761718,
+      117.02543907165527,
+      120.12631530761718,
+      148.0412275950114,
+      49.07368469238281,
+      148.0412275950114
+     ],
+     "confidence": 0.8646328330039978,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "79285279689891",
+     "bbox": [
+      150.59262084960938,
+      116.55105667114258,
+      301.8073791503906,
+      116.55105667114258,
+      301.8073791503906,
+      147.33227666219076,
+      150.59262084960938,
+      147.33227666219076
+     ],
+     "confidence": 0.985739699431828,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "PAY",
+     "bbox": [
+      48.092308044433594,
+      177.59102147420248,
+      95.90769653320312,
+      177.59102147420248,
+      95.90769653320312,
+      204.6256451924642,
+      48.092308044433594,
+      204.6256451924642
+     ],
+     "confidence": 0.9777978658676147,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "Priya Vonkatesan",
+     "bbox": [
+      131.56726684570313,
+      169.5253018697103,
+      291.21381225585935,
+      171.13172887166343,
+      290.8518493652344,
+      206.11077041625975,
+      131.2053039550781,
+      204.50434341430665
+     ],
+     "confidence": 0.8066422957926989,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 6
+    },
+    {
+     "text": "RUPES45. 000 anly",
+     "bbox": [
+      47.926629638671876,
+      241.3276486714681,
+      274.8733703613281,
+      241.3276486714681,
+      274.8733703613281,
+      278.1556846618652,
+      47.926629638671876,
+      278.1556846618652
+     ],
+     "confidence": 0.8113524773541618,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "65.000.00",
+     "bbox": [
+      855.6557373046875,
+      239.08827845255533,
+      943.1442626953125,
+      239.08827845255533,
+      943.1442626953125,
+      268.5617215474447,
+      855.6557373046875,
+      268.5617215474447
+     ],
+     "confidence": 0.8516267769866519,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 8
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      769.8908935546875,
+      322.67652486165366,
+      877.3071533203125,
+      331.80792338053385,
+      874.4861572265625,
+      364.0765075683594,
+      767.0698974609375,
+      354.9451090494792
+     ],
+     "confidence": 0.9976114109158516,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "MICR",
+     "bbox": [
+      51.89302368164062,
+      413.2723052978516,
+      105.30697631835938,
+      413.2723052978516,
+      105.30697631835938,
+      438.7276947021484,
+      51.89302368164062,
+      438.7276947021484
+     ],
+     "confidence": 0.8644919693470001,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "969792588",
+     "bbox": [
+      134.82272644042968,
+      412.2168462117513,
+      244.37728271484374,
+      412.2168462117513,
+      244.37728271484374,
+      439.7831537882487,
+      134.82272644042968,
+      439.7831537882487
+     ],
+     "confidence": 0.9994854198561774,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "407670 PUNB0969447792852796",
+     "bbox": [
+      50.46421508789062,
+      454.4633051554362,
+      415.13576660156247,
+      454.4633051554362,
+      415.13576660156247,
+      486.2866948445638,
+      50.46421508789062,
+      486.2866948445638
+     ],
+     "confidence": 0.9762144309503061,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "Punjab National Bank",
+   "value_en": null,
+   "normalized": "Punjab National Bank",
+   "confidence": 0.974566388130188,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     51.02912292480469,
+     78.72038510640462,
+     304.17088623046874,
+     78.72038510640462,
+     304.17088623046874,
+     112.97961489359538,
+     51.02912292480469,
+     112.97961489359538
+    ],
+    "span": [
+     0,
+     20
+    ],
+    "line_index": 0
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "20/18/2026",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.4742647290229797,
+   "source": "regex_validator",
+   "validator_passed": false,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     870.7676513671875,
+     83.59032287597657,
+     997.6323486328124,
+     83.59032287597657,
+     997.6323486328124,
+     114.0263437906901,
+     870.7676513671875,
+     114.0263437906901
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 2
+   },
+   "mt_engine": null,
+   "flags": [
+    "VALIDATOR_FAILED"
+   ]
+  },
+  "micr_code": {
+   "value": "969792588",
+   "value_en": null,
+   "normalized": "969792588",
+   "confidence": 0.9994854198561774,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     134.82272644042968,
+     412.2168462117513,
+     244.37728271484374,
+     412.2168462117513,
+     244.37728271484374,
+     439.7831537882487,
+     134.82272644042968,
+     439.7831537882487
+    ],
+    "span": [
+     0,
+     9
+    ],
+    "line_index": 11
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.828,
+  "s1_ingest": 7.047,
+  "s15_quality": 99.983,
+  "s15_quality:p1": 99.983,
+  "s4_ocr": 357.879,
+  "s4_ocr:p1": 357.879,
+  "s2b_lid": 0.862,
+  "s2b_lid:p1": 0.862,
+  "s3_classify": 45.099,
+  "s3_classify:p1": 45.099,
+  "s5_validators": 33.132,
+  "s5_slm": 0.015,
+  "assemble": 0.763,
+  "s4b_vlm": 0.132,
+  "s4b_vlm:p1": 0.132,
+  "e2e_total": 553.374
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+  "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_form",
+ "summary_span_count": 0
+}

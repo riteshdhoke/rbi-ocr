@@ -1,0 +1,285 @@
+{
+  "doc_id": "complaint_letter_mar_v0_light",
+  "doc_type": "complaint_letter_mar",
+  "variant": 0,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Deva",
+  "primary_language": "mar",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-1.1deg",
+    "blur:0.4",
+    "noise:0.004"
+  ],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "सेवेत,",
+      "bbox": [
+        169.9,
+        146.9,
+        242.0,
+        148.3,
+        241.1,
+        191.8,
+        169.1,
+        190.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "मा. बँकिंग लोकपाल,",
+      "bbox": [
+        168.9,
+        202.9,
+        437.0,
+        208.2,
+        436.1,
+        251.7,
+        168.0,
+        246.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "भारतीय रिझर्व्ह बँक",
+      "bbox": [
+        167.8,
+        258.9,
+        416.9,
+        263.8,
+        416.0,
+        307.3,
+        166.9,
+        302.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "विषय: मेरे बचत खाते से अनधिकृत इलेक्ट्रॉनिक लेनदेन डेबिट किया गया",
+      "bbox": [
+        166.1,
+        344.9,
+        1106.7,
+        363.3,
+        1105.9,
+        406.8,
+        165.2,
+        388.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "माझे स्टेट बैंक ऑफ इंडिया येथे बचत खाते आहे.",
+      "bbox": [
+        164.6,
+        418.9,
+        801.9,
+        431.4,
+        801.1,
+        474.9,
+        163.8,
+        462.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "खाते क्रमांक 33226602297 आहे.",
+      "bbox": [
+        163.5,
+        472.8,
+        617.8,
+        481.8,
+        616.9,
+        525.3,
+        162.7,
+        516.4
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "दिनांक 24/09/2026 रोजी रु. 98,200 रक्कम",
+      "bbox": [
+        162.5,
+        526.8,
+        756.2,
+        538.5,
+        755.3,
+        582.0,
+        161.6,
+        570.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "माझ्या संमतीशिवाय डेबिट करण्यात आली.",
+      "bbox": [
+        161.4,
+        580.8,
+        712.9,
+        591.6,
+        712.0,
+        635.2,
+        160.6,
+        624.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "संदर्भ क्रमांक 684624277031.",
+      "bbox": [
+        160.4,
+        634.8,
+        567.7,
+        642.8,
+        566.8,
+        686.3,
+        159.5,
+        678.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "बँकेकडे तक्रार करूनही निराकरण झाले नाही.",
+      "bbox": [
+        159.3,
+        688.8,
+        733.9,
+        700.1,
+        733.1,
+        743.6,
+        158.5,
+        732.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "bbox": [
+        158.2,
+        742.8,
+        717.2,
+        753.8,
+        716.4,
+        797.3,
+        157.4,
+        786.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "आपला विश्वासू,",
+      "bbox": [
+        156.2,
+        846.8,
+        355.6,
+        850.7,
+        354.8,
+        894.2,
+        155.4,
+        890.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "राजेश कुमार शर्मा",
+      "bbox": [
+        155.0,
+        906.8,
+        388.4,
+        911.3,
+        387.5,
+        954.9,
+        154.2,
+        950.3
+      ],
+      "script": "Deva",
+      "language": "mar",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "State Bank of India",
+    "ifsc_code": "SBIN0361076",
+    "account_number": "33226602297",
+    "card_last_four": "1896",
+    "disputed_amount": 98200,
+    "transaction_date": "24/09/2026",
+    "transaction_reference": "684624277031",
+    "complainant_name": "Rajesh Kumar Sharma",
+    "complainant_city": "Panvel, Maharashtra",
+    "mobile": "9886027577",
+    "prior_complaint_ref": "CMS/2026/428308",
+    "ground_en": "Unauthorised electronic transaction debited from my savings account"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "विषय: मेरे बचत खाते से अनधिकृत इलेक्ट्रॉनिक लेनदेन डेबिट किया गया",
+      "value_en": "Subject: Unauthorised electronic transaction debited from my savings account",
+      "script": "Deva"
+    },
+    "account_number": {
+      "value": "33226602297",
+      "value_en": "33226602297",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "98,200",
+      "value_en": "98,200",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "684624277031",
+      "value_en": "684624277031",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "कृपया योग्य ती कार्यवाही करावी ही विनंती.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Deva"
+    },
+    "complainant_name": {
+      "value": "राजेश कुमार शर्मा",
+      "value_en": "Rajesh Kumar Sharma",
+      "script": "Deva"
+    }
+  }
+}

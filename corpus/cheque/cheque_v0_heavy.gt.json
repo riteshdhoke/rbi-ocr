@@ -1,0 +1,290 @@
+{
+  "doc_id": "cheque_v0_heavy",
+  "doc_type": "cheque",
+  "variant": 0,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-3.0deg",
+    "holes",
+    "fold",
+    "shadow",
+    "stamp",
+    "blur:1.5",
+    "noise:0.03",
+    "downscale:0.7"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "State Bank of India",
+      "bbox": [
+        53.3,
+        15.3,
+        266.0,
+        26.4,
+        264.5,
+        55.0,
+        51.8,
+        44.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "DATE",
+      "bbox": [
+        793.8,
+        62.3,
+        833.9,
+        64.4,
+        832.8,
+        85.9,
+        792.7,
+        83.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12/09/2026",
+      "bbox": [
+        877.8,
+        65.3,
+        986.8,
+        71.0,
+        985.6,
+        94.2,
+        876.5,
+        88.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "A/C No.",
+      "bbox": [
+        51.1,
+        57.3,
+        105.5,
+        60.1,
+        104.4,
+        79.8,
+        50.0,
+        77.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "2226017004675163",
+      "bbox": [
+        149.0,
+        61.0,
+        310.2,
+        69.4,
+        309.0,
+        90.9,
+        147.9,
+        82.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "PAY",
+      "bbox": [
+        48.2,
+        113.2,
+        76.6,
+        114.7,
+        75.5,
+        136.1,
+        47.0,
+        134.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Rajesh Kumar Sharma",
+      "bbox": [
+        132.4,
+        110.6,
+        319.6,
+        120.3,
+        318.0,
+        150.8,
+        130.8,
+        141.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    },
+    {
+      "text": "RUPEES",
+      "bbox": [
+        44.5,
+        183.1,
+        105.2,
+        186.3,
+        104.1,
+        207.8,
+        43.4,
+        204.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "250,000 only",
+      "bbox": [
+        156.7,
+        183.3,
+        264.2,
+        188.9,
+        262.7,
+        219.4,
+        155.0,
+        213.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "250,000.00",
+      "bbox": [
+        841.9,
+        216.2,
+        934.7,
+        221.1,
+        933.2,
+        249.7,
+        840.4,
+        244.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "MICR",
+      "bbox": [
+        35.8,
+        349.5,
+        74.3,
+        351.5,
+        73.3,
+        371.1,
+        34.9,
+        369.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "311222282",
+      "bbox": [
+        119.8,
+        352.4,
+        217.9,
+        357.6,
+        216.7,
+        380.8,
+        118.6,
+        375.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "micr_code"
+    },
+    {
+      "text": "273773  SBIN0311642  222601700",
+      "bbox": [
+        33.6,
+        392.8,
+        385.8,
+        411.2,
+        384.6,
+        436.2,
+        32.3,
+        417.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    }
+  ],
+  "fields": {
+    "bank_name": "State Bank of India",
+    "complainant_name": "Rajesh Kumar Sharma",
+    "transaction_date": "12/09/2026",
+    "account_number": "2226017004675163",
+    "ifsc_code": "SBIN0311642",
+    "micr_code": "311222282",
+    "disputed_amount": 250000
+  },
+  "fields_bilingual": {
+    "bank_name": {
+      "value": "State Bank of India",
+      "value_en": "State Bank of India",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "12/09/2026",
+      "value_en": "12/09/2026",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "2226017004675163",
+      "value_en": "2226017004675163",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Rajesh Kumar Sharma",
+      "value_en": "Rajesh Kumar Sharma",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "micr_code": {
+      "value": "311222282",
+      "value_en": "311222282",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "SBIN0311642",
+      "value_en": "SBIN0311642",
+      "script": "Latn"
+    }
+  }
+}

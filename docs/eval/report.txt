@@ -1,0 +1,266 @@
+==============================================================================
+RBI OCR corpus evaluation — harness 1.1.0
+==============================================================================
+corpus       E:\pythonprojects\python_ocr\corpus  (seed 1729, generator 1.2.0)
+predictions  E:\pythonprojects\python_ocr\docs\eval\predictions
+split        dev  final=False  locked variants [3, 4]
+documents    177 scored / 177 selected / 118 withheld
+
+Recognition — CER / WER by script x modality x profile
+-----------------------------------------------------
+cell               lines  ref_chars    CER    WER
+-------------------------------------------------
+Deva|hand|bounce      51       1524  1.000  1.000
+Deva|hand|clean       51       1524  0.249  0.416
+Deva|hand|heavy       51       1527  0.781  1.033
+Deva|hand|light       51       1518  0.260  0.482
+Deva|hand|photo       51       1521  0.650  0.955
+Deva|hand|scan        51       1511  0.700  0.927
+Deva|print|bounce     54       1035  1.000  1.000
+Deva|print|clean      54       1035  0.046  0.254
+Deva|print|heavy      54       1035  0.283  0.726
+Deva|print|light      54       1035  0.090  0.418
+Deva|print|photo      54       1035  0.756  0.945
+Deva|print|scan       54       1035  0.151  0.542
+Latn|hand|bounce      69       1827  1.000  1.000
+Latn|hand|clean       69       1824  0.255  0.333
+Latn|hand|heavy       69       1820  0.692  0.911
+Latn|hand|light       69       1810  0.265  0.404
+Latn|hand|photo       69       1824  0.812  1.044
+Latn|hand|scan        69       1830  0.564  0.770
+Latn|print|bounce    588       8110  1.000  1.000
+Latn|print|clean     543       7698  0.097  0.128
+Latn|print|heavy     588       8106  0.470  0.629
+Latn|print|light     588       8145  0.197  0.340
+Latn|print|photo     588       8123  0.607  0.786
+Latn|print|scan      588       8143  0.288  0.431
+
+Recognition — rollups
+--------------------------------------------------
+cell            lines  ref_chars    CER    WER
+----------------------------------------------
+script:Deva       630      15335  0.518  0.732
+script:Latn      3897      59260  0.474  0.594
+profile:bounce    762      12496  1.000  1.000
+profile:clean     717      12081  0.136  0.215
+profile:heavy     762      12488  0.525  0.737
+profile:light     762      12508  0.205  0.378
+profile:photo     762      12503  0.654  0.865
+profile:scan      762      12519  0.367  0.562
+OVERALL          4527      74595  0.483  0.628
+
+Detection — IoU and line recall by profile
+----------------------------------------------------------------
+profile  gt_lines  matched  spurious  mean_IoU  line_recall
+-----------------------------------------------------------
+bounce        762        0         0       n/a        0.000
+clean         717      717         9     0.767        0.955
+heavy         762      675        91     0.356        0.285
+light         762      754         8     0.543        0.576
+photo         762      672       103     0.266        0.123
+scan          762      736        37     0.450        0.448
+OVERALL      4527     3554       248     0.481        0.392
+
+Fields — precision / recall / F1 by field
+--------------------------------------------------------------
+field                   TP  FP   FN      P      R     F1
+--------------------------------------------------------
+account_number          70  16   56  0.814  0.556  0.660
+bank_name               81  13   42  0.862  0.659  0.747
+card_last_four          22   2   11  0.917  0.667  0.772
+complainant_address      6   3   48  0.667  0.111  0.190
+complainant_contact      0   0   54    n/a  0.000    n/a
+complainant_name         7   2  101  0.778  0.065  0.120
+complaint_summary        0   0   90    n/a  0.000    n/a
+disputed_amount         67  19   74  0.779  0.475  0.590
+ifsc_code               62   7   28  0.899  0.689  0.780
+micr_code               13   2    5  0.867  0.722  0.788
+prior_complaint_ref     13   5   59  0.722  0.181  0.289
+relief_sought            1   3   35  0.250  0.028  0.050
+transaction_date       101  43   22  0.701  0.821  0.757
+transaction_reference   65   7   58  0.903  0.528  0.667
+
+Fields — by source mechanism (R = share of ALL reference fields this source captured)
+---------------------------------------------------------
+source            TP  FP    GT      P      R     F1
+---------------------------------------------------
+lookup_table      81  13  1191  0.862  0.068  0.126
+regex_validator  400  96  1191  0.806  0.336  0.474
+slm               27  13  1191  0.675  0.023  0.044
+
+Fields — field x source (R = share of that field's reference this source captured)
+------------------------------------------------------------------------------
+field|source                            TP  FP   GT      P      R     F1
+------------------------------------------------------------------------
+account_number|regex_validator          70  16  126  0.814  0.556  0.660
+bank_name|lookup_table                  81  13  123  0.862  0.659  0.747
+card_last_four|regex_validator          22   2   33  0.917  0.667  0.772
+complainant_address|slm                  6   3   54  0.667  0.111  0.190
+complainant_name|slm                     7   2  108  0.778  0.065  0.120
+disputed_amount|regex_validator         67  19  141  0.779  0.475  0.590
+ifsc_code|regex_validator               62   7   90  0.899  0.689  0.780
+micr_code|regex_validator               13   2   18  0.867  0.722  0.788
+prior_complaint_ref|slm                 13   5   72  0.722  0.181  0.289
+relief_sought|slm                        1   3   36  0.250  0.028  0.050
+transaction_date|regex_validator       101  43  123  0.701  0.821  0.757
+transaction_reference|regex_validator   65   7  123  0.903  0.528  0.667
+
+Fields — bilingual slots (fields whose native spelling differs from its English)
+---------------------------------
+metric                     count
+--------------------------------
+gt occurrences               198
+claimed                       29
+value = page's own string     13
+value = its translation        0
+value_en correct               9
+value_en wrong                10
+value_en absent               10
+    `value` is contractually the page's own string; a translation there is a contract violation this table counts but precision/recall cannot see.
+
+Schema validity
+---------------------
+metric         value
+--------------------
+checked          177
+valid            177
+validity_rate  1.000
+
+Escalation vs reference rule 'quality_or_hand'
+------------------------------------------
+TP  FP   FN  precision  recall     F1
+-------------------------------------
+23   1  109      0.958   0.174  0.295
+
+Quality gate — confusion (rows: quality_expectation, cols: verdict)
+--------------------------------------
+expectation  accept  repair  bounce
+-----------------------------------
+clean            42      15       0
+degraded         15      75       0
+bounce            0       0      30
+    expectation-satisfied rate: 0.915 over 177 documents
+
+Language ID — LINE level
+----------------------------------------------------------------------------
+cell        gt_lines  matched  correct  acc_matched  acc_all  coverage
+----------------------------------------------------------------------
+Deva|hand        306      240      100        0.417    0.327     0.784
+Deva|print       324      261      197        0.755    0.608     0.806
+Latn|hand        414      319      284        0.890    0.686     0.771
+Latn|print      3483     2734     2474        0.905    0.710     0.785
+OVERALL         4527     3554     3055        0.860    0.675     0.785
+
+Latency (ms) by stage
+-------------------------------------------
+stage             n       p50        p95
+----------------------------------------
+assemble         28     0.242     61.401
+e2e_total       177  5861.198  22608.611
+s0_read         177     0.996      1.380
+s15_quality     177   190.668    251.774
+s15_quality:p1  177   190.668    251.774
+s1_ingest       177    21.784     51.993
+s2b_lid         147     1.242      5.091
+s2b_lid:p1      147     1.242      5.091
+s3_classify     147   173.781    341.939
+s3_classify:p1  147   173.781    341.939
+s4_ocr          147   751.036   1727.103
+s4_ocr:p1       147   751.036   1727.103
+s4b_vlm          28  1517.072   1777.081
+s4b_vlm:p1       28  1517.072   1777.081
+s5_slm          147  5316.891  21845.131
+s5_validators   147     5.530     15.510
+
+Latency (ms) by stage x profile
+-------------------------------------------------
+stage|profile           n       p50        p95
+----------------------------------------------
+assemble|clean          2     0.233      0.243
+assemble|heavy          6     0.225      0.315
+assemble|light          7     0.240      0.516
+assemble|photo          8     0.296     31.926
+assemble|scan           5     0.345     69.083
+e2e_total|bounce       30   137.543    182.491
+e2e_total|clean        27  5942.095  22606.434
+e2e_total|heavy        30  6237.459  26079.241
+e2e_total|light        30  6994.714  18545.374
+e2e_total|photo        30  8269.730  23775.601
+e2e_total|scan         30  6729.737  22019.288
+s0_read|bounce         30     0.944      1.439
+s0_read|clean          27     1.122      1.443
+s0_read|heavy          30     0.984      1.311
+s0_read|light          30     1.046      1.284
+s0_read|photo          30     0.950      1.420
+s0_read|scan           30     0.992      1.213
+s15_quality|bounce     30   135.794    170.613
+s15_quality|clean      27   199.494    245.443
+s15_quality|heavy      30   195.722    264.058
+s15_quality|light      30   204.791    254.830
+s15_quality|photo      30   191.272    252.333
+s15_quality|scan       30   197.865    234.799
+s15_quality:p1|bounce  30   135.794    170.613
+s15_quality:p1|clean   27   199.494    245.443
+s15_quality:p1|heavy   30   195.722    264.058
+s15_quality:p1|light   30   204.791    254.830
+s15_quality:p1|photo   30   191.272    252.333
+s15_quality:p1|scan    30   197.865    234.799
+s1_ingest|bounce       30     7.911     10.658
+s1_ingest|clean        27    43.707     64.271
+s1_ingest|heavy        30    23.220     31.590
+s1_ingest|light        30    44.755     57.875
+s1_ingest|photo        30    17.450     24.616
+s1_ingest|scan         30    33.853     40.819
+s2b_lid|clean          27     1.477      5.309
+s2b_lid|heavy          30     1.143      4.994
+s2b_lid|light          30     1.409      4.937
+s2b_lid|photo          30     1.115      5.299
+s2b_lid|scan           30     1.132      4.944
+s2b_lid:p1|clean       27     1.477      5.309
+s2b_lid:p1|heavy       30     1.143      4.994
+s2b_lid:p1|light       30     1.409      4.937
+s2b_lid:p1|photo       30     1.115      5.299
+s2b_lid:p1|scan        30     1.132      4.944
+s3_classify|clean      27   294.124    345.290
+s3_classify|heavy      30   156.643    198.998
+s3_classify|light      30   304.688    364.731
+s3_classify|photo      30   127.478    155.257
+s3_classify|scan       30   220.732    272.245
+s3_classify:p1|clean   27   294.124    345.290
+s3_classify:p1|heavy   30   156.643    198.998
+s3_classify:p1|light   30   304.688    364.731
+s3_classify:p1|photo   30   127.478    155.257
+s3_classify:p1|scan    30   220.732    272.245
+s4_ocr|clean           27   798.161   1969.079
+s4_ocr|heavy           30   759.058   1545.785
+s4_ocr|light           30   741.862   1731.496
+s4_ocr|photo           30   700.768   1618.467
+s4_ocr|scan            30   745.653   1643.469
+s4_ocr:p1|clean        27   798.161   1969.079
+s4_ocr:p1|heavy        30   759.058   1545.785
+s4_ocr:p1|light        30   741.862   1731.496
+s4_ocr:p1|photo        30   700.768   1618.467
+s4_ocr:p1|scan         30   745.653   1643.469
+s4b_vlm|clean           2   727.127   1001.911
+s4b_vlm|heavy           6  1721.043   1779.532
+s4b_vlm|light           7  1333.229   1438.901
+s4b_vlm|photo           8  1517.072   1529.849
+s4b_vlm|scan            5  1656.013   2255.473
+s4b_vlm:p1|clean        2   727.127   1001.911
+s4b_vlm:p1|heavy        6  1721.043   1779.532
+s4b_vlm:p1|light        7  1333.229   1438.901
+s4b_vlm:p1|photo        8  1517.072   1529.849
+s4b_vlm:p1|scan         5  1656.013   2255.473
+s5_slm|clean           27  4722.849  20127.099
+s5_slm|heavy           30  5011.092  23448.873
+s5_slm|light           30  5349.039  15922.441
+s5_slm|photo           30  6185.462  20182.777
+s5_slm|scan            30  5011.947  19953.298
+s5_validators|clean    27     5.842     13.366
+s5_validators|heavy    30     5.490     22.116
+s5_validators|light    30     5.835     14.776
+s5_validators|photo    30     5.407     28.959
+s5_validators|scan     30     5.406     12.815
+
+CAVEAT  Font-rendered handwriting is not real handwriting. This corpus validates plumbing, schema, routing and throughput. It does NOT validate handwriting accuracy — measure that on iiit-indic-hw-words and real complaint pages.
+NOTE    variants [3, 4] are the locked test split and were not scored. Pass --split all --final to include them.

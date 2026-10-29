@@ -1,0 +1,35 @@
+# Environment / secrets
+.env
+*.env.local
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Runtime artifacts
+.cache/
+data/runtime/
+*.sqlite
+*.sqlite-journal
+
+# Local model weights (placed offline in air-gapped deploys).
+# `models/*`, not `models/`: git cannot re-include a file whose *parent directory*
+# is excluded, so the `models/` form silently swallowed the negation below and
+# `models/README.md` was ignored too (it is a documented member of the code bundle
+# and of docs/AIR-GAPPED-DEPLOY.md section 2's unzip layout).
+models/*
+!models/README.md
+
+# Hand-off bundles built by tools/make_bundle.py
+dist/
+
+# OS
+Thumbs.db
+Desktop.ini

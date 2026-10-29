@@ -1,0 +1,7 @@
+{% extends "hin/_layout.txt.j2" %}
+{#- ALL_PAGES_BOUNCED - document level: every page was refused by the quality gate -#}
+{% block subject %}आपके भेजे किसी भी पृष्ठ को पढ़ा नहीं जा सका{% endblock %}
+{% block defect %}दस्तावेज़ के हर पृष्ठ में कोई न कोई ऐसी कठिनाई थी जिसके कारण उसे पढ़ा नहीं जा
+सका, इसलिए संलग्नक से कुछ भी नहीं लिया जा सका।{% endblock %}
+{% block remedy %}कृपया पूरे दस्तावेज़ को अच्छी रोशनी में, हर पृष्ठ को समतल और पूरा रखते हुए,
+{{ recommended_dpi }} DPI पर दोबारा स्कैन करें और नई फ़ाइल भेजें।{% endblock %}

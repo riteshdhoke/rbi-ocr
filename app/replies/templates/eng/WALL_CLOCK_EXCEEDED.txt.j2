@@ -1,0 +1,10 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- WALL_CLOCK_EXCEEDED - ingestion: document exceeded MAX_WALL_CLOCK_SECONDS -#}
+{% block subject %}Your document took longer to process than we allow{% endblock %}
+{% block defect %}Processing did not finish within the time allowed for a single complaint,
+so it was stopped. Very long documents and very large scans are the usual
+cause.{% endblock %}
+{% block remedy %}Please send the pages that relate to your complaint in smaller attachments,
+a few pages at a time, scanned at {{ recommended_dpi }} DPI in greyscale.
+Quote the reference below in each message so that we can join them
+together.{% endblock %}

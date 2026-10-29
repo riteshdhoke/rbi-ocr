@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RBI complaint OCR — field review</title>
+<!--
+  Keyboard-first review fragment (PRD P1-1: "flagged fields beside the source
+  crop, keyboard-first, correction written to the active-learning store").
+
+  Shares review_ui.js with test_page.html. Air-gapped: two sibling files, no
+  framework, no CDN, no build step.
+
+  The published API contract (POST /v1/documents, GET /v1/jobs/{id}, /healthz,
+  /metrics) has no endpoint for writing a correction back, and this page does
+  not invent one. Decisions are exported as a JSON file; when the
+  active-learning store gets an endpoint, posting this same payload to it is a
+  few lines here and nothing else changes.
+-->
+<link rel="stylesheet" href="review_ui.css">
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Field review — keyboard first</h1>
+  <p class="sub" id="progress">No envelope loaded.</p>
+  <div class="keys" aria-label="keyboard shortcuts">
+    <span><kbd>j</kbd>/<kbd>↓</kbd> next</span>
+    <span><kbd>k</kbd>/<kbd>↑</kbd> previous</span>
+    <span><kbd>a</kbd> accept</span>
+    <span><kbd>c</kbd> correct</span>
+    <span><kbd>s</kbd> skip</span>
+    <span><kbd>x</kbd> undo this decision</span>
+    <span><kbd>e</kbd> export decisions</span>
+    <span><kbd>Enter</kbd> save correction</span>
+    <span><kbd>Esc</kbd> cancel</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="panel" aria-labelledby="source-heading">
+    <h2 id="source-heading">Source</h2>
+    <p class="status" id="source-status"></p>
+    <div class="row">
+      <button type="button" id="reload-btn" class="secondary">Reload from the test page</button>
+      <label class="field">Page image (for the evidence crop)
+        <input type="file" id="image-input" accept=".png,.jpg,.jpeg,.tif,.tiff,image/*">
+      </label>
+      <label class="field">
+        <span>Review every field, not only flagged ones</span>
+        <input type="checkbox" id="all-fields">
+      </label>
+    </div>
+    <details>
+      <summary>Paste an envelope instead</summary>
+      <textarea id="paste-json" spellcheck="false" aria-label="Envelope JSON"></textarea>
+      <div class="row" style="margin-top:0.5rem">
+        <button type="button" id="paste-btn" class="secondary">Load pasted JSON</button>
+      </div>
+    </details>
+  </section>
+
+  <div class="grid-two">
+
+    <section class="panel" aria-labelledby="queue-heading">
+      <h2 id="queue-heading">Queue</h2>
+      <ul class="queue" id="queue"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="current-heading">
+      <h2 id="current-heading">Field and its evidence</h2>
+      <div id="current"></div>
+      <canvas id="crop-canvas" width="10" height="10" aria-label="Crop of the page around this field"></canvas>
+      <p class="status" id="crop-status"></p>
+      <div class="row" style="margin-top:0.6rem">
+        <label class="field" style="flex:1 1 20rem">Corrected value (native script — the immutable one)
+          <input type="text" id="correction" spellcheck="false" autocomplete="off">
+        </label>
+      </div>
+      <div class="row" style="margin-top:0.6rem">
+        <button type="button" id="accept-btn">Accept (a)</button>
+        <button type="button" id="correct-btn" class="secondary">Save correction (Enter)</button>
+        <button type="button" id="skip-btn" class="secondary">Skip (s)</button>
+        <button type="button" id="undo-btn" class="secondary">Undo (x)</button>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="panel" aria-labelledby="decisions-heading">
+    <h2 id="decisions-heading">Decisions</h2>
+    <div id="decisions"></div>
+    <div class="row" style="margin-top:0.7rem">
+      <button type="button" id="export-btn">Export decisions JSON (e)</button>
+      <button type="button" id="reset-btn" class="secondary">Clear all decisions</button>
+    </div>
+    <p class="note">Corrections are exported, not posted: there is no review endpoint in the
+      published API contract. <code>source</code> becomes <code>human</code> when one of these
+      corrections is applied by whatever consumes this file.</p>
+  </section>
+
+</main>
+
+<script src="review_ui.js"></script>
+<script>
+/* Page wiring only; shared helpers live in review_ui.js. */
+(function () {
+  "use strict";
+
+  var state = {
+    envelope: null,
+    image: null,
+    rows: [],
+    index: 0,
+    decisions: {},
+    fileName: null,
+    apiBase: null
+  };
+
+  var sourceStatus = RUI.q("#source-status");
+  var cropStatus = RUI.q("#crop-status");
+  var correction = RUI.q("#correction");
+  var cropCanvas = RUI.q("#crop-canvas");
+
+  /* ---------------------------------------------------------- loading */
+
+  function adoptEnvelope(envelope, note) {
+    state.envelope = envelope;
+    state.decisions = {};
+    state.index = 0;
+    rebuildRows();
+    RUI.setStatus(sourceStatus, note, envelope ? "" : "error");
+    render();
+  }
+
+  function rebuildRows() {
+    if (!state.envelope) { state.rows = []; return; }
+    state.rows = RUI.q("#all-fields").checked
+      ? RUI.fieldRows(state.envelope)
+      : RUI.flaggedRows(state.envelope);
+    if (state.index >= state.rows.length) { state.index = Math.max(0, state.rows.length - 1); }
+  }
+
+  function loadFromStash() {
+    var stash = RUI.loadStash();
+    if (!stash || !stash.envelope) {
+      RUI.setStatus(sourceStatus,
+        "Nothing handed over yet. Open test_page.html, load an envelope, and press " +
+        "“Open the flagged fields in the review page”. Or paste an envelope below.",
+        "busy");
+      return;
+    }
+    state.fileName = stash.file_name;
+    state.apiBase = stash.api_base;
+    adoptEnvelope(stash.envelope,
+      "Loaded from the test page" + (stash.file_name ? " (" + stash.file_name + ")" : "") +
+      " at " + stash.saved_at + ".");
+    if (stash.image_data_url) {
+      RUI.imageFromDataUrl(stash.image_data_url).then(function (image) {
+        state.image = image;
+        render();
+      }, function () {
+        RUI.setStatus(cropStatus, "The handed-over image could not be decoded; choose it again above.", "error");
+      });
+    } else {
+      RUI.setStatus(cropStatus, "No page image was handed over. Choose the image file above to see crops.", "busy");
+    }
+  }
+
+  /* ---------------------------------------------------------- rendering */
+
+  function currentRow() {
+    return state.rows.length ? state.rows[state.index] : null;
+  }
+
+  function decisionFor(name) {
+    return state.decisions[name] || null;
+  }
+
+  function render() {
+    renderProgress();
+    renderQueue();
+    renderCurrent();
+    renderDecisions();
+  }
+
+  function renderProgress() {
+    var node = RUI.q("#progress");
+    if (!state.envelope) { node.textContent = "No envelope loaded."; return; }
+    var decided = Object.keys(state.decisions).length;
+    node.textContent = state.rows.length
+      ? ("Field " + (state.index + 1) + " of " + state.rows.length + " · " +
+         decided + " decided · document " + RUI.orDash(state.envelope.document_id))
+      : ("Nothing to review: no field in this envelope is flagged. " +
+         "Tick “Review every field” to go through all of them.");
+  }
+
+  function renderQueue() {
+    var list = RUI.clear(RUI.q("#queue"));
+    state.rows.forEach(function (row, position) {
+      var decision = decisionFor(row.name);
+      var classes = ["", position === state.index ? "current" : ""];
+      if (decision) { classes.push("done-" + decision.action); }
+      var item = RUI.el("li", { className: classes.join(" ").trim() });
+      item.appendChild(RUI.el("span", { className: "name", text: row.name }));
+      item.appendChild(RUI.el("span", {
+        className: "state",
+        text: decision ? decision.action : (RUI.isFlagged(row.field) ? "flagged" : "ok")
+      }));
+      item.appendChild(RUI.el("div", { className: "mono", text: RUI.orDash(row.field.value) }));
+      item.addEventListener("click", function () {
+        state.index = position;
+        render();
+      });
+      list.appendChild(item);
+    });
+  }
+
+  function renderCurrent() {
+    var node = RUI.clear(RUI.q("#current"));
+    var row = currentRow();
+    if (!row) {
+      node.appendChild(RUI.el("p", { className: "note", text: "Nothing selected." }));
+      cropCanvas.getContext("2d").clearRect(0, 0, cropCanvas.width, cropCanvas.height);
+      return;
+    }
+    var field = row.field;
+    var evidence = field.evidence || {};
+    node.appendChild(RUI.el("h3", { text: row.name }));
+    node.appendChild(RUI.kvList([
+      ["value (native, immutable)", RUI.orDash(field.value)],
+      ["value_en (advisory)", RUI.orDash(field.value_en)],
+      ["normalized", RUI.orDash(field.normalized)],
+      ["confidence", RUI.pct(field.confidence)],
+      ["source", RUI.orDash(field.source)],
+      ["validator_passed", RUI.tri(field.validator_passed)],
+      ["mt_engine", RUI.orDash(field.mt_engine)],
+      ["evidence", "page " + RUI.orDash(evidence.page_no) + " · " + RUI.bboxText(evidence.bbox)]
+    ]));
+    if (field.flags && field.flags.length) {
+      node.appendChild(RUI.chipList(field.flags, "flagged"));
+    }
+    var decision = decisionFor(row.name);
+    if (decision) {
+      node.appendChild(RUI.el("p", {
+        className: "note",
+        text: "decided: " + decision.action +
+          (decision.value_after !== null && decision.value_after !== undefined
+            ? " → " + decision.value_after : "")
+      }));
+    }
+    correction.value = (decision && decision.value_after) || field.value || "";
+    drawCrop(row);
+  }
+
+  function drawCrop(row) {
+    var evidence = row.field.evidence || {};
+    if (!state.image) {
+      RUI.setStatus(cropStatus, "No page image loaded — choose it above to see the crop.", "busy");
+      return;
+    }
+    if (!evidence.bbox || evidence.bbox.length !== 8) {
+      RUI.setStatus(cropStatus, "This field carries no usable bbox.", "error");
+      return;
+    }
+    RUI.drawCrop(cropCanvas, state.image, evidence.bbox, { pad: 30 });
+    RUI.setStatus(cropStatus,
+      "page " + RUI.orDash(evidence.page_no) + " · " + RUI.bboxText(evidence.bbox), "");
+  }
+
+  var DECISION_COLUMNS = ["field", "action", "value_before", "value_after", "page", "decided_at"];
+
+  function renderDecisions() {
+    var node = RUI.clear(RUI.q("#decisions"));
+    var names = Object.keys(state.decisions);
+    if (!names.length) {
+      node.appendChild(RUI.el("p", { className: "note", text: "No decisions yet." }));
+      return;
+    }
+    var table = RUI.el("table");
+    var head = RUI.el("tr");
+    DECISION_COLUMNS.forEach(function (name) { head.appendChild(RUI.el("th", { text: name })); });
+    table.appendChild(RUI.el("thead", { children: [head] }));
+    var body = RUI.el("tbody");
+    names.sort().forEach(function (name) {
+      var decision = state.decisions[name];
+      var tr = RUI.el("tr");
+      tr.appendChild(RUI.el("td", { text: name }));
+      tr.appendChild(RUI.el("td", { text: decision.action }));
+      tr.appendChild(RUI.el("td", { text: RUI.orDash(decision.value_before) }));
+      tr.appendChild(RUI.el("td", { text: RUI.orDash(decision.value_after) }));
+      tr.appendChild(RUI.el("td", { className: "mono", text: RUI.orDash(decision.page_no) }));
+      tr.appendChild(RUI.el("td", { className: "mono", text: decision.decided_at }));
+      body.appendChild(tr);
+    });
+    table.appendChild(body);
+    node.appendChild(RUI.el("div", { className: "table-scroll", children: [table] }));
+  }
+
+  /* ----------------------------------------------------------- actions */
+
+  function record(action, valueAfter) {
+    var row = currentRow();
+    if (!row) { return; }
+    var evidence = row.field.evidence || {};
+    state.decisions[row.name] = {
+      field: row.name,
+      action: action,
+      value_before: row.field.value === undefined ? null : row.field.value,
+      value_after: valueAfter === undefined ? null : valueAfter,
+      page_no: evidence.page_no === undefined ? null : evidence.page_no,
+      bbox: evidence.bbox || null,
+      span: evidence.span || null,
+      flags_at_review: row.field.flags || [],
+      decided_at: new Date().toISOString()
+    };
+    advance();
+  }
+
+  function advance() {
+    if (state.index < state.rows.length - 1) { state.index += 1; }
+    render();
+  }
+
+  function move(delta) {
+    if (!state.rows.length) { return; }
+    state.index = Math.min(state.rows.length - 1, Math.max(0, state.index + delta));
+    render();
+  }
+
+  function saveCorrection() {
+    var row = currentRow();
+    if (!row) { return; }
+    var value = correction.value;
+    if (value === (row.field.value || "")) {
+      record("accept", value);
+      return;
+    }
+    record("correct", value);
+  }
+
+  function exportDecisions() {
+    var envelope = state.envelope || {};
+    var payload = {
+      kind: "rbi-ocr-review-decisions",
+      version: 1,
+      document_id: envelope.document_id || null,
+      job_id: envelope.job_id || null,
+      result_version: envelope.result_version || null,
+      schema_version: envelope.schema_version || null,
+      api_base: state.apiBase || null,
+      exported_at: new Date().toISOString(),
+      decisions: Object.keys(state.decisions).sort().map(function (name) {
+        return state.decisions[name];
+      })
+    };
+    RUI.downloadJSON(
+      "review-decisions-" + (envelope.document_id || "unknown").replace(/[^A-Za-z0-9._-]/g, "_") + ".json",
+      payload);
+  }
+
+  /* ------------------------------------------------------------ wiring */
+
+  RUI.q("#reload-btn").addEventListener("click", loadFromStash);
+
+  RUI.q("#paste-btn").addEventListener("click", function () {
+    var text = RUI.q("#paste-json").value.trim();
+    if (!text) {
+      RUI.setStatus(sourceStatus, "Paste an envelope first.", "error");
+      return;
+    }
+    try {
+      var envelope = RUI.unwrapEnvelope(JSON.parse(text));
+      if (!envelope) {
+        RUI.setStatus(sourceStatus, "That JSON does not contain a result envelope.", "error");
+        return;
+      }
+      adoptEnvelope(envelope, "Loaded pasted envelope.");
+    } catch (error) {
+      RUI.setStatus(sourceStatus, "That is not valid JSON: " + error.message, "error");
+    }
+  });
+
+  RUI.q("#image-input").addEventListener("change", function (event) {
+    var file = event.target.files[0];
+    if (!file) { return; }
+    RUI.loadImageFile(file).then(function (loaded) {
+      state.image = loaded.image;
+      state.fileName = file.name;
+      render();
+    }, function (error) {
+      RUI.setStatus(cropStatus, error.message, "error");
+    });
+  });
+
+  RUI.q("#all-fields").addEventListener("change", function () {
+    rebuildRows();
+    render();
+  });
+
+  RUI.q("#accept-btn").addEventListener("click", function () { record("accept", null); });
+  RUI.q("#skip-btn").addEventListener("click", function () { record("skip", null); });
+  RUI.q("#correct-btn").addEventListener("click", saveCorrection);
+  RUI.q("#undo-btn").addEventListener("click", function () {
+    var row = currentRow();
+    if (row) { delete state.decisions[row.name]; render(); }
+  });
+  RUI.q("#export-btn").addEventListener("click", exportDecisions);
+  RUI.q("#reset-btn").addEventListener("click", function () {
+    state.decisions = {};
+    render();
+  });
+
+  correction.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      saveCorrection();
+      correction.blur();
+    } else if (event.key === "Escape") {
+      var row = currentRow();
+      correction.value = (row && row.field.value) || "";
+      correction.blur();
+    }
+  });
+
+  RUI.bindKeys({
+    "j": function () { move(1); },
+    "ArrowDown": function () { move(1); },
+    "k": function () { move(-1); },
+    "ArrowUp": function () { move(-1); },
+    "a": function () { record("accept", null); },
+    "s": function () { record("skip", null); },
+    "c": function () { correction.focus(); correction.select(); },
+    "x": function () {
+      var row = currentRow();
+      if (row) { delete state.decisions[row.name]; render(); }
+    },
+    "e": exportDecisions,
+    "Escape": function () {
+      if (document.activeElement === correction) { correction.blur(); }
+    }
+  });
+
+  loadFromStash();
+})();
+</script>
+</body>
+</html>

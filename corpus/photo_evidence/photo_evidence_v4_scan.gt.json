@@ -1,0 +1,311 @@
+{
+  "doc_id": "photo_evidence_v4_scan",
+  "doc_type": "photo_evidence",
+  "variant": 4,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-3.3deg",
+    "holes",
+    "fold",
+    "stamp",
+    "blur:0.8",
+    "noise:0.012",
+    "downscale:0.85"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "TRANSACTION RECEIPT",
+      "bbox": [
+        85.1,
+        44.6,
+        376.3,
+        61.6,
+        374.4,
+        94.2,
+        83.1,
+        77.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        81.1,
+        112.5,
+        126.2,
+        115.2,
+        124.7,
+        141.3,
+        79.6,
+        138.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "21/09/2026",
+      "bbox": [
+        284.8,
+        124.4,
+        407.0,
+        131.5,
+        405.5,
+        157.6,
+        283.2,
+        150.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "Bank",
+      "bbox": [
+        78.5,
+        156.7,
+        126.6,
+        159.5,
+        125.1,
+        185.6,
+        77.0,
+        182.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Union Bank of India",
+      "bbox": [
+        282.2,
+        168.6,
+        514.5,
+        182.1,
+        513.0,
+        208.2,
+        280.7,
+        194.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "A/C",
+      "bbox": [
+        76.0,
+        200.8,
+        109.5,
+        202.7,
+        108.0,
+        228.8,
+        74.5,
+        226.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXXXX7710",
+      "bbox": [
+        279.6,
+        212.7,
+        401.9,
+        219.8,
+        400.3,
+        245.8,
+        278.1,
+        238.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Card",
+      "bbox": [
+        73.4,
+        244.9,
+        118.2,
+        247.5,
+        116.7,
+        273.6,
+        71.9,
+        271.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "XXXX XXXX XXXX 3104",
+      "bbox": [
+        277.1,
+        256.8,
+        509.3,
+        270.3,
+        507.8,
+        296.4,
+        275.6,
+        282.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "card_last_four"
+    },
+    {
+      "text": "Amount",
+      "bbox": [
+        70.8,
+        289.1,
+        147.7,
+        293.5,
+        146.2,
+        319.6,
+        69.3,
+        315.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Rs. 98,200.00",
+      "bbox": [
+        274.5,
+        300.9,
+        433.4,
+        310.2,
+        431.9,
+        336.3,
+        272.9,
+        327.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "RRN",
+      "bbox": [
+        68.3,
+        333.2,
+        109.1,
+        335.6,
+        107.5,
+        361.6,
+        66.7,
+        359.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "369073902932",
+      "bbox": [
+        271.9,
+        345.0,
+        418.6,
+        353.6,
+        417.1,
+        379.6,
+        270.4,
+        371.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "Status",
+      "bbox": [
+        65.7,
+        377.3,
+        125.3,
+        380.8,
+        123.8,
+        406.8,
+        64.2,
+        403.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "FAILED",
+      "bbox": [
+        269.4,
+        389.1,
+        342.7,
+        393.5,
+        341.2,
+        419.5,
+        267.8,
+        415.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "transaction_date": "21/09/2026",
+    "bank_name": "Union Bank of India",
+    "card_last_four": "3104",
+    "disputed_amount": 98200,
+    "transaction_reference": "369073902932"
+  },
+  "fields_bilingual": {
+    "transaction_date": {
+      "value": "21/09/2026",
+      "value_en": "21/09/2026",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "Union Bank of India",
+      "value_en": "Union Bank of India",
+      "script": "Latn"
+    },
+    "card_last_four": {
+      "value": "3104",
+      "value_en": "3104",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "Rs. 98,200.00",
+      "value_en": "Rs. 98,200.00",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "369073902932",
+      "value_en": "369073902932",
+      "script": "Latn"
+    }
+  }
+}

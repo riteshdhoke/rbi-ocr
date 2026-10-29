@@ -1,0 +1,11 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- MIME_MISMATCH - ingestion: magic bytes disagree with the declared type -#}
+{% block subject %}The attachment's name and its contents do not match{% endblock %}
+{% block defect %}The attachment is named as one kind of file, but its contents are of a
+different kind — for example a web page or a picture saved with a .pdf name.
+For everyone's safety we do not open a file whose contents are not what its
+name says.{% endblock %}
+{% block remedy %}Please save or export the document again in a standard format and send it
+with a matching name: a PDF as .pdf, a photograph as .jpg, a scan as .png or
+.jpg. Renaming a file does not change what is inside it, so please export it
+again rather than renaming it.{% endblock %}

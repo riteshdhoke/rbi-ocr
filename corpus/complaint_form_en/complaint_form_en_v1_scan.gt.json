@@ -1,0 +1,518 @@
+{
+  "doc_id": "complaint_form_en_v1_scan",
+  "doc_type": "complaint_form_en",
+  "variant": 1,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-3.1deg",
+    "holes",
+    "fold",
+    "stamp",
+    "blur:0.8",
+    "noise:0.012",
+    "downscale:0.85"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+      "bbox": [
+        143.0,
+        53.7,
+        850.6,
+        91.6,
+        848.4,
+        132.9,
+        140.8,
+        95.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank — Integrated Ombudsman Scheme, 2021 — Form I",
+      "bbox": [
+        140.2,
+        104.6,
+        790.4,
+        139.5,
+        789.0,
+        166.6,
+        138.8,
+        131.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. Name of complainant",
+      "bbox": [
+        133.9,
+        223.5,
+        372.8,
+        236.3,
+        371.4,
+        263.4,
+        132.4,
+        250.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Priya Venkatesan",
+      "bbox": [
+        651.6,
+        251.2,
+        829.3,
+        260.7,
+        827.7,
+        288.9,
+        650.1,
+        279.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. Address",
+      "bbox": [
+        130.3,
+        289.7,
+        233.9,
+        295.2,
+        232.5,
+        322.4,
+        128.9,
+        316.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Lucknow, Uttar Pradesh",
+      "bbox": [
+        648.1,
+        317.4,
+        894.3,
+        330.6,
+        892.8,
+        358.8,
+        646.6,
+        345.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. Mobile",
+      "bbox": [
+        126.8,
+        355.9,
+        218.2,
+        360.8,
+        216.8,
+        387.9,
+        125.3,
+        383.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9674931435",
+      "bbox": [
+        644.6,
+        383.6,
+        770.8,
+        390.4,
+        769.2,
+        418.6,
+        643.0,
+        411.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. Name of bank",
+      "bbox": [
+        123.2,
+        422.1,
+        287.0,
+        430.9,
+        285.5,
+        458.1,
+        121.8,
+        449.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Punjab National Bank",
+      "bbox": [
+        641.0,
+        449.8,
+        864.8,
+        461.8,
+        863.3,
+        490.0,
+        639.5,
+        478.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC code",
+      "bbox": [
+        119.7,
+        488.3,
+        239.9,
+        494.7,
+        238.4,
+        521.9,
+        118.2,
+        515.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "PUNB0629466",
+      "bbox": [
+        637.4,
+        516.0,
+        786.4,
+        524.0,
+        784.9,
+        552.2,
+        636.0,
+        544.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. Account number",
+      "bbox": [
+        116.2,
+        554.5,
+        305.5,
+        564.7,
+        304.0,
+        591.8,
+        114.7,
+        581.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "28001176603435",
+      "bbox": [
+        633.9,
+        582.2,
+        810.6,
+        591.7,
+        809.2,
+        619.9,
+        632.4,
+        610.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. Amount in dispute (Rs.)",
+      "bbox": [
+        112.6,
+        620.8,
+        367.5,
+        634.4,
+        366.0,
+        661.6,
+        111.2,
+        647.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "250,000",
+      "bbox": [
+        630.4,
+        648.5,
+        712.0,
+        652.8,
+        710.5,
+        681.0,
+        628.8,
+        676.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. Date of transaction",
+      "bbox": [
+        109.1,
+        686.9,
+        323.0,
+        698.4,
+        321.6,
+        725.6,
+        107.6,
+        714.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "15/04/2026",
+      "bbox": [
+        626.8,
+        714.6,
+        744.3,
+        720.9,
+        742.7,
+        749.2,
+        625.3,
+        742.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. Transaction reference",
+      "bbox": [
+        105.5,
+        753.1,
+        345.0,
+        765.9,
+        343.5,
+        793.1,
+        104.0,
+        780.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "763930525107",
+      "bbox": [
+        623.3,
+        780.8,
+        774.8,
+        789.0,
+        773.2,
+        817.2,
+        621.8,
+        809.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. Previous complaint no.",
+      "bbox": [
+        102.0,
+        819.3,
+        364.8,
+        833.4,
+        363.3,
+        860.5,
+        100.6,
+        846.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2026/723809",
+      "bbox": [
+        619.7,
+        847.0,
+        808.5,
+        857.1,
+        807.0,
+        885.4,
+        618.2,
+        875.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. Nature of complaint",
+      "bbox": [
+        96.6,
+        919.5,
+        331.9,
+        932.1,
+        330.5,
+        959.2,
+        95.2,
+        946.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Credit card annual fee levied without prior consent or intimation",
+      "bbox": [
+        118.7,
+        985.3,
+        784.0,
+        1020.9,
+        782.5,
+        1049.2,
+        117.1,
+        1013.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "Signature",
+      "bbox": [
+        77.0,
+        1286.1,
+        161.8,
+        1290.7,
+        160.4,
+        1314.6,
+        75.7,
+        1310.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "Punjab National Bank",
+    "ifsc_code": "PUNB0629466",
+    "account_number": "28001176603435",
+    "card_last_four": "4287",
+    "disputed_amount": 250000,
+    "transaction_date": "15/04/2026",
+    "transaction_reference": "763930525107",
+    "complainant_name": "Priya Venkatesan",
+    "complainant_city": "Lucknow, Uttar Pradesh",
+    "mobile": "9674931435",
+    "prior_complaint_ref": "CMS/2026/723809",
+    "ground_en": "Credit card annual fee levied without prior consent or intimation"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "Priya Venkatesan",
+      "value_en": "Priya Venkatesan",
+      "script": "Latn"
+    },
+    "complainant_address": {
+      "value": "Lucknow, Uttar Pradesh",
+      "value_en": "Lucknow, Uttar Pradesh",
+      "script": "Latn"
+    },
+    "complainant_contact": {
+      "value": "9674931435",
+      "value_en": "9674931435",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "Punjab National Bank",
+      "value_en": "Punjab National Bank",
+      "script": "Latn"
+    },
+    "ifsc_code": {
+      "value": "PUNB0629466",
+      "value_en": "PUNB0629466",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "28001176603435",
+      "value_en": "28001176603435",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "250,000",
+      "value_en": "250,000",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "15/04/2026",
+      "value_en": "15/04/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "763930525107",
+      "value_en": "763930525107",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2026/723809",
+      "value_en": "CMS/2026/723809",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "Credit card annual fee levied without prior consent or intimation",
+      "value_en": "Credit card annual fee levied without prior consent or intimation",
+      "script": "Latn"
+    }
+  }
+}

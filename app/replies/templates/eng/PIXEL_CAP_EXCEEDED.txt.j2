@@ -1,0 +1,9 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- PIXEL_CAP_EXCEEDED - ingestion: total rasterised pixels above MAX_TOTAL_PIXELS -#}
+{% block subject %}The images you sent are larger than we can process{% endblock %}
+{% block defect %}The pages you sent are stored at a very high resolution, and together they
+are far larger than we can process as one document. The extra detail does
+not make the writing any easier to read.{% endblock %}
+{% block remedy %}Please scan the document again at {{ recommended_dpi }} DPI rather than the
+highest setting your scanner offers, choosing greyscale or black and white
+for pages of text, and send the new file.{% endblock %}

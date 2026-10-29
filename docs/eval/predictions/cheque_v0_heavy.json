@@ -1,0 +1,399 @@
+{
+ "doc_id": "cheque_v0_heavy",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 1.0,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "State Bank of India",
+     "bbox": [
+      48.00487248102824,
+      70.1551251411438,
+      270.44825251897174,
+      70.1551251411438,
+      270.44825251897174,
+      102.63282128742763,
+      48.00487248102824,
+      102.63282128742763
+     ],
+     "confidence": 0.998514081302442,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "DATE",
+     "bbox": [
+      791.1583655675252,
+      76.38118059294564,
+      841.6593427658081,
+      76.38118059294564,
+      841.6593427658081,
+      102.53399797848293,
+      791.1583655675252,
+      102.53399797848293
+     ],
+     "confidence": 0.9983454942703247,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "12/09/2026",
+     "bbox": [
+      873.8215557734171,
+      72.14177283218929,
+      995.6279134750365,
+      73.81043759414128,
+      995.2067092259724,
+      106.26763982432229,
+      873.400351524353,
+      104.5989750623703
+     ],
+     "confidence": 0.9993622660636902,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "ANO",
+     "bbox": [
+      45.20190052191416,
+      100.78216082709176,
+      120.45033808549245,
+      105.93641812460763,
+      118.04084376494089,
+      143.07087053571428,
+      42.79240620136261,
+      137.9166132381984
+     ],
+     "confidence": 0.7535945574442545,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "2226017004675163",
+     "bbox": [
+      145.5530120929082,
+      107.88305032253265,
+      317.2178303400675,
+      107.88305032253265,
+      317.2178303400675,
+      137.20623539175307,
+      145.5530120929082,
+      137.20623539175307
+     ],
+     "confidence": 0.9976221770048141,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "PAY",
+     "bbox": [
+      42.57968840996424,
+      165.0676301888057,
+      91.00364947319031,
+      165.0676301888057,
+      91.00364947319031,
+      195.2136198111943,
+      42.57968840996424,
+      195.2136198111943
+     ],
+     "confidence": 0.9989809592564901,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "Rajosh Kimar Sharma",
+     "bbox": [
+      134.3884150981903,
+      160.13521579333715,
+      330.76785310109454,
+      160.13521579333715,
+      330.76785310109454,
+      195.24424849237715,
+      134.3884150981903,
+      195.24424849237715
+     ],
+     "confidence": 0.8999748371149364,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 6
+    },
+    {
+     "text": "RUPEES",
+     "bbox": [
+      39.51056555906931,
+      229.3138133117131,
+      127.46860110759734,
+      229.3138133117131,
+      127.46860110759734,
+      269.44288311685835,
+      39.51056555906931,
+      269.44288311685835
+     ],
+     "confidence": 0.9958049257596334,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "250,000 anly",
+     "bbox": [
+      158.35046712557474,
+      231.09147354534696,
+      283.3691078027089,
+      228.7560272557395,
+      284.0588606993357,
+      267.73369799341475,
+      159.04022002220154,
+      270.0691442830222
+     ],
+     "confidence": 0.8739105785886446,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 8
+    },
+    {
+     "text": "250,000.00",
+     "bbox": [
+      846.4342527389526,
+      225.08282937322343,
+      956.9406016667683,
+      225.08282937322343,
+      956.9406016667683,
+      261.4193653719766,
+      846.4342527389526,
+      261.4193653719766
+     ],
+     "confidence": 0.9890215396881104,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 9
+    },
+    {
+     "text": "MICR",
+     "bbox": [
+      45.56687808036804,
+      402.19710506711687,
+      99.94353858629862,
+      402.19710506711687,
+      99.94353858629862,
+      428.6555735043117,
+      45.56687808036804,
+      428.6555735043117
+     ],
+     "confidence": 0.9954020828008652,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "311222282",
+     "bbox": [
+      132.10238472620645,
+      400.42483009610856,
+      243.60074027379352,
+      400.42483009610856,
+      243.60074027379352,
+      431.65329490389144,
+      132.10238472620645,
+      431.65329490389144
+     ],
+     "confidence": 0.9985070957077874,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "273773 SBIN0311642 222601700",
+     "bbox": [
+      48.294559597969055,
+      443.02850287301203,
+      412.2241759300232,
+      444.38327039991105,
+      412.0988920529683,
+      479.9147844314575,
+      48.16925752162933,
+      478.5600169045585
+     ],
+     "confidence": 0.9910312784569604,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "State Bank of India",
+   "value_en": null,
+   "normalized": "State Bank of India",
+   "confidence": 0.998514081302442,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     48.00487248102824,
+     70.1551251411438,
+     270.44825251897174,
+     70.1551251411438,
+     270.44825251897174,
+     102.63282128742763,
+     48.00487248102824,
+     102.63282128742763
+    ],
+    "span": [
+     0,
+     19
+    ],
+    "line_index": 0
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "12/09/2026",
+   "value_en": null,
+   "normalized": "2026-09-12",
+   "confidence": 0.9993622660636902,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     873.8215557734171,
+     72.14177283218929,
+     995.6279134750365,
+     73.81043759414128,
+     995.2067092259724,
+     106.26763982432229,
+     873.400351524353,
+     104.5989750623703
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 2
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "micr_code": {
+   "value": "311222282",
+   "value_en": null,
+   "normalized": "311222282",
+   "confidence": 0.9985070957077874,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     132.10238472620645,
+     400.42483009610856,
+     243.60074027379352,
+     400.42483009610856,
+     243.60074027379352,
+     431.65329490389144,
+     132.10238472620645,
+     431.65329490389144
+    ],
+    "span": [
+     0,
+     9
+    ],
+    "line_index": 11
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "ifsc_code": {
+   "value": "SBIN0311642",
+   "value_en": null,
+   "normalized": "SBIN0311642",
+   "confidence": 0.8919281506112644,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     48.294559597969055,
+     443.02850287301203,
+     412.2241759300232,
+     444.38327039991105,
+     412.0988920529683,
+     479.9147844314575,
+     48.16925752162933,
+     478.5600169045585
+    ],
+    "span": [
+     7,
+     18
+    ],
+    "line_index": 12
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.854,
+  "s1_ingest": 7.407,
+  "s15_quality": 103.037,
+  "s15_quality:p1": 103.037,
+  "s4_ocr": 452.99,
+  "s4_ocr:p1": 452.99,
+  "s2b_lid": 0.759,
+  "s2b_lid:p1": 0.759,
+  "s3_classify": 53.686,
+  "s3_classify:p1": 53.686,
+  "s5_validators": 4.173,
+  "s5_slm": 2119.74,
+  "e2e_total": 2740.9469999999997
+ },
+ "warnings": [
+  "grounding_rejected:page=1:field=prior_complaint_reference:reason=empty",
+  "grounding_rejected:page=1:field=relief_sought:reason=ungrounded"
+ ],
+ "needs_review": true,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_form",
+ "summary_span_count": 1
+}

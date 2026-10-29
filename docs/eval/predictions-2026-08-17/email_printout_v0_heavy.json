@@ -1,0 +1,330 @@
+{
+ "doc_id": "email_printout_v0_heavy",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "accept",
+  "score": 1.0,
+  "flags": [
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "From:",
+     "bbox": [
+      78.06284899938674,
+      66.38481472333272,
+      139.3170886039734,
+      70.71814001401266,
+      137.37142451604208,
+      97.69604445298513,
+      76.11718491145542,
+      93.3627191623052
+     ],
+     "confidence": 0.9904508709907531,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "cistomercare@bankexample in",
+     "bbox": [
+      185.82048320770264,
+      65.781684700648,
+      448.3875628880092,
+      70.98262736002604,
+      447.77133959815615,
+      101.49918514887493,
+      185.20423364639282,
+      96.29824248949687
+     ],
+     "confidence": 0.9295378923416138,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "To",
+     "bbox": [
+      77.43938792319524,
+      95.4385935664177,
+      121.64468684650603,
+      102.7354520837466,
+      116.7899318081992,
+      131.5845622142156,
+      72.58463288488842,
+      124.28770369688671
+     ],
+     "confidence": 0.8862918019294739,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "rajesh@example.com",
+     "bbox": [
+      184.42700573376246,
+      100.80765416622162,
+      361.3602097829183,
+      100.80765416622162,
+      361.3602097829183,
+      129.39547083377838,
+      184.42700573376246,
+      129.39547083377838
+     ],
+     "confidence": 0.9727553957038455,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "Date:",
+     "bbox": [
+      74.0975272655487,
+      127.95331877867382,
+      134.23134178207033,
+      127.95331877867382,
+      134.23134178207033,
+      160.22688955465952,
+      74.0975272655487,
+      160.22688955465952
+     ],
+     "confidence": 0.9904149889945983,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "25/12/2026",
+     "bbox": [
+      183.97874900272913,
+      129.3522265672684,
+      284.33077480679464,
+      129.3522265672684,
+      284.33077480679464,
+      160.5331900993983,
+      183.97874900272913,
+      160.5331900993983
+     ],
+     "confidence": 0.8441471338272095,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "Subject",
+     "bbox": [
+      76.70102863084702,
+      161.2255927324295,
+      159.17545946439108,
+      161.2255927324295,
+      159.17545946439108,
+      188.34211560090384,
+      76.70102863084702,
+      188.34211560090384
+     ],
+     "confidence": 0.9676721692085266,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "Re Service Request CMS/2026/463063",
+     "bbox": [
+      179.1050259726388,
+      161.74015266895296,
+      497.72851126534596,
+      163.71245028972626,
+      497.5452415829613,
+      192.7620855410894,
+      178.92170374734062,
+      190.78978792031606
+     ],
+     "confidence": 0.9479912046123954,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "Dear Customer",
+     "bbox": [
+      74.95641343366532,
+      232.47420355478923,
+      213.31172370910645,
+      236.3892927805583,
+      212.51990200224375,
+      263.83743308385215,
+      74.16459172680264,
+      259.9223438580831
+     ],
+     "confidence": 0.9425374957231375,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      688.3936087290446,
+      252.07683997154237,
+      792.2909150804792,
+      252.07683997154237,
+      792.2909150804792,
+      283.3585766951243,
+      688.3936087290446,
+      283.3585766951243
+     ],
+     "confidence": 0.9595426023006439,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "Weacknowledge your complaint regarding the disputed transaction",
+     "bbox": [
+      74.49927695024581,
+      262.6981730302175,
+      645.6377586183094,
+      269.9502000967662,
+      645.2035439809164,
+      303.49682275454205,
+      74.06502290566762,
+      296.24479568799336
+     ],
+     "confidence": 0.9729372130499946,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 10
+    },
+    {
+     "text": "Your service request number is CMS/2026/463063.",
+     "bbox": [
+      77.1045450710115,
+      295.9438551425934,
+      498.32119532993863,
+      301.7112664699555,
+      497.8950723012288,
+      332.2399493058523,
+      76.67839577084496,
+      326.4725379784902
+     ],
+     "confidence": 0.9447392859357469,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "The matter is under investigation and we will revert within 3o days",
+     "bbox": [
+      75.12673128786541,
+      327.25465555191045,
+      629.5471744083222,
+      334.7424185117086,
+      629.1134852000645,
+      366.2387633641561,
+      74.69308148679279,
+      358.7510004043579
+     ],
+     "confidence": 0.9347125807804848,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "Regards,Customer Care",
+     "bbox": [
+      74.13107591583615,
+      363.3052825609843,
+      285.70971102941604,
+      363.3052825609843,
+      285.70971102941604,
+      392.1020091056824,
+      74.13107591583615,
+      392.1020091056824
+     ],
+     "confidence": 0.9764200903120495,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 13
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "25/12/2026",
+   "value_en": null,
+   "normalized": "2026-12-25",
+   "confidence": 0.8441471338272095,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     183.97874900272913,
+     129.3522265672684,
+     284.33077480679464,
+     129.3522265672684,
+     284.33077480679464,
+     160.5331900993983,
+     183.97874900272913,
+     160.5331900993983
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 40.538,
+  "s1_ingest": 25.797,
+  "s15_quality": 214.573,
+  "s15_quality:p1": 214.573,
+  "s4_ocr": 568.056,
+  "s4_ocr:p1": 568.056,
+  "s2b_lid": 0.933,
+  "s2b_lid:p1": 0.933,
+  "s3_classify": 140.901,
+  "s3_classify:p1": 140.901,
+  "s5_validators": 23.703,
+  "s5_slm": 0.027,
+  "e2e_total": 1002.573
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

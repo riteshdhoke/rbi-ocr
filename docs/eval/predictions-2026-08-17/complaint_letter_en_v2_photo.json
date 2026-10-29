@@ -1,0 +1,331 @@
+{
+ "doc_id": "complaint_letter_en_v2_photo",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.48448665972486776,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "Te",
+     "bbox": [
+      157.73690273450768,
+      142.902836449941,
+      189.60005378723145,
+      142.902836449941,
+      189.60005378723145,
+      172.12633021672565,
+      157.73690273450768,
+      172.12633021672565
+     ],
+     "confidence": 0.8606922924518585,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Bankirg Ombdoman",
+     "bbox": [
+      156.50729224992835,
+      170.58227709929147,
+      350.2889034022456,
+      170.58227709929147,
+      350.2889034022456,
+      208.7385684967041,
+      156.50729224992835,
+      208.7385684967041
+     ],
+     "confidence": 0.8242915868759155,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 1
+    },
+    {
+     "text": "Recerve Bank of Ika",
+     "bbox": [
+      155.00989018315855,
+      207.63286876678467,
+      334.4194576429284,
+      207.63286876678467,
+      334.4194576429284,
+      245.62338123321533,
+      155.00989018315855,
+      245.62338123321533
+     ],
+     "confidence": 0.7688015471947821,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "Subyeat Faire to erdt the ameunt of a fuid ATM withdrad wthin thepe",
+     "bbox": [
+      158.53863931738812,
+      262.6586225827535,
+      739.8010345956553,
+      262.6586225827535,
+      739.8010345956553,
+      298.28616908391314,
+      158.53863931738812,
+      298.28616908391314
+     ],
+     "confidence": 0.7289541746253398,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "Ihoda sange acenunt with HDre Bank lmed",
+     "bbox": [
+      156.62274665417877,
+      308.9268980503082,
+      534.893545648326,
+      308.9268980503082,
+      534.893545648326,
+      340.41893528302506,
+      156.62274665417877,
+      340.41893528302506
+     ],
+     "confidence": 0.6677151471376419,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "Mya00t=m6eris 7085431283334430",
+     "bbox": [
+      157.76467924532682,
+      345.4498641490936,
+      491.12388362055236,
+      345.4498641490936,
+      491.12388362055236,
+      373.00951085090634,
+      157.76467924532682,
+      373.00951085090634
+     ],
+     "confidence": 0.7113583376010258,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "On 08/06/2025 an am0umtofRo 127505",
+     "bbox": [
+      157.75188711415166,
+      379.1899662017822,
+      506.9246951393459,
+      379.1899662017822,
+      506.9246951393459,
+      406.77565879821776,
+      157.75188711415166,
+      406.77565879821776
+     ],
+     "confidence": 0.7634823182049919,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "ited wthout my autheriton ar ioncont",
+     "bbox": [
+      158.01692031777424,
+      409.41124827067057,
+      492.6360050698985,
+      411.380337524414,
+      492.45166347337806,
+      443.8469621022542,
+      157.83257872125375,
+      441.8778728485107
+     ],
+     "confidence": 0.6843949001696374,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "TheCran0ation referieceis 632074332442.",
+     "bbox": [
+      158.23959012653518,
+      443.97812353769933,
+      496.9642262666122,
+      443.97812353769933,
+      496.9642262666122,
+      475.39270979563395,
+      158.23959012653518,
+      475.39270979563395
+     ],
+     "confidence": 0.7694942584404578,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 8
+    },
+    {
+     "text": "Iaed thit with the tanch but reod he dutn",
+     "bbox": [
+      158.1741719867872,
+      477.66463775634764,
+      571.2334607995075,
+      477.66463775634764,
+      571.2334607995075,
+      509.21244557698566,
+      158.1741719867872,
+      509.21244557698566
+     ],
+     "confidence": 0.6538807844243398,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 9
+    },
+    {
+     "text": "Irequnst that the ameant be rtvered and ompemcation dantidere",
+     "bbox": [
+      156.7600271805473,
+      509.9252496083577,
+      664.0952750496242,
+      508.1442205429077,
+      664.2176555135976,
+      544.2808146794637,
+      156.88240764452064,
+      546.0618437449137
+     ],
+     "confidence": 0.7351117832738845,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "Yoire faichfully",
+     "bbox": [
+      154.75279484624448,
+      573.8336345036824,
+      284.1548138494077,
+      573.8336345036824,
+      284.1548138494077,
+      607.5257404963176,
+      154.75279484624448,
+      607.5257404963176
+     ],
+     "confidence": 0.756930636242032,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      777.7262585681417,
+      581.2669660568237,
+      873.9852870443593,
+      572.0798775990804,
+      876.815070276675,
+      602.8091281890869,
+      780.5560418004575,
+      611.9962166468302
+     ],
+     "confidence": 0.9947508201003075,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "Adut Rahan Shai",
+     "bbox": [
+      154.4618039753126,
+      607.2330552736918,
+      332.3004688180011,
+      609.159078057607,
+      331.87411262678063,
+      649.9605851173401,
+      154.0354477840921,
+      648.0345623334248
+     ],
+     "confidence": 0.6206971367200216,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 13
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "transaction_date": {
+   "value": "08/06/2025",
+   "value_en": null,
+   "normalized": "2025-06-08",
+   "confidence": 0.7634823182049919,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     157.75188711415166,
+     379.1899662017822,
+     506.9246951393459,
+     379.1899662017822,
+     506.9246951393459,
+     406.77565879821776,
+     157.75188711415166,
+     406.77565879821776
+    ],
+    "span": [
+     3,
+     13
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.795,
+  "s1_ingest": 17.634,
+  "s15_quality": 215.423,
+  "s15_quality:p1": 215.423,
+  "s4_ocr": 645.399,
+  "s4_ocr:p1": 645.399,
+  "s2b_lid": 0.986,
+  "s2b_lid:p1": 0.986,
+  "s3_classify": 132.801,
+  "s3_classify:p1": 132.801,
+  "s5_validators": 26.268,
+  "s5_slm": 0.015,
+  "e2e_total": 1031.494
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

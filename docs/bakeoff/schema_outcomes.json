@@ -1,0 +1,453 @@
+{
+  "Qwen/Qwen2.5-7B-Instruct": {
+    "bilingual_form_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:39:25.361716+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_deva_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:52:33.849283+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_deva_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T18:02:42.720593+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_deva_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T18:02:42.720593+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_en_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:39:25.361716+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_en_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:52:33.849283+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_en_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:39:25.361716+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_en_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:39:25.361716+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_mar_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T18:02:42.720593+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_mar_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T18:02:42.720593+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_mar_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:39:25.361716+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "email_printout_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T18:02:42.720593+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "email_printout_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:52:33.849283+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "email_printout_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:39:25.361716+00:00",
+      "repaired": false,
+      "valid": false
+    }
+  },
+  "Qwen/Qwen3-0.6B-Instruct": {},
+  "Qwen/Qwen3-1.7B-Instruct": {},
+  "Qwen/Qwen3-4B-Instruct-2507": {
+    "bilingual_form_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:47:59.510619+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "bilingual_form_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "bilingual_form_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:57:50.068425+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_deva_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:57:50.068425+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_deva_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:57:50.068425+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_deva_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_en_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:57:50.068425+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_form_en_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:57:50.068425+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_en_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_en_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_en_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_mar_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_mar_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "email_printout_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:57:50.068425+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "email_printout_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:32:45.272159+00:00",
+      "repaired": false,
+      "valid": false
+    }
+  },
+  "google/gemma-3-4b-it": {
+    "bilingual_form_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": true,
+      "valid": true
+    },
+    "bilingual_form_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "bilingual_form_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_deva_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_deva_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_deva_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_en_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_en_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_en_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:49:41.498477+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_en_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:59:31.241508+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_en_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:59:31.241508+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_mar_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_mar_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "complaint_letter_mar_v2_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:35:52.153414+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "email_printout_v0_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:59:31.241508+00:00",
+      "repaired": false,
+      "valid": false
+    },
+    "email_printout_v1_clean": {
+      "first_attempt_valid": false,
+      "from_cache": false,
+      "observed_at": "2026-08-07T17:59:31.241508+00:00",
+      "repaired": false,
+      "valid": false
+    }
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+    "bilingual_form_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "bilingual_form_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "bilingual_form_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_deva_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_deva_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_deva_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_en_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_en_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_form_en_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_en_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_en_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_en_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_mar_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_mar_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "complaint_letter_mar_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "email_printout_v0_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "email_printout_v1_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    },
+    "email_printout_v2_clean": {
+      "first_attempt_valid": null,
+      "from_cache": true,
+      "observed_at": "2026-08-07T17:35:52.583613+00:00",
+      "repaired": false,
+      "valid": true
+    }
+  }
+}

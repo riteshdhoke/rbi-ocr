@@ -1,0 +1,10 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- PAGE_CAP_EXCEEDED - ingestion: more pages than MAX_PAGES_PER_DOC -#}
+{% block subject %}Your document has more pages than we can process in one message{% endblock %}
+{% block defect %}The document you sent contains more than {{ max_pages }} pages, which is
+the most we can process as a single attachment.{% endblock %}
+{% block remedy %}Please send only the pages that relate to your complaint — usually the
+complaint letter, the bank's reply, and the statement or receipt showing the
+disputed entry. If the whole document is needed, please split it into
+attachments of fewer than {{ max_pages }} pages each, send them in separate
+messages, and quote the reference below in every one of them.{% endblock %}

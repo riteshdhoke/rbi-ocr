@@ -1,0 +1,392 @@
+{
+ "doc_id": "complaint_letter_en_v2_heavy",
+ "result_version": 2,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 0.9905146356340986,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED",
+   "BLUR_ABOVE_CEILING",
+   "SHADOW_DETECTED",
+   "NOISE_ABOVE_CEILING"
+  ]
+ },
+ "escalated": true,
+ "escalation_reason": "score=2.00/2.00 quality_low handwriting=0.57 escalate",
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "To",
+     "bbox": [
+      166.53645371307024,
+      151.78263432979583,
+      193.18229628692973,
+      151.78263432979583,
+      193.18229628692973,
+      181.66111567020417,
+      166.53645371307024,
+      181.66111567020417
+     ],
+     "confidence": 0.8939282894134521,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "The Banking Ombudman",
+     "bbox": [
+      160.14125189997932,
+      183.11897685527802,
+      377.6201255971735,
+      183.11897685527802,
+      377.6201255971735,
+      225.618523144722,
+      160.14125189997932,
+      225.618523144722
+     ],
+     "confidence": 0.8327268302440644,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 1
+    },
+    {
+     "text": "Reserve Bankof Inda",
+     "bbox": [
+      158.39992095123637,
+      224.42570027510325,
+      363.01057655161077,
+      224.42570027510325,
+      363.01057655161077,
+      266.77636938095094,
+      158.39992095123637,
+      266.77636938095094
+     ],
+     "confidence": 0.8531246577438555,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "Subjeet: Failire to credt the amount ofa failed ATM withdrawal within thepr",
+     "bbox": [
+      160.6366226456382,
+      283.9994558016459,
+      820.4145137179981,
+      283.9994558016459,
+      820.4145137179981,
+      323.7286691983541,
+      160.6366226456382,
+      323.7286691983541
+     ],
+     "confidence": 0.7535568908850352,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 3
+    },
+    {
+     "text": "Ihold a savings aecount with HDFC Bank Liited",
+     "bbox": [
+      160.2508768818595,
+      337.40006712277733,
+      588.2547772147439,
+      337.40006712277733,
+      588.2547772147439,
+      372.5124328772227,
+      160.2508768818595,
+      372.5124328772227
+     ],
+     "confidence": 0.8357639676994748,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 4
+    },
+    {
+     "text": "My account numberis5090085+027445",
+     "bbox": [
+      157.85218414393339,
+      370.88732592264813,
+      517.9829045209017,
+      370.88732592264813,
+      517.9829045209017,
+      414.3189240773519,
+      157.85218414393339,
+      414.3189240773519
+     ],
+     "confidence": 0.7447413034511335,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 5
+    },
+    {
+     "text": "On04/07/2026 an am0unt of Rr. 4.500 was",
+     "bbox": [
+      159.4817001061006,
+      411.51095131238304,
+      545.6505921970714,
+      413.7263969898224,
+      545.4259365255182,
+      451.8553687254588,
+      159.25704443454742,
+      449.6399230480194
+     ],
+     "confidence": 0.7780285385938791,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 6
+    },
+    {
+     "text": "debited withouty auherisation or consent.",
+     "bbox": [
+      162.1130461909554,
+      452.17820722262064,
+      544.6071519851685,
+      452.17820722262064,
+      544.6071519851685,
+      487.20098679860433,
+      162.1130461909554,
+      487.20098679860433
+     ],
+     "confidence": 0.8886436056800004,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 7
+    },
+    {
+     "text": "The trancaction reference is 336463152695.",
+     "bbox": [
+      163.92777001857758,
+      489.8230853398641,
+      548.2426706660877,
+      489.8230853398641,
+      548.2426706660877,
+      524.8498313268026,
+      163.92777001857758,
+      524.8498313268026
+     ],
+     "confidence": 0.8289602462734494,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "Irated this with the branch but reeived no resalution.",
+     "bbox": [
+      160.2156427556818,
+      527.3923828125,
+      631.8923117897727,
+      527.3923828125,
+      631.8923117897727,
+      562.5742838541667,
+      160.2156427556818,
+      562.5742838541667
+     ],
+     "confidence": 0.8786161586090371,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 9
+    },
+    {
+     "text": "RECEIVED",
+     "bbox": [
+      806.1393423513932,
+      521.02834482193,
+      917.5896238413724,
+      530.7319914182027,
+      914.1558073650706,
+      569.1337428092957,
+      802.7055258750916,
+      559.4300962130229
+     ],
+     "confidence": 0.9867142513394356,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "I requect that the amount be revericed and compensation tomsidered",
+     "bbox": [
+      161.21874807097694,
+      567.2730857531229,
+      734.2299560200084,
+      564.0786204338074,
+      734.4442992643876,
+      601.5120204607646,
+      161.43309131535617,
+      604.7064857800801
+     ],
+     "confidence": 0.8382561003619974,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "Yours Faith fully",
+     "bbox": [
+      162.53026980703527,
+      635.4461706797282,
+      309.82767087763006,
+      635.4461706797282,
+      309.82767087763006,
+      676.8163293202718,
+      162.53026980703527,
+      676.8163293202718
+     ],
+     "confidence": 0.7882427397896262,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": true,
+     "line_index": 12
+    },
+    {
+     "text": "Abdut Rahman Shach",
+     "bbox": [
+      158.42329024184832,
+      676.2112464904785,
+      359.3537122553045,
+      676.2112464904785,
+      359.3537122553045,
+      718.5158368428548,
+      158.42329024184832,
+      718.5158368428548
+     ],
+     "confidence": 0.7899327360921435,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "HDFC Bank",
+   "value_en": null,
+   "normalized": "HDFC Bank Limited",
+   "confidence": 0.8357639676994748,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     160.2508768818595,
+     337.40006712277733,
+     588.2547772147439,
+     337.40006712277733,
+     588.2547772147439,
+     372.5124328772227,
+     160.2508768818595,
+     372.5124328772227
+    ],
+    "span": [
+     29,
+     38
+    ],
+    "line_index": 4
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "04/07/2026",
+   "value_en": null,
+   "normalized": "2026-07-04",
+   "confidence": 0.7780285385938791,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     159.4817001061006,
+     411.51095131238304,
+     545.6505921970714,
+     413.7263969898224,
+     545.4259365255182,
+     451.8553687254588,
+     159.25704443454742,
+     449.6399230480194
+    ],
+    "span": [
+     2,
+     12
+    ],
+    "line_index": 6
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "336463152695",
+   "value_en": null,
+   "normalized": "336463152695",
+   "confidence": 0.8289602462734494,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     163.92777001857758,
+     489.8230853398641,
+     548.2426706660877,
+     489.8230853398641,
+     548.2426706660877,
+     524.8498313268026,
+     163.92777001857758,
+     524.8498313268026
+    ],
+    "span": [
+     29,
+     41
+    ],
+    "line_index": 8
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 1.93,
+  "s1_ingest": 24.153,
+  "s15_quality": 217.843,
+  "s15_quality:p1": 217.843,
+  "s4_ocr": 677.469,
+  "s4_ocr:p1": 677.469,
+  "s2b_lid": 1.021,
+  "s2b_lid:p1": 1.021,
+  "s3_classify": 177.656,
+  "s3_classify:p1": 177.656,
+  "s5_validators": 55.119,
+  "s5_slm": 0.013,
+  "assemble": 0.734,
+  "s4b_vlm": 0.1,
+  "s4b_vlm:p1": 0.1,
+  "e2e_total": 1171.4260000000002
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+  "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 2,
+ "document_class": "complaint_letter",
+ "summary_span_count": 0
+}

@@ -1,0 +1,44 @@
+{#-
+  Shared frame for every English bounce auto-reply (PRD P1-2, WS-G).
+
+  Structure, which every child template relies on:
+    line 1            the subject, from block `subject`
+    line 2            the literal separator `---`
+    everything after  the plain-text body
+
+  Blocks a child must define: `subject`, `defect`, `remedy`.
+  Context comes from app.replies.bounce.ReplyContext and nothing else; a
+  missing name raises (StrictUndefined) rather than rendering a gap.
+
+  Deployment note: the signature block at the foot is literal text. Review it,
+  and the Hindi one beside it, before this service sends mail to the public.
+-#}
+{% block subject %}{% endblock %}
+---
+Dear Sir or Madam,
+
+Thank you for writing to us. We were not able to read the document sent with
+your complaint, so the information in it has not been recorded yet.
+
+What we found
+{% block defect %}{% endblock %}
+
+What you can do
+{% block remedy %}{% endblock %}
+{%- if attachment_name %}
+
+Attachment received: {{ attachment_name }}
+{%- endif %}
+{%- if page_numbers %}
+Pages affected: {{ page_numbers | join(", ") }}
+{%- endif %}
+
+Reference: {{ reference_id }}
+
+Please reply to this message with the corrected document attached, and quote
+the reference above. Your complaint is still with us: it has not been closed,
+and no decision has been taken on it.
+
+Complaint Processing Desk
+This message was prepared automatically. If anything here is unclear, please
+reply and a person will read it.

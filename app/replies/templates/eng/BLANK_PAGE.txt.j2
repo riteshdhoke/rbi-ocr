@@ -1,0 +1,10 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- BLANK_PAGE - quality gate: no ink on the page -#}
+{% block subject %}The page you sent appears to be blank{% endblock %}
+{% block defect %}We found no writing or printing on the page that reached us. This usually
+means the blank side of a sheet was scanned, or that the scanner ran with no
+page on the glass.{% endblock %}
+{% block remedy %}Please check that the side with the writing is the side being scanned, then
+scan the document again at {{ recommended_dpi }} DPI and send it. If you
+wrote your complaint in pencil or in light ink, a darker pen will also
+help.{% endblock %}

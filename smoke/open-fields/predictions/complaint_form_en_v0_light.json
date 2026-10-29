@@ -1,0 +1,919 @@
+{
+ "doc_id": "complaint_form_en_v0_light",
+ "result_version": 1,
+ "is_final": true,
+ "schema_version": "1.0.0",
+ "quality": {
+  "verdict": "repair",
+  "score": 1.0,
+  "flags": [
+   "SKEW_DETECTED",
+   "SKEW_REPAIRED"
+  ]
+ },
+ "escalated": false,
+ "escalation_reason": null,
+ "shadow_sampled": false,
+ "pages": [
+  {
+   "page_no": 1,
+   "lines": [
+    {
+     "text": "COMPLAINT TO THE BANKING OMBUDSMAN",
+     "bbox": [
+      129.4859826998277,
+      116.14641374349593,
+      973.7508427880027,
+      118.96572643518446,
+      973.6046731255271,
+      164.6699261188507,
+      129.33981303735212,
+      161.85059456825255
+     ],
+     "confidence": 0.9984083876890295,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 0
+    },
+    {
+     "text": "Reserve Bank —Integrated Ombudsman Scheme, 2021 — Formi I.",
+     "bbox": [
+      127.2034105387601,
+      174.47574818134308,
+      908.1431803703308,
+      174.47574818134308,
+      908.1431803703308,
+      211.1367518186569,
+      127.2034105387601,
+      211.1367518186569
+     ],
+     "confidence": 0.9461023553178228,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 1
+    },
+    {
+     "text": "1. Name of complainant",
+     "bbox": [
+      123.50068568099628,
+      311.5890355825424,
+      423.2010373202237,
+      311.5890355825424,
+      423.2010373202237,
+      353.34535827636716,
+      123.50068568099628,
+      353.34535827636716
+     ],
+     "confidence": 0.9495395557446913,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 2
+    },
+    {
+     "text": "Rajesh Kumar Sharma",
+     "bbox": [
+      739.5980431383306,
+      315.7599663257599,
+      1016.6207068616693,
+      315.7599663257599,
+      1016.6207068616693,
+      351.64628367424007,
+      739.5980431383306,
+      351.64628367424007
+     ],
+     "confidence": 0.9885947139639604,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 3
+    },
+    {
+     "text": "2. Address",
+     "bbox": [
+      124.30587381666356,
+      387.02842693328853,
+      263.9528996619311,
+      391.48772926330565,
+      262.6664220744913,
+      433.5544884681701,
+      123.01939622922377,
+      429.09518613815305
+     ],
+     "confidence": 0.9895993530750274,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 4
+    },
+    {
+     "text": "Panivel, Maharashtra",
+     "bbox": [
+      738.0392691872337,
+      390.79523010253905,
+      1001.2460945302789,
+      390.79523010253905,
+      1001.2460945302789,
+      432.3390694618225,
+      738.0392691872337,
+      432.3390694618225
+     ],
+     "confidence": 0.9548948794603348,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 5
+    },
+    {
+     "text": "3. Mobile",
+     "bbox": [
+      124.58025568181817,
+      468.42031249999997,
+      247.9509943181818,
+      468.42031249999997,
+      247.9509943181818,
+      507.9703125,
+      124.58025568181817,
+      507.9703125
+     ],
+     "confidence": 0.9890369574228922,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 6
+    },
+    {
+     "text": "9877256158",
+     "bbox": [
+      737.600686376745,
+      471.91897969245906,
+      900.0853931687095,
+      471.91897969245906,
+      900.0853931687095,
+      506.94352030754084,
+      737.600686376745,
+      506.94352030754084
+     ],
+     "confidence": 0.9998999297618866,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 7
+    },
+    {
+     "text": "4. Name of bank",
+     "bbox": [
+      125.367172609676,
+      548.3244186878204,
+      331.8302705721422,
+      548.3244186878204,
+      331.8302705721422,
+      583.7943313121796,
+      125.367172609676,
+      583.7943313121796
+     ],
+     "confidence": 0.9459561904271444,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 8
+    },
+    {
+     "text": "State Bank of India",
+     "bbox": [
+      736.5024945085698,
+      546.4125024318695,
+      981.5321626229719,
+      549.8900099277496,
+      980.9982742396268,
+      589.1734958171844,
+      735.9686061252247,
+      585.6959883213043
+     ],
+     "confidence": 0.9953044872534903,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 9
+    },
+    {
+     "text": "5. IFSC code",
+     "bbox": [
+      125.63370154662566,
+      627.6967790603637,
+      280.7640164982189,
+      627.6967790603637,
+      280.7640164982189,
+      662.6219709396362,
+      125.63370154662566,
+      662.6219709396362
+     ],
+     "confidence": 0.9824163963397344,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 10
+    },
+    {
+     "text": "SBIN0955306",
+     "bbox": [
+      737.5289303606206,
+      627.5737435340881,
+      912.2523196393793,
+      627.5737435340881,
+      912.2523196393793,
+      662.7450064659118,
+      737.5289303606206,
+      662.7450064659118
+     ],
+     "confidence": 0.9971155740998008,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 11
+    },
+    {
+     "text": "6. Account number",
+     "bbox": [
+      125.27508756789294,
+      703.9584377288818,
+      358.53173984180796,
+      703.9584377288818,
+      358.53173984180796,
+      739.6165622711181,
+      125.27508756789294,
+      739.6165622711181
+     ],
+     "confidence": 0.9705074885312248,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 12
+    },
+    {
+     "text": "1134296538241788",
+     "bbox": [
+      739.6746714765375,
+      706.3944808006286,
+      985.0966353416443,
+      706.3944808006286,
+      985.0966353416443,
+      742.1242691993713,
+      739.6746714765375,
+      742.1242691993713
+     ],
+     "confidence": 0.9995388127863407,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 13
+    },
+    {
+     "text": "7. Amount in dispute (Rs.)",
+     "bbox": [
+      123.46050747958097,
+      781.2042297363281,
+      440.1744357022372,
+      781.2042297363281,
+      440.1744357022372,
+      823.0426452636718,
+      123.46050747958097,
+      823.0426452636718
+     ],
+     "confidence": 0.9546544620623956,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 14
+    },
+    {
+     "text": "250,000",
+     "bbox": [
+      735.6062825376337,
+      778.8653477668762,
+      846.4420129169117,
+      778.8653477668762,
+      846.4420129169117,
+      822.9096522331237,
+      735.6062825376337,
+      822.9096522331237
+     ],
+     "confidence": 0.9993613192013332,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 15
+    },
+    {
+     "text": "8. Date of transaction",
+     "bbox": [
+      127.28948822888461,
+      858.3912573814391,
+      390.7670227397572,
+      861.9337149620055,
+      390.2824481617321,
+      899.5659901618957,
+      126.80491365085948,
+      896.0235325813293
+     ],
+     "confidence": 0.9828664226965471,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 16
+    },
+    {
+     "text": "08/02/2026",
+     "bbox": [
+      736.2389461777427,
+      858.6118311882018,
+      889.3519629131664,
+      858.6118311882018,
+      889.3519629131664,
+      898.891293811798,
+      736.2389461777427,
+      898.891293811798
+     ],
+     "confidence": 0.9970231533050538,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 17
+    },
+    {
+     "text": "9. Transaction reference",
+     "bbox": [
+      126.53628075664693,
+      934.3427247047424,
+      420.74287700653076,
+      938.763856601715,
+      420.1607083407315,
+      979.215765094757,
+      125.9541120908477,
+      974.7946331977844
+     ],
+     "confidence": 0.998020405570666,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 18
+    },
+    {
+     "text": "245083831706",
+     "bbox": [
+      738.3703656196594,
+      937.4179339408873,
+      928.3441230167042,
+      937.4179339408873,
+      928.3441230167042,
+      978.2851910591124,
+      738.3703656196594,
+      978.2851910591124
+     ],
+     "confidence": 0.9998917778333029,
+     "script": "Latn",
+     "language": null,
+     "is_handwritten": false,
+     "line_index": 19
+    },
+    {
+     "text": "10. Previous complaint no.",
+     "bbox": [
+      129.4981358213858,
+      1013.6894746780395,
+      446.640819159421,
+      1017.250640296936,
+      446.22991999712855,
+      1055.4599981307983,
+      129.08721820332786,
+      1051.8988325119017
+     ],
+     "confidence": 0.9484762870348417,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 20
+    },
+    {
+     "text": "CMS/2026/627777",
+     "bbox": [
+      738.1463864499872,
+      1013.8171872138977,
+      972.11071582274,
+      1013.8171872138977,
+      972.11071582274,
+      1055.142187786102,
+      738.1463864499872,
+      1055.142187786102
+     ],
+     "confidence": 0.9615267157554627,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 21
+    },
+    {
+     "text": "11. Nature of complaint",
+     "bbox": [
+      130.79612057859248,
+      1129.8188682556151,
+      415.9055839668621,
+      1129.8188682556151,
+      415.9055839668621,
+      1171.4967567443846,
+      130.79612057859248,
+      1171.4967567443846
+     ],
+     "confidence": 0.9537005294924197,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 22
+    },
+    {
+     "text": "Unauthorised electronic transaction debited from my savings account",
+     "bbox": [
+      155.12057953531092,
+      1207.2839516639708,
+      1018.2666658488187,
+      1210.2737677574157,
+      1018.1315696456215,
+      1250.991662311554,
+      154.98552024364471,
+      1248.001846218109
+     ],
+     "confidence": 0.9830871046479068,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 23
+    },
+    {
+     "text": "Signature",
+     "bbox": [
+      126.99141838875684,
+      1566.7494787216185,
+      234.46795030073685,
+      1561.974402809143,
+      236.0599815412001,
+      1599.3913846969604,
+      128.5834496292201,
+      1604.166460609436
+     ],
+     "confidence": 0.9958894716368781,
+     "script": "Latn",
+     "language": "eng",
+     "is_handwritten": false,
+     "line_index": 24
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "bank_name": {
+   "value": "State Bank of India",
+   "value_en": null,
+   "normalized": "State Bank of India",
+   "confidence": 0.9953044872534903,
+   "source": "lookup_table",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     736.5024945085698,
+     546.4125024318695,
+     981.5321626229719,
+     549.8900099277496,
+     980.9982742396268,
+     589.1734958171844,
+     735.9686061252247,
+     585.6959883213043
+    ],
+    "span": [
+     0,
+     19
+    ],
+    "line_index": 9
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "ifsc_code": {
+   "value": "SBIN0955306",
+   "value_en": null,
+   "normalized": "SBIN0955306",
+   "confidence": 0.8974040166898207,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     737.5289303606206,
+     627.5737435340881,
+     912.2523196393793,
+     627.5737435340881,
+     912.2523196393793,
+     662.7450064659118,
+     737.5289303606206,
+     662.7450064659118
+    ],
+    "span": [
+     0,
+     11
+    ],
+    "line_index": 11
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "account_number": {
+   "value": "1134296538241788",
+   "value_en": null,
+   "normalized": "1134296538241788",
+   "confidence": 0.8995849315077067,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     739.6746714765375,
+     706.3944808006286,
+     985.0966353416443,
+     706.3944808006286,
+     985.0966353416443,
+     742.1242691993713,
+     739.6746714765375,
+     742.1242691993713
+    ],
+    "span": [
+     0,
+     16
+    ],
+    "line_index": 13
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount": {
+   "value": "250,000",
+   "value_en": null,
+   "normalized": "250000.00",
+   "confidence": 0.9993613192013332,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     735.6062825376337,
+     778.8653477668762,
+     846.4420129169117,
+     778.8653477668762,
+     846.4420129169117,
+     822.9096522331237,
+     735.6062825376337,
+     822.9096522331237
+    ],
+    "span": [
+     0,
+     7
+    ],
+    "line_index": 15
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_date": {
+   "value": "08/02/2026",
+   "value_en": null,
+   "normalized": "2026-02-08",
+   "confidence": 0.9970231533050538,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     736.2389461777427,
+     858.6118311882018,
+     889.3519629131664,
+     858.6118311882018,
+     889.3519629131664,
+     898.891293811798,
+     736.2389461777427,
+     898.891293811798
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 17
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "utr_rrn": {
+   "value": "245083831706",
+   "value_en": null,
+   "normalized": "245083831706",
+   "confidence": 0.9998917778333029,
+   "source": "regex_validator",
+   "validator_passed": true,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     738.3703656196594,
+     937.4179339408873,
+     928.3441230167042,
+     937.4179339408873,
+     928.3441230167042,
+     978.2851910591124,
+     738.3703656196594,
+     978.2851910591124
+    ],
+    "span": [
+     0,
+     12
+    ],
+    "line_index": 19
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "name_of_complainant": {
+   "value": "Rajesh Kumar Sharma",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     733.3579884811218,
+     296.6074362378919,
+     1010.3198965564636,
+     302.408961178792,
+     1009.5683502304844,
+     338.2874080648508,
+     732.6064421551425,
+     332.4858831239506
+    ],
+    "span": [
+     0,
+     19
+    ],
+    "line_index": 3
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "address": {
+   "value": "Panivel, Maharashtra",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     730.2281363948397,
+     371.5935990427684,
+     993.3772361315537,
+     377.10578689526784,
+     992.5072076041248,
+     418.6405150040614,
+     729.3581078674108,
+     413.12832715156196
+    ],
+    "span": [
+     0,
+     20
+    ],
+    "line_index": 5
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "mobile": {
+   "value": "9877256158",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     728.0907221463846,
+     452.69037186845,
+     890.5397933570647,
+     456.09319482271144,
+     889.8062947212819,
+     491.11005397725035,
+     727.3572235106018,
+     487.70723102298894
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 7
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "name_of_bank": {
+   "value": "State Bank of India",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     725.4326964980347,
+     527.1445581520909,
+     970.33579813494,
+     535.7528171666421,
+     968.9793355861614,
+     575.0165066237608,
+     724.0762339492561,
+     566.4082476092095
+    ],
+    "span": [
+     0,
+     19
+    ],
+    "line_index": 9
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "amount_in_dispute_rs": {
+   "value": "250,000",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     719.668555991107,
+     759.5276538893966,
+     830.4799782631353,
+     761.848822293078,
+     829.5575839455328,
+     805.8834671155171,
+     718.7461616735045,
+     803.5622987118356
+    ],
+    "span": [
+     0,
+     7
+    ],
+    "line_index": 15
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "date_of_transaction": {
+   "value": "08/02/2026",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     718.6309965375943,
+     839.269897096681,
+     871.7104330582317,
+     842.4764541827617,
+     870.8668836392924,
+     882.7470828545803,
+     717.787447118655,
+     879.5405257684996
+    ],
+    "span": [
+     0,
+     10
+    ],
+    "line_index": 17
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "transaction_reference": {
+   "value": "245083831706",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     719.1115580307878,
+     918.1033534496501,
+     909.0436510434897,
+     922.0818636438779,
+     908.1877917854387,
+     962.9401578972793,
+     718.2556987727368,
+     958.9616477030513
+    ],
+    "span": [
+     0,
+     12
+    ],
+    "line_index": 19
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "previous_complaint_no": {
+   "value": "CMS/2026/627777",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     717.2876427426304,
+     994.4811604380918,
+     951.200659871655,
+     999.3809396615441,
+     950.335214357992,
+     1040.6968769782209,
+     716.4221972289673,
+     1035.7970977547686
+    ],
+    "span": [
+     0,
+     15
+    ],
+    "line_index": 21
+   },
+   "mt_engine": null,
+   "flags": []
+  },
+  "nature_of_complaint": {
+   "value": "Unauthorised electronic transaction debited from my savings account",
+   "value_en": null,
+   "normalized": null,
+   "confidence": 0.85,
+   "source": "ocr_label",
+   "validator_passed": null,
+   "evidence": {
+    "page_no": 1,
+    "bbox": [
+     130.3380408074141,
+     1175.6955231784127,
+     993.2322109365679,
+     1196.7610513160348,
+     992.2444131176817,
+     1237.4671865216158,
+     129.35027989196342,
+     1216.4016591570103
+    ],
+    "span": [
+     0,
+     67
+    ],
+    "line_index": 23
+   },
+   "mt_engine": null,
+   "flags": []
+  }
+ },
+ "timings_ms": {
+  "s0_read": 0.189,
+  "s1_ingest": 33.944,
+  "s15_quality": 148.94,
+  "s15_quality:p1": 148.94,
+  "s4_ocr": 789.525,
+  "s4_ocr:p1": 789.525,
+  "s2b_lid": 1.116,
+  "s2b_lid:p1": 1.116,
+  "s3_classify": 547.669,
+  "s3_classify:p1": 547.669,
+  "s5_validators": 25.462,
+  "s5_slm": 0.017,
+  "e2e_total": 1548.2910000000002
+ },
+ "warnings": [
+  "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED"
+ ],
+ "needs_review": false,
+ "tier2_applied": false,
+ "result_versions": 1,
+ "document_class": "complaint_form",
+ "summary_span_count": 0
+}

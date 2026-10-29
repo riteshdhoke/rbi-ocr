@@ -1,0 +1,9 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- RESOLUTION_BELOW_FLOOR - quality gate: effective resolution below the readability floor -#}
+{% block subject %}The pages you sent are too small to read{% endblock %}
+{% block defect %}The pages reached us at a resolution too low for the writing to be read
+reliably. Letters run into one another, and the digits of an account number
+or an amount cannot be told apart.{% endblock %}
+{% block remedy %}Please rescan the document at {{ recommended_dpi }} DPI and send it again.
+If you are photographing the page instead, hold the camera so that the page
+fills the whole frame, and take the picture in good light.{% endblock %}

@@ -1,0 +1,1701 @@
+{
+  "doc_id": "bank_statement_v2_photo",
+  "doc_type": "bank_statement",
+  "variant": 2,
+  "synthetic": true,
+  "document_class": "supporting_doc",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+4.6deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "HDFC Bank Limited",
+      "bbox": [
+        16.5,
+        93.2,
+        216.9,
+        77.3,
+        219.0,
+        104.1,
+        18.7,
+        120.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "Statement of Account",
+      "bbox": [
+        19.0,
+        124.1,
+        182.0,
+        111.1,
+        183.6,
+        131.7,
+        20.6,
+        144.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "A/C 3614041020762195    IFSC HDFC0226865",
+      "bbox": [
+        21.0,
+        150.0,
+        362.1,
+        122.9,
+        363.6,
+        141.1,
+        22.5,
+        168.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Date",
+      "bbox": [
+        30.4,
+        189.1,
+        63.9,
+        186.4,
+        65.4,
+        204.6,
+        31.8,
+        207.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Particulars",
+      "bbox": [
+        191.0,
+        176.3,
+        268.0,
+        170.2,
+        269.5,
+        188.4,
+        192.5,
+        194.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Ref",
+      "bbox": [
+        500.1,
+        151.7,
+        523.4,
+        149.9,
+        524.8,
+        168.1,
+        501.5,
+        169.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Debit",
+      "bbox": [
+        660.7,
+        138.9,
+        699.0,
+        135.9,
+        700.5,
+        154.1,
+        662.2,
+        157.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "Balance",
+      "bbox": [
+        809.1,
+        127.1,
+        864.9,
+        122.7,
+        866.3,
+        140.9,
+        810.5,
+        145.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "14/01/2026",
+      "bbox": [
+        33.6,
+        229.9,
+        111.4,
+        223.7,
+        112.8,
+        240.3,
+        34.9,
+        246.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "ATM WDL 1821996623",
+      "bbox": [
+        194.3,
+        217.1,
+        334.4,
+        206.0,
+        335.7,
+        222.6,
+        195.6,
+        233.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "627596507112",
+      "bbox": [
+        503.3,
+        192.5,
+        596.7,
+        185.1,
+        598.1,
+        201.7,
+        504.6,
+        209.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "3,816.00",
+      "bbox": [
+        664.0,
+        179.7,
+        726.3,
+        174.8,
+        727.6,
+        191.4,
+        665.3,
+        196.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "183,724.00",
+      "bbox": [
+        812.3,
+        167.9,
+        890.2,
+        161.7,
+        891.5,
+        178.3,
+        813.7,
+        184.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "26/01/2026",
+      "bbox": [
+        35.6,
+        254.6,
+        113.4,
+        248.4,
+        114.7,
+        265.1,
+        36.9,
+        271.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "UPI/P2M/8615645324",
+      "bbox": [
+        196.3,
+        241.8,
+        336.4,
+        230.7,
+        337.7,
+        247.3,
+        197.6,
+        258.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "208687190875",
+      "bbox": [
+        505.3,
+        217.2,
+        598.7,
+        209.8,
+        600.0,
+        226.4,
+        506.6,
+        233.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "6,327.00",
+      "bbox": [
+        666.0,
+        204.4,
+        728.3,
+        199.5,
+        729.6,
+        216.1,
+        667.3,
+        221.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "177,397.00",
+      "bbox": [
+        814.3,
+        192.6,
+        892.1,
+        186.4,
+        893.5,
+        203.1,
+        815.6,
+        209.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "28/01/2026",
+      "bbox": [
+        37.5,
+        279.3,
+        115.4,
+        273.2,
+        116.7,
+        289.7,
+        38.9,
+        295.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "IMPS/3612279308",
+      "bbox": [
+        198.2,
+        266.5,
+        315.0,
+        257.2,
+        316.3,
+        273.9,
+        199.6,
+        283.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "207449465630",
+      "bbox": [
+        507.2,
+        241.9,
+        600.7,
+        234.5,
+        602.0,
+        251.2,
+        508.6,
+        258.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "3,762.00",
+      "bbox": [
+        667.9,
+        229.2,
+        730.2,
+        224.2,
+        731.5,
+        240.8,
+        669.3,
+        245.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "173,635.00",
+      "bbox": [
+        816.3,
+        217.4,
+        894.1,
+        211.2,
+        895.4,
+        227.8,
+        817.6,
+        234.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "25/04/2026",
+      "bbox": [
+        39.5,
+        304.0,
+        117.4,
+        297.8,
+        118.7,
+        314.5,
+        40.8,
+        320.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "UPI/P2M/2624499112",
+      "bbox": [
+        200.2,
+        291.3,
+        340.3,
+        280.1,
+        341.6,
+        296.7,
+        201.5,
+        307.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "151618899511",
+      "bbox": [
+        509.2,
+        266.7,
+        602.6,
+        259.2,
+        603.9,
+        275.8,
+        510.6,
+        283.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,634.00",
+      "bbox": [
+        669.9,
+        253.9,
+        732.2,
+        248.9,
+        733.5,
+        265.5,
+        671.2,
+        270.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "169,001.00",
+      "bbox": [
+        818.2,
+        242.1,
+        896.1,
+        235.9,
+        897.4,
+        252.5,
+        819.6,
+        258.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12/10/2026",
+      "bbox": [
+        41.5,
+        328.8,
+        119.3,
+        322.6,
+        120.7,
+        339.2,
+        42.8,
+        345.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "IMPS/2875053962",
+      "bbox": [
+        202.2,
+        316.0,
+        318.9,
+        306.7,
+        320.2,
+        323.3,
+        203.5,
+        332.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "491882167677",
+      "bbox": [
+        511.2,
+        291.4,
+        604.6,
+        284.0,
+        605.9,
+        300.6,
+        512.5,
+        308.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "7,067.00",
+      "bbox": [
+        671.9,
+        278.6,
+        734.1,
+        273.7,
+        735.4,
+        290.3,
+        673.2,
+        295.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "161,934.00",
+      "bbox": [
+        820.2,
+        266.8,
+        898.1,
+        260.6,
+        899.4,
+        277.2,
+        821.6,
+        283.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "19/03/2026",
+      "bbox": [
+        43.5,
+        353.5,
+        121.3,
+        347.3,
+        122.6,
+        363.9,
+        44.8,
+        370.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "NEFT/3227776786",
+      "bbox": [
+        204.1,
+        340.7,
+        320.9,
+        331.4,
+        322.2,
+        348.0,
+        205.5,
+        357.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "949635279579",
+      "bbox": [
+        513.2,
+        316.1,
+        606.5,
+        308.7,
+        607.8,
+        325.3,
+        514.5,
+        332.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,030.00",
+      "bbox": [
+        673.8,
+        303.3,
+        736.1,
+        298.3,
+        737.4,
+        315.0,
+        675.2,
+        319.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "157,904.00",
+      "bbox": [
+        822.2,
+        291.5,
+        900.0,
+        285.3,
+        901.4,
+        301.9,
+        823.5,
+        308.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "20/01/2026",
+      "bbox": [
+        45.4,
+        378.2,
+        123.3,
+        372.0,
+        124.6,
+        388.6,
+        46.7,
+        394.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "ATM WDL 6455739463",
+      "bbox": [
+        206.1,
+        365.4,
+        346.2,
+        354.3,
+        347.5,
+        370.9,
+        207.5,
+        382.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "490701653183",
+      "bbox": [
+        515.1,
+        340.8,
+        608.5,
+        333.4,
+        609.8,
+        350.0,
+        516.5,
+        357.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1,235.00",
+      "bbox": [
+        675.8,
+        328.0,
+        738.1,
+        323.1,
+        739.4,
+        339.7,
+        677.2,
+        344.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "156,669.00",
+      "bbox": [
+        824.2,
+        316.3,
+        902.0,
+        310.1,
+        903.3,
+        326.7,
+        825.5,
+        332.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12/05/2026",
+      "bbox": [
+        47.4,
+        402.9,
+        125.2,
+        396.7,
+        126.5,
+        413.4,
+        48.7,
+        419.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "POS PUR 2362401449",
+      "bbox": [
+        208.1,
+        390.2,
+        348.2,
+        379.0,
+        349.5,
+        395.6,
+        209.4,
+        406.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "972875808657",
+      "bbox": [
+        517.1,
+        365.6,
+        610.5,
+        358.1,
+        611.8,
+        374.7,
+        518.4,
+        382.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "45,000.00",
+      "bbox": [
+        677.8,
+        352.8,
+        747.8,
+        347.2,
+        749.1,
+        363.8,
+        679.1,
+        369.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "111,669.00",
+      "bbox": [
+        826.1,
+        340.9,
+        904.0,
+        334.8,
+        905.3,
+        351.4,
+        827.5,
+        357.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "01/04/2026",
+      "bbox": [
+        49.4,
+        427.7,
+        127.2,
+        421.5,
+        128.5,
+        438.1,
+        50.7,
+        444.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "IMPS/7251318142",
+      "bbox": [
+        210.1,
+        414.9,
+        326.8,
+        405.6,
+        328.1,
+        422.2,
+        211.4,
+        431.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "788468997758",
+      "bbox": [
+        519.1,
+        390.3,
+        612.4,
+        382.9,
+        613.8,
+        399.5,
+        520.4,
+        406.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "7,016.00",
+      "bbox": [
+        679.8,
+        377.5,
+        742.0,
+        372.6,
+        743.3,
+        389.2,
+        681.1,
+        394.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "104,653.00",
+      "bbox": [
+        828.1,
+        365.7,
+        905.9,
+        359.5,
+        907.2,
+        376.1,
+        829.4,
+        382.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "26/04/2026",
+      "bbox": [
+        51.3,
+        452.4,
+        129.1,
+        446.2,
+        130.4,
+        462.8,
+        52.6,
+        469.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "IMPS/9967096082",
+      "bbox": [
+        212.0,
+        439.6,
+        328.7,
+        430.3,
+        330.1,
+        446.9,
+        213.3,
+        456.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "574911092204",
+      "bbox": [
+        521.0,
+        415.0,
+        614.4,
+        407.6,
+        615.7,
+        424.2,
+        522.4,
+        431.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9,702.00",
+      "bbox": [
+        681.7,
+        402.2,
+        744.0,
+        397.2,
+        745.3,
+        413.9,
+        683.1,
+        418.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "94,951.00",
+      "bbox": [
+        830.1,
+        390.4,
+        900.1,
+        384.8,
+        901.4,
+        401.4,
+        831.4,
+        407.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "03/03/2026",
+      "bbox": [
+        53.3,
+        477.1,
+        131.1,
+        470.9,
+        132.4,
+        487.5,
+        54.6,
+        493.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "ATM WDL 7017193648",
+      "bbox": [
+        214.0,
+        464.3,
+        354.1,
+        453.2,
+        355.4,
+        469.8,
+        215.3,
+        480.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "228140361510",
+      "bbox": [
+        523.0,
+        439.7,
+        616.4,
+        432.3,
+        617.7,
+        448.9,
+        524.3,
+        456.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "2,295.00",
+      "bbox": [
+        683.7,
+        426.9,
+        745.9,
+        422.0,
+        747.3,
+        438.6,
+        685.0,
+        443.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "92,656.00",
+      "bbox": [
+        832.0,
+        415.2,
+        902.0,
+        409.6,
+        903.4,
+        426.2,
+        833.3,
+        431.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "09/03/2026",
+      "bbox": [
+        55.2,
+        501.8,
+        133.1,
+        495.6,
+        134.4,
+        512.2,
+        56.5,
+        518.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "POS PUR 6517376867",
+      "bbox": [
+        215.9,
+        489.1,
+        356.1,
+        477.9,
+        357.4,
+        494.5,
+        217.2,
+        505.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "353164241109",
+      "bbox": [
+        525.0,
+        464.4,
+        618.4,
+        457.0,
+        619.7,
+        473.6,
+        526.3,
+        481.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "3,589.00",
+      "bbox": [
+        685.7,
+        451.7,
+        747.9,
+        446.7,
+        749.3,
+        463.3,
+        687.0,
+        468.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "89,067.00",
+      "bbox": [
+        834.0,
+        439.8,
+        904.0,
+        434.3,
+        905.4,
+        450.9,
+        835.3,
+        456.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "15/03/2026",
+      "bbox": [
+        57.2,
+        526.6,
+        135.0,
+        520.4,
+        136.4,
+        537.0,
+        58.5,
+        543.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "ATM WDL 2830047481",
+      "bbox": [
+        217.9,
+        513.8,
+        358.0,
+        502.6,
+        359.4,
+        519.2,
+        219.2,
+        530.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "495394169314",
+      "bbox": [
+        526.9,
+        489.2,
+        620.3,
+        481.7,
+        621.7,
+        498.4,
+        528.2,
+        505.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1,731.00",
+      "bbox": [
+        687.6,
+        476.4,
+        749.9,
+        471.4,
+        751.2,
+        488.1,
+        688.9,
+        493.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "87,336.00",
+      "bbox": [
+        835.9,
+        464.6,
+        906.0,
+        459.0,
+        907.3,
+        475.6,
+        837.2,
+        481.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "12/10/2026",
+      "bbox": [
+        59.2,
+        551.3,
+        137.0,
+        545.1,
+        138.3,
+        561.7,
+        60.5,
+        567.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "UPI/P2M/8843590231",
+      "bbox": [
+        219.9,
+        538.5,
+        360.0,
+        527.3,
+        361.3,
+        543.9,
+        221.2,
+        555.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "513367353000",
+      "bbox": [
+        528.9,
+        513.9,
+        622.3,
+        506.5,
+        623.6,
+        523.1,
+        530.2,
+        530.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "6,361.00",
+      "bbox": [
+        689.6,
+        501.1,
+        751.9,
+        496.1,
+        753.2,
+        512.7,
+        690.9,
+        517.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "80,975.00",
+      "bbox": [
+        837.9,
+        489.3,
+        908.0,
+        483.7,
+        909.3,
+        500.3,
+        839.2,
+        505.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "08/08/2026",
+      "bbox": [
+        61.1,
+        576.0,
+        139.0,
+        569.8,
+        140.3,
+        586.4,
+        62.5,
+        592.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "NEFT/7309530165",
+      "bbox": [
+        221.8,
+        563.2,
+        338.6,
+        553.9,
+        339.9,
+        570.5,
+        223.1,
+        579.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "975682003721",
+      "bbox": [
+        530.8,
+        538.6,
+        624.3,
+        531.2,
+        625.6,
+        547.8,
+        532.2,
+        555.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "4,767.00",
+      "bbox": [
+        691.5,
+        525.8,
+        753.8,
+        520.9,
+        755.2,
+        537.5,
+        692.9,
+        542.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "76,208.00",
+      "bbox": [
+        839.9,
+        514.0,
+        909.9,
+        508.5,
+        911.3,
+        525.1,
+        841.2,
+        530.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "25/01/2026",
+      "bbox": [
+        63.1,
+        600.7,
+        140.9,
+        594.5,
+        142.3,
+        611.1,
+        64.4,
+        617.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "ATM WDL 3739369679",
+      "bbox": [
+        223.8,
+        587.9,
+        363.9,
+        576.8,
+        365.2,
+        593.4,
+        225.1,
+        604.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "618524211820",
+      "bbox": [
+        532.8,
+        563.3,
+        626.3,
+        555.9,
+        627.6,
+        572.5,
+        534.1,
+        579.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "7,970.00",
+      "bbox": [
+        693.5,
+        550.6,
+        755.8,
+        545.6,
+        757.1,
+        562.2,
+        694.8,
+        567.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "68,238.00",
+      "bbox": [
+        841.8,
+        538.7,
+        911.9,
+        533.1,
+        913.2,
+        549.8,
+        843.2,
+        555.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "13/09/2026",
+      "bbox": [
+        65.1,
+        625.5,
+        142.9,
+        619.3,
+        144.2,
+        635.9,
+        66.4,
+        642.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "IMPS/2435365694",
+      "bbox": [
+        225.8,
+        612.6,
+        342.6,
+        603.4,
+        343.9,
+        620.0,
+        227.1,
+        629.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "871123150394",
+      "bbox": [
+        534.8,
+        588.1,
+        628.2,
+        580.6,
+        629.5,
+        597.2,
+        536.1,
+        604.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "5,852.00",
+      "bbox": [
+        695.5,
+        575.3,
+        757.8,
+        570.3,
+        759.1,
+        587.0,
+        696.8,
+        591.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "62,386.00",
+      "bbox": [
+        843.8,
+        563.5,
+        913.9,
+        557.9,
+        915.2,
+        574.5,
+        845.1,
+        580.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "09/03/2026",
+      "bbox": [
+        67.0,
+        650.2,
+        144.9,
+        644.0,
+        146.2,
+        660.6,
+        68.4,
+        666.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "NEFT/6325438272",
+      "bbox": [
+        227.7,
+        637.4,
+        344.5,
+        628.1,
+        345.8,
+        644.7,
+        229.1,
+        654.0
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "799748601200",
+      "bbox": [
+        536.8,
+        612.8,
+        630.2,
+        605.4,
+        631.5,
+        622.0,
+        538.1,
+        629.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "6,386.00",
+      "bbox": [
+        697.4,
+        600.0,
+        759.7,
+        595.0,
+        761.0,
+        611.6,
+        698.8,
+        616.6
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "56,000.00",
+      "bbox": [
+        845.8,
+        588.2,
+        915.9,
+        582.6,
+        917.2,
+        599.2,
+        847.1,
+        604.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "HDFC Bank Limited",
+    "account_number": "3614041020762195",
+    "ifsc_code": "HDFC0226865"
+  },
+  "fields_bilingual": {
+    "bank_name": {
+      "value": "HDFC Bank Limited",
+      "value_en": "HDFC Bank Limited",
+      "script": "Latn"
+    }
+  }
+}

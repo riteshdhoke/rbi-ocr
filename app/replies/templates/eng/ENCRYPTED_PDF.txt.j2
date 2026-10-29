@@ -1,0 +1,10 @@
+{% extends "eng/_layout.txt.j2" %}
+{#- ENCRYPTED_PDF - ingestion: password-protected PDF; we never guess a password -#}
+{% block subject %}Your PDF is password protected, so we could not read it{% endblock %}
+{% block defect %}The PDF attached to your message is protected by a password. We do not
+open protected files and we never try to guess a password, so none of the
+pages could be read.{% endblock %}
+{% block remedy %}Please remove the password and send the unprotected copy. In most PDF
+readers this is done from the File menu, with "Save a copy" or "Print to
+PDF", choosing not to set a password on the new file. Please do not send us
+the password itself — we will not use it.{% endblock %}

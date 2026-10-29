@@ -1,0 +1,2978 @@
+{
+  "generated_at": "2026-08-07T21:13:23.792688+00:00",
+  "resolves": "OPEN-QUESTIONS Q3",
+  "corpus": {
+    "path": "corpus/",
+    "pages": 295,
+    "seed": 1729,
+    "generator_version": "1.2.0",
+    "profiles": [
+      "clean",
+      "light",
+      "scan",
+      "heavy",
+      "photo",
+      "bounce"
+    ]
+  },
+  "thresholds": {
+    "min_page_dimension_px": 200,
+    "blank_ink_ratio": 0.0015,
+    "blank_glyph_count": 8,
+    "coverage_floor": 0.004,
+    "skew_unrecoverable_deg": 25.0,
+    "effective_dpi_floor": 30.0,
+    "effective_dpi_target": 140.0,
+    "effective_dpi_flag": 90.0,
+    "laplacian_floor": 9500.0,
+    "laplacian_target": 26000.0,
+    "laplacian_flag": 40000.0,
+    "contrast_floor": 17.0,
+    "contrast_target": 70.0,
+    "coverage_good_low": 0.012,
+    "coverage_good_high": 0.45,
+    "coverage_ceiling": 0.8,
+    "occlusion_flag": 0.05,
+    "occlusion_ceiling": 0.35,
+    "noise_ceiling": 4.0,
+    "shadow_ceiling": 0.02,
+    "exposure_low": 70.0,
+    "exposure_high": 250.0,
+    "skew_repair_deg": 0.75,
+    "skew_search_deg": 20.0,
+    "invert_background_level": 110.0,
+    "duplicate_hamming_max": 6,
+    "weight_resolution": 0.2,
+    "weight_sharpness": 0.45,
+    "weight_contrast": 0.25,
+    "weight_coverage": 0.06,
+    "weight_occlusion": 0.04,
+    "subscore_floor": 0.05,
+    "bounce_threshold": 0.35
+  },
+  "targets": {
+    "bounce_recall_min": 0.8,
+    "clean_expectation_false_bounce_max": 0.0,
+    "note": "a few heavy/photo pages may bounce; they are borderline by design (TEST-DATA-SPEC sec. 3)"
+  },
+  "confusion_matrix": {
+    "rows": "quality_expectation",
+    "columns": "quality_verdict",
+    "counts": {
+      "clean": {
+        "accept": 67,
+        "repair": 28
+      },
+      "degraded": {
+        "repair": 125,
+        "accept": 25
+      },
+      "bounce": {
+        "bounce": 50
+      }
+    }
+  },
+  "by_profile": {
+    "clean": {
+      "accept": 45
+    },
+    "light": {
+      "repair": 28,
+      "accept": 22
+    },
+    "scan": {
+      "repair": 35,
+      "accept": 15
+    },
+    "heavy": {
+      "repair": 42,
+      "accept": 8
+    },
+    "photo": {
+      "repair": 48,
+      "accept": 2
+    },
+    "bounce": {
+      "bounce": 50
+    }
+  },
+  "score_distribution": {
+    "clean": {
+      "min": 1.0,
+      "p10": 1.0,
+      "median": 1.0,
+      "max": 1.0
+    },
+    "light": {
+      "min": 1.0,
+      "p10": 1.0,
+      "median": 1.0,
+      "max": 1.0
+    },
+    "scan": {
+      "min": 0.9789,
+      "p10": 1.0,
+      "median": 1.0,
+      "max": 1.0
+    },
+    "heavy": {
+      "min": 0.4214,
+      "p10": 0.9824,
+      "median": 1.0,
+      "max": 1.0
+    },
+    "photo": {
+      "min": 0.4146,
+      "p10": 0.4736,
+      "median": 0.5988,
+      "max": 0.7932
+    },
+    "bounce": {
+      "min": 0.0818,
+      "p10": 0.104,
+      "median": 0.1539,
+      "max": 0.295
+    }
+  },
+  "metrics": {
+    "bounce_recall": 1.0,
+    "clean_expectation_false_bounce": 0.0,
+    "degraded_expectation_false_bounce": 0.0,
+    "overall_bounce_rate": 0.1695,
+    "deviations": []
+  },
+  "bounce_reasons": {
+    "QUALITY_SCORE_BELOW_THRESHOLD": 50
+  },
+  "flags_by_profile": {
+    "clean": {},
+    "light": {
+      "SKEW_DETECTED": 28,
+      "SKEW_REPAIRED": 28
+    },
+    "scan": {
+      "SKEW_DETECTED": 35,
+      "SKEW_REPAIRED": 35
+    },
+    "heavy": {
+      "SKEW_DETECTED": 42,
+      "SKEW_REPAIRED": 42,
+      "BLUR_ABOVE_CEILING": 50,
+      "SHADOW_DETECTED": 50,
+      "NOISE_ABOVE_CEILING": 50,
+      "RESOLUTION_BELOW_FLOOR": 4,
+      "OCCLUSION_DETECTED": 4
+    },
+    "photo": {
+      "SKEW_DETECTED": 48,
+      "SKEW_REPAIRED": 48,
+      "BLUR_ABOVE_CEILING": 50,
+      "SHADOW_DETECTED": 50,
+      "RESOLUTION_BELOW_FLOOR": 4
+    },
+    "bounce": {
+      "SKEW_DETECTED": 47,
+      "SKEW_REPAIRED": 47,
+      "RESOLUTION_BELOW_FLOOR": 36,
+      "BLUR_ABOVE_CEILING": 50,
+      "SHADOW_DETECTED": 50
+    }
+  },
+  "adversarial": {
+    "blank_page.png": {
+      "verdict": "bounce",
+      "bounce_reason": "BLANK_PAGE",
+      "score": 0.0564,
+      "repairs": [],
+      "flags": [
+        "BLANK_PAGE"
+      ]
+    },
+    "inverted.png": {
+      "verdict": "repair",
+      "bounce_reason": null,
+      "score": 0.8355,
+      "repairs": [
+        "auto_invert"
+      ],
+      "flags": [
+        "INVERTED_REPAIRED"
+      ]
+    },
+    "tiny_lowres.png": {
+      "verdict": "bounce",
+      "bounce_reason": "RESOLUTION_BELOW_FLOOR",
+      "score": 0.0564,
+      "repairs": [],
+      "flags": [
+        "RESOLUTION_BELOW_FLOOR"
+      ]
+    }
+  },
+  "runtime": {
+    "seconds_total": 62.2,
+    "ms_per_page": 210.8
+  },
+  "pages": [
+    {
+      "doc_id": "complaint_form_en_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.581,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1347,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6783,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1404,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6439,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1422,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9789,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 0.9976,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5413,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.139,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_en_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.547,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_en_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1533,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6091,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1421,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5988,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1158,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5522,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1307,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6129,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1539,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5854,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_form_deva_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.134,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9783,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4816,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1392,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9914,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4813,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.104,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9905,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4845,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.104,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9883,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4912,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1069,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9849,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4736,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_en_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.0917,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.7821,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2511,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.7524,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2477,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.793,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2508,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.7463,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2479,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.7932,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "complaint_letter_mar_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2505,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6633,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1404,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6667,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1484,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6808,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1363,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 0.648,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1387,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bilingual_form_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6736,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bilingual_form_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1354,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bank_statement_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9893,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4368,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2059,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bank_statement_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4674,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2117,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bank_statement_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bank_statement_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9824,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4397,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2032,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bank_statement_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bank_statement_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.9833,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4146,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1967,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "bank_statement_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4503,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "bank_statement_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2107,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6207,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2703,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4214,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5306,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1566,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6951,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2569,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5382,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2334,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "receipt_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6322,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "receipt_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1965,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5267,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.104,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.495,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.0986,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.521,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.0818,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.496,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.0917,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "email_printout_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4782,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "email_printout_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.0818,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v0_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6762,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1552,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v1_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6163,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1839,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v2_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6487,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1441,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v3_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6544,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1686,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v4_clean",
+      "profile": "clean",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "cheque_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6088,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "cheque_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.1879,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v0_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6149,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v0_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v0_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "photo_evidence_v0_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 0.4341,
+      "repairs": []
+    },
+    {
+      "doc_id": "photo_evidence_v0_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2542,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v1_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.5038,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v1_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "photo_evidence_v1_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v1_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.4514,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v1_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.295,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v2_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.573,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v2_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v2_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v2_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v2_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.175,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v3_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 0.5662,
+      "repairs": []
+    },
+    {
+      "doc_id": "photo_evidence_v3_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "photo_evidence_v3_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "accept",
+      "score": 1.0,
+      "repairs": []
+    },
+    {
+      "doc_id": "photo_evidence_v3_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.45,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v3_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.2879,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v4_photo",
+      "profile": "photo",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 0.6277,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v4_light",
+      "profile": "light",
+      "expect": "clean",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v4_scan",
+      "profile": "scan",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v4_heavy",
+      "profile": "heavy",
+      "expect": "degraded",
+      "verdict": "repair",
+      "score": 1.0,
+      "repairs": [
+        "deskew"
+      ]
+    },
+    {
+      "doc_id": "photo_evidence_v4_bounce",
+      "profile": "bounce",
+      "expect": "bounce",
+      "verdict": "bounce",
+      "score": 0.189,
+      "repairs": [
+        "deskew"
+      ]
+    }
+  ]
+}

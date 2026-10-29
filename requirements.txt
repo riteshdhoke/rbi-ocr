@@ -1,0 +1,43 @@
+# Runtime dependencies — licence gate: Apache-2.0/MIT/BSD/MPL-2.0/ISC/PSF only (see PLAN.md)
+fastapi
+uvicorn[standard]
+pydantic>=2.7
+pydantic-settings
+python-multipart
+jinja2
+
+# Imaging / PDF
+pillow
+numpy
+opencv-python-headless
+pypdfium2
+
+# OCR / NLP (CPU by default)
+# On a GPU node replace this with `onnxruntime-gpu` and set GPU_EXECUTION=require.
+# The two wheels install the same `onnxruntime` package and shadow each other —
+# uninstall this one first, or the GPU is silently never used.
+#
+# Pin the GPU wheel to the CUDA runtime that is INSTALLED, which is not what
+# `nvidia-smi` reports: that shows the driver's ceiling. Read the real one from
+#   ls /usr/local/cuda/lib64/libcublasLt.so.*
+# Measured on a CUDA 12.8 box (driver 580, ceiling 13.0): onnxruntime-gpu 1.28
+# imports, advertises CUDAExecutionProvider, then fails to load its CUDA library
+# and runs on CPU without raising. `onnxruntime-gpu==1.22.*` is the CUDA 12 pair
+# and places sessions on CUDA correctly. Verify with tools/dryrun_gpu.py.
+onnxruntime
+rapidfuzz
+fasttext-predict          # loads lid.176.ftz; prebuilt wheels (fasttext-wheel lacks cp312 win wheels)
+ctranslate2
+transformers
+sentencepiece
+
+# Providers
+openai                    # OpenAI-compatible client pointed at HF router
+httpx
+
+# Service (dual-mode; eager on laptop)
+celery[redis]
+redis
+sqlalchemy>=2.0
+alembic
+prometheus-client

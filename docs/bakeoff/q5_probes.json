@@ -1,0 +1,173 @@
+{
+  "Qwen/Qwen3-1.7B-Instruct": {
+    "variants": {
+      "json_object": {
+        "status_code": 400,
+        "latency_seconds": 0.604,
+        "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-1.7B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+      },
+      "none": {
+        "status_code": 400,
+        "latency_seconds": 0.614,
+        "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-1.7B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+      },
+      "json_schema": {
+        "status_code": 400,
+        "latency_seconds": 0.61,
+        "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-1.7B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+      }
+    },
+    "json_object_accepted": false,
+    "json_object_yields_json": false,
+    "json_schema_accepted": false,
+    "unconstrained_yields_json": false,
+    "probed_at": "2026-08-07T15:48:35.844125+00:00"
+  },
+  "Qwen/Qwen3-0.6B-Instruct": {
+    "variants": {
+      "json_object": {
+        "status_code": 400,
+        "latency_seconds": 0.614,
+        "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-0.6B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+      },
+      "none": {
+        "status_code": 400,
+        "latency_seconds": 0.603,
+        "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-0.6B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+      },
+      "json_schema": {
+        "status_code": 400,
+        "latency_seconds": 0.636,
+        "error": "{\"error\":{\"message\":\"The requested model 'Qwen/Qwen3-0.6B-Instruct' does not exist.\",\"type\":\"invalid_request_error\",\"param\":\"model\",\"code\":\"model_not_found\"}}"
+      }
+    },
+    "json_object_accepted": false,
+    "json_object_yields_json": false,
+    "json_schema_accepted": false,
+    "unconstrained_yields_json": false,
+    "probed_at": "2026-08-07T15:48:37.704044+00:00"
+  },
+  "Qwen/Qwen3-4B-Instruct-2507": {
+    "variants": {
+      "json_object": {
+        "status_code": 200,
+        "latency_seconds": 1.17,
+        "usage": {
+          "completion_tokens": 38,
+          "prompt_tokens": 66,
+          "prompt_tokens_details": null,
+          "total_tokens": 104
+        },
+        "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+        "parses_as_json": true
+      },
+      "none": {
+        "status_code": 200,
+        "latency_seconds": 1.381,
+        "usage": {
+          "completion_tokens": 38,
+          "prompt_tokens": 66,
+          "prompt_tokens_details": null,
+          "total_tokens": 104
+        },
+        "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+        "parses_as_json": true
+      },
+      "json_schema": {
+        "status_code": 200,
+        "latency_seconds": 1.263,
+        "usage": {
+          "completion_tokens": 38,
+          "prompt_tokens": 66,
+          "prompt_tokens_details": null,
+          "total_tokens": 104
+        },
+        "content_preview": "{\"fields\": [{\"confidence\": 1.0, \"line_indices\": [0], \"name\": \"complainant_name\", \"value\": \"Asha Patil\"}]}",
+        "parses_as_json": true
+      }
+    },
+    "json_object_accepted": true,
+    "json_object_yields_json": true,
+    "json_schema_accepted": true,
+    "unconstrained_yields_json": true,
+    "probed_at": "2026-08-07T15:48:41.507846+00:00"
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+    "variants": {
+      "json_object": {
+        "status_code": 200,
+        "latency_seconds": 1.612,
+        "usage": {
+          "prompt_tokens": 66,
+          "completion_tokens": 38,
+          "total_tokens": 104,
+          "cached_tokens": 0
+        },
+        "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+        "parses_as_json": true
+      },
+      "none": {
+        "status_code": 200,
+        "latency_seconds": 1.26,
+        "usage": {
+          "prompt_tokens": 66,
+          "completion_tokens": 38,
+          "total_tokens": 104,
+          "cached_tokens": 0
+        },
+        "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+        "parses_as_json": true
+      },
+      "json_schema": {
+        "status_code": 422,
+        "latency_seconds": 0.754,
+        "error": "{\n  \"id\": \"ovG9CNp-6Ng1vN-a27776db9977d641\",\n  \"error\": {\n    \"message\": \"Input validation error: grammar is not valid: failed to compile grammar\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": null\n  }\n}"
+      }
+    },
+    "json_object_accepted": true,
+    "json_object_yields_json": true,
+    "json_schema_accepted": false,
+    "unconstrained_yields_json": true,
+    "probed_at": "2026-08-07T15:55:11.572463+00:00"
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+    "variants": {
+      "json_object": {
+        "status_code": 200,
+        "latency_seconds": 2.857,
+        "usage": {
+          "prompt_tokens": 68,
+          "total_tokens": 106,
+          "completion_tokens": 38,
+          "estimated_cost": 2.8799999999999995e-06,
+          "prompt_tokens_details": null
+        },
+        "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+        "parses_as_json": true
+      },
+      "none": {
+        "status_code": 200,
+        "latency_seconds": 3.53,
+        "usage": {
+          "prompt_tokens": 68,
+          "total_tokens": 106,
+          "completion_tokens": 38,
+          "estimated_cost": 2.8799999999999995e-06,
+          "prompt_tokens_details": null
+        },
+        "content_preview": "{\"fields\": [{\"name\": \"complainant_name\", \"value\": \"Asha Patil\", \"confidence\": 1.0, \"line_indices\": [0]}]}",
+        "parses_as_json": true
+      },
+      "json_schema": {
+        "status_code": 405,
+        "latency_seconds": 0.737,
+        "error": "{\"error\":{\"message\":\"json_schema response format is not supported for model: meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo\",\"type\":\"invalid_request_error\",\"param\":\"response_format\",\"code\":null}}"
+      }
+    },
+    "json_object_accepted": true,
+    "json_object_yields_json": true,
+    "json_schema_accepted": false,
+    "unconstrained_yields_json": true,
+    "probed_at": "2026-08-07T16:34:16.550032+00:00"
+  }
+}

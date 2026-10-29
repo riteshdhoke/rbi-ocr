@@ -1,0 +1,514 @@
+{
+  "doc_id": "complaint_form_deva_v1_light",
+  "doc_type": "complaint_form_deva",
+  "variant": 1,
+  "synthetic": true,
+  "document_class": "complaint_form",
+  "primary_script": "Deva",
+  "primary_language": "hin",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:+0.2deg",
+    "blur:0.4",
+    "noise:0.004"
+  ],
+  "quality_expectation": "clean",
+  "lines": [
+    {
+      "text": "बैंकिंग लोकपाल को शिकायत",
+      "bbox": [
+        105.4,
+        103.1,
+        553.7,
+        101.2,
+        553.9,
+        152.4,
+        105.6,
+        154.3
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "एकीकृत लोकपाल योजना 2021 — प्रपत्र I",
+      "bbox": [
+        105.7,
+        163.1,
+        503.9,
+        161.4,
+        504.0,
+        194.7,
+        105.8,
+        196.4
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "1. शिकायतकर्ता का नाम",
+      "bbox": [
+        106.3,
+        303.1,
+        325.0,
+        302.1,
+        325.2,
+        334.1,
+        106.4,
+        335.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "प्रिया वेंकटेशन",
+      "bbox": [
+        716.3,
+        300.5,
+        846.0,
+        299.9,
+        846.2,
+        333.2,
+        716.4,
+        333.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_name"
+    },
+    {
+      "text": "2. पता",
+      "bbox": [
+        106.6,
+        381.1,
+        168.5,
+        380.8,
+        168.7,
+        412.8,
+        106.7,
+        413.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "लखनऊ, उत्तर प्रदेश",
+      "bbox": [
+        716.6,
+        378.5,
+        900.0,
+        377.7,
+        900.1,
+        411.0,
+        716.7,
+        411.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complainant_address"
+    },
+    {
+      "text": "3. मोबाइल",
+      "bbox": [
+        106.9,
+        459.1,
+        205.3,
+        458.7,
+        205.5,
+        490.7,
+        107.1,
+        491.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "9217776108",
+      "bbox": [
+        716.9,
+        456.5,
+        865.7,
+        455.8,
+        865.8,
+        489.1,
+        717.1,
+        489.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "complainant_contact"
+    },
+    {
+      "text": "4. बैंक का नाम",
+      "bbox": [
+        107.3,
+        537.1,
+        241.7,
+        536.5,
+        241.9,
+        568.5,
+        107.4,
+        569.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "पंजाब नेशनल बैंक",
+      "bbox": [
+        717.3,
+        534.5,
+        885.4,
+        533.7,
+        885.6,
+        567.0,
+        717.4,
+        567.7
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "bank_name"
+    },
+    {
+      "text": "5. IFSC कोड",
+      "bbox": [
+        107.6,
+        615.1,
+        231.1,
+        614.6,
+        231.2,
+        646.6,
+        107.8,
+        647.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "PUNB0514691",
+      "bbox": [
+        717.6,
+        612.5,
+        893.1,
+        611.7,
+        893.3,
+        645.0,
+        717.8,
+        645.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "ifsc_code"
+    },
+    {
+      "text": "6. खाता संख्या",
+      "bbox": [
+        107.9,
+        693.1,
+        241.6,
+        692.5,
+        241.7,
+        724.5,
+        108.1,
+        725.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "02339437921322",
+      "bbox": [
+        717.9,
+        690.5,
+        926.2,
+        689.6,
+        926.3,
+        722.8,
+        718.1,
+        723.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "account_number"
+    },
+    {
+      "text": "7. विवादित राशि (₹)",
+      "bbox": [
+        108.3,
+        771.1,
+        294.6,
+        770.3,
+        294.8,
+        802.3,
+        108.4,
+        803.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "98,200",
+      "bbox": [
+        718.3,
+        768.5,
+        799.6,
+        768.1,
+        799.8,
+        801.4,
+        718.4,
+        801.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "8. लेनदेन दिनांक",
+      "bbox": [
+        108.6,
+        849.1,
+        259.4,
+        848.4,
+        259.5,
+        880.4,
+        108.8,
+        881.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "24/08/2026",
+      "bbox": [
+        718.6,
+        846.5,
+        857.0,
+        845.9,
+        857.1,
+        879.1,
+        718.8,
+        879.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_date"
+    },
+    {
+      "text": "9. लेनदेन संदर्भ",
+      "bbox": [
+        109.0,
+        927.1,
+        248.2,
+        926.5,
+        248.3,
+        958.5,
+        109.1,
+        959.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "760593878000",
+      "bbox": [
+        718.9,
+        924.5,
+        897.4,
+        923.7,
+        897.6,
+        957.0,
+        719.1,
+        957.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "10. पूर्व शिकायत सं.",
+      "bbox": [
+        109.3,
+        1005.1,
+        292.7,
+        1004.3,
+        292.8,
+        1036.3,
+        109.4,
+        1037.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "CMS/2025/452346",
+      "bbox": [
+        719.3,
+        1002.5,
+        941.7,
+        1001.5,
+        941.8,
+        1034.8,
+        719.4,
+        1035.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": false,
+      "field": "prior_complaint_ref"
+    },
+    {
+      "text": "11. शिकायत का विवरण",
+      "bbox": [
+        109.8,
+        1123.1,
+        329.7,
+        1122.1,
+        329.8,
+        1154.1,
+        109.9,
+        1155.1
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    },
+    {
+      "text": "पूर्व सहमति के बिना क्रेडिट कार्ड वार्षिक शुल्क लगाया गया",
+      "bbox": [
+        140.1,
+        1198.9,
+        665.3,
+        1196.7,
+        665.5,
+        1230.0,
+        140.3,
+        1232.2
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "हस्ताक्षर",
+      "bbox": [
+        111.6,
+        1555.1,
+        174.9,
+        1554.8,
+        175.0,
+        1583.0,
+        111.8,
+        1583.2
+      ],
+      "script": "Deva",
+      "language": "hin",
+      "is_handwritten": false,
+      "field": null
+    }
+  ],
+  "fields": {
+    "bank_name": "Punjab National Bank",
+    "ifsc_code": "PUNB0514691",
+    "account_number": "02339437921322",
+    "card_last_four": "5549",
+    "disputed_amount": 98200,
+    "transaction_date": "24/08/2026",
+    "transaction_reference": "760593878000",
+    "complainant_name": "Priya Venkatesan",
+    "complainant_city": "Lucknow, Uttar Pradesh",
+    "mobile": "9217776108",
+    "prior_complaint_ref": "CMS/2025/452346",
+    "ground_en": "Credit card annual fee levied without prior consent or intimation"
+  },
+  "fields_bilingual": {
+    "complainant_name": {
+      "value": "प्रिया वेंकटेशन",
+      "value_en": "Priya Venkatesan",
+      "script": "Deva"
+    },
+    "complainant_address": {
+      "value": "लखनऊ, उत्तर प्रदेश",
+      "value_en": "Lucknow, Uttar Pradesh",
+      "script": "Deva"
+    },
+    "complainant_contact": {
+      "value": "9217776108",
+      "value_en": "9217776108",
+      "script": "Latn"
+    },
+    "bank_name": {
+      "value": "पंजाब नेशनल बैंक",
+      "value_en": "Punjab National Bank",
+      "script": "Deva"
+    },
+    "ifsc_code": {
+      "value": "PUNB0514691",
+      "value_en": "PUNB0514691",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "02339437921322",
+      "value_en": "02339437921322",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "98,200",
+      "value_en": "98,200",
+      "script": "Latn"
+    },
+    "transaction_date": {
+      "value": "24/08/2026",
+      "value_en": "24/08/2026",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "760593878000",
+      "value_en": "760593878000",
+      "script": "Latn"
+    },
+    "prior_complaint_ref": {
+      "value": "CMS/2025/452346",
+      "value_en": "CMS/2025/452346",
+      "script": "Latn"
+    },
+    "complaint_summary": {
+      "value": "पूर्व सहमति के बिना क्रेडिट कार्ड वार्षिक शुल्क लगाया गया",
+      "value_en": "Credit card annual fee levied without prior consent or intimation",
+      "script": "Deva"
+    }
+  }
+}

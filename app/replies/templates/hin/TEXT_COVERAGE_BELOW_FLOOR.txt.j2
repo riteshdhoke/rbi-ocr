@@ -1,0 +1,8 @@
+{% extends "hin/_layout.txt.j2" %}
+{#- TEXT_COVERAGE_BELOW_FLOOR - quality gate: share of page area carrying text below the floor -#}
+{% block subject %}भेजे गए पृष्ठ पर बहुत थोड़ी लिखावट है{% endblock %}
+{% block defect %}पृष्ठ के क्षेत्रफल का बहुत थोड़ा भाग ही लिखा या छपा हुआ है। संभव है कि पृष्ठ
+को काटकर केवल एक कोना भेजा गया हो, या केवल हाशिया ही चित्र में आया हो।{% endblock %}
+{% block remedy %}कृपया पूरा पृष्ठ, उसके चारों किनारों सहित, {{ recommended_dpi }} DPI पर
+स्कैन करके भेजें। पृष्ठ के किसी एक भाग को काटकर या बड़ा करके न भेजें — हमें
+पूरा कागज़ चाहिए।{% endblock %}

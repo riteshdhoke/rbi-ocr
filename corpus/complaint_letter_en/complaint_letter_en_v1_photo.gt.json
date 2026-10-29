@@ -1,0 +1,290 @@
+{
+  "doc_id": "complaint_letter_en_v1_photo",
+  "doc_type": "complaint_letter_en",
+  "variant": 1,
+  "synthetic": true,
+  "document_class": "complaint_letter",
+  "primary_script": "Latn",
+  "primary_language": "eng",
+  "is_code_mixed": false,
+  "degradations": [
+    "skew:-7.4deg",
+    "shadow",
+    "thumb_occlusion",
+    "exposure",
+    "stamp",
+    "blur:1.9",
+    "noise:0.02",
+    "downscale:0.62"
+  ],
+  "quality_expectation": "degraded",
+  "lines": [
+    {
+      "text": "To,",
+      "bbox": [
+        176.6,
+        50.6,
+        198.0,
+        53.4,
+        194.5,
+        80.2,
+        173.1,
+        77.4
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The Banking Ombudsman,",
+      "bbox": [
+        172.1,
+        85.1,
+        357.7,
+        109.0,
+        354.3,
+        135.8,
+        168.6,
+        111.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Reserve Bank of India",
+      "bbox": [
+        167.6,
+        119.5,
+        329.2,
+        140.3,
+        325.7,
+        167.1,
+        164.2,
+        146.3
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Subject: Credit card annual fee levied without prior consent or intimation",
+      "bbox": [
+        160.8,
+        172.4,
+        689.4,
+        240.6,
+        686.0,
+        267.3,
+        157.4,
+        199.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complaint_summary"
+    },
+    {
+      "text": "I hold a savings account with Punjab National Bank.",
+      "bbox": [
+        155.0,
+        217.9,
+        536.6,
+        267.2,
+        533.1,
+        293.9,
+        151.5,
+        244.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "My account number is 03637070772.",
+      "bbox": [
+        150.7,
+        251.1,
+        424.8,
+        286.4,
+        421.4,
+        313.2,
+        147.2,
+        277.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "account_number"
+    },
+    {
+      "text": "On 01/05/2026 an amount of Rs. 12,750 was",
+      "bbox": [
+        146.4,
+        284.3,
+        480.1,
+        327.4,
+        476.6,
+        354.1,
+        143.0,
+        311.1
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "disputed_amount"
+    },
+    {
+      "text": "debited without my authorisation or consent.",
+      "bbox": [
+        142.1,
+        317.5,
+        463.8,
+        359.0,
+        460.4,
+        385.8,
+        138.7,
+        344.2
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "The transaction reference is 391982655879.",
+      "bbox": [
+        137.8,
+        350.7,
+        466.8,
+        393.1,
+        463.4,
+        419.9,
+        134.4,
+        377.5
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "transaction_reference"
+    },
+    {
+      "text": "I raised this with the branch but received no resolution.",
+      "bbox": [
+        133.5,
+        383.9,
+        539.6,
+        436.3,
+        536.2,
+        463.1,
+        130.1,
+        410.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "I request that the amount be reversed and compensation considered.",
+      "bbox": [
+        129.3,
+        417.1,
+        626.4,
+        481.2,
+        622.9,
+        508.0,
+        125.8,
+        443.9
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "relief_sought"
+    },
+    {
+      "text": "Yours faithfully,",
+      "bbox": [
+        121.0,
+        481.1,
+        236.4,
+        495.9,
+        233.0,
+        522.7,
+        117.6,
+        507.8
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": null
+    },
+    {
+      "text": "Priya Venkatesan",
+      "bbox": [
+        116.2,
+        517.9,
+        243.5,
+        534.4,
+        240.1,
+        561.2,
+        112.8,
+        544.7
+      ],
+      "script": "Latn",
+      "language": "eng",
+      "is_handwritten": true,
+      "field": "complainant_name"
+    }
+  ],
+  "fields": {
+    "bank_name": "Punjab National Bank",
+    "ifsc_code": "PUNB0342951",
+    "account_number": "03637070772",
+    "card_last_four": "3173",
+    "disputed_amount": 12750,
+    "transaction_date": "01/05/2026",
+    "transaction_reference": "391982655879",
+    "complainant_name": "Priya Venkatesan",
+    "complainant_city": "Lucknow, Uttar Pradesh",
+    "mobile": "9241098299",
+    "prior_complaint_ref": "CMS/2025/804751",
+    "ground_en": "Credit card annual fee levied without prior consent or intimation"
+  },
+  "fields_bilingual": {
+    "complaint_summary": {
+      "value": "Subject: Credit card annual fee levied without prior consent or intimation",
+      "value_en": "Subject: Credit card annual fee levied without prior consent or intimation",
+      "script": "Latn"
+    },
+    "account_number": {
+      "value": "03637070772",
+      "value_en": "03637070772",
+      "script": "Latn"
+    },
+    "disputed_amount": {
+      "value": "12,750",
+      "value_en": "12,750",
+      "script": "Latn"
+    },
+    "transaction_reference": {
+      "value": "391982655879",
+      "value_en": "391982655879",
+      "script": "Latn"
+    },
+    "relief_sought": {
+      "value": "I request that the amount be reversed and compensation considered.",
+      "value_en": "I request that the amount be reversed and compensation considered.",
+      "script": "Latn"
+    },
+    "complainant_name": {
+      "value": "Priya Venkatesan",
+      "value_en": "Priya Venkatesan",
+      "script": "Latn"
+    }
+  }
+}

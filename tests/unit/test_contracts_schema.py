@@ -170,6 +170,7 @@ def test_source_enum_includes_ocr_label_discovery(committed: dict[str, Any]) -> 
     assert set(source["enum"]) == {
         "regex_validator",
         "ocr_label",
+        "ocr_layout",
         "lookup_table",
         "slm",
         "classifier",

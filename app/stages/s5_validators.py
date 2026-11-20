@@ -61,6 +61,7 @@ This module does NOT handle:
 from __future__ import annotations
 
 import json
+import math
 import re
 from collections.abc import Callable, Mapping, Sequence
 from concurrent.futures import ThreadPoolExecutor
@@ -83,6 +84,7 @@ from app.contracts.ocr import (
     OCRLine,
     OCRPage,
     TextSpan,
+    bbox_from_xyxy,
 )
 from app.resources import bank_aliases_path, ifsc_master_sample_path
 
@@ -113,12 +115,12 @@ __all__ = [
     "classify_reference",
     "default_bank_records",
     "default_bank_table",
-    "load_bank_table",
-    "non_party_institution_names",
     "default_ifsc_master",
     "format_indian_grouping",
+    "load_bank_table",
     "luhn_check",
     "merge_spans",
+    "non_party_institution_names",
     "normalise_digits",
     "parse_amount",
     "parse_indian_date",
@@ -387,7 +389,13 @@ class ValidatorReport(BaseModel):
         (PLAN.md invariant 10, and BUILD-BRIEF sec. 8's "do not send an account
         number through the SLM").
         """
-        return merge_spans([hit.span for hit in self.hits_on_page(page_no)])
+        return merge_spans(
+            [
+                span
+                for hit in self.hits_on_page(page_no)
+                for span in (hit.evidence.spans or (hit.span,))
+            ]
+        )
 
     def fields(self) -> dict[str, Field]:
         """Best candidate per field name, promoted to envelope fields.
@@ -541,9 +549,7 @@ class IFSCMaster:
 
     # ------------------------------------------------------------- loaders
     @classmethod
-    def load(
-        cls, path: Path | str, *, authoritative: bool | None = None
-    ) -> IFSCMaster:
+    def load(cls, path: Path | str, *, authoritative: bool | None = None) -> IFSCMaster:
         """Load from ``.json`` or ``.csv``, dispatching on the suffix.
 
         Raises:
@@ -598,9 +604,7 @@ class IFSCMaster:
         )
 
     @classmethod
-    def from_csv(
-        cls, path: Path | str, *, authoritative: bool = True
-    ) -> IFSCMaster:
+    def from_csv(cls, path: Path | str, *, authoritative: bool = True) -> IFSCMaster:
         """Load an RBI-style CSV.  Column names are matched case-insensitively.
 
         Rows whose IFSC does not satisfy :data:`IFSC_STRUCTURE` are skipped and
@@ -833,18 +837,30 @@ _DATE_MDY_TEXT_RE: Final[re.Pattern[str]] = re.compile(
 )
 
 _MONTH_NAMES: Final[Mapping[str, int]] = {
-    "jan": 1, "january": 1,
-    "feb": 2, "february": 2,
-    "mar": 3, "march": 3,
-    "apr": 4, "april": 4,
+    "jan": 1,
+    "january": 1,
+    "feb": 2,
+    "february": 2,
+    "mar": 3,
+    "march": 3,
+    "apr": 4,
+    "april": 4,
     "may": 5,
-    "jun": 6, "june": 6,
-    "jul": 7, "july": 7,
-    "aug": 8, "august": 8,
-    "sep": 9, "sept": 9, "september": 9,
-    "oct": 10, "october": 10,
-    "nov": 11, "november": 11,
-    "dec": 12, "december": 12,
+    "jun": 6,
+    "june": 6,
+    "jul": 7,
+    "july": 7,
+    "aug": 8,
+    "august": 8,
+    "sep": 9,
+    "sept": 9,
+    "september": 9,
+    "oct": 10,
+    "october": 10,
+    "nov": 11,
+    "november": 11,
+    "dec": 12,
+    "december": 12,
 }
 
 #: Two-digit years below this pivot are 20xx, at or above it 19xx.  A complaint
@@ -884,28 +900,68 @@ _LAST4_RE: Final[re.Pattern[str]] = re.compile(r"(?<![\d])\d{4}(?![\d])")
 #: value in the same row, which is exactly what makes the previous line the
 #: right amount of context.
 ACCOUNT_CUES: Final[tuple[str, ...]] = (
-    "account number", "account no", "account #", "a/c no", "a/c number",
-    "a/c", "acct", "account", "खाता संख्या", "खाता क्रमांक", "खाते क्रमांक",
-    "खाता", "खाते",
+    "account number",
+    "account no",
+    "account #",
+    "a/c no",
+    "a/c number",
+    "a/c",
+    "acct",
+    "account",
+    "खाता संख्या",
+    "खाता क्रमांक",
+    "खाते क्रमांक",
+    "खाता",
+    "खाते",
 )
 CARD_CUES: Final[tuple[str, ...]] = (
-    "card", "debit card", "credit card", "कार्ड",
+    "card",
+    "debit card",
+    "credit card",
+    "कार्ड",
 )
 REFERENCE_CUES: Final[tuple[str, ...]] = (
-    "utr", "rrn", "reference", "ref no", "ref.", "txn id", "transaction id",
-    "transaction reference", "संदर्भ", "यूटीआर", "लेनदेन संदर्भ",
+    "utr",
+    "rrn",
+    "reference",
+    "ref no",
+    "ref.",
+    "txn id",
+    "transaction id",
+    "transaction reference",
+    "संदर्भ",
+    "यूटीआर",
+    "लेनदेन संदर्भ",
 )
 MICR_CUES: Final[tuple[str, ...]] = ("micr", "एमआईसीआर")
 CURRENCY_CUES: Final[tuple[str, ...]] = (
-    "₹", "rs.", "rs ", "rs)", "inr", "amount", "रु", "राशि", "रक्कम", "रुपये",
+    "₹",
+    "rs.",
+    "rs ",
+    "rs)",
+    "inr",
+    "amount",
+    "रु",
+    "राशि",
+    "रक्कम",
+    "रुपये",
 )
 COMPLAINT_DATE_CUES: Final[tuple[str, ...]] = (
-    "date of complaint", "complaint date", "dated", "शिकायत की तारीख",
-    "शिकायत दिनांक", "तक्रार दिनांक",
+    "date of complaint",
+    "complaint date",
+    "dated",
+    "शिकायत की तारीख",
+    "शिकायत दिनांक",
+    "तक्रार दिनांक",
 )
 TRANSACTION_DATE_CUES: Final[tuple[str, ...]] = (
-    "date of transaction", "transaction date", "txn date", "value date",
-    "लेनदेन दिनांक", "व्यवहार दिनांक", "लेनदेन की तारीख",
+    "date of transaction",
+    "transaction date",
+    "txn date",
+    "value date",
+    "लेनदेन दिनांक",
+    "व्यवहार दिनांक",
+    "लेनदेन की तारीख",
 )
 
 
@@ -1038,9 +1094,7 @@ def parse_amount(text: str, *, multiplier_word: str | None = None) -> AmountPars
         return AmountParse(normalized=None, ok=False, reason=reason)
     digits = integer_part.replace(",", "")
     if not digits or len(digits) > _AMOUNT_MAX_INTEGER_DIGITS:
-        return AmountParse(
-            normalized=None, ok=False, reason="range", grouping=grouping
-        )
+        return AmountParse(normalized=None, ok=False, reason="range", grouping=grouping)
     multiplier = 1
     if multiplier_word:
         multiplier = AMOUNT_MULTIPLIERS.get(multiplier_word.strip().lower(), 0)
@@ -1075,7 +1129,9 @@ def format_indian_grouping(value: Decimal | int | str) -> str:
     """
     number = int(Decimal(str(value)))
     if number < 0:
-        raise ValueError(f"Indian grouping is defined for non-negative values, got {number}")
+        raise ValueError(
+            f"Indian grouping is defined for non-negative values, got {number}"
+        )
     digits = str(number)
     if len(digits) <= 3:
         return digits
@@ -1112,9 +1168,7 @@ def _resolve_year(raw: str) -> int:
 
 def _iso_or_failure(day: int, month: int, year: int, order: str) -> DateParse:
     try:
-        return DateParse(
-            iso=date(year, month, day).isoformat(), ok=True, order=order
-        )
+        return DateParse(iso=date(year, month, day).isoformat(), ok=True, order=order)
     except ValueError:
         return DateParse(iso=None, ok=False, reason="calendar", order=order)
 
@@ -1144,17 +1198,13 @@ def parse_indian_date(text: str) -> DateParse:
         month = _MONTH_NAMES.get(dmy.group(2).lower())
         if month is None:
             return DateParse(iso=None, ok=False, reason="month", order="dmy_text")
-        return _iso_or_failure(
-            int(dmy.group(1)), month, int(dmy.group(3)), "dmy_text"
-        )
+        return _iso_or_failure(int(dmy.group(1)), month, int(dmy.group(3)), "dmy_text")
     mdy = _DATE_MDY_TEXT_RE.fullmatch(candidate)
     if mdy is not None:
         month = _MONTH_NAMES.get(mdy.group(1).lower())
         if month is None:
             return DateParse(iso=None, ok=False, reason="month", order="mdy_text")
-        return _iso_or_failure(
-            int(mdy.group(2)), month, int(mdy.group(3)), "mdy_text"
-        )
+        return _iso_or_failure(int(mdy.group(2)), month, int(mdy.group(3)), "mdy_text")
     return DateParse(iso=None, ok=False, reason="syntax")
 
 
@@ -1339,9 +1389,7 @@ def validate_account_number(scan: PageScan) -> list[ValidatorHit]:
                     field_name="account_number",
                     value=line.text[match.start() : match.end()],
                     normalized=digits if passed else None,
-                    confidence=_confidence(
-                        line, _weight_for(checks, unverified=True)
-                    ),
+                    confidence=_confidence(line, _weight_for(checks, unverified=True)),
                     evidence=scan.evidence(position, match.start(), match.end()),
                     checks=checks,
                     detail=ACCOUNT_CHECKSUM_POLICY,
@@ -1415,9 +1463,7 @@ def validate_card_fragment(scan: PageScan) -> list[ValidatorHit]:
                     field_name="card_fragment",
                     value=line.text[match.start() : match.end()],
                     normalized=digits[-4:] if passed else None,
-                    confidence=_confidence(
-                        line, _weight_for(checks, unverified=False)
-                    ),
+                    confidence=_confidence(line, _weight_for(checks, unverified=False)),
                     evidence=scan.evidence(position, match.start(), match.end()),
                     checks=checks,
                     flags=() if passed else (FieldFlag.CHECKSUM_FAILED,),
@@ -1470,15 +1516,14 @@ def validate_utr_rrn(scan: PageScan) -> list[ValidatorHit]:
             format_class = classify_reference(token)
             if format_class is not None:
                 needs_cue = next(
-                    needs for name, _p, needs in REFERENCE_FORMATS
+                    needs
+                    for name, _p, needs in REFERENCE_FORMATS
                     if name == format_class
                 )
                 if needs_cue and not has_cue:
                     continue
                 checks = (
-                    CheckOutcome(
-                        name="format_class", passed=True, detail=format_class
-                    ),
+                    CheckOutcome(name="format_class", passed=True, detail=format_class),
                 )
                 hits.append(
                     ValidatorHit(
@@ -1486,9 +1531,7 @@ def validate_utr_rrn(scan: PageScan) -> list[ValidatorHit]:
                         value=line.text[match.start() : match.end()],
                         normalized=token,
                         confidence=_confidence(line, PASS_WEIGHT),
-                        evidence=scan.evidence(
-                            position, match.start(), match.end()
-                        ),
+                        evidence=scan.evidence(position, match.start(), match.end()),
                         checks=checks,
                         detail=f"format class {format_class}",
                     )
@@ -1617,9 +1660,7 @@ def validate_amount(scan: PageScan) -> list[ValidatorHit]:
                     field_name="amount",
                     value=line.text[start:end],
                     normalized=parsed.normalized if parsed.ok else None,
-                    confidence=_confidence(
-                        line, _weight_for(checks, unverified=False)
-                    ),
+                    confidence=_confidence(line, _weight_for(checks, unverified=False)),
                     evidence=scan.evidence(position, start, end),
                     checks=checks,
                     detail=(
@@ -1681,9 +1722,7 @@ def validate_date(scan: PageScan) -> list[ValidatorHit]:
                         confidence=_confidence(
                             line, _weight_for(checks, unverified=False)
                         ),
-                        evidence=scan.evidence(
-                            position, match.start(), match.end()
-                        ),
+                        evidence=scan.evidence(position, match.start(), match.end()),
                         checks=checks,
                         detail=role_detail,
                     )
@@ -1768,16 +1807,17 @@ def validate_bank_name(scan: PageScan) -> list[ValidatorHit]:
     aliases: list[tuple[str, BankRecord]] = [
         (alias, bank) for bank in scan.banks for alias in bank.aliases
     ]
+    hits, consumed = _multiline_bank_hits(scan, aliases)
     for position, line in enumerate(scan.lines):
+        if position in consumed:
+            continue
         text = line.text
         if not text.strip():
             continue
         candidate = _bank_candidate(text, aliases, scan.non_party)
         if candidate is None:
             continue
-        hits.append(
-            _bank_hit(candidate, scan=scan, line=line, position=position)
-        )
+        hits.append(_bank_hit(candidate, scan=scan, line=line, position=position))
     return hits
 
 
@@ -1823,9 +1863,7 @@ def _bank_candidate(
     )
     if exact:
         longest, alias, bank, (start, end) = exact[0]
-        rivals = {
-            entry[2].code for entry in exact if entry[0] == longest
-        } - {bank.code}
+        rivals = {entry[2].code for entry in exact if entry[0] == longest} - {bank.code}
         return _BankCandidate(
             bank=bank,
             alias=alias,
@@ -1840,6 +1878,15 @@ def _bank_candidate(
                 else None
             ),
         )
+
+    # A proper suffix alone is not evidence for a complete bank name. For
+    # example, 'of India' must not become a second bank through fuzzy matching.
+    folded = " ".join(text.casefold().split())
+    if folded and any(
+        " ".join(alias.casefold().split()).endswith(" " + folded)
+        for alias, _ in aliases
+    ):
+        return None
 
     scored = sorted(
         ((_alias_score(text, alias), alias, bank) for alias, bank in aliases),
@@ -1911,6 +1958,135 @@ def _bank_hit(
         flags=(FieldFlag.MULTIPLE_CANDIDATES,) if candidate.ambiguous else (),
         detail=detail,
     )
+
+
+def _bank_line_continues(first: OCRLine, second: OCRLine) -> bool:
+    """Nearby stacked/logo text, even with an intervening OCR line elsewhere."""
+    top, bottom = min(first.bbox[1::2]), max(first.bbox[1::2])
+    next_top, next_bottom = min(second.bbox[1::2]), max(second.bbox[1::2])
+    height = max(1, bottom - top)
+    next_height = max(1, next_bottom - next_top)
+    overlap = min(max(first.bbox[0::2]), max(second.bbox[0::2])) - max(
+        min(first.bbox[0::2]), min(second.bbox[0::2])
+    )
+    width = max(
+        1,
+        min(
+            max(first.bbox[0::2]) - min(first.bbox[0::2]),
+            max(second.bbox[0::2]) - min(second.bbox[0::2]),
+        ),
+    )
+    angle = lambda line: math.atan2(
+        line.bbox[3] - line.bbox[1], line.bbox[2] - line.bbox[0]
+    )
+    return (
+        next_top >= top + min(height, next_height) * 0.4
+        and next_bottom - bottom <= max(height, next_height) * 2.2
+        and overlap >= width * 0.5
+        and abs(angle(first) - angle(second)) <= math.radians(10)
+    )
+
+
+def _multiline_bank_hits(
+    scan: PageScan,
+    aliases: Sequence[tuple[str, BankRecord]],
+) -> tuple[list[ValidatorHit], set[int]]:
+    """Join only observed fragments that complete a reference name verbatim.
+
+    This is a layout-aware reference lookup, not name completion from a short
+    alias. All contributing spans remain evidence and participate in masking.
+    """
+    fold = lambda text: " ".join(text.casefold().split())
+    references = {fold(alias) for alias, _ in aliases} | {
+        fold(name) for name in scan.non_party
+    }
+    blocked = set()
+    proposals = []
+    for first, line in enumerate(scan.lines):
+        prefix = fold(line.text)
+        if not prefix or not any(name.startswith(prefix + " ") for name in references):
+            continue
+        pending = [(first, (first,), line.text.strip())]
+        while pending:
+            last, positions, text = pending.pop()
+            if len(positions) >= 3:
+                continue
+            for second, following in enumerate(scan.lines):
+                if second in positions or not _bank_line_continues(
+                    scan.lines[last], following
+                ):
+                    continue
+                joined = text + " " + following.text.strip()
+                value = fold(joined)
+                if not any(
+                    name == value or name.startswith(value + " ") for name in references
+                ):
+                    continue
+                path = (*positions, second)
+                if any(value == fold(name) for name in scan.non_party):
+                    blocked.update(path)
+                    continue
+                candidate = _bank_candidate(joined, aliases, scan.non_party)
+                if (
+                    candidate is not None
+                    and candidate.check_name == "exact_match"
+                    and not candidate.ambiguous
+                    and candidate.start == 0
+                    and candidate.end == len(joined)
+                ):
+                    proposals.append((path, joined, candidate))
+                pending.append((second, path, joined))
+    hits = []
+    consumed = set(blocked)
+    for positions, text, candidate in sorted(
+        proposals, key=lambda item: (-len(item[1]), item[0])
+    ):
+        if consumed.intersection(positions):
+            continue
+        rivals = {
+            other.bank.code for path, _, other in proposals if path[0] == positions[0]
+        }
+        if len(rivals) != 1:
+            continue
+        lines = [scan.lines[position] for position in positions]
+        spans = tuple(
+            TextSpan(
+                line_index=line.line_index,
+                start=len(line.text) - len(line.text.lstrip()),
+                end=len(line.text.rstrip()),
+            )
+            for line in lines
+        )
+        hits.append(
+            ValidatorHit(
+                field_name="bank_name",
+                value=text,
+                normalized=candidate.bank.name,
+                confidence=min(_confidence(line, PASS_WEIGHT) for line in lines),
+                source="lookup_table",
+                evidence=Evidence(
+                    page_no=scan.page_no,
+                    span=spans[0],
+                    spans=spans,
+                    bbox=bbox_from_xyxy(
+                        min(min(line.bbox[0::2]) for line in lines),
+                        min(min(line.bbox[1::2]) for line in lines),
+                        max(max(line.bbox[0::2]) for line in lines),
+                        max(max(line.bbox[1::2]) for line in lines),
+                    ),
+                ),
+                checks=(
+                    CheckOutcome(
+                        name="exact_multiline_match",
+                        passed=True,
+                        detail="Nearby observed OCR spans form a complete reference alias",
+                    ),
+                ),
+                detail=f"matched multi-line alias {candidate.alias!r} (bank code {candidate.bank.code})",
+            )
+        )
+        consumed.update(positions)
+    return hits, consumed
 
 
 def _non_party_spans(

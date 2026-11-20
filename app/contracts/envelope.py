@@ -90,6 +90,7 @@ SCHEMA_VERSION: Literal["1.0.0"] = "1.0.0"
 FieldSource = Literal[
     "regex_validator",
     "ocr_label",
+    "ocr_layout",
     "lookup_table",
     "slm",
     "classifier",
@@ -224,6 +225,8 @@ class Evidence(BaseModel):
     page_no: PageNumber
     bbox: BBox
     span: TextSpan
+    #: Additional exact spans for a value assembled from multiple OCR lines.
+    spans: tuple[TextSpan, ...] = ()
 
 
 class Field(BaseModel):
@@ -534,6 +537,7 @@ class ResultEnvelope(BaseModel):
     document_id: str = _Field(min_length=1)
     job_id: str | None = None
     requested_fields: tuple[str, ...] = ()
+    extraction_revision: str | None = None
     created_at: datetime = _Field(default_factory=lambda: datetime.now(UTC))
     #: ``laptop`` | ``cpu_node`` | ``gpu_node`` — recorded so a divergence
     #: between profiles is attributable (BUILD-BRIEF M6).

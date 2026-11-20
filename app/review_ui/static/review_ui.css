@@ -209,3 +209,6 @@ pre.raw {
 details > summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 .note { font-size: 0.8rem; color: var(--muted); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* Preserve source line breaks in addresses and letter transcriptions. */
+.field-value { white-space: pre-wrap; overflow-wrap: anywhere; min-width: 12rem; max-width: 42rem; }

@@ -214,7 +214,7 @@
       });
     });
     RUI.q("#missing-fields").textContent = requested.length
-      ? ((doc.missing_fields || []).length ? "Not found: " + doc.missing_fields.join(", ") : "All requested fields found.")
+      ? ((doc.missing_fields || []).length ? "Not extracted reliably: " + doc.missing_fields.join(", ") : "All requested fields found.")
       : "No field list supplied. All discoveries appear under Other fields.";
     if (envelope.bounce_decision && envelope.bounce_decision.decision === "bounce") {
       RUI.q("#missing-fields").textContent = "Document bounced; no values were extracted.";

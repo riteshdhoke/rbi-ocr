@@ -189,6 +189,11 @@ class Settings(BaseSettings):
     # gemma the fallback.
     EXTRACT_ALL_FIELDS: bool = True
 
+    GPU_HANDWRITING_ENABLED: bool = False
+    GPU_HANDWRITING_MIN_RATIO: float = Field(default=0.5, gt=0, le=1)
+    VLM_MODEL: str | None = Field(default=None, min_length=1)
+    VLM_MAX_TOKENS: int | None = Field(default=None, gt=0, le=8192)
+
     SLM_MODEL: str = Field(default="meta-llama/Llama-3.1-8B-Instruct", min_length=1)
     SLM_MODEL_FALLBACK: str = Field(default="google/gemma-3-4b-it", min_length=1)
     SLM_MAX_TOKENS: int = Field(default=512, gt=0, le=8192)
@@ -514,6 +519,19 @@ class Settings(BaseSettings):
                 f"SLM_MAX_TOKENS ({self.SLM_MAX_TOKENS}) exceeds "
                 f"JOB_TOKEN_BUDGET ({self.JOB_TOKEN_BUDGET}): a single call "
                 "could never complete within the job budget"
+            )
+        if (
+            self.VLM_MAX_TOKENS is not None
+            and self.VLM_MAX_TOKENS > self.JOB_TOKEN_BUDGET
+        ):
+            raise ValueError("VLM_MAX_TOKENS exceeds JOB_TOKEN_BUDGET")
+        if self.GPU_HANDWRITING_ENABLED and (
+            self.PROVIDER_PROFILE is not ProviderProfile.GPU_NODE
+            or not self.slm_endpoint_configured
+            or not self.slm_endpoint_is_local
+        ):
+            raise ValueError(
+                "GPU_HANDWRITING_ENABLED requires gpu_node and an in-house HF_BASE_URL"
             )
         return self
 

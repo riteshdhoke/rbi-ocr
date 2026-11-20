@@ -230,6 +230,14 @@
         },
         "span": {
           "$ref": "#/$defs/TextSpan"
+        },
+        "spans": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/TextSpan"
+          },
+          "title": "Spans",
+          "type": "array"
         }
       },
       "required": [
@@ -289,6 +297,7 @@
           "enum": [
             "regex_validator",
             "ocr_label",
+            "ocr_layout",
             "lookup_table",
             "slm",
             "classifier",
@@ -679,6 +688,18 @@
       "default": false,
       "title": "Escalation Flag",
       "type": "boolean"
+    },
+    "extraction_revision": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Extraction Revision"
     },
     "is_final": {
       "title": "Is Final",

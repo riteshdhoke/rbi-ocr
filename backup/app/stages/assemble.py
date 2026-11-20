@@ -85,6 +85,7 @@ from app.contracts.ocr import (
     RawField,
     TextSpan,
 )
+from app.field_selection import EXTRACTION_REVISION
 from app.settings import Settings, get_settings
 from app.stages.s5_discover import add_discovered, discover_fields
 from app.stages.s5_slm import RejectedField, SLMPageResult, apply_grounding_gate
@@ -519,6 +520,7 @@ def assemble_envelope(
         job_id=job_id,
         provider_profile=provider_profile,
         requested_fields=tuple(requested_fields),
+        extraction_revision=EXTRACTION_REVISION,
         bounce_decision=decision,
         escalation_flag=escalation_flag,
         pages=page_results,

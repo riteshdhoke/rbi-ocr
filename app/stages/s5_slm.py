@@ -81,6 +81,8 @@ from app.contracts.ocr import (
     TextSpan,
 )
 from app.settings import Settings, get_settings
+from app.stages.s5_evidence import ground_multiline
+from app.stages.s5_letter import conflicting_letter_role
 from app.stages.s5_validators import normalise_digits
 
 __all__ = [
@@ -193,16 +195,14 @@ class SupportsExtraction(Protocol):
 
     def extract_fields_batch(
         self, ctxs: Sequence[ExtractionContext]
-    ) -> list[dict[str, RawField]]:
-        ...
+    ) -> list[dict[str, RawField]]: ...
 
 
 class BudgetSource(Protocol):
     """The read side of :class:`~app.providers.base.JobBudget`."""
 
     @property
-    def remaining(self) -> int:
-        ...
+    def remaining(self) -> int: ...
 
 
 # --------------------------------------------------------------------------- #
@@ -265,18 +265,22 @@ def build_extraction_context(
             nothing to extract is a caller bug.
     """
     active = settings if settings is not None else get_settings()
-    fields = tuple(target_fields) if target_fields is not None else DEFAULT_TARGET_FIELDS
+    fields = (
+        tuple(target_fields) if target_fields is not None else DEFAULT_TARGET_FIELDS
+    )
     if not fields:
         raise ValueError("target_fields must name at least one field to extract")
-    max_tokens = (active.SLM_MAX_TOKENS if active.EXTRACT_ALL_FIELDS
-                  else context_max_tokens(fields, settings=active))
+    max_tokens = (
+        active.SLM_MAX_TOKENS
+        if active.EXTRACT_ALL_FIELDS
+        else context_max_tokens(fields, settings=active)
+    )
     remaining: int | None = None
     if budget is not None:
         remaining = int(budget.remaining)
         if remaining <= 0:
             raise TokenBudgetExceeded(
-                "no token headroom left for SLM extraction on page "
-                f"{page.page_no}",
+                f"no token headroom left for SLM extraction on page {page.page_no}",
                 budget=None,
                 used=None,
                 context={"page_no": page.page_no, "document_id": document_id},
@@ -369,6 +373,7 @@ def extract_pages(
 # --------------------------------------------------------------------------- #
 # The grounding gate (PLAN.md invariant 8)
 # --------------------------------------------------------------------------- #
+
 
 def _fold_char(character: str) -> str:
     """Lowercase one character, unless doing so would change its length.
@@ -490,9 +495,7 @@ def ground_value(
         return GroundingResult(grounded=False)
 
     by_index = {line.line_index: line for line in lines}
-    cited_indices = [
-        index for index in preferred_line_indices if index in by_index
-    ]
+    cited_indices = [index for index in preferred_line_indices if index in by_index]
     cited = [by_index[index] for index in cited_indices]
     seen = set(cited_indices)
     remaining = [line for line in lines if line.line_index not in seen]
@@ -613,9 +616,7 @@ def apply_grounding_gate(
     """
     active = settings if settings is not None else get_settings()
     budget = (
-        max_distance
-        if max_distance is not None
-        else active.GROUNDING_MAX_EDIT_DISTANCE
+        max_distance if max_distance is not None else active.GROUNDING_MAX_EDIT_DISTANCE
     )
     known = {line.line_index for line in page.lines}
     by_index = {line.line_index: line for line in page.lines}
@@ -662,6 +663,21 @@ def apply_grounding_gate(
                     line_indices=tuple(raw.line_indices),
                 )
             )
+            continue
+        if conflicting_letter_role(name, raw.value, page):
+            rejected.append(
+                RejectedField(
+                    page_no=page.page_no,
+                    name=name,
+                    value=raw.value,
+                    reason="role_conflict",
+                    line_indices=tuple(raw.line_indices),
+                )
+            )
+            continue
+        multiline = ground_multiline(raw, page)
+        if multiline is not None:
+            accepted[name] = multiline
             continue
         result = ground_value(
             raw.value,
@@ -716,9 +732,7 @@ def apply_grounding_gate(
     )
 
 
-def _confidence_of(
-    raw: RawField, result: GroundingResult, budget: int
-) -> Confidence:
+def _confidence_of(raw: RawField, result: GroundingResult, budget: int) -> Confidence:
     """Discount the model's self-reported confidence by the grounding distance.
 
     A model's own confidence is not calibrated and is not evidence.  What *is*

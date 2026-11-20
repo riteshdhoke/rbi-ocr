@@ -127,7 +127,7 @@ def build_router() -> APIRouter:
         """
         from fastapi.exceptions import RequestValidationError
 
-        from app.field_selection import parse_requested_fields
+        from app.field_selection import EXTRACTION_REVISION, parse_requested_fields
 
         try:
             wanted = parse_requested_fields(requested_fields)
@@ -172,6 +172,7 @@ def build_router() -> APIRouter:
             record.job.status != JobStatus.FAILED.value
             and previous is not None
             and previous.requested_fields == wanted
+            and previous.extraction_revision == EXTRACTION_REVISION
         ):
             _LOG.info(
                 "idempotent resubmission | job=%s version=%d",

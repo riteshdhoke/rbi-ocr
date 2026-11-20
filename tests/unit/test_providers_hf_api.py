@@ -910,3 +910,40 @@ def test_batch_works_from_inside_a_running_event_loop(
         )
 
     assert len(asyncio.run(caller())) == 2
+
+
+
+def test_vllm_transcription_sends_image_and_accounts_to_current_job(build_provider):
+    import numpy as np
+
+    from app.providers.base import JobBudget, use_job_budget
+
+    payload = {
+        "lines": [{
+            "text": "Handwritten complaint",
+            "bbox": [1, 1, 15, 1, 15, 8, 1, 8],
+            "confidence": 0.8,
+            "script": "Latn",
+            "is_handwritten": True,
+        }]
+    }
+    provider, recorder, _ = build_provider(
+        [_ok(json.dumps(payload), total_tokens=120)],
+        base_url="http://127.0.0.1:8000/v1",
+        settings_kwargs={"VLM_MODEL": "served-qwen", "VLM_MAX_TOKENS": 1024},
+    )
+    budget = JobBudget(3000)
+    with use_job_budget(budget):
+        lines = provider.ocr_page_heavy(np.zeros((12, 20, 3), dtype=np.uint8))
+
+    assert lines[0].text == "Handwritten complaint"
+    assert lines[0].is_handwritten
+    assert lines[0].line_index == 0
+    body = recorder.body()
+    assert recorder.requests[0].url.path == "/v1/chat/completions"
+    assert body["model"] == "served-qwen"
+    assert body["max_tokens"] == 1024
+    image = body["messages"][-1]["content"][-1]["image_url"]["url"]
+    assert image.startswith("data:image/png;base64,")
+    assert budget.used == 120
+    assert provider.budget.used == 0

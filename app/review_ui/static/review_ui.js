@@ -679,7 +679,7 @@
       var field = row.field;
       var tr = el("tr", { className: isFlagged(field) ? "flagged" : "" });
       tr.appendChild(el("td", { text: row.name }));
-      tr.appendChild(el("td", { text: orDash(field.value) }));
+      tr.appendChild(el("td", { className: "field-value", text: orDash(field.value) }));
       tr.appendChild(el("td", { text: orDash(field.value_en) }));
       tr.appendChild(el("td", { className: "mono", text: pct(field.confidence) }));
       tr.appendChild(el("td", { className: "mono", text: orDash(field.source) }));

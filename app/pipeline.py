@@ -18,7 +18,9 @@ escalation, the validators decide validity, and ``assemble`` decides the shape.
    machine-readable :class:`~app.contracts.envelope.BounceReason`.  When *every*
    page bounces the document bounces, and the envelope carries no
    ``document`` at all (BUILD-BRIEF sec. 0.5).
-4. ``s4_ocr.run_tier1`` — batched recognition (invariant 4).  Stage 2's script
+4. ``s4c_handwriting`` can route detected handwritten raster pages directly to
+   the in-house VLM. Otherwise ``s4_ocr.run_tier1`` runs batched recognition
+   (invariant 4). Stage 2's script
    vote is *inside* it (adjudication A-6 gives it the second recognition pass),
    so this module deliberately does not vote a second time.  It owes Stage 4 one
    thing the stage cannot see for itself: when a geometric repair forced the
@@ -77,7 +79,7 @@ from __future__ import annotations
 import logging
 import time
 from collections.abc import Callable, Iterator, Mapping, Sequence
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -108,7 +110,7 @@ from app.contracts.ocr import (
     PageClassLabel,
     RawField,
 )
-from app.providers.base import JobBudget, ModelProvider, PageImage
+from app.providers.base import JobBudget, ModelProvider, PageImage, use_job_budget
 from app.providers.factory import require_synthetic_corpus_file
 from app.providers.local import UNDETERMINED_SCRIPT
 from app.settings import Settings, get_settings
@@ -131,6 +133,7 @@ from app.stages.s4_router import (
     route,
 )
 from app.stages.s4b_vlm import Tier2Result, apply_tier2, escalate_page
+from app.stages.s4c_handwriting import extract_handwritten_page
 from app.stages.s5_slm import build_extraction_contexts, extract_pages
 from app.stages.s5_validators import (
     BankTable,
@@ -258,6 +261,7 @@ class PageOutcome:
     escalated: bool = False
     shadow_sampled: bool = False
     tier2: Tier2Result | None = None
+    handwriting_vlm: Tier2Result | None = None
     structural_anomalies: tuple[str, ...] = ()
     raw_fields: dict[str, RawField] = field(default_factory=dict)
 
@@ -542,6 +546,7 @@ def run_document(
         active.PROVIDER_PROFILE.value,
     )
 
+    budget = JobBudget(active.JOB_TOKEN_BUDGET, job_id=job_id or document_id)
     bypasses = _bypass_results(ingested, timings)
     outcomes = [
         _process_page(
@@ -550,6 +555,7 @@ def run_document(
             provider=provider,
             settings=active,
             timings=timings,
+            budget=budget,
         )
         for raster in ingested.pages
     ]
@@ -573,8 +579,12 @@ def run_document(
 
     master = ifsc_master if ifsc_master is not None else _load_ifsc_master(active)
     bank_table = _load_bank_table(active)
-    budget = JobBudget(active.JOB_TOKEN_BUDGET, job_id=job_id or document_id)
-    warnings: list[str] = []
+    warnings = [
+        f"handwriting_vlm_failed:page={outcome.page_no}:"
+        f"reason={outcome.handwriting_vlm.error_code or outcome.handwriting_vlm.outcome.value}"
+        for outcome in outcomes
+        if outcome.handwriting_vlm is not None and not outcome.handwriting_vlm.succeeded
+    ]
 
     report = _run_validators(
         outcomes, master=master, bank_table=bank_table, timings=timings
@@ -622,6 +632,7 @@ def run_document(
             document_id=document_id,
             timings=timings,
             warnings=warnings,
+            budget=budget,
         )
         report = _run_validators(
             outcomes, master=master, bank_table=bank_table, timings=timings
@@ -820,6 +831,7 @@ def _process_page(
     provider: ModelProvider,
     settings: Settings,
     timings: _Timings,
+    budget: JobBudget,
 ) -> PageOutcome:
     """Quality, recognition, LID and classification for one page."""
     page_no = raster.page_no
@@ -861,25 +873,42 @@ def _process_page(
     repairs = assessment.repairs_applied
     bypass_lines = _usable_bypass_lines(bypass, repairs)
 
-    with timings.stage("s4_ocr", page_no):
-        tier1 = run_tier1(
-            None if bypass_lines is not None else image,
-            provider=provider,
+    handwriting_vlm = None
+    if bypass_lines is None and settings.GPU_HANDWRITING_ENABLED:
+        with timings.stage("s4c_handwriting", page_no), use_job_budget(budget):
+            handwriting_vlm = extract_handwritten_page(
+                image, provider=provider, min_ratio=settings.GPU_HANDWRITING_MIN_RATIO
+            )
+
+    rotation = -assessment.metrics.skew_deg if REPAIR_DESKEW in repairs else 0.0
+    tier1 = None
+    if handwriting_vlm is not None:
+        page = OCRPage(
             page_no=page_no,
-            settings=settings,
-            script_prior=(
-                None if bypass_lines is not None else _text_layer_script(bypass)
-            ),
-            bypass_lines=bypass_lines,
             width_px=raster.width_px,
             height_px=raster.height_px,
-            rotation_applied_deg=(
-                -assessment.metrics.skew_deg if REPAIR_DESKEW in repairs else 0.0
-            ),
+            lines=list(handwriting_vlm.lines),
+            tier=OCRTier.TIER2 if handwriting_vlm.succeeded else OCRTier.NONE,
+            rotation_applied_deg=rotation,
             dpi_estimate=raster.dpi,
         )
-
-    page = tier1.page
+    else:
+        with timings.stage("s4_ocr", page_no):
+            tier1 = run_tier1(
+                None if bypass_lines is not None else image,
+                provider=provider,
+                page_no=page_no,
+                settings=settings,
+                script_prior=(
+                    None if bypass_lines is not None else _text_layer_script(bypass)
+                ),
+                bypass_lines=bypass_lines,
+                width_px=raster.width_px,
+                height_px=raster.height_px,
+                rotation_applied_deg=rotation,
+                dpi_estimate=raster.dpi,
+            )
+        page = tier1.page
     if page.lines:
         with timings.stage("s2b_lid", page_no):
             lid = identify_line_languages(
@@ -903,6 +932,7 @@ def _process_page(
         page_class=classification.page_class,
         classification=classification,
         tier1=tier1,
+        handwriting_vlm=handwriting_vlm,
     )
     outcome.structural_anomalies = _structural_anomalies(outcome, bypass)
     if "page_sideways" in outcome.structural_anomalies:
@@ -1025,7 +1055,7 @@ def _route_pages(
 ) -> None:
     """Decide escalation and shadow sampling for every non-bounced page."""
     for outcome in outcomes:
-        if outcome.bounced:
+        if outcome.bounced or outcome.handwriting_vlm is not None:
             continue
         failures = tuple(
             hit.field_name
@@ -1082,6 +1112,7 @@ def _run_tier2(
     document_id: str,
     timings: _Timings,
     warnings: list[str],
+    budget: JobBudget,
 ) -> None:
     """Escalate every page the router selected, then re-label its lines.
 
@@ -1091,11 +1122,13 @@ def _run_tier2(
     shadow-sampled page runs Tier 2 for the diff only; its lines are never
     replaced, because a control that changes the output is not a control.
     """
-    del settings
     for outcome in outcomes:
         if not _awaits_tier2(outcome):
             continue
-        with timings.stage("s4b_vlm", outcome.page_no):
+        budget_scope = (
+            use_job_budget(budget) if settings.GPU_HANDWRITING_ENABLED else nullcontext()
+        )
+        with timings.stage("s4b_vlm", outcome.page_no), budget_scope:
             result = escalate_page(outcome.image, outcome.page.lines, provider=provider)
         outcome.tier2 = result
         if not result.succeeded:
@@ -1176,40 +1209,43 @@ def _extract_fields(
         return
 
     by_page = {outcome.page_no: outcome for outcome in candidates}
-    contexts = build_extraction_contexts(
-        [outcome.page for outcome in candidates],
-        target_fields=requested_fields or None,
-        document_id=document_id,
-        page_classes={
-            outcome.page_no: (
-                outcome.page_class.label
-                if outcome.page_class is not None
-                else PageClassLabel.UNKNOWN
-            )
-            for outcome in candidates
-        },
-        primary_scripts={
-            outcome.page_no: _page_script(outcome) for outcome in candidates
-        },
-        primary_languages={
-            outcome.page_no: _page_language(outcome) for outcome in candidates
-        },
-        masked_spans={
-            outcome.page_no: (
-                []
-                if settings.EXTRACT_ALL_FIELDS
-                and settings.PROVIDER_PROFILE.value != "laptop"
-                else report.masked_spans(outcome.page_no)
-            )
-            for outcome in candidates
-        },
-        budget=budget,
-        settings=settings,
-    )
-    if not contexts:
-        return
     try:
-        with timings.stage("s5_slm"):
+        contexts = build_extraction_contexts(
+            [outcome.page for outcome in candidates],
+            target_fields=requested_fields or None,
+            document_id=document_id,
+            page_classes={
+                outcome.page_no: (
+                    outcome.page_class.label
+                    if outcome.page_class is not None
+                    else PageClassLabel.UNKNOWN
+                )
+                for outcome in candidates
+            },
+            primary_scripts={
+                outcome.page_no: _page_script(outcome) for outcome in candidates
+            },
+            primary_languages={
+                outcome.page_no: _page_language(outcome) for outcome in candidates
+            },
+            masked_spans={
+                outcome.page_no: (
+                    []
+                    if settings.EXTRACT_ALL_FIELDS
+                    and settings.PROVIDER_PROFILE.value != "laptop"
+                    else report.masked_spans(outcome.page_no)
+                )
+                for outcome in candidates
+            },
+            budget=budget,
+            settings=settings,
+        )
+        if not contexts:
+            return
+        budget_scope = (
+            use_job_budget(budget) if settings.GPU_HANDWRITING_ENABLED else nullcontext()
+        )
+        with timings.stage("s5_slm"), budget_scope:
             results = extract_pages(provider, contexts)
     except ProviderError as failure:
         warnings.append(f"{SLM_UNAVAILABLE_PREFIX}:{failure.code}")

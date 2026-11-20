@@ -1264,3 +1264,16 @@ fails the build if a required property or an enum value disappears without a ver
 | Measured accuracy, and its caveats | `docs/eval/REPORT.md` |
 | What is known-broken or undecided | `OPEN-QUESTIONS.md` (Q9, Q11, Q14, Q15 are referenced above) |
 | To tune thresholds or models | `docs/TUNING.md` |
+
+## Letter fields and multi-line evidence
+
+Readable letters may additionally yield `recipient_name`, `sender_name`,
+`sender_designation`, `email`, `postal_address` and `letter_content`. Addressee
+means recipient, not signatory. `email id` is an alias of email; `address` refers
+to a postal address. Unknown custom labels remain supported. Unreliable fields
+remain in `missing_fields`. Multi-line values preserve source line breaks and
+carry `evidence.spans` in addition to the first `evidence.span`. The additional
+source value `ocr_layout` denotes grounded deterministic layout/letter extraction.
+Letter content is a raw transcription marked for review, not a corrected summary.
+The root `extraction_revision` invalidates saved results from older extractor
+revisions without deleting their history.

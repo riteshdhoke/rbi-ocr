@@ -29,6 +29,31 @@ HF client, and the air-gapped profiles refuse to start if pointed off-premises.
 Health and error rates: `GET /healthz`, `GET /v1/stats` (JSON, in-memory, resets on
 restart) and `GET /metrics` (Prometheus).
 
+## Handwritten pages on an in-house GPU
+
+Serve a vision model using the OpenAI-compatible endpoint from IDP2's vLLM
+deployment. In RBI OCR's `.env`, set the endpoint and use the model names
+advertised by that deployment. For a single Qwen server, the same model can
+handle the image transcription and the text-only field extraction requests.
+
+```dotenv
+PROVIDER_PROFILE=gpu_node
+HF_BASE_URL=http://127.0.0.1:8000/v1
+GPU_HANDWRITING_ENABLED=true
+GPU_HANDWRITING_MIN_RATIO=0.5
+VLM_MODEL=Qwen/Qwen2.5-VL-7B-Instruct
+VLM_MAX_TOKENS=3072
+SLM_MODEL=Qwen/Qwen2.5-VL-7B-Instruct
+```
+
+The handwriting stage runs after the quality gate on raster pages without a
+usable PDF text layer. The existing pixel heuristic estimates the share of
+text lines that look handwritten. Pages at or above the threshold go straight
+to the VLM and skip Tier-1 OCR. RBI OCR still validates fields and grounds SLM
+results in the transcribed lines. If the VLM is unavailable or returns no
+lines, the result records a page warning and CPU OCR stays skipped. Printed
+pages and usable PDF text layers follow the regular path.
+
 ## Office hand-off
 
 The office machine is air-gapped: it has no internet, no git and no copy of this

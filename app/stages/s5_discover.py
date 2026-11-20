@@ -7,6 +7,7 @@ not pretend that arbitrary narrative text can be understood without a model.
 
 from __future__ import annotations
 
+import math
 import re
 import unicodedata
 from collections.abc import Mapping, Sequence
@@ -14,6 +15,7 @@ from collections.abc import Mapping, Sequence
 from app.contracts.envelope import Evidence, Field, FieldFlag
 from app.contracts.ocr import OCRLine, OCRPage, TextSpan
 from app.field_selection import field_name, matches_field
+from app.stages.s5_letter import discover_letter_fields
 
 # Separate multiple form cells only at explicit layout separators. A lone colon
 # inside a URL, time or value is not treated as a second label.
@@ -26,7 +28,12 @@ def _same_row_value(label: OCRLine, value: OCRLine) -> bool:
     other_top, other_bottom = min(value.bbox[1::2]), max(value.bbox[1::2])
     overlap = min(bottom, other_bottom) - max(top, other_top)
     return (
-        overlap > 0
+        abs(
+            math.atan2(label.bbox[3] - label.bbox[1], label.bbox[2] - label.bbox[0])
+            - math.atan2(value.bbox[3] - value.bbox[1], value.bbox[2] - value.bbox[0])
+        )
+        <= math.radians(10)
+        and overlap > 0
         and overlap >= min(bottom - top, other_bottom - other_top) * 0.5
         and min(value.bbox[0::2]) >= max(label.bbox[0::2])
     )
@@ -55,16 +62,38 @@ def discover_fields(
     have ``validator_passed=None`` and ``source='ocr_label'``.
     """
     fields = dict(existing or {})
+    claimed = {
+        (field.evidence.page_no, span.line_index)
+        for field in fields.values()
+        if field.source in {"lookup_table", "regex_validator"}
+        for span in (field.evidence.spans or (field.evidence.span,))
+    }
     for page in sorted(pages, key=lambda p: p.page_no):
+        for name, candidate in discover_letter_fields(page).items():
+            add_discovered(fields, name, candidate)
         lines = page.lines
         for position, line in enumerate(lines):
+            if line.confidence < 0.8:
+                continue
             matches = list(_CELL.finditer(line.text))
             if not matches:
                 numbered = _NUMBERED_LABEL.fullmatch(line.text)
                 if numbered:
                     matches = [numbered]
                 elif (
-                    len(line.text) <= 80
+                    (page.page_no, line.line_index) not in claimed
+                    and sum(
+                        1
+                        for peer in lines
+                        if peer is line
+                        or _same_row_value(line, peer)
+                        or _same_row_value(peer, line)
+                    )
+                    < 3
+                    and len(line.text) <= 60
+                    and len(line.text.split()) <= 6
+                    and not any(c.isdigit() for c in line.text)
+                    and not re.search(r"[.,!?;]", line.text)
                     and position + 1 < len(lines)
                     and (
                         _same_row_value(line, lines[position + 1])
@@ -107,7 +136,8 @@ def discover_fields(
                         min(line.bbox[0::2]) - min(following.bbox[0::2])
                     ) <= max(height * 2, 20)
                     if (
-                        not _CELL.search(following.text)
+                        following.confidence >= 0.8
+                        and not _CELL.search(following.text)
                         and not _NUMBERED_LABEL.fullmatch(following.text)
                         and (
                             _same_row_value(line, following)

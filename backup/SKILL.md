@@ -63,6 +63,29 @@ The offline CPU provider has no SLM. Its label discovery cannot infer every fact
 from narrative or reconstruct arbitrary tables. Do not claim unrestricted field
 names guarantee complete semantic extraction.
 
+## Letter roles and extraction quality
+
+`app/stages/s5_letter.py` recognizes readable letter structure and contacts;
+`app/stages/s5_evidence.py` preserves exact multi-line evidence. A closing signature
+identifies the sender, while a greeting identifies the recipient/addressee. Never
+map sender to addressee to satisfy an expected answer. Postal addresses and email
+addresses are separate concepts. Unknown/ambiguous fields must remain missing.
+
+Multi-line fields carry `evidence.spans`; retain `evidence.span` as the first span
+for compatibility. Preserve OCR spellings, even when a cleaner reading seems
+obvious from the image. Do not manufacture corrected addresses or designations
+from expected test values. Compare reference-transcription tests separately from
+actual-image OCR tests, and disclose recognition limits.
+
+Bank-name logos can span multiple OCR lines. Join only nearby fragments whose
+complete observed text matches a reference alias. Preserve all spans for evidence
+and masking; do not publish suffixes such as 'of India' as independent banks or
+complete a short alias using unobserved words. Keep genuinely distinct banks separate.
+
+Results record `extraction_revision`. When extraction behavior changes, update the
+revision in `app/field_selection.py` so cached legacy results get a new append-only
+extraction instead of being silently reused.
+
 ## Run the service
 
 Use Python 3.12 and the explicit virtual-environment interpreter; activation is not

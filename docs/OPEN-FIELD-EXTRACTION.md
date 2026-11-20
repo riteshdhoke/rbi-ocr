@@ -55,6 +55,52 @@ For local profiles, open model extraction can see validator-owned OCR spans.
 The laptop profile still masks those spans before any remote request. Selecting
 open extraction does not add remote calls to `cpu_node`.
 
+## Letter structure and conservative discovery
+
+`app/stages/s5_letter.py` adds evidence-backed email, postal-address block, recipient,
+sender/signatory, sender designation, and letter-body recognition. These recognizers
+complement arbitrary field labels; they are not an output-field allowlist.
+A readable greeting identifies the recipient; a readable closing/signature identifies
+the sender. Designation requires an associated readable role line. Text inside the
+uploaded document remains data, including any instructions in the letter.
+
+Layout inference now rejects label/value pairs whose writing angles differ, skips
+low-confidence OCR fragments, and does not promote digit-containing address lines
+to arbitrary field names. Email, sender/recipient and postal-address aliases retain
+their distinct meanings. Missing or ambiguous values remain missing rather than
+being replaced by unrelated bank identifiers or nearby narrative.
+
+Multi-line addresses and letter content use `source="ocr_layout"` and carry exact
+`evidence.spans` for all source lines. The original `evidence.span` remains the first
+span for compatibility; the bounding box covers the selected lines. Model-proposed
+multi-line values must exactly join their cited OCR lines; arbitrary rewritten
+summaries and spelling repairs are rejected. A signature proposed as the addressee
+is rejected when clear letter-role evidence contradicts it.
+
+This is deliberately conservative. An address block requires both a street and a
+postal destination and sufficiently readable source lines. Current deterministic
+address conventions and English greeting/closing rules do not cover all languages,
+layouts or international addresses. Uncertain address or designation fragments are
+withheld. Raw letter content is marked for review and may still contain OCR spelling
+errors; geometry and OCR confidence cannot prove a transcription is correct.
+
+## Bank names split over logo lines
+
+The bank validator joins up to three nearby, horizontally overlapping text
+fragments only when their observed text forms a complete reference-table alias.
+This handles logos such as `Union Bank` above `of India`, even if an OCR line from
+another column appears between them in reading order. Distant fragments, separate
+columns and genuinely distinct banks are not joined. Regulator exclusions still
+apply across line breaks. Every contributing span is retained in evidence and
+masked under remote-profile rules.
+
+A suffix such as `of India` alone no longer becomes a second bank through fuzzy
+matching. The full observed name is the field value; the canonical reference name
+remains in `normalized`. Generic label inference skips validator-claimed lines and
+unlabeled rows of three or more cells, so a bank logo or table header is not used
+as an arbitrary label for its neighbor. The extractor revision was updated to
+recompute cached results affected by the older bank-logo behavior.
+
 ## Practical limits
 
 The current offline CPU provider has no SLM. It can extract explicit labels and
@@ -85,13 +131,20 @@ those names. `document.other_fields` contains discoveries not matched to the req
 The original complete `document.fields` map remains available for existing clients.
 With an empty request list, all discoveries appear in `other_fields`.
 
-Matching uses normalized label words, so `complainant name` matches
-`name_of_complainant`. It does not guess arbitrary synonyms. Use descriptive labels:
-a broad request such as `name` can match multiple different names. The offline
+Matching uses normalized label words plus a small set of explicit semantic aliases.
+For example, `complainant name` matches `name_of_complainant`, and `email id` matches
+`email`. Email addresses and postal addresses are separate concepts. Recipient and
+sender names/designations are also separate concepts; a signature is never an
+addressee merely because it is the clearest visible name. Unknown custom field
+names remain supported. Ambiguous broad requests such as `name` are left unresolved
+when multiple different roles match. Matching aliases are deduplicated between
+requested and other groups. The offline
 provider still cannot infer arbitrary semantic facts from narrative text.
 
 Jobs remain keyed by the document's hash. The same file and equivalent field list
-reuse the latest saved result. A changed field list reruns extraction on that job
+reuse the latest saved result only when its `extraction_revision` is current.
+Older results are re-extracted once with append-only versions after an extractor
+revision, so stale incorrect fields are not returned indefinitely. A changed field list reruns extraction on that job
 and appends new versions, preserving earlier results. `is_new` describes the job,
 so it stays false for these re-extractions. The latest grouped result is also
 available through `GET /v1/jobs/{job_id}` and webhook delivery. A request while the

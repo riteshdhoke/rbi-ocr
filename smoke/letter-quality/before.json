@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0.0",
+  "result_version": 2,
+  "is_final": true,
+  "document_id": "sha256:82dd32c25a16b775ab06bed0188c11f400665bfb14720e4e6917d30c638a90ef",
+  "job_id": null,
+  "requested_fields": [
+    "address",
+    "addressee",
+    "email_id",
+    "letter_content",
+    "sender",
+    "sender_designation"
+  ],
+  "created_at": "2026-11-20T02:14:54.408275Z",
+  "provider_profile": "cpu_node",
+  "bounce_decision": {
+    "decision": "accept",
+    "reason": null,
+    "detail": null
+  },
+  "escalation_flag": true,
+  "pages": [
+    {
+      "page_no": 1,
+      "quality_score": 0.9329469706649884,
+      "quality_flags": [
+        "OCCLUSION_DETECTED",
+        "SHADOW_DETECTED"
+      ],
+      "quality_verdict": "accept",
+      "ocr_tier": "tier1",
+      "line_count": 29,
+      "primary_script": "Latn",
+      "primary_language": "eng",
+      "language_distribution": {
+        "eng": 1.0
+      },
+      "is_code_mixed": false,
+      "escalated": false,
+      "shadow_sampled": false,
+      "repairs_applied": []
+    }
+  ],
+  "document": {
+    "document_class": "complaint_letter",
+    "document_class_confidence": 1.0,
+    "fields": {
+      "bos": {
+        "value": "OR aRe loking fiR business seRvices",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            233.82928705215454,
+            282.7255859375,
+            676.6414947509766,
+            281.62841796875,
+            676.7177982330322,
+            313.3865966796875,
+            233.90553045272827,
+            314.4837646484375
+          ],
+          "span": {
+            "line_index": 8,
+            "start": 0,
+            "end": 35
+          }
+        },
+        "mt_engine": null,
+        "flags": [
+          "HANDWRITTEN_SOURCE"
+        ]
+      },
+      "05_ma": {
+        "value": "and tools, you should consider me a",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            236.07445693016052,
+            312.8216552734375,
+            692.19118309021,
+            312.8216552734375,
+            692.19118309021,
+            347.1783447265625,
+            236.07445693016052,
+            347.1783447265625
+          ],
+          "span": {
+            "line_index": 10,
+            "start": 0,
+            "end": 35
+          }
+        },
+        "mt_engine": null,
+        "flags": [
+          "HANDWRITTEN_SOURCE"
+        ]
+      },
+      "745_aantic_ave": {
+        "value": "pesource.",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            240.66471219062805,
+            345.2879943847656,
+            363.02586221694946,
+            350.7518615722656,
+            361.81930589675903,
+            378.6371765136719,
+            239.45812582969666,
+            373.1733093261719
+          ],
+          "span": {
+            "line_index": 13,
+            "start": 0,
+            "end": 9
+          }
+        },
+        "mt_engine": null,
+        "flags": []
+      },
+      "boston_ma02111": {
+        "value": "We ane introducing lots of great",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            270.5664396286011,
+            369.8739318847656,
+            689.6249828338623,
+            374.2740783691406,
+            689.235294342041,
+            412.5760803222656,
+            270.1767511367798,
+            408.1759338378906
+          ],
+          "span": {
+            "line_index": 17,
+            "start": 0,
+            "end": 32
+          }
+        },
+        "mt_engine": null,
+        "flags": [
+          "HANDWRITTEN_SOURCE"
+        ]
+      }
+    },
+    "extracted_fields": {
+      "address": [],
+      "addressee": [],
+      "email_id": [],
+      "letter_content": [],
+      "sender": [],
+      "sender_designation": []
+    },
+    "other_fields": {
+      "bos": {
+        "value": "OR aRe loking fiR business seRvices",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            233.82928705215454,
+            282.7255859375,
+            676.6414947509766,
+            281.62841796875,
+            676.7177982330322,
+            313.3865966796875,
+            233.90553045272827,
+            314.4837646484375
+          ],
+          "span": {
+            "line_index": 8,
+            "start": 0,
+            "end": 35
+          }
+        },
+        "mt_engine": null,
+        "flags": [
+          "HANDWRITTEN_SOURCE"
+        ]
+      },
+      "05_ma": {
+        "value": "and tools, you should consider me a",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            236.07445693016052,
+            312.8216552734375,
+            692.19118309021,
+            312.8216552734375,
+            692.19118309021,
+            347.1783447265625,
+            236.07445693016052,
+            347.1783447265625
+          ],
+          "span": {
+            "line_index": 10,
+            "start": 0,
+            "end": 35
+          }
+        },
+        "mt_engine": null,
+        "flags": [
+          "HANDWRITTEN_SOURCE"
+        ]
+      },
+      "745_aantic_ave": {
+        "value": "pesource.",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            240.66471219062805,
+            345.2879943847656,
+            363.02586221694946,
+            350.7518615722656,
+            361.81930589675903,
+            378.6371765136719,
+            239.45812582969666,
+            373.1733093261719
+          ],
+          "span": {
+            "line_index": 13,
+            "start": 0,
+            "end": 9
+          }
+        },
+        "mt_engine": null,
+        "flags": []
+      },
+      "boston_ma02111": {
+        "value": "We ane introducing lots of great",
+        "value_en": null,
+        "normalized": null,
+        "confidence": 0.85,
+        "source": "ocr_label",
+        "validator_passed": null,
+        "evidence": {
+          "page_no": 1,
+          "bbox": [
+            270.5664396286011,
+            369.8739318847656,
+            689.6249828338623,
+            374.2740783691406,
+            689.235294342041,
+            412.5760803222656,
+            270.1767511367798,
+            408.1759338378906
+          ],
+          "span": {
+            "line_index": 17,
+            "start": 0,
+            "end": 32
+          }
+        },
+        "mt_engine": null,
+        "flags": [
+          "HANDWRITTEN_SOURCE"
+        ]
+      }
+    },
+    "missing_fields": [
+      "address",
+      "addressee",
+      "email_id",
+      "letter_content",
+      "sender",
+      "sender_designation"
+    ],
+    "complaint_summary": null,
+    "supporting_doc_tags": [],
+    "page_count": 1,
+    "primary_script": "Latn",
+    "primary_language": "eng",
+    "language_distribution": {
+      "eng": 1.0
+    },
+    "is_code_mixed": false
+  },
+  "processing": {
+    "started_at": "2026-11-20T02:14:52.663867Z",
+    "finished_at": "2026-11-20T02:14:54.405648Z",
+    "duration_ms": 1741.781,
+    "pages_processed": 1,
+    "pages_bounced": 0,
+    "pages_escalated": 0,
+    "tokens_used": 0,
+    "stage_timings_ms": {
+      "s0_read": 0.006,
+      "s1_ingest": 22.382,
+      "s15_quality": 111.279,
+      "s15_quality:p1": 111.279,
+      "s4_ocr": 1411.708,
+      "s4_ocr:p1": 1411.708,
+      "s2b_lid": 20.738,
+      "s2b_lid:p1": 20.738,
+      "s3_classify": 88.263,
+      "s3_classify:p1": 88.263,
+      "s5_validators": 80.795,
+      "s5_slm": 0.016,
+      "assemble": 3.162,
+      "s4b_vlm": 0.095,
+      "s4b_vlm:p1": 0.095
+    }
+  },
+  "warnings": [
+    "slm_unavailable:PROVIDER_METHOD_NOT_SUPPORTED",
+    "tier2_failed:page=1:reason=not_supported:code=PROVIDER_METHOD_NOT_SUPPORTED"
+  ]
+}

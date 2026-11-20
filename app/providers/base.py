@@ -54,6 +54,7 @@ from __future__ import annotations
 import threading
 from collections.abc import Iterator, Mapping, Sequence
 from contextlib import contextmanager
+from contextvars import ContextVar
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, ClassVar, Protocol, TypeAlias, runtime_checkable
 
@@ -473,3 +474,19 @@ def to_page_image(image: object) -> PageImage:
     if array.dtype != np.uint8:
         array = np.clip(array, 0, 255).astype(np.uint8)
     return np.ascontiguousarray(array)
+
+
+# A provider can be shared by concurrent jobs in the API and worker.
+active_job_budget: ContextVar[JobBudget | None] = ContextVar(
+    "active_job_budget", default=None
+)
+
+
+@contextmanager
+def use_job_budget(budget: JobBudget) -> Iterator[None]:
+    """Bind token accounting to this document's inference calls."""
+    token = active_job_budget.set(budget)
+    try:
+        yield
+    finally:
+        active_job_budget.reset(token)

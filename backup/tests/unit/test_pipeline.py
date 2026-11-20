@@ -1277,3 +1277,54 @@ def test_requested_names_reach_model_context_and_persist_in_grouped_result(
     assert final.requested_fields == ('custom_reference',)
     assert final.document.extracted_fields['custom_reference'][0].value == '4. Name of bank'
     assert final.document.other_fields
+
+
+@pytest.mark.parametrize("ratio, vlm_outcome", [
+    (0.0, "printed"),
+    (0.5, "success"),
+    (0.9, "empty"),
+    (0.9, "unavailable"),
+])
+def test_handwriting_routes_before_tier1(
+    monkeypatch, make_settings, latin_provider, ratio, vlm_outcome,
+):
+    monkeypatch.setattr(
+        "app.stages.s4c_handwriting.estimate_handwriting_ratio", lambda image: ratio
+    )
+    settings = make_settings(
+        PROVIDER_PROFILE=ProviderProfile.GPU_NODE,
+        HF_BASE_URL="http://127.0.0.1:8000/v1",
+        GPU_EXECUTION="never",
+        GPU_HANDWRITING_ENABLED=True,
+        ESCALATION_SHADOW_RATE=0.0 if vlm_outcome == "printed" else 1.0,
+    )
+    if vlm_outcome == "empty":
+        latin_provider.heavy_lines = []
+    if vlm_outcome == "unavailable":
+        latin_provider.fail_with["ocr_page_heavy"] = ProviderUnavailable("offline")
+
+    result = run_document(CLEAN_DOC, provider=latin_provider, settings=settings)
+    page = result.pages[0]
+    if vlm_outcome == "printed":
+        assert latin_provider.method_calls("ocr_page")
+        assert not latin_provider.method_calls("ocr_page_heavy")
+        assert page.tier1 is not None
+        return
+
+    assert latin_provider.method_calls("ocr_page_heavy") == [None]
+    assert not latin_provider.method_calls("ocr_page")
+    assert page.tier1 is None
+    assert page.escalation is None
+    assert len(result.envelopes) == 1
+    assert result.envelopes[0].is_final
+    if vlm_outcome == "success":
+        assert page.page.tier is OCRTier.TIER2
+        assert page.page.lines[0].text == latin_provider.lines[0].text
+        assert latin_provider.method_calls("extract_fields_batch")
+    else:
+        assert page.page.tier is OCRTier.NONE
+        assert not page.page.lines
+        assert any(
+            warning.startswith("handwriting_vlm_failed:page=1:")
+            for warning in result.envelopes[0].warnings
+        )

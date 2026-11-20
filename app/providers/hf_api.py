@@ -69,6 +69,7 @@ import threading
 import time
 from collections.abc import Callable, Mapping, Sequence
 from concurrent.futures import ThreadPoolExecutor
+from contextvars import copy_context
 from typing import Any, Final, TypeVar
 
 import httpx
@@ -99,6 +100,7 @@ from app.providers.base import (
     JobBudget,
     PageImage,
     ProviderMethodNotSupported,
+    active_job_budget,
     inject_truststore,
 )
 from app.providers.cache import ResponseCache, make_cache_key
@@ -298,6 +300,15 @@ def extraction_system_prompt(ctx: ExtractionContext) -> str:
         "original script; never invent, correct, translate or infer missing values. "
         "Use descriptive snake_case field names; preserve distinct repeated values "
         "using _2, _3 suffixes. Cite source line_indices. Omit absent fields. "
+        "Identify letter roles carefully: the greeting names the recipient/addressee; "
+        "the closing signature names the sender/signatory. Never interchange them. "
+        "Extract email from its actual address, and designation only for the person "
+        "it is explicitly associated with. A postal address must contain address "
+        "lines, not an unrelated adjacent paragraph. For letter_content copy the "
+        "body in reading order, excluding greetings, signature and envelope text. "
+        "For a multi-line value, return complete verbatim lines joined with newline "
+        "characters and cite every source line_index in that order. Omit unreadable "
+        "or ambiguous fields; do not invent corrections to damaged handwriting. "
         "For complaint_summary return only selected line indices, value null. "
         "Never reproduce or guess [[MASK_n]] redactions. Return one JSON object."
     )
@@ -553,8 +564,8 @@ class HFAPIProvider:
         #: and ``/healthz`` can say where extraction traffic actually goes.
         self.endpoint_is_local: bool = endpoint_is_local
         self.slm_model: str = slm_model or settings.SLM_MODEL
-        self.vlm_model: str = vlm_model or os.environ.get(
-            "VLM_MODEL", DEFAULT_VLM_MODEL
+        self.vlm_model: str = (
+            vlm_model or settings.VLM_MODEL or os.environ.get("VLM_MODEL", DEFAULT_VLM_MODEL)
         )
         self.json_mode = json_mode
         self.enable_translate = enable_translate
@@ -733,7 +744,7 @@ class HFAPIProvider:
             model=self.vlm_model,
             system=SYSTEM_PROMPT_OCR,
             prompt=instruction,
-            max_tokens=self.settings.SLM_MAX_TOKENS,
+            max_tokens=self.settings.VLM_MAX_TOKENS or self.settings.SLM_MAX_TOKENS,
             validate=_parse_ocr,
             image_url=image_url,
             cache_prompt=f"{instruction}\n#image={_digest_of(image_url)}",
@@ -918,7 +929,7 @@ class HFAPIProvider:
     ) -> str:
         """One completion with retry, budget reservation and metrics."""
         estimated = _estimate_request_tokens(messages, params)
-        claim = self.budget.reserve(estimated)
+        claim = (active_job_budget.get() or self.budget).reserve(estimated)
         settled = False
         try:
             for attempt in range(self.retry_policy.max_attempts):
@@ -961,7 +972,7 @@ class HFAPIProvider:
         """Async mirror of :meth:`_chat`."""
         client = self._ensure_async_client()
         estimated = _estimate_request_tokens(messages, params)
-        claim = self.budget.reserve(estimated)
+        claim = (active_job_budget.get() or self.budget).reserve(estimated)
         settled = False
         try:
             for attempt in range(self.retry_policy.max_attempts):
@@ -1233,4 +1244,4 @@ def _run_coroutine(coro: Any) -> Any:
     except RuntimeError:
         return asyncio.run(coro)
     with ThreadPoolExecutor(max_workers=1) as pool:
-        return pool.submit(asyncio.run, coro).result()
+        return pool.submit(copy_context().run, asyncio.run, coro).result()

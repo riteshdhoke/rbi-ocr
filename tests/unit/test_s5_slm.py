@@ -647,7 +647,7 @@ class TestGroundingGate:
         assert result.distance is None
         assert result.line_index == 2
 
-    def test_an_approximate_span_costs_half_the_confidence(
+    def test_exact_multiline_join_keeps_its_confidence_and_all_spans(
         self, name_page: OCRPage
     ) -> None:
         result = apply_grounding_gate(
@@ -662,8 +662,9 @@ class TestGroundingGate:
             max_distance=2,
         )
         field = result.fields["complainant_address"]
-        assert field.confidence == pytest.approx(0.45)
-        assert FieldFlag.LOW_CONFIDENCE in field.flags
+        assert field.confidence == pytest.approx(0.9)
+        assert [span.line_index for span in field.evidence.spans] == [2, 3]
+        assert FieldFlag.LOW_CONFIDENCE not in field.flags
 
     def test_accepted_and_rejected_fields_coexist(self, name_page: OCRPage) -> None:
         """One hallucinated field must not cost a document the ones that ground."""

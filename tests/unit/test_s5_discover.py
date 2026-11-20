@@ -54,7 +54,7 @@ def test_arbitrary_labels_multicell_unicode_and_repeated_values():
         span = f.evidence.span
         assert f.value == p.line_by_index(span.line_index).text[span.start : span.end]
         assert f.validator_passed is None
-        assert f.source == "ocr_label"
+        assert f.source in {"ocr_label", "ocr_layout"}
 
 
 def test_empty_labels_only_take_a_nearby_value_not_another_label():

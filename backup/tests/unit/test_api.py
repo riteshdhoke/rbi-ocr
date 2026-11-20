@@ -625,3 +625,20 @@ class TestRequestedFields:
 
     def test_request_list_has_a_length_limit(self, client: TestClient) -> None:
         assert upload(client, requested_fields='x' * 4097).status_code == 422
+
+
+def test_extractor_revision_reruns_old_results_without_deleting_history(
+    client: TestClient, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import app.field_selection as selection
+    import app.stages.assemble as assembly
+
+    first = upload(client, requested_fields='address, addressee').json()
+    monkeypatch.setattr(selection, 'EXTRACTION_REVISION', 'letter-next-revision')
+    monkeypatch.setattr(assembly, 'EXTRACTION_REVISION', 'letter-next-revision')
+    fresh = upload(client, requested_fields='address, addressee').json()
+    assert fresh['job_id'] == first['job_id']
+    assert fresh['result']['result_version'] > first['result']['result_version']
+    assert fresh['result']['extraction_revision'] == 'letter-next-revision'
+    cached = upload(client, requested_fields='address, addressee').json()
+    assert cached['result']['result_version'] == fresh['result']['result_version']

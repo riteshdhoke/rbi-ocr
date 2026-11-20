@@ -446,9 +446,9 @@ def escalate_page(
             )
             _TIER2_CALLS.labels(outcome=outcome.value).inc()
             _LOG.warning(
-                "tier-2 escalation unavailable (%s); the page ships at Tier-1 "
-                "quality with the reason recorded",
+                "tier-2 transcription unavailable (%s); retained_lines=%d",
                 exc.code,
+                len(tier1_lines),
             )
             return Tier2Result(
                 outcome=outcome,

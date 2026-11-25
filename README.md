@@ -29,6 +29,82 @@ HF client, and the air-gapped profiles refuse to start if pointed off-premises.
 Health and error rates: `GET /healthz`, `GET /v1/stats` (JSON, in-memory, resets on
 restart) and `GET /metrics` (Prometheus).
 
+## Configured extraction API
+
+The upload UI at `/ui/test_page.html` exposes these options and loads
+the deployment catalogue from `GET /v1/field-groups`.
+
+Send `POST /v1/documents` as multipart form data with the attachment in
+`file`, the application name in `realm`, and a JSON string in
+`configurations`. Under the laptop profile, add `synthetic=true` for
+synthetic uploads.
+
+```bash
+curl http://localhost:8000/v1/documents \
+  -F 'file=@complaint.pdf' \
+  -F 'realm=complaints' \
+  -F 'configurations={
+    "groups":[{"name":"banking","model":"cpu"}],
+    "override_model":"cpu",
+    "fields_to_extract":["complainant name"],
+    "other_fields":false,
+    "reactions":[],
+    "file_size":5242880
+  }'
+```
+
+- `fields_to_extract` adds individual field names to the selected groups.
+  With `other_fields: false` (the default), field extractors use only that
+  selection. An empty selection returns an empty field map. Set
+  `other_fields: true` to discover extra fields in the primary extraction pass.
+- The built-in groups are `banking`, `contact`, and `letter`.
+  Set `API_FIELD_GROUPS` to a JSON object mapping group names to field-name
+  arrays to replace the catalogue.
+- A group's optional `model` is `cpu` or `gpu`. `override_model`
+  applies to every group and individual field. Without an override,
+  individual fields and groups without a model inherit the common explicit
+  model when there is one, or use the server profile. For mixed models, the
+  API combines results after all configured passes finish.
+- `cpu` uses local OCR and deterministic extraction. `gpu` sends accepted
+  pages to the in-house VLM, including printed pages. It requires an
+  in-house `HF_BASE_URL` and the served model settings described below.
+- `file_size` is an optional maximum number of upload bytes for this request.
+  The service-wide maximum still applies.
+- `reactions` defaults to an empty array. Use `["webhook"]` to invoke the
+  service's configured result webhook.
+
+The upload and `GET /v1/jobs/{job_id}` return the same compact shape for
+configured jobs. Page numbers start at 1. Missing fields are omitted. Each
+returned field uses the highest-ranked evidence-bearing match. The label is
+the original document label associated with that value, or null if no label
+was identified. A null validation result indicates that
+no deterministic validator supplied a pass or fail for that value.
+
+```json
+{
+  "job_id": "example-job-id",
+  "pages_processed": [1],
+  "extracted_data": {
+    "ifsc_code": {
+      "value": "BARB0417293",
+      "confidence": 0.96,
+      "source_page": 1,
+      "label": "IFSC Code",
+      "validation_status": {
+        "method": "regex_validator",
+        "passed": true,
+        "flags": []
+      }
+    }
+  }
+}
+```
+
+Equivalent requests within a realm reuse a saved job. The realm is an
+application identifier for job deduplication. Existing clients that submit
+without `realm` and `configurations` continue to receive the versioned
+envelope.
+
 ## Handwritten pages on an in-house GPU
 
 Serve a vision model using the OpenAI-compatible endpoint from IDP2's vLLM

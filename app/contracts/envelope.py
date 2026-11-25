@@ -245,6 +245,8 @@ class Field(BaseModel):
     value_en: str | None = None
     #: Canonical form for indexing/linking (P2-4) — e.g. digits-only account.
     normalized: str | None = None
+    #: Original document label when it can be linked to the extracted value.
+    label: str | None = None
     confidence: Confidence
     source: FieldSource
     #: ``None`` when no validator applies to this field.

@@ -172,11 +172,12 @@
   // so the server sees an explicit statement rather than a missing field —
   // omitting it entirely is what made every upload through this page fail
   // under the default profile with a residency violation.
-  function postDocument(base, file, fieldName, synthetic, requestedFields) {
+  function postDocument(base, file, synthetic, realm, configurations) {
     var form = new FormData();
-    form.append(fieldName || "file", file, file.name);
+    form.append("file", file, file.name);
     form.append("synthetic", synthetic ? "true" : "false");
-    form.append("requested_fields", requestedFields || "");
+    form.append("realm", realm);
+    form.append("configurations", JSON.stringify(configurations));
     return global.fetch(apiUrl(base, "/v1/documents"), {
       method: "POST",
       body: form
@@ -186,6 +187,10 @@
   function fetchJob(base, jobId) {
     return global.fetch(apiUrl(base, "/v1/jobs/" + encodeURIComponent(jobId)))
       .then(readResponse);
+  }
+
+  function fetchFieldGroups(base) {
+    return global.fetch(apiUrl(base, "/v1/field-groups")).then(readResponse);
   }
 
   function fetchHealth(base) {
@@ -758,6 +763,7 @@
     postDocument: postDocument,
     fetchJob: fetchJob,
     fetchHealth: fetchHealth,
+    fetchFieldGroups: fetchFieldGroups,
     unwrapEnvelope: unwrapEnvelope,
     isBounced: isBounced,
     fieldRows: fieldRows,

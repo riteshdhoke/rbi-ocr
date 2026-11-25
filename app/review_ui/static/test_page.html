@@ -11,8 +11,7 @@
     1. served by the API (FastAPI mounts app/review_ui/static), or
     2. opened straight from disk over file:// with the API base typed in.
 
-  Air-gapped: this page loads exactly two sibling files, review_ui.css and
-  review_ui.js. No framework, no CDN, no font, no icon, no build step. The
+  Air-gapped: this page loads its scripts and stylesheet from sibling files. No framework, no CDN, no font, no icon, no build step. The
   only absolute URL in the whole front end is the loopback default in
   review_ui.js, marked API-BASE-PLACEHOLDER, and the operator overwrites it in
   the box below. tests/unit/test_review_ui_static.py fails the build if that
@@ -24,8 +23,7 @@
 
 <header class="masthead">
   <h1>RBI complaint document intelligence — API test page</h1>
-  <p class="sub">Upload a document, read the result envelope, see where every value came from.
-    Nothing on this page leaves your machine except the file you upload, which goes to the API base below.</p>
+  <p class="sub">Configure a document upload and inspect the extracted values and their source pages.</p>
 </header>
 
 <main>
@@ -36,21 +34,20 @@
       <label class="field">API base
         <input type="text" id="api-base" size="34" spellcheck="false" autocomplete="off">
       </label>
-      <label class="field">Upload form field name
-        <input type="text" id="field-name" value="file" size="10" spellcheck="false" autocomplete="off">
-      </label>
       <button type="button" id="health-btn">Check /healthz</button>
     </div>
     <p class="status" id="conn-status"></p>
   </section>
 
-  <section class="panel" aria-labelledby="doc-heading">
+  <form class="panel" id="upload-form" aria-labelledby="doc-heading">
     <h2 id="doc-heading">2 · Document</h2>
     <div class="row">
       <label class="field">Choose a document (image or PDF)
-        <input type="file" id="file-input" accept=".png,.jpg,.jpeg,.tif,.tiff,.pdf,image/*,application/pdf">
+        <input type="file" id="file-input" required accept=".png,.jpg,.jpeg,.tif,.tiff,.pdf,image/*,application/pdf">
       </label>
-      <button type="button" id="upload-btn">Upload to POST /v1/documents</button>
+      <label class="field">Realm (application name)
+        <input type="text" id="realm" required maxlength="128" autocomplete="organization">
+      </label>
     </div>
     <div class="row">
       <label class="field" style="flex-direction:row; align-items:center; gap:0.4rem">
@@ -66,16 +63,41 @@
       is ignored. Ticking it does not unlock anything — it states what the file
       is, and stating it falsely is the one thing this control can do wrong.
     </p>
-    <label class="field">Fields to extract (comma separated)
-      <input type="text" id="requested-fields" maxlength="4096"
-        placeholder="name of complainant, mobile, account number" autocomplete="off">
-    </label>
-    <p class="hint">Optional. Requested values appear under Extracted fields; additional discoveries appear under Other fields.</p>
-    <p class="status" id="doc-status"></p>
+    <fieldset>
+      <legend>Extraction configuration</legend>
+      <div class="row">
+        <label class="field">Model override
+          <select id="override-model">
+            <option value="">Use group models or server default</option>
+            <option value="cpu">CPU</option>
+            <option value="gpu">GPU</option>
+          </select>
+        </label>
+        <label class="field">Maximum file size (bytes)
+          <input type="number" id="file-size" min="1" step="1" placeholder="Server limit">
+        </label>
+      </div>
+      <p id="groups-label">Predefined field groups</p>
+      <div id="group-options" aria-labelledby="groups-label"></div>
+      <p class="status" id="group-status" aria-live="polite"></p>
+      <label class="field">Fields to extract (comma separated)
+        <input type="text" id="requested-fields" maxlength="4096"
+          placeholder="name of complainant, mobile, account number" autocomplete="off">
+      </label>
+      <p class="hint">Select groups or enter individual fields. An empty selection returns no fields unless discovery is enabled.</p>
+      <div class="row">
+        <label><input type="checkbox" id="discover-other-fields"> Discover other fields</label>
+        <label><input type="checkbox" id="webhook-reaction"> Send result webhook</label>
+      </div>
+    </fieldset>
+    <div class="row">
+      <button type="submit" id="upload-btn" disabled>Extract fields</button>
+    </div>
+    <p class="status" id="doc-status" aria-live="polite">Upload controls are loading.</p>
     <details>
-      <summary>Offline alternatives — no API needed</summary>
+      <summary>Load a saved result or fetch a job</summary>
       <div class="row" style="margin-top:0.6rem">
-        <label class="field">Load an envelope from a saved JSON file
+        <label class="field">Load a saved result JSON file
           <input type="file" id="json-input" accept=".json,application/json">
         </label>
         <label class="field">Fetch an existing job — GET /v1/jobs/&lt;id&gt;
@@ -83,8 +105,8 @@
         </label>
         <button type="button" id="job-btn" class="secondary">Fetch job</button>
       </div>
-      <p class="hint">Paste an envelope JSON here and press “Render pasted JSON”:</p>
-      <textarea id="paste-json" spellcheck="false" aria-label="Envelope JSON"></textarea>
+      <p class="hint">Paste result JSON here and press “Render pasted JSON”:</p>
+      <textarea id="paste-json" spellcheck="false" aria-label="Result JSON"></textarea>
       <div class="row" style="margin-top:0.5rem">
         <button type="button" id="paste-btn" class="secondary">Render pasted JSON</button>
         <label class="field">Page image for the overlay (optional, when you pasted JSON)
@@ -92,8 +114,15 @@
         </label>
       </div>
     </details>
+  </form>
+
+  <section class="panel" id="compact-result" aria-labelledby="compact-heading" hidden>
+    <h2 id="compact-heading">Extraction result</h2>
+    <div id="compact-overview"></div>
+    <div class="table-scroll" id="compact-fields"></div>
   </section>
 
+  <div id="legacy-result" hidden>
   <div id="banner"></div>
 
   <div class="grid-two">
@@ -147,6 +176,8 @@
     <div id="lines"></div>
   </section>
 
+  </div>
+
   <section class="panel" aria-labelledby="raw-heading">
     <h2 id="raw-heading">8 · Raw response</h2>
     <details>
@@ -158,255 +189,6 @@
 </main>
 
 <script src="review_ui.js"></script>
-<script>
-/* Page wiring only. Everything reusable lives in review_ui.js, which the
- * review page loads as well. */
-(function () {
-  "use strict";
-
-  var state = {
-    envelope: null,
-    raw: null,
-    image: null,
-    dataUrl: null,
-    fileName: null,
-    activeField: null,
-    pageNo: null
-  };
-
-  var apiBase = RUI.q("#api-base");
-  var fieldName = RUI.q("#field-name");
-  var connStatus = RUI.q("#conn-status");
-  var docStatus = RUI.q("#doc-status");
-  var imageStatus = RUI.q("#image-status");
-  var canvas = RUI.q("#page-canvas");
-  var pageSelect = RUI.q("#page-select");
-  var showBoxes = RUI.q("#show-boxes");
-
-  apiBase.value = RUI.defaultApiBase();
-
-  /* ------------------------------------------------------------- render */
-
-  function renderAll() {
-    var envelope = state.envelope;
-    RUI.renderBanner(RUI.q("#banner"), envelope);
-    if (!envelope) { return; }
-    RUI.renderOverview(RUI.q("#overview"), envelope);
-    RUI.renderPages(RUI.q("#pages"), envelope);
-    function showField(row) {
-      state.activeField = row.originalName || row.name;
-      var evidence = row.field.evidence || {};
-      if (evidence.page_no) { state.pageNo = evidence.page_no; syncPageSelect(); }
-      drawImage();
-      canvas.scrollIntoView({ block: "center" });
-    }
-    var doc = envelope.document || {};
-    var allFields = doc.fields || {};
-    var requested = envelope.requested_fields || [];
-    var selected = [];
-    requested.forEach(function (name) {
-      ((doc.extracted_fields || {})[name] || []).forEach(function (field, index) {
-        var original = Object.keys(allFields).filter(function (key) {
-          var candidate = allFields[key];
-          return candidate.value === field.value && JSON.stringify(candidate.evidence) === JSON.stringify(field.evidence);
-        })[0];
-        selected.push({ name: name + (index ? "_" + (index + 1) : ""), originalName: original, field: field });
-      });
-    });
-    RUI.q("#missing-fields").textContent = requested.length
-      ? ((doc.missing_fields || []).length ? "Not extracted reliably: " + doc.missing_fields.join(", ") : "All requested fields found.")
-      : "No field list supplied. All discoveries appear under Other fields.";
-    if (envelope.bounce_decision && envelope.bounce_decision.decision === "bounce") {
-      RUI.q("#missing-fields").textContent = "Document bounced; no values were extracted.";
-    }
-    RUI.renderFields(RUI.q("#fields"), envelope, showField, selected);
-    var other = doc.other_fields || allFields;
-    var otherRows = Object.keys(other).sort().map(function (name) { return { name: name, field: other[name] }; });
-    RUI.renderFields(RUI.q("#other-fields"), envelope, showField, otherRows);
-    RUI.renderLines(RUI.q("#lines"), envelope);
-    RUI.q("#raw").textContent = JSON.stringify(state.raw, null, 2);
-    buildPageSelect();
-    drawImage();
-  }
-
-  function buildPageSelect() {
-    var pages = (state.envelope && state.envelope.pages) || [];
-    RUI.clear(pageSelect);
-    pages.forEach(function (page) {
-      var option = RUI.el("option", { text: "Page " + page.page_no });
-      option.value = String(page.page_no);
-      pageSelect.appendChild(option);
-    });
-    if (!state.pageNo && pages.length) { state.pageNo = pages[0].page_no; }
-    syncPageSelect();
-  }
-
-  function syncPageSelect() {
-    if (state.pageNo) { pageSelect.value = String(state.pageNo); }
-  }
-
-  function drawImage() {
-    if (!state.image) {
-      RUI.setStatus(imageStatus, state.envelope
-        ? "No page image in this browser. Choose the image file above to draw evidence boxes."
-        : "", "busy");
-      var ctx = canvas.getContext("2d");
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      return;
-    }
-    var boxes = showBoxes.checked
-      ? RUI.evidenceBoxes(state.envelope, state.pageNo)
-      : [];
-    RUI.drawPage(canvas, state.image, boxes, state.activeField);
-    RUI.setStatus(imageStatus,
-      state.image.naturalWidth + " × " + state.image.naturalHeight + " px" +
-      (boxes.length ? " · " + boxes.length + " evidence box(es) on page " + state.pageNo : " · no evidence boxes on this page"),
-      "");
-  }
-
-  function setEnvelope(payload, note) {
-    var envelope = RUI.unwrapEnvelope(payload);
-    state.raw = payload;
-    if (!envelope) {
-      state.envelope = null;
-      RUI.setStatus(docStatus,
-        "The response did not contain a result envelope (looked for schema_version + bounce_decision). " +
-        "See the raw response below.", "error");
-      RUI.q("#raw").textContent = JSON.stringify(payload, null, 2);
-      return;
-    }
-    state.envelope = envelope;
-    RUI.q("#requested-fields").value = (envelope.requested_fields || []).join(", ");
-    state.activeField = null;
-    state.pageNo = null;
-    RUI.setStatus(docStatus, note || "Envelope loaded.", "");
-    renderAll();
-  }
-
-  function useImageFile(file) {
-    if (!file) { return; }
-    state.fileName = file.name;
-    RUI.loadImageFile(file).then(function (loaded) {
-      state.image = loaded.image;
-      state.dataUrl = loaded.dataUrl;
-      drawImage();
-    }, function (error) {
-      state.image = null;
-      state.dataUrl = null;
-      RUI.setStatus(imageStatus, error.message, "error");
-    });
-  }
-
-  /* -------------------------------------------------------------- wiring */
-
-  RUI.q("#health-btn").addEventListener("click", function () {
-    RUI.setStatus(connStatus, "checking…", "busy");
-    RUI.fetchHealth(apiBase.value).then(function (payload) {
-      RUI.setStatus(connStatus, "healthy: " + JSON.stringify(payload), "");
-    }, function (error) {
-      RUI.setStatus(connStatus, RUI.describeError(error, apiBase.value), "error");
-    });
-  });
-
-  RUI.q("#upload-btn").addEventListener("click", function () {
-    var file = RUI.q("#file-input").files[0];
-    if (!file) {
-      RUI.setStatus(docStatus, "Choose a file first.", "error");
-      return;
-    }
-    RUI.setStatus(docStatus, "uploading " + file.name + "…", "busy");
-    var synthetic = RUI.q("#synthetic-input").checked;
-    RUI.postDocument(apiBase.value, file, fieldName.value, synthetic, RUI.q("#requested-fields").value).then(function (payload) {
-      setEnvelope(payload, "Processed " + file.name + ".");
-    }, function (error) {
-      RUI.setStatus(docStatus, RUI.describeError(error, apiBase.value), "error");
-    });
-  });
-
-  RUI.q("#job-btn").addEventListener("click", function () {
-    var jobId = RUI.q("#job-id").value.trim();
-    if (!jobId) {
-      RUI.setStatus(docStatus, "Enter a job id first.", "error");
-      return;
-    }
-    RUI.setStatus(docStatus, "fetching job " + jobId + "…", "busy");
-    RUI.fetchJob(apiBase.value, jobId).then(function (payload) {
-      setEnvelope(payload, "Loaded job " + jobId + ".");
-    }, function (error) {
-      RUI.setStatus(docStatus, RUI.describeError(error, apiBase.value), "error");
-    });
-  });
-
-  RUI.q("#json-input").addEventListener("change", function (event) {
-    var file = event.target.files[0];
-    if (!file) { return; }
-    file.text().then(function (text) {
-      try {
-        setEnvelope(JSON.parse(text), "Loaded " + file.name + " from disk.");
-      } catch (error) {
-        RUI.setStatus(docStatus, "That file is not valid JSON: " + error.message, "error");
-      }
-    });
-  });
-
-  RUI.q("#paste-btn").addEventListener("click", function () {
-    var text = RUI.q("#paste-json").value.trim();
-    if (!text) {
-      RUI.setStatus(docStatus, "Paste an envelope first.", "error");
-      return;
-    }
-    try {
-      setEnvelope(JSON.parse(text), "Rendered pasted JSON.");
-    } catch (error) {
-      RUI.setStatus(docStatus, "That is not valid JSON: " + error.message, "error");
-    }
-  });
-
-  RUI.q("#image-input").addEventListener("change", function (event) {
-    useImageFile(event.target.files[0]);
-  });
-
-  RUI.q("#file-input").addEventListener("change", function (event) {
-    useImageFile(event.target.files[0]);
-  });
-
-  showBoxes.addEventListener("change", drawImage);
-  pageSelect.addEventListener("change", function () {
-    state.pageNo = Number(pageSelect.value) || null;
-    drawImage();
-  });
-  RUI.q("#clear-active").addEventListener("click", function () {
-    state.activeField = null;
-    drawImage();
-  });
-
-  RUI.q("#review-btn").addEventListener("click", function () {
-    if (!state.envelope) {
-      RUI.setStatus(docStatus, "Load an envelope first.", "error");
-      return;
-    }
-    var saved = RUI.saveStash({
-      envelope: state.envelope,
-      imageDataUrl: state.dataUrl,
-      fileName: state.fileName,
-      apiBase: RUI.normaliseBase(apiBase.value)
-    });
-    if (!saved.ok) {
-      RUI.setStatus(docStatus,
-        "Could not hand the envelope to the review page (" + saved.note +
-        "). Open review.html and paste the JSON there.", "error");
-      return;
-    }
-    if (saved.note) { RUI.setStatus(docStatus, saved.note, "busy"); }
-    window.open("review.html", "_blank");
-  });
-
-  RUI.bindKeys({
-    "u": function () { RUI.q("#file-input").click(); },
-    "r": function () { RUI.q("#review-btn").click(); },
-    "h": function () { RUI.q("#health-btn").click(); }
-  });
-})();
-</script>
+<script src="upload_page.js"></script>
 </body>
 </html>

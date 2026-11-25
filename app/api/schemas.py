@@ -1,14 +1,7 @@
-"""Request and response shapes for the HTTP surface.
+"""Forms and response models for the document and job API.
 
-Deliberately thin.  :class:`~app.contracts.envelope.ResultEnvelope` **is** the
-product and is returned as itself — re-modelling it here would create a second
-definition of the thing the JSON Schema in ``docs/schema/`` pins, and the two
-would drift on the first field anyone added.  What lives here is only the
-envelope's *wrapper*: the idempotency answer, the job view, and the health
-report, none of which the pipeline knows about.
-
-This module does NOT handle: validation of the envelope (its own models do),
-authentication, or pagination.
+The pipeline stores its evidence-bearing ResultEnvelope. Configured requests
+expose a compact view of that envelope alongside the legacy response models.
 """
 
 from __future__ import annotations
@@ -18,7 +11,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from app.contracts.envelope import ResultEnvelope
+from app.contracts.envelope import FieldFlag, FieldSource, ResultEnvelope
 
 __all__ = [
     "ErrorResponse",
@@ -26,6 +19,51 @@ __all__ = [
     "JobResponse",
     "SubmissionResponse",
 ]
+
+
+ExtractionModel = Literal["cpu", "gpu"]
+
+
+class ExtractionGroup(BaseModel):
+    """Select a named group from the deployment's field catalogue."""
+
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
+
+    name: str = Field(min_length=1, max_length=100)
+    model: ExtractionModel | None = None
+
+
+class ExtractionConfiguration(BaseModel):
+    """JSON configuration carried in a multipart form field."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    groups: list[ExtractionGroup] = Field(default_factory=list, max_length=32)
+    override_model: ExtractionModel | None = None
+    fields_to_extract: list[str] = Field(default_factory=list, max_length=128)
+    other_fields: bool = False
+    reactions: list[Literal["webhook"]] = Field(default_factory=list, max_length=1)
+    file_size: int | None = Field(default=None, gt=0, strict=True)
+
+
+class ExtractionValidation(BaseModel):
+    method: FieldSource
+    passed: bool | None
+    flags: tuple[FieldFlag, ...]
+
+
+class ExtractedValue(BaseModel):
+    value: str
+    confidence: float
+    source_page: int
+    label: str | None
+    validation_status: ExtractionValidation
+
+
+class ExtractionResponse(BaseModel):
+    job_id: str
+    pages_processed: tuple[int, ...] = ()
+    extracted_data: dict[str, ExtractedValue] = Field(default_factory=dict)
 
 
 class SubmissionResponse(BaseModel):

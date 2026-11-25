@@ -41,7 +41,7 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from typing import Any
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -281,6 +281,31 @@ class JobStore:
                 )
             )
             return job
+
+    def try_start_extraction(self, job: Job) -> bool:
+        """Claim the observed job version and record its transition atomically."""
+        with session_scope(self.sessions) as session:
+            claimed = session.scalar(
+                update(Job)
+                .where(
+                    Job.id == job.id,
+                    Job.status == job.status,
+                    Job.latest_result_version == job.latest_result_version,
+                )
+                .values(status=JobStatus.RUNNING.value, error_code=None, error_message=None)
+                .returning(Job.id)
+            )
+            if claimed is None:
+                return False
+            session.add(AuditEvent(
+                job_id=job.id,
+                actor=SYSTEM_ACTOR,
+                action=AuditAction.JOB_STATUS_CHANGED.value,
+                entity="job",
+                before={"status": job.status},
+                after={"status": JobStatus.RUNNING.value, "error_code": None},
+            ))
+            return True
 
     # --------------------------------------------------------------- results
     def record_result(

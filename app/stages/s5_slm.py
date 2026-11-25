@@ -245,6 +245,7 @@ def build_extraction_context(
     primary_script: str,
     primary_language: str | None = None,
     target_fields: Sequence[str] | None = None,
+    requested_only: bool = False,
     masked_spans: Sequence[TextSpan] = (),
     budget: BudgetSource | None = None,
     settings: Settings | None = None,
@@ -272,7 +273,7 @@ def build_extraction_context(
         raise ValueError("target_fields must name at least one field to extract")
     max_tokens = (
         active.SLM_MAX_TOKENS
-        if active.EXTRACT_ALL_FIELDS
+        if active.EXTRACT_ALL_FIELDS or requested_only
         else context_max_tokens(fields, settings=active)
     )
     remaining: int | None = None
@@ -294,6 +295,7 @@ def build_extraction_context(
         primary_script=primary_script,
         primary_language=primary_language,
         discover_fields=active.EXTRACT_ALL_FIELDS,
+        requested_only=requested_only,
         target_fields=list(fields),
         masked_spans=list(masked_spans),
         max_tokens=max_tokens,
@@ -309,6 +311,7 @@ def build_extraction_contexts(
     primary_scripts: Mapping[int, str] | str,
     primary_languages: Mapping[int, str | None] | str | None = None,
     target_fields: Sequence[str] | None = None,
+    requested_only: bool = False,
     masked_spans: Mapping[int, Sequence[TextSpan]] | None = None,
     budget: BudgetSource | None = None,
     settings: Settings | None = None,
@@ -331,6 +334,7 @@ def build_extraction_contexts(
                 primary_script=_per_page(primary_scripts, page.page_no),
                 primary_language=_per_page(primary_languages, page.page_no),
                 target_fields=target_fields,
+                requested_only=requested_only,
                 masked_spans=(masked_spans or {}).get(page.page_no, ()),
                 budget=budget,
                 settings=settings,
@@ -595,6 +599,7 @@ def apply_grounding_gate(
     *,
     max_distance: int | None = None,
     settings: Settings | None = None,
+    requested_fields: Sequence[str] | None = None,
 ) -> SLMPageResult:
     """Promote model output to envelope fields, refusing anything ungrounded.
 
@@ -627,7 +632,11 @@ def apply_grounding_gate(
 
     for name in sorted(raw_fields):
         raw = raw_fields[name]
-        if not active.EXTRACT_ALL_FIELDS and name not in SLM_ELIGIBLE_FIELDS:
+        if requested_fields is not None:
+            eligible = name in requested_fields
+        else:
+            eligible = active.EXTRACT_ALL_FIELDS or name in SLM_ELIGIBLE_FIELDS
+        if not eligible:
             rejected.append(
                 RejectedField(
                     page_no=page.page_no,

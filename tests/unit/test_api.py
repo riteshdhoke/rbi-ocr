@@ -15,6 +15,7 @@ cannot afford to get wrong would be the one thing the suite never exercises.
 
 from __future__ import annotations
 
+import json
 import logging
 import sys
 from collections.abc import Callable, Iterator
@@ -26,8 +27,8 @@ from fastapi.testclient import TestClient
 from app.api.app import create_app
 from app.api.logging_filter import PIIRedactionFilter, install_redaction, redact
 from app.contracts.errors import ResidencyViolation
-from app.stages.s7_categorise import CategoriserNotProduction
 from app.settings import ProviderProfile, Settings
+from app.stages.s7_categorise import CategoriserNotProduction
 from app.storage.models import JobStatus
 from app.storage.repository import JobStore
 
@@ -642,3 +643,124 @@ def test_extractor_revision_reruns_old_results_without_deleting_history(
     assert fresh['result']['extraction_revision'] == 'letter-next-revision'
     cached = upload(client, requested_fields='address, addressee').json()
     assert cached['result']['result_version'] == fresh['result']['result_version']
+
+
+
+def test_configured_request_limits_fields_and_scopes_jobs(client, store, provider):
+    contexts = []
+    original = provider.extract_fields_batch
+    account_line = provider.lines[-1].model_copy(update={
+        "text": "Account number: 30294817465021",
+        "line_index": max(line.line_index for line in provider.lines) + 1,
+    })
+    provider.lines.append(account_line)
+    provider.heavy_lines = provider.lines
+    provider.field_values["custom_field"] = provider.field_values["complainant_name"]
+
+    def capture(batch):
+        contexts.extend(batch)
+        results = original(batch)
+        for fields in results:
+            fields["unexpected"] = fields["custom_field"].model_copy(
+                update={"name": "unexpected"}
+            )
+        return results
+
+    provider.extract_fields_batch = capture
+    configuration = json.dumps({"fields_to_extract": ["complainant name", "custom field", "missing field"]})
+    form = {"realm": "complaints", "configurations": configuration}
+    response = upload(client, **form)
+    assert response.status_code == 200, response.text
+    body = response.json()
+    assert set(body) == {"job_id", "pages_processed", "extracted_data"}
+    assert body["pages_processed"] == [1]
+    assert set(body["extracted_data"]) == {"complainant_name", "custom_field"}
+    assert body["extracted_data"]["complainant_name"]["source_page"] == 1
+    assert body["extracted_data"]["complainant_name"]["label"] is None
+    assert body["extracted_data"]["complainant_name"]["validation_status"]["method"] == "slm"
+    assert contexts
+    assert all(
+        set(ctx.target_fields) == {"complainant_name", "custom_field", "missing_field"}
+        and not ctx.discover_fields
+        and any(
+            span.line_index == account_line.line_index
+            and account_line.text[span.start:span.end] == "30294817465021"
+            for span in ctx.masked_spans
+        )
+        for ctx in contexts
+    )
+    assert not store.latest_envelope(body["job_id"]).document.other_fields
+    assert client.get("/v1/jobs/" + body["job_id"]).json() == body
+    assert upload(client, **form).json() == body
+    assert upload(client, realm="different", configurations=configuration).json()["job_id"] != body["job_id"]
+    assert upload(client, synthetic=False, **form).status_code == 422
+
+
+def test_configured_discovery_and_reactions(client, monkeypatch):
+    calls = []
+    monkeypatch.setattr(client.app.state.dispatcher, "publish", lambda *args: calls.append(args))
+    config = {"fields_to_extract": ["complainant_name"]}
+    strict = upload(client, realm="complaints", configurations=json.dumps(config))
+    assert strict.status_code == 200, strict.text
+    assert not calls
+    config.update(other_fields=True, reactions=["webhook"])
+    open_result = upload(client, realm="complaints", configurations=json.dumps(config))
+    assert open_result.status_code == 200, open_result.text
+    assert set(open_result.json()["extracted_data"]) > {"complainant_name"}
+    assert calls
+
+
+def test_configured_mixed_group_models_and_override(api_settings, store, provider):
+    settings = api_settings.model_copy(update={
+        "HF_BASE_URL": "http://127.0.0.1:8000/v1",
+        "GPU_EXECUTION": "never",
+        "API_FIELD_GROUPS": {"identity": ("complainant_name",), "finance": ("account_number",)},
+    })
+    provider.heavy_lines = [
+        provider.lines[0].model_copy(update={"text": "Account number: 30294817465021"})
+    ]
+    config = {"groups": [{"name": "identity", "model": "cpu"}, {"name": "finance", "model": "gpu"}]}
+    app = create_app(settings, provider=provider, store=store)
+    with TestClient(app) as client:
+        response = upload(client, realm="complaints", configurations=json.dumps(config))
+        assert response.status_code == 200, response.text
+        body = response.json()
+        assert body["extracted_data"]["complainant_name"]["source_page"] == 1
+        account = body["extracted_data"]["account_number"]
+        assert account["value"] == "30294817465021"
+        assert account["label"] == "Account number"
+        assert account["validation_status"]["method"] == "regex_validator"
+        assert account["validation_status"]["passed"] is True
+        assert provider.method_calls("ocr_page")
+        assert provider.method_calls("ocr_page_heavy") == [None]
+        assert client.get("/v1/jobs/" + body["job_id"]).json() == body
+        assert len(store.results_for(body["job_id"])) == 1
+
+        provider.calls.clear()
+        config["override_model"] = "cpu"
+        response = upload(client, realm="complaints", configurations=json.dumps(config))
+        assert response.status_code == 200, response.text
+        assert provider.method_calls("ocr_page")
+        assert not provider.method_calls("ocr_page_heavy")
+
+
+def test_configured_limits_are_validated(client):
+    assert upload(client, realm="app").status_code == 422
+    assert upload(client, realm="app", configurations="{").status_code == 422
+    assert upload(client, realm="app", configurations='{"groups":[{"name":"unknown"}]}').status_code == 422
+    assert upload(client, realm="app", configurations='{"override_model":"gpu"}').status_code == 422
+    assert upload(client, realm="app", configurations='{"file_size":10}').status_code == 413
+    response = upload(client, realm="app", configurations="{}")
+    assert response.status_code == 200, response.text
+    assert response.json()["extracted_data"] == {}
+
+
+
+def test_field_group_catalogue_returns_deployment_groups(api_settings, store, provider):
+    settings = api_settings.model_copy(
+        update={"API_FIELD_GROUPS": {"custom": ("complainant_name", "email")}}
+    )
+    with TestClient(create_app(settings, provider=provider, store=store)) as client:
+        assert client.get("/v1/field-groups").json() == {
+            "custom": ["complainant_name", "email"]
+        }

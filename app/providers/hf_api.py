@@ -392,7 +392,11 @@ def build_extraction_prompt(ctx: ExtractionContext) -> str:
             "allowlist. Use descriptive snake_case names and suffix repeated fields "
             "with _2, _3, etc. Only extract facts visible in the numbered lines.\n"
             if ctx.discover_fields
-            else f"Extract these fields: {fields}.\n"
+            else (
+                f"Extract only these fields: {fields}. Omit every other field.\n"
+                if ctx.requested_only
+                else f"Extract these fields: {fields}.\n"
+            )
         )
         + f"Reply with exactly this JSON shape:\n{_EXTRACTION_JSON_SHAPE}\n\n"
         + (

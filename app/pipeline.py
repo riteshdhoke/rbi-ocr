@@ -83,7 +83,7 @@ from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Final
+from typing import Final, Literal
 
 from prometheus_client import Counter, Histogram
 
@@ -139,7 +139,9 @@ from app.stages.s5_validators import (
     BankTable,
     IFSCMaster,
     ValidatorReport,
+    banking_identifier_masks,
     load_bank_table,
+    merge_spans,
     run_validators,
 )
 from app.stages.s6_translate import translate_fields
@@ -443,6 +445,8 @@ def run_document(
     scanner: Scanner | None = None,
     strict_rejections: bool = False,
     requested_fields: Sequence[str] = (),
+    other_fields: bool | None = None,
+    recognition_model: Literal["cpu", "gpu"] | None = None,
     starting_result_version: int = 1,
 ) -> PipelineResult:
     """Process one document, publishing one envelope per ``result_version``.
@@ -466,8 +470,11 @@ def run_document(
         ifsc_master: overrides the master named by ``IFSC_MASTER_PATH`` (Q8).
         strict_rejections: re-raise ``DocumentRejected`` instead of returning a
             bounce envelope.
-        requested_fields: user-selected field names to prioritize, while still
-            discovering extra fields. Published results include both groups.
+        requested_fields: normalized field names to extract.
+        other_fields: enable discovery in addition to the selected fields.
+            None preserves legacy extraction behavior.
+        recognition_model: force the GPU VLM or keep recognition on the CPU.
+            The caller chooses the corresponding provider.
         starting_result_version: next append-only version when re-extracting
             an existing job; defaults to 1 for a new document.
 
@@ -482,14 +489,32 @@ def run_document(
         ProviderError: a model failure the stage that raised it chose not to
             absorb (the SLM and Tier 2 are absorbed; OCR and MT are not).
     """
-    from app.field_selection import parse_requested_fields
+    from app.field_selection import matches_field, parse_requested_fields
+    from app.stages.s5_validators import VALIDATOR_FIELD_NAMES
+
+    def validator_outputs(name: str) -> tuple[str, ...]:
+        return ("complaint_date", "transaction_date") if name == "date" else (name,)
 
     requested_fields = parse_requested_fields(requested_fields)
     if starting_result_version < 1:
         raise ValueError("starting_result_version must be positive")
     active = settings if settings is not None else get_settings()
-    if requested_fields:
-        active = active.model_copy(update={"EXTRACT_ALL_FIELDS": True})
+    if other_fields is not None or requested_fields:
+        active = active.model_copy(
+            update={"EXTRACT_ALL_FIELDS": other_fields is not False}
+        )
+    strict_fields = requested_fields if other_fields is False else None
+    selected_validators = (
+        tuple(
+            name for name in VALIDATOR_FIELD_NAMES
+            if any(
+                matches_field(output, wanted)
+                for output in validator_outputs(name)
+                for wanted in strict_fields
+            )
+        )
+        if strict_fields is not None else None
+    )
     started_at = utc_now()
     wall_start = time.perf_counter()
     timings = _Timings()
@@ -556,6 +581,7 @@ def run_document(
             settings=active,
             timings=timings,
             budget=budget,
+            force_vlm=recognition_model == "gpu",
         )
         for raster in ingested.pages
     ]
@@ -577,19 +603,29 @@ def run_document(
             envelopes=tuple(published), ingest=ingested, pages=tuple(outcomes)
         )
 
-    master = ifsc_master if ifsc_master is not None else _load_ifsc_master(active)
-    bank_table = _load_bank_table(active)
+    master = ifsc_master
+    if master is None and (selected_validators is None or "ifsc_code" in selected_validators):
+        master = _load_ifsc_master(active)
+    bank_table = (
+        _load_bank_table(active)
+        if selected_validators is None or "bank_name" in selected_validators
+        else None
+    )
     warnings = [
-        f"handwriting_vlm_failed:page={outcome.page_no}:"
+        f"{'gpu' if recognition_model == 'gpu' else 'handwriting'}"
+        f"_vlm_failed:page={outcome.page_no}:"
         f"reason={outcome.handwriting_vlm.error_code or outcome.handwriting_vlm.outcome.value}"
         for outcome in outcomes
         if outcome.handwriting_vlm is not None and not outcome.handwriting_vlm.succeeded
     ]
 
     report = _run_validators(
-        outcomes, master=master, bank_table=bank_table, timings=timings
+        outcomes, master=master, bank_table=bank_table, timings=timings,
+        validators=selected_validators,
+        requested_fields=strict_fields,
     )
-    _route_pages(outcomes, document_id=document_id, report=report, settings=active)
+    if recognition_model != "cpu":
+        _route_pages(outcomes, document_id=document_id, report=report, settings=active)
     _extract_fields(
         outcomes,
         provider=provider,
@@ -600,6 +636,8 @@ def run_document(
         timings=timings,
         warnings=warnings,
         requested_fields=requested_fields,
+        strict_fields=strict_fields,
+        configured=other_fields is not None,
     )
 
     pending = [outcome.page_no for outcome in outcomes if _awaits_tier2(outcome)]
@@ -613,6 +651,7 @@ def run_document(
         report=report,
         result_version=version,
         requested_fields=requested_fields,
+        strict_fields=strict_fields,
         is_final=not pending,
         started_at=started_at,
         timings=timings,
@@ -635,7 +674,9 @@ def run_document(
             budget=budget,
         )
         report = _run_validators(
-            outcomes, master=master, bank_table=bank_table, timings=timings
+            outcomes, master=master, bank_table=bank_table, timings=timings,
+            validators=selected_validators,
+            requested_fields=strict_fields,
         )
         _extract_fields(
             outcomes,
@@ -647,6 +688,8 @@ def run_document(
             timings=timings,
             warnings=warnings,
             requested_fields=requested_fields,
+            strict_fields=strict_fields,
+            configured=other_fields is not None,
             only_pages={outcome.page_no for outcome in outcomes if outcome.escalated},
         )
         version += 1
@@ -659,6 +702,7 @@ def run_document(
             report=report,
             result_version=version,
             requested_fields=requested_fields,
+            strict_fields=strict_fields,
             is_final=True,
             started_at=started_at,
             timings=timings,
@@ -832,6 +876,7 @@ def _process_page(
     settings: Settings,
     timings: _Timings,
     budget: JobBudget,
+    force_vlm: bool = False,
 ) -> PageOutcome:
     """Quality, recognition, LID and classification for one page."""
     page_no = raster.page_no
@@ -874,10 +919,12 @@ def _process_page(
     bypass_lines = _usable_bypass_lines(bypass, repairs)
 
     handwriting_vlm = None
-    if bypass_lines is None and settings.GPU_HANDWRITING_ENABLED:
+    if force_vlm or (bypass_lines is None and settings.GPU_HANDWRITING_ENABLED):
         with timings.stage("s4c_handwriting", page_no), use_job_budget(budget):
             handwriting_vlm = extract_handwritten_page(
-                image, provider=provider, min_ratio=settings.GPU_HANDWRITING_MIN_RATIO
+                image,
+                provider=provider,
+                min_ratio=None if force_vlm else settings.GPU_HANDWRITING_MIN_RATIO,
             )
 
     rotation = -assessment.metrics.skew_deg if REPAIR_DESKEW in repairs else 0.0
@@ -1031,14 +1078,28 @@ def _structural_anomalies(
 def _run_validators(
     outcomes: Sequence[PageOutcome],
     *,
-    master: IFSCMaster,
-    bank_table: BankTable,
+    master: IFSCMaster | None,
+    bank_table: BankTable | None,
     timings: _Timings,
+    validators: Sequence[str] | None = None,
+    requested_fields: Sequence[str] | None = None,
 ) -> ValidatorReport:
     """Deterministic extraction over every non-bounced page, in one pool."""
+    from app.field_selection import matches_field
+
     pages = [outcome.page for outcome in outcomes if not outcome.bounced]
     with timings.stage("s5_validators"):
-        return run_validators(pages, ifsc_master=master, bank_table=bank_table)
+        if validators == ():
+            return ValidatorReport(hits=())
+        report = run_validators(
+            pages, ifsc_master=master, bank_table=bank_table, validators=validators
+        )
+    if requested_fields is None:
+        return report
+    return ValidatorReport(hits=tuple(
+        hit for hit in report.hits
+        if any(matches_field(hit.field_name, wanted) for wanted in requested_fields)
+    ))
 
 
 # --------------------------------------------------------------------------- #
@@ -1187,6 +1248,8 @@ def _extract_fields(
     warnings: list[str],
     only_pages: set[int] | None = None,
     requested_fields: Sequence[str] = (),
+    strict_fields: Sequence[str] | None = None,
+    configured: bool = False,
 ) -> None:
     """Run the extractive SLM over pages with text, absorbing provider failure.
 
@@ -1198,6 +1261,20 @@ def _extract_fields(
     ``only_pages`` restricts the re-run after Tier 2 to the pages whose text
     actually changed; the others keep the raw fields the fast path produced.
     """
+    from app.contracts.ocr import DETERMINISTIC_FIELDS
+    from app.field_selection import canonical_field
+
+    targets = requested_fields
+    if strict_fields is not None:
+        targets = tuple(
+            name for name in strict_fields
+            if name != "date" and not any(
+                canonical_field(field) == canonical_field(name)
+                for field in DETERMINISTIC_FIELDS
+            )
+        )
+        if not targets:
+            return
     candidates = [
         outcome
         for outcome in outcomes
@@ -1210,9 +1287,16 @@ def _extract_fields(
 
     by_page = {outcome.page_no: outcome for outcome in candidates}
     try:
+        pages = [outcome.page for outcome in candidates]
+        identifier_masks = (
+            banking_identifier_masks(pages)
+            if strict_fields is not None and settings.is_remote_profile
+            else {}
+        )
         contexts = build_extraction_contexts(
-            [outcome.page for outcome in candidates],
-            target_fields=requested_fields or None,
+            pages,
+            target_fields=targets or None,
+            requested_only=strict_fields is not None,
             document_id=document_id,
             page_classes={
                 outcome.page_no: (
@@ -1233,7 +1317,10 @@ def _extract_fields(
                     []
                     if settings.EXTRACT_ALL_FIELDS
                     and settings.PROVIDER_PROFILE.value != "laptop"
-                    else report.masked_spans(outcome.page_no)
+                    else merge_spans((
+                        *report.masked_spans(outcome.page_no),
+                        *identifier_masks.get(outcome.page_no, ()),
+                    ))
                 )
                 for outcome in candidates
             },
@@ -1243,7 +1330,7 @@ def _extract_fields(
         if not contexts:
             return
         budget_scope = (
-            use_job_budget(budget) if settings.GPU_HANDWRITING_ENABLED else nullcontext()
+            use_job_budget(budget) if configured or settings.GPU_HANDWRITING_ENABLED else nullcontext()
         )
         with timings.stage("s5_slm"), budget_scope:
             results = extract_pages(provider, contexts)
@@ -1256,7 +1343,10 @@ def _extract_fields(
         )
         return
     for context, fields in zip(contexts, results, strict=True):
-        by_page[context.page_no].raw_fields = dict(fields)
+        by_page[context.page_no].raw_fields = {
+            name: field for name, field in fields.items()
+            if strict_fields is None or name in strict_fields
+        }
 
 
 def _page_script(outcome: PageOutcome) -> str:
@@ -1291,6 +1381,7 @@ def _assemble(
     budget: JobBudget,
     warnings: Sequence[str],
     requested_fields: Sequence[str] = (),
+    strict_fields: Sequence[str] | None = None,
 ) -> ResultEnvelope:
     """Build one published envelope from the current state of every page."""
     finished_at = utc_now()
@@ -1321,6 +1412,7 @@ def _assemble(
             ),
             warnings=tuple(warnings),
             requested_fields=requested_fields,
+            strict_fields=strict_fields,
             settings=settings,
         )
     return envelope

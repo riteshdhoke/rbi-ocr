@@ -387,6 +387,7 @@ def assemble_envelope(
     summary_separator: str = "\n",
     settings: Settings | None = None,
     requested_fields: Sequence[str] = (),
+    strict_fields: Sequence[str] | None = None,
 ) -> ResultEnvelope:
     """Build the published :class:`~app.contracts.envelope.ResultEnvelope`.
 
@@ -429,7 +430,9 @@ def assemble_envelope(
     )
 
     gate_results: list[SLMPageResult] = [
-        apply_grounding_gate(item.raw_fields, item.page, settings=active)
+        apply_grounding_gate(
+            item.raw_fields, item.page, settings=active, requested_fields=strict_fields
+        )
         for item in ordered
     ]
     rejections: tuple[RejectedField, ...] = tuple(
@@ -474,6 +477,17 @@ def assemble_envelope(
                 fields,
                 requested_fields=requested_fields,
             )
+        if strict_fields:
+            fields = discover_fields(
+                [
+                    item.page
+                    for item in ordered
+                    if item.quality_verdict is not QualityVerdict.BOUNCE
+                ],
+                fields,
+                requested_fields=strict_fields,
+                requested_only=True,
+            )
         if translator is not None:
             fields = dict(translator(fields))
 
@@ -487,6 +501,17 @@ def assemble_envelope(
             pages_by_no,
             separator=summary_separator,
         )
+        if summary is not None and "complaint_summary" in requested_fields:
+            fields["complaint_summary"] = Field(
+                value=summary.text,
+                confidence=min(
+                    pages_by_no[span.evidence.page_no]
+                    .line_by_index(span.evidence.span.line_index).confidence
+                    for span in summary.spans
+                ),
+                source="slm",
+                evidence=summary.spans[0].evidence,
+            )
         document_summary = derive_language_summary(
             [line for item in ordered for line in item.page.lines],
             code_mix_threshold=threshold,

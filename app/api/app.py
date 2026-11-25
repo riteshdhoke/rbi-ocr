@@ -127,6 +127,7 @@ def create_app(
         state.settings = active
         state.redactor = redactor
         state.owns_provider = provider is None
+        state.extraction_providers = {}
         state.owns_store = store is None
         # The gauge describes the *configuration*, not who built the provider,
         # so it is set here rather than left to the factory: an injected
@@ -150,6 +151,8 @@ def create_app(
             state.dispatcher.stop()
             if state.owns_provider:
                 close_provider(state.provider)
+            for extraction_provider in state.extraction_providers.values():
+                close_provider(extraction_provider)
             if state.owns_store:
                 state.store.close()
 

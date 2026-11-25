@@ -493,6 +493,7 @@ class ExtractionContext(BaseModel):
     #: Derived hint only; the model must not rely on it for per-line decisions.
     primary_language: LanguageCode | None = None
     discover_fields: bool = False
+    requested_only: bool = False
     target_fields: list[str] = Field(min_length=1)
     #: Regions already claimed by deterministic validators, to be sentinel-masked.
     masked_spans: list[TextSpan] = Field(default_factory=list)
@@ -509,7 +510,7 @@ class ExtractionContext(BaseModel):
                 "sent to the SLM — validators own them (PLAN.md invariant 7)"
             )
         unknown = sorted(set(self.target_fields) - SLM_ELIGIBLE_FIELDS)
-        if unknown and not self.discover_fields:
+        if unknown and not (self.discover_fields or self.requested_only):
             raise ValueError(
                 f"unknown SLM target field(s) {', '.join(unknown)}; allowed: "
                 f"{', '.join(sorted(SLM_ELIGIBLE_FIELDS))}"

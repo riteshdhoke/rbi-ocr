@@ -22,6 +22,7 @@ from app.review_ui import (
     SHARED_ASSET_FILENAMES,
     STATIC_DIR,
     TEST_PAGE_FILENAME,
+    UPLOAD_SCRIPT_FILENAME,
     review_page_path,
     static_assets,
     static_path,
@@ -31,7 +32,7 @@ from app.review_ui import (
 from app.review_ui import test_page_path as api_test_page_path
 
 HTML_FILES = (TEST_PAGE_FILENAME, REVIEW_PAGE_FILENAME)
-ALL_FILES = HTML_FILES + SHARED_ASSET_FILENAMES
+ALL_FILES = HTML_FILES + SHARED_ASSET_FILENAMES + (UPLOAD_SCRIPT_FILENAME,)
 
 #: The marker a line must carry to be allowed to contain an absolute URL.
 API_BASE_MARKER = "API-BASE-PLACEHOLDER"
@@ -66,7 +67,7 @@ FORBIDDEN_DOM_SINKS = (
 )
 
 #: The published API surface. A reviewer page must not invent an endpoint.
-PUBLISHED_PATHS = ("/v1/documents", "/v1/jobs/", "/healthz", "/metrics")
+PUBLISHED_PATHS = ("/v1/documents", "/v1/jobs/", "/v1/field-groups", "/healthz", "/metrics")
 
 
 def read(name: str) -> str:
@@ -294,7 +295,7 @@ def test_every_element_the_script_looks_up_exists(
     name: str, pages: dict[str, _Page]
 ) -> None:
     """A typo in a selector is a silently dead button; catch it here."""
-    script = "\n".join(pages[name].scripts)
+    script = read(UPLOAD_SCRIPT_FILENAME) if name == TEST_PAGE_FILENAME else "\n".join(pages[name].scripts)
     wanted = set(re.findall(r"RUI\.q\(\"#([A-Za-z0-9_-]+)\"\)", script))
 
     assert wanted, f"{name} looks nothing up"
@@ -305,7 +306,7 @@ def test_every_element_the_script_looks_up_exists(
 def test_pages_only_link_to_pages_that_exist(
     name: str, pages: dict[str, _Page]
 ) -> None:
-    script = "\n".join(pages[name].scripts)
+    script = read(UPLOAD_SCRIPT_FILENAME) if name == TEST_PAGE_FILENAME else "\n".join(pages[name].scripts)
     for target in re.findall(r"\"([A-Za-z0-9_.-]+\.html)\"", script):
         assert static_path(target).is_file(), f"{name} opens missing {target}"
 
@@ -319,6 +320,13 @@ def test_test_page_has_the_controls_the_brief_asks_for(
         "file-input",    # upload a document
         "upload-btn",
         "requested-fields",
+        "realm",
+        "group-options",
+        "override-model",
+        "discover-other-fields",
+        "webhook-reaction",
+        "file-size",
+        "compact-result",
         "other-fields",
         "missing-fields",
         "banner",        # bounce banner
@@ -426,3 +434,10 @@ def test_shared_script_refuses_to_pretend_it_can_render_a_pdf() -> None:
     js = read("review_ui.js")
     assert "isPdf" in js
     assert "air-gapped" in js
+
+
+def test_upload_cannot_submit_before_javascript_is_ready(pages: dict[str, _Page]) -> None:
+    page = pages[TEST_PAGE_FILENAME]
+    assert any(attrs.get("src") == UPLOAD_SCRIPT_FILENAME for _, attrs in page.elements)
+    button = next(attrs for tag, attrs in page.elements if tag == "button" and attrs.get("id") == "upload-btn")
+    assert "disabled" in button

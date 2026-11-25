@@ -44,10 +44,13 @@ def test_arbitrary_labels_multicell_unicode_and_repeated_values():
     )
     fields = discover_fields([p])
     assert fields["customer_id"].value == "C-123"
+    assert fields["customer_id"].label == "Customer ID"
+    assert fields["email"].label == "Email"
     assert fields["email_2"].value == "b@example.in"
     assert "email_3" not in fields
     assert fields["policy_number"].value == "P-42"
     assert fields["मोबाइल"].value == "9876543210"
+    assert fields["मोबाइल"].label == "मोबाइल"
     assert fields["website"].value == "https://example.in:8000/a"
     assert fields["appointment"].value == "10:30"
     for f in fields.values():
@@ -62,6 +65,7 @@ def test_empty_labels_only_take_a_nearby_value_not_another_label():
         [page("Customer ID:", "C-123", "Missing:", "Email: a@b.in")]
     )
     assert fields["customer_id"].value == "C-123"
+    assert fields["customer_id"].label == "Customer ID"
     assert "missing" not in fields
     assert fields["email"].value == "a@b.in"
 

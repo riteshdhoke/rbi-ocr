@@ -2274,6 +2274,15 @@ def run_validators(
     return ValidatorReport(hits=tuple(collected))
 
 
+def banking_identifier_masks(pages: Sequence[OCRPage]) -> dict[int, tuple[TextSpan, ...]]:
+    """Find sensitive spans for remote prompts without publishing field results."""
+    report = run_validators(
+        pages,
+        validators=("account_number", "ifsc_code", "card_fragment", "utr_rrn", "micr_code"),
+    )
+    return {page.page_no: report.masked_spans(page.page_no) for page in pages}
+
+
 def _cross_check_bank_name(hits: Sequence[ValidatorHit]) -> list[ValidatorHit]:
     """Flag ``bank_name``/IFSC disagreement.  Never resolves it.
 

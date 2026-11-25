@@ -50,6 +50,7 @@ __all__ = [
     "SHARED_ASSET_FILENAMES",
     "STATIC_DIR",
     "TEST_PAGE_FILENAME",
+    "UPLOAD_SCRIPT_FILENAME",
     "review_page_path",
     "static_assets",
     "static_path",
@@ -64,6 +65,7 @@ STATIC_DIR: Final[Path] = REVIEW_UI_DIR / "static"
 
 TEST_PAGE_FILENAME: Final[str] = "test_page.html"
 REVIEW_PAGE_FILENAME: Final[str] = "review.html"
+UPLOAD_SCRIPT_FILENAME: Final[str] = "upload_page.js"
 #: Loaded by both pages; the reason they are two pages and not two copies.
 SHARED_ASSET_FILENAMES: Final[tuple[str, ...]] = ("review_ui.css", "review_ui.js")
 
@@ -107,5 +109,5 @@ def review_page_path() -> Path:
 
 def static_assets() -> tuple[Path, ...]:
     """Every file a deployment must ship for the pages to work offline."""
-    names = (TEST_PAGE_FILENAME, REVIEW_PAGE_FILENAME, *SHARED_ASSET_FILENAMES)
+    names = (TEST_PAGE_FILENAME, REVIEW_PAGE_FILENAME, UPLOAD_SCRIPT_FILENAME, *SHARED_ASSET_FILENAMES)
     return tuple(static_path(name) for name in names)

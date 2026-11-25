@@ -500,6 +500,13 @@ class Settings(BaseSettings):
             "MAX_TOTAL_PIXELS, which caps what a valid upload may decode to."
         ),
     )
+    API_FIELD_GROUPS: dict[str, tuple[str, ...]] = Field(
+        default_factory=lambda: {
+            "contact": ("complainant_name", "mobile", "email", "postal_address"),
+            "banking": ("bank_name", "account_number", "ifsc_code", "transaction_reference"),
+            "letter": ("recipient_name", "sender_name", "letter_content"),
+        }
+    )
     API_TITLE: str = Field(default="RBI Complaint Document Intelligence", min_length=1)
 
     # ------------------------------------------------------------------- paths

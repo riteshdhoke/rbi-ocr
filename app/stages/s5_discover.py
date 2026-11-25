@@ -10,6 +10,7 @@ from __future__ import annotations
 import math
 import re
 import unicodedata
+from collections import defaultdict
 from collections.abc import Mapping, Sequence
 
 from app.contracts.envelope import Evidence, Field, FieldFlag
@@ -43,7 +44,15 @@ def add_discovered(fields: dict[str, Field], name: str, candidate: Field) -> Non
     """Keep distinct occurrences rather than discarding all but the best value."""
     key, occurrence = name, 2
     while key in fields:
-        if fields[key].value == candidate.value:
+        existing = fields[key]
+        if existing.value == candidate.value:
+            if (
+                existing.label is None
+                and candidate.label is not None
+                and existing.evidence.page_no == candidate.evidence.page_no
+                and existing.evidence.span == candidate.evidence.span
+            ):
+                fields[key] = existing.model_copy(update={"label": candidate.label})
             return
         key = f"{name}_{occurrence}"
         occurrence += 1
@@ -54,6 +63,8 @@ def discover_fields(
     pages: Sequence[OCRPage],
     existing: Mapping[str, Field] | None = None,
     requested_fields: Sequence[str] = (),
+    *,
+    requested_only: bool = False,
 ) -> dict[str, Field]:
     """Copy labeled values, preserving OCR text, locations and repeated values.
 
@@ -61,7 +72,16 @@ def discover_fields(
     Additional occurrences get numeric suffixes. Unvalidated discoveries always
     have ``validator_passed=None`` and ``source='ocr_label'``.
     """
+    def wanted(name: str) -> bool:
+        return not requested_only or any(
+            matches_field(name, field) for field in requested_fields
+        )
+
     fields = dict(existing or {})
+    fields_by_line: dict[tuple[int, int], list[str]] = defaultdict(list)
+    for name, field in fields.items():
+        if field.label is None:
+            fields_by_line[field.evidence.page_no, field.evidence.span.line_index].append(name)
     claimed = {
         (field.evidence.page_no, span.line_index)
         for field in fields.values()
@@ -69,7 +89,9 @@ def discover_fields(
         for span in (field.evidence.spans or (field.evidence.span,))
     }
     for page in sorted(pages, key=lambda p: p.page_no):
-        for name, candidate in discover_letter_fields(page).items():
+        for name, candidate in discover_letter_fields(
+            page, wanted=wanted if requested_only else None
+        ).items():
             add_discovered(fields, name, candidate)
         lines = page.lines
         for position, line in enumerate(lines):
@@ -151,8 +173,19 @@ def discover_fields(
                         end = len(source.text.rstrip())
                 if end <= start:
                     continue
+                # A validated or model-extracted value can occupy part of this
+                # cell. Keep that value's evidence and checks while adding the
+                # visible label from the cell.
+                for field_key in fields_by_line.get((page.page_no, source.line_index), ()):
+                    field = fields[field_key]
+                    span = field.evidence.span
+                    if field.label is None and start <= span.start < span.end <= end:
+                        fields[field_key] = field.model_copy(update={"label": label})
+                if not wanted(name):
+                    continue
                 candidate = Field(
                     value=source.text[start:end],
+                    label=label,
                     confidence=min(source.confidence, 0.85),
                     source="ocr_label",
                     validator_passed=None,

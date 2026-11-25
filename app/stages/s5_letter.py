@@ -9,6 +9,7 @@ from __future__ import annotations
 import math
 import re
 import statistics
+from collections.abc import Callable
 
 from app.contracts.envelope import Field
 from app.contracts.ocr import OCRLine, OCRPage, TextSpan
@@ -125,7 +126,9 @@ def _address_blocks(page: OCRPage) -> list[Field]:
     return results
 
 
-def discover_letter_fields(page: OCRPage) -> dict[str, Field]:
+def discover_letter_fields(
+    page: OCRPage, *, wanted: Callable[[str], bool] | None = None,
+) -> dict[str, Field]:
     fields: dict[str, Field] = {}
 
     def add(name: str, value: Field):
@@ -136,7 +139,7 @@ def discover_letter_fields(page: OCRPage) -> dict[str, Field]:
             key, i = f"{name}_{i}", i + 1
         fields[key] = value
 
-    for line in page.lines:
+    for line in page.lines if wanted is None or wanted("email") else ():
         if line.confidence < 0.85:
             continue
         for match in _EMAIL.finditer(line.text):
@@ -156,8 +159,15 @@ def discover_letter_fields(page: OCRPage) -> dict[str, Field]:
                     source="ocr_layout",
                 ),
             )
-    for address in _address_blocks(page):
-        add("postal_address", address)
+    if wanted is None or wanted("postal_address"):
+        for address in _address_blocks(page):
+            add("postal_address", address)
+    if wanted is not None and not any(
+        wanted(name) for name in (
+            "recipient_name", "sender_name", "sender_designation", "letter_content"
+        )
+    ):
+        return fields
 
     lines = page.lines
     greeting = next(
@@ -173,7 +183,7 @@ def discover_letter_fields(page: OCRPage) -> dict[str, Field]:
     start, match = greeting
     line = lines[start]
     name = match.group("name").strip()
-    if _name(name):
+    if (wanted is None or wanted("recipient_name")) and _name(name):
         name_start = line.text.find(name, match.start("name"))
         add(
             "recipient_name",
@@ -210,11 +220,12 @@ def discover_letter_fields(page: OCRPage) -> dict[str, Field]:
             <= min(signature.bbox[1::2]) - min(close.bbox[1::2])
             <= max(120, height * 3)
         ):
-            add(
-                "sender_name",
-                field_from_spans(page, [_full(signature)], source="ocr_layout"),
-            )
-            if closing + 2 < len(lines):
+            if wanted is None or wanted("sender_name"):
+                add(
+                    "sender_name",
+                    field_from_spans(page, [_full(signature)], source="ocr_layout"),
+                )
+            if (wanted is None or wanted("sender_designation")) and closing + 2 < len(lines):
                 role = lines[closing + 2]
                 if (
                     role.confidence >= 0.85
@@ -227,6 +238,8 @@ def discover_letter_fields(page: OCRPage) -> dict[str, Field]:
                         "sender_designation",
                         field_from_spans(page, [_full(role)], source="ocr_layout"),
                     )
+    if wanted is not None and not wanted("letter_content"):
+        return fields
     height = statistics.median(
         max(item.bbox[1::2]) - min(item.bbox[1::2])
         for item in lines[start : closing + 1]

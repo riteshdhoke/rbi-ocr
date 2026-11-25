@@ -45,7 +45,7 @@ def _tokens(name: str) -> set[str]:
 
 
 # Version stored with results so a changed extractor does not serve stale values.
-EXTRACTION_REVISION = "open-fields-bank-logo-v2"
+EXTRACTION_REVISION = "open-fields-source-label-v3"
 
 # Semantic aliases identify a concept, not a list of allowed output fields.
 # Unknown/custom labels continue through the normal label-word matcher.

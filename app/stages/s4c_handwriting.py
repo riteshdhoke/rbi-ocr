@@ -8,13 +8,13 @@ from app.stages.s4b_vlm import Tier2Result, escalate_page
 
 
 def extract_handwritten_page(
-    image: PageImage, *, provider: ModelProvider, min_ratio: float
+    image: PageImage, *, provider: ModelProvider, min_ratio: float | None
 ) -> Tier2Result | None:
     """Use pixel-only detection and transcribe selected pages using vLLM.
 
     A result means the VLM owns recognition for this page, even if inference
     failed or returned no lines. The caller records that outcome.
     """
-    if estimate_handwriting_ratio(image) < min_ratio:
+    if min_ratio is not None and estimate_handwriting_ratio(image) < min_ratio:
         return None
     return escalate_page(image, (), provider=provider)
